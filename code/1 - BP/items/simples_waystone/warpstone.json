@@ -1,0 +1,1 @@
+{"format_version":"1.21.100","minecraft:item":{"description":{"identifier":"ws:warpstone","menu_category":{"category":"equipment"}},"components":{"ws:warpstone":{},"minecraft:icon":"simple_waystone:warpstone","minecraft:max_stack_size":1}}}

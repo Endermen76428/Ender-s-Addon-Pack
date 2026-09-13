@@ -1,0 +1,16 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.temporal_bottle.temporal_bottle_entity": {
+      "ignore_lighting": true,
+      "arrays": {
+        "textures": {
+          "Array.tier": ["Texture.speed_2x", "Texture.speed_4x", "Texture.speed_8x", "Texture.speed_16x", "Texture.speed_32x", "Texture.speed_64x", "Texture.speed_128x", "Texture.speed_256x"]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Array.tier[v.tier]" ]
+    }
+  }
+}

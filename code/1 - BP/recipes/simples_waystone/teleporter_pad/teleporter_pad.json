@@ -1,0 +1,1 @@
+{"format_version":"1.20.10","minecraft:recipe_shaped":{"description":{"identifier":"ws:teleporter_pad"},"tags":["crafting_table"],"pattern":[" S ","POP"],"key":{"S":{"item":"ws:teleport_shard"},"P":{"item":"minecraft:polished_andesite"},"O":{"item":"minecraft:obsidian"}},"unlock":[{"item":"ws:teleport_shard"},{"item":"minecraft:obsidian"}],"result":{"item":"ws:teleporter_pad"}}}

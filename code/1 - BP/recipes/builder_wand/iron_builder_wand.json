@@ -1,0 +1,19 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "builder_wand:iron_builder_wand" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " O",
+      "S "
+    ],
+    "key": {
+      "S": { "item": "minecraft:stick" },
+      "O": { "item": "minecraft:iron_ingot" }
+    },
+    "unlock": [
+      { "item": "minecraft:iron_ingot" }
+    ],
+    "result": { "item": "builder_wand:iron_builder_wand" }
+  }
+}

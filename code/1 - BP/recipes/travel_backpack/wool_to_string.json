@@ -1,0 +1,11 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "travel_backpack:wool_to_string" },
+    "tags": [ "crafting_table" ],
+    "pattern": [ "W" ],
+    "key": { "W": { "tag": "minecraft:wool" } },
+    "unlock": [ { "tag": "minecraft:wool" } ],
+    "result": { "item": "minecraft:string", "count": 4 }
+  }
+}

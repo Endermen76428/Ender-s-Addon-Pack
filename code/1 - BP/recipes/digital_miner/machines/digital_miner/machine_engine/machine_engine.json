@@ -1,0 +1,19 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:machine_engine" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " C ",
+      "RBR",
+      "SSS"
+    ],
+    "key": {
+      "S": { "item": "digital_miner:steel_block" },
+      "C": { "item": "minecraft:coal_block" },
+      "R": { "item": "minecraft:redstone_block" },
+      "B": { "item": "minecraft:blast_furnace" }
+    },
+    "unlock": [ { "item": "digital_miner:steel_ingot" } ],
+    "result": { "item": "digital_miner:machine_engine" }
+  }
+}

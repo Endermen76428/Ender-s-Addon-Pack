@@ -1,0 +1,21 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "digital_miner:gold_dust_4" },
+    "priority": 5,
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "HII",
+      "II "
+    ],
+    "key": {
+      "H": { "item": "digital_miner:hammer" },
+      "I": { "item": "minecraft:raw_gold" }
+    },
+    "unlock": [ { "item": "minecraft:raw_gold" } ],
+    "result": [
+      { "item": "digital_miner:gold_dust", "count": 8 },
+      { "item": "digital_miner:hammer" }
+    ]
+  }
+}

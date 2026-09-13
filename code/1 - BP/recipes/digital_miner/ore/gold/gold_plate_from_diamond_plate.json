@@ -1,0 +1,14 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "digital_miner:gold_plate_from_diamond_plate" },
+    "tags": [ "crafting_table" ],
+    "pattern": [ "D" ],
+    "key": { "D": { "item": "digital_miner:diamond_plate" } },
+    "unlock": [ { "item": "digital_miner:gold_plate" } ],
+    "result": [
+      { "item": "digital_miner:gold_plate" },
+      { "item": "digital_miner:diamond_dust", "count": 8 }
+    ]
+  }
+}

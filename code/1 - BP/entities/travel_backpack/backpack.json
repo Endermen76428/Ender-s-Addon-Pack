@@ -1,0 +1,91 @@
+{
+  "format_version": "1.26.20",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "travel_backpack:backpack",
+      "is_summonable": true,
+      "is_spawnable": false,
+      "is_experimental": false,
+      "properties": {
+        "travel_backpack:on_ground": { "type": "bool", "default": false }
+      }
+    },
+
+    "component_groups": {
+      "travel_backpack:despawn": { "minecraft:instant_despawn": {} },
+
+      "travel_backpack:on_ground": {
+        "minecraft:collision_box": { "width": 0.7, "height": 0.8 },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": [
+                {
+                  "all_of": [
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:netherite_backpack" }
+                  ]
+                }
+              ],
+              "event": "travel_backpack:return"
+            }
+          ]
+        }
+      },
+
+      "travel_backpack:timer": {
+        "minecraft:tick_world": {},
+        "minecraft:timer": { "time": 60.0, "time_down_event": { "event": "travel_backpack:archive" } }
+      },
+
+      "travel_backpack:inventory0": { "minecraft:inventory": { "container_type": "container", "inventory_size": 49  } }, /* 27  - Leather */
+      "travel_backpack:inventory1": { "minecraft:inventory": { "container_type": "container", "inventory_size": 57  } }, /* 36  - Copper */
+      "travel_backpack:inventory2": { "minecraft:inventory": { "container_type": "container", "inventory_size": 75  } }, /* 54  - Iron */
+      "travel_backpack:inventory3": { "minecraft:inventory": { "container_type": "container", "inventory_size": 102 } }, /* 81  - Gold */
+      "travel_backpack:inventory4": { "minecraft:inventory": { "container_type": "container", "inventory_size": 121 } }, /* 100 - Diamond */
+      "travel_backpack:inventory5": { "minecraft:inventory": { "container_type": "container", "inventory_size": 141 } }  /* 120 - Netherite */
+    },
+
+    "components": {
+      "minecraft:type_family": { "family": [ "backpack" ] },
+      "minecraft:health": { "value": 1, "min": 1 },
+      "minecraft:damage_sensor": { "triggers": [ { "cause": "all", "deals_damage": "no" } ] },
+      "minecraft:collision_box": { "width": 0.1, "height": 0.1 },
+      "minecraft:nameable": { "allow_name_tag_renaming": false },
+      "minecraft:fire_immune": {},
+      "minecraft:persistent": {},
+      "minecraft:physics": { "has_collision": false, "has_gravity": false }
+    },
+
+    "events": {
+      "travel_backpack:despawn": { "add": { "component_groups": [ "travel_backpack:despawn" ] } },
+      "travel_backpack:return": { "queue_command": { "command": "scriptevent travel_backpack:return" } },
+      "travel_backpack:archive": { "queue_command": { "command": "scriptevent travel_backpack:archive" } },
+
+      "travel_backpack:add_on_ground": {
+        "add": { "component_groups": [ "travel_backpack:on_ground" ] },
+        "remove": { "component_groups": [ "travel_backpack:timer" ] },
+        "set_property": { "travel_backpack:on_ground": true }
+      },
+      "travel_backpack:remove_on_ground": {
+        "add": { "component_groups": [ "travel_backpack:timer" ] },
+        "remove": { "component_groups": [ "travel_backpack:on_ground" ] },
+        "set_property": { "travel_backpack:on_ground": false }
+      },
+
+      "travel_backpack:add_timer": { "add": { "component_groups": [ "travel_backpack:timer" ] } },
+      "travel_backpack:remove_timer": { "remove": { "component_groups": [ "travel_backpack:timer" ] } },
+
+      "travel_backpack:inventory0": { "add": { "component_groups": [ "travel_backpack:inventory0" ] } },
+      "travel_backpack:inventory1": { "add": { "component_groups": [ "travel_backpack:inventory1" ] } },
+      "travel_backpack:inventory2": { "add": { "component_groups": [ "travel_backpack:inventory2" ] } },
+      "travel_backpack:inventory3": { "add": { "component_groups": [ "travel_backpack:inventory3" ] } },
+      "travel_backpack:inventory4": { "add": { "component_groups": [ "travel_backpack:inventory4" ] } },
+      "travel_backpack:inventory5": { "add": { "component_groups": [ "travel_backpack:inventory5" ] } }
+    }
+  }
+}

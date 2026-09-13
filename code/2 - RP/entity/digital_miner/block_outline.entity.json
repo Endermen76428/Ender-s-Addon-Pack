@@ -1,0 +1,19 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "digital_miner:block_outline",
+      "materials": {
+        "default": "always_visible",
+        "overwrite": "overwrite"
+      },
+      "textures": { "default": "textures/digital_miner/entity/outline/block_outline" },
+      "geometry": { "default": "geometry.digital_miner.block_outline" },
+      "render_controllers": [
+        "controller.render.digital_miner.block_outline",
+        "controller.render.digital_miner.block_outline.invisible"
+      ],
+      "spawn_egg": { "texture": "digital_miner:null" }
+    }
+  }
+}

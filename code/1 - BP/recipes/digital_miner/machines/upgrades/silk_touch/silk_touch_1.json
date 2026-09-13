@@ -1,0 +1,19 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:silk_touch_upgrade_1" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BFB",
+      "STS",
+      "BFB"
+    ],
+    "key": {
+      "B": { "item": "digital_miner:steel_block" },
+      "S": { "item": "minecraft:wither_skeleton_skull" },
+      "F": { "item": "minecraft:feather" },
+      "T": { "item": "digital_miner:upgrade_template" }
+    },
+    "unlock": [ { "item": "digital_miner:upgrade_template" } ],
+    "result": { "item": "digital_miner:silk_touch_upgrade_1" }
+  }
+}

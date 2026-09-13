@@ -1,0 +1,125 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "gravestone_death_path:gravestone_entity",
+      "is_summonable": true,
+      "is_spawnable": false,
+      "is_experimental": false,
+      "properties": {
+        "gravestone_death_path:xp": {
+          "type": "int",
+          "range": [0, 2147483647],
+          "default": 0
+        }
+      }
+    },
+
+    "component_groups": {
+      "gravestone_death_path:in_gravestone": {
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": [
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_blaze" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_bogged" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_breeze" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_cave_spider" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_creaking" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_creeper" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_enderman" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_evoker" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_ghast" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_hoglin" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_iron_golem" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_piglin" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_piglin_brute" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_player" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_ravager" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_shulker" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_skeleton" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_slime" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_spider" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_stray" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_wither_skeleton" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_zombie" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_zombie_pigman" },
+
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_blaze" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_bogged" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_breeze" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_cave_spider" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_creaking" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_creeper" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_enderman" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_evoker" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_ghast" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_hoglin" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_iron_golem" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_piglin" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_piglin_brute" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_player" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_ravager" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_shulker" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_skeleton" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_slime" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_spider" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_stray" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_wither_skeleton" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_zombie" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_nether_zombie_pigman" },
+
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_blaze" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_bogged" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_breeze" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_cave_spider" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_creaking" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_creeper" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_enderman" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_evoker" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_ghast" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_hoglin" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_iron_golem" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_piglin" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_piglin_brute" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_player" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_ravager" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_shulker" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_skeleton" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_slime" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_spider" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_stray" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_wither_skeleton" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_zombie" },
+                { "test": "in_block", "subject": "self", "operator": "!=", "value": "gravestone_death_path:gravestone_end_zombie_pigman" }
+              ],
+              "event": "gravestone_death_path:drop_all"
+            }
+          ]
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:type_family": { "family": [ "gravestone" ] },
+      "minecraft:inventory": { "inventory_size": 100 },
+      "minecraft:collision_box": { "width": 0, "height": 0 },
+      "minecraft:physics": { "has_collision": false, "has_gravity": false },
+      "minecraft:damage_sensor": { "triggers": [ { "cause": "all", "deals_damage": "no" } ] },
+      "minecraft:nameable": { "allow_name_tag_renaming": false },
+      "minecraft:fire_immune": true,
+      "minecraft:persistent": {},
+      "minecraft:conditional_bandwidth_optimization": {}
+    },
+
+    "events": {
+      "minecraft:entity_spawned": { "add": { "component_groups": [ "gravestone_death_path:in_gravestone" ] } },
+      "gravestone_death_path:drop_all": { "queue_command": { "command": [ "scriptevent gravestone_death_path:drop_all" ] } },
+      "gravestone_death_path:add_in_gravestone": { "add": { "component_groups": [ "gravestone_death_path:in_gravestone" ] } },
+      "gravestone_death_path:remove_in_gravestone": { "remove": { "component_groups": [ "gravestone_death_path:in_gravestone" ] } }
+    }
+  }
+}

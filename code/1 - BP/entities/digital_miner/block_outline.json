@@ -1,0 +1,48 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "digital_miner:block_outline",
+      "is_summonable": true,
+      "is_spawnable": false,
+      "is_experimental": false,
+      "properties": {
+        "digital_miner:red": { "type": "int", "range": [0, 255], "default": 255, "client_sync": true },
+        "digital_miner:green": { "type": "int", "range": [0, 255], "default": 255, "client_sync": true },
+        "digital_miner:blue": { "type": "int", "range": [0, 255], "default": 255, "client_sync": true }
+      }
+    },
+    "component_groups": {
+      "digital_miner:despawn": { "minecraft:instant_despawn": {} }
+    },
+    "components": {
+      "minecraft:timer": { "time": 10, "looping": false, "time_down_event": { "event": "digital_miner:despawn" } },
+
+      "minecraft:health": { "value": 1, "min": 1 },
+      "minecraft:damage_sensor": { "triggers": { "cause": "all", "deals_damage": "no" } },
+
+      "minecraft:collision_box": { "width": 0.1, "height": 0.1 },
+      "minecraft:physics": { "has_collision": false, "has_gravity": false },
+      "minecraft:environment_sensor": {
+        "triggers": {
+          "filters": [
+            {
+              "any_of": [
+                { "test": "in_block", "subject": "self", "operator": "==", "value": "minecraft:air" },
+                { "test": "in_block", "subject": "self", "operator": "==", "value": "minecraft:water" },
+                { "test": "in_block", "subject": "self", "operator": "==", "value": "minecraft:lava" }
+              ]
+            }
+          ],
+          "event": "digital_miner:despawn",
+          "target": "self"
+        }
+      }
+    },
+    "events": {
+      "digital_miner:despawn": {
+        "add": { "component_groups": [ "digital_miner:despawn" ] }
+      }
+    }
+  }
+}

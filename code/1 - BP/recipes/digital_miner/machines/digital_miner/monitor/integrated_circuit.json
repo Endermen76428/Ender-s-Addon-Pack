@@ -1,0 +1,20 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:integrated_circuit" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "NCN",
+      "CRC",
+      "NCN"
+    ],
+    "key": {
+      "N": { "item": "digital_miner:steel_nugget" },
+      "C": { "item": "digital_miner:capacitor" },
+      "R": { "item": "minecraft:redstone" }
+    },
+    "unlock": [
+      { "item": "digital_miner:steel_ingot" }
+    ],
+    "result": { "item": "digital_miner:integrated_circuit" }
+  }
+}

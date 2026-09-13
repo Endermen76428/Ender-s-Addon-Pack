@@ -1,0 +1,10 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": { "identifier": "digital_miner:steel_block_from_plate" },
+    "tags": [ "crafting_table" ],
+    "ingredients": [ { "item": "digital_miner:steel_plate" } ],
+    "unlock": [ { "item": "digital_miner:steel_block" } ],
+    "result": { "item": "digital_miner:steel_block", "count": 3 }
+  }
+}

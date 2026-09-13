@@ -1,0 +1,1380 @@
+pack.description=§5Endermen76428§r don't write descriptions.
+
+
+
+### Command
+commands.advanced_waypoints.main_panel=Open the Main Waypoints Painel
+commands.advanced_waypoints.teleport=Enable the Teleport and set the XP cost by distance
+
+### Entity
+entity.advanced_waypoints:waypoint.name=Waypoint
+
+### Item
+item.wp:waypoint_item=Waypoint
+item.wp:advanced_waypoint_item=Advanced Waypoint
+
+### UI
+## Main Painel
+ui.advanced_waypoints:config.title=Waypoints
+ui.advanced_waypoints:config.button.teleport=Teleport
+ui.advanced_waypoints:config.button.create=Create Point
+ui.advanced_waypoints:config.button.edit=Edit Point
+ui.advanced_waypoints:edit.visible=Edit Visibility
+ui.advanced_waypoints:config.button.remove=Remove Point
+ui.advanced_waypoints:config.button.options=Options
+
+## Teleport
+ui.advanced_waypoints:tp.title=Teleport to Waypoint
+
+## Create/Edit
+ui.advanced_waypoints:create.title=Create Waypoint
+ui.advanced_waypoints:edit.title=Edit Waypoints
+ui.advanced_waypoints:create.name=Waypoint Name:
+ui.advanced_waypoints:create.name_hold=Put name here
+ui.advanced_waypoints:create.pos=Waypoint Position:
+ui.advanced_waypoints:create.pos_hold=Example: -7, 61, 43
+ui.advanced_waypoints:create.turn_off_close=Turn Off When Close
+ui.advanced_waypoints:create.icon=Waypoint Icon:
+ui.advanced_waypoints:create.icon.first_letter=First Letter
+ui.advanced_waypoints:create.icon.default=Default
+ui.advanced_waypoints:create.icon.death=Death
+ui.advanced_waypoints:create.icon.house=house
+ui.advanced_waypoints:create.icon.sword=Sword
+ui.advanced_waypoints:create.icon.pickaxe=Pickaxe
+ui.advanced_waypoints:create.icon.axe=Axe
+ui.advanced_waypoints:create.color=Waypoint Color:
+ui.advanced_waypoints.create.color.0=§lWhite
+ui.advanced_waypoints.create.color.1=§l§iLight Gray
+ui.advanced_waypoints.create.color.2=§l§jGray
+ui.advanced_waypoints.create.color.3=§l§0Black
+ui.advanced_waypoints.create.color.4=§l§mBrown
+ui.advanced_waypoints.create.color.5=§l§cRed
+ui.advanced_waypoints.create.color.6=§l§6Orange
+ui.advanced_waypoints.create.color.7=§l§eYellow
+ui.advanced_waypoints.create.color.8=§l§aLime
+ui.advanced_waypoints.create.color.9=§l§2Green
+ui.advanced_waypoints.create.color.10=§l§3Cyan
+ui.advanced_waypoints.create.color.11=§l§bLight Blue
+ui.advanced_waypoints.create.color.12=§l§1Blue
+ui.advanced_waypoints.create.color.13=§l§uPurple
+ui.advanced_waypoints.create.color.14=§l§5Magenta
+ui.advanced_waypoints.create.color.15=§l§dPink
+ui.advanced_waypoints:create.slider_r=§cR
+ui.advanced_waypoints:create.slider_g=§aG
+ui.advanced_waypoints:create.slider_b=§sB
+ui.advanced_waypoints:create.visible=Is visible
+ui.advanced_waypoints:create.button_save=Save
+
+## Delete
+ui.advanced_waypoints:delete.title=Delete Waypoint
+ui.advanced_waypoints:delete.body=Choose one to delete:
+ui.advanced_waypoints:delete.buttonDelete=Delete
+ui.advanced_waypoints:delete.confirm1=Do you really want to delete "§a%1§r"
+ui.advanced_waypoints:delete.confirm2= at §3%1§r
+ui.advanced_waypoints:yes=Yes
+ui.advanced_waypoints:no=No
+
+## Share
+ui.advanced_waypoints:config.button.share=Share Waypoints
+ui.advanced_waypoints:share.players=Select a Player to recive:
+ui.advanced_waypoints:share.waypoints=Select a Waypoint to share:
+ui.advanced_waypoints:share.confirm.body=Do you want to share the waypoint: "§a%1§r" to §e%2§r?
+
+## Options
+ui.advanced_waypoints:options.title=Options
+ui.advanced_waypoints:options.general.title=General Settings
+ui.advanced_waypoints:options.general.toggle.showName=Show Name
+ui.advanced_waypoints:options.general.toggle.showDistance=Show Distance
+ui.advanced_waypoints:options.general.toggle.showBeacon=Show Beacon
+ui.advanced_waypoints:options.general.toggle.alwaysShowInfo=Always Show: Info
+ui.advanced_waypoints:options.general.toggle.alwaysShowBeam=Always Show: Beam
+ui.advanced_waypoints:options.general.toggle.showPos=Show Position
+ui.advanced_waypoints:options.general.toggle.reciveSharing=Receive Shares
+ui.advanced_waypoints:options.general.toggle.createDeathPoint=Create Death Point
+ui.advanced_waypoints:options.general.dropdown.deathPointDate=Death Point Date:
+ui.advanced_waypoints:options.general.dropdown.deathPointUTC=Death Time Zone:
+
+ui.advanced_waypoints:options.recover.title=Recover Waypoints
+
+## Admin Options
+ui.advanced_waypoints:config.tp=Teleport Enabled
+ui.advanced_waypoints:config.cost=Teleport Cost XP
+ui.advanced_waypoints:config.distance=Distance to start cost XP
+
+### Warining
+## General
+warn.advanced_waypoints:dontHavePoints=§cYou have no waypoints at this dimension
+
+## Teleport
+warn.advanced_waypoints:insufficientXp=§cYou don't have enough XP!
+
+## Create/Edit
+warn.advanced_waypoints:cancelCreatePoint=§cWaypoint creation cancelled
+warn.advanced_waypoints:invalidName=§cInvalid waypoint name
+warn.advanced_waypoints:invalidPos=§cInvalid waypoint position
+warn.advanced_waypoints:failCreatePoint=§cFailed to create waypoint
+warn.advanced_waypoints:createPoint=Waypoint "§a%1§r" successfully created
+warn.advanced_waypoints:editPoint=Waypoint "§a%1§r" successfully edited
+warn.advanced_waypoints:manyWaypoints=§cYou have too many active Waypoints, for better performance leave the visibility of unnecessary Waypoints turned off.
+
+## Delete
+warn.advanced_waypoints:dontDelete=No Waypoints deleted
+warn.advanced_waypoints:waypointNotFound=§cCouldn't find the Waypoint
+warn.advanced_waypoints:deleted=Waypoints "§a%1§r" deleted
+
+## Share
+warn.advanced_waypoints:noPlayersOnline=§cThere are no players to share.
+warn.advanced_waypoints:dontShared=Unshared Waypoint.
+warn.advanced_waypoints:targetDontAcceptShare=This player doesn't accept shares.
+warn.advanced_waypoints:reciveWaypoint=You recived a Waypoint. "§a%1§r" from §e%2.
+warn.advanced_waypoints:alreadySent=§cYou have already shared this waypoint to this person.
+warn.advanced_waypoints:playerOffline=§cPlayer Offline, Waypoint not sent.
+
+## Settings
+warn.advanced_waypoints:saveOptions=All options have been saved
+warn.advanced_waypoints:cancelOptions=§cChanges Undone
+
+
+
+
+
+
+
+## Ui - Config Wand
+ui.builder_wand:config.wand.title=Wand's Settings
+ui.builder_wand:config.wand.slider=Select the max area size
+ui.builder_wand:config.wand.toggle=Connected Diagonal Blocks
+
+## Items
+item.builder_wand:creative_builder_wand=Creative Builder Wand
+item.builder_wand:diamond_builder_wand=Diamond Builder Wand
+item.builder_wand:golden_builder_wand=Golden Builder Wand
+item.builder_wand:iron_builder_wand=Iron Builder Wand
+item.builder_wand:netherite_builder_wand=Netherite Builder Wand
+item.builder_wand:stone_builder_wand=Stone Builder Wand
+item.builder_wand:wooden_builder_wand=Wooden Builder Wand
+
+## Item Catalog
+builder_wand:itemGroup.name.builder_wand=Builder's Wands
+
+## Warn
+warning.builder_wand:will_place=Selected %1 Blocks
+warning.builder_wand:placed=Placed %1 Blocks
+warning.builder_wand:low_durability=§cLow durability, action cancelled
+
+
+
+
+
+
+
+## --------------------------------------------------
+## Blocks
+## --------------------------------------------------
+
+### Machines
+## Digital Miner
+tile.digital_miner:digital_miner.name=Digital Miner\n§9@Digital Miner§r
+
+## Laser Drill
+tile.digital_miner:light_generator.name=Light Generator\n§9@Digital Miner§r
+
+## Monitor
+tile.digital_miner:diamond_glass.name=Diamond Glass\n§9@Digital Miner§r
+
+### Ore
+## Steel
+tile.digital_miner:steel_block.name=Steel Block\n§9@Digital Miner§r
+
+
+
+## --------------------------------------------------
+## Entity
+## --------------------------------------------------
+
+### Ore Scanner
+entity.digital_miner:block_outline.name=Block Outline
+entity.digital_miner:anchor_upgrade.name=Digital Miner Anchor
+
+
+
+## --------------------------------------------------
+## Items
+## --------------------------------------------------
+
+### Components
+## Digital Processor
+item.digital_miner:digital_processor=Digital Processor\n§9@Digital Miner§r
+item.digital_miner:advanced_circuit=Advanced Circuit\n§9@Digital Miner§r
+
+## Laser Drill
+item.digital_miner:laser_drill=Laser Drill\n§9@Digital Miner§r
+
+## Machine Engine
+item.digital_miner:machine_engine=Machine Engine\n§9@Digital Miner§r
+
+## Monitor
+item.digital_miner:monitor=Monitor\n§9@Digital Miner§r
+item.digital_miner:integrated_circuit=Integrated Circuit\n§9@Digital Miner§r
+item.digital_miner:capacitor=Capacitor\n§9@Digital Miner§r
+
+### Machines
+## Digital Miner
+item.digital_miner:digital_miner=Digital Miner\n§9@Digital Miner§r
+
+### Ore
+## Diamond
+item.digital_miner:diamond_dust=Diamond Dust\n§9@Digital Miner§r
+item.digital_miner:diamond_plate=Diamond Plate\n§9@Digital Miner§r
+
+## Dust
+item.digital_miner:coal_dust=Coal Dust\n§9@Digital Miner§r
+item.digital_miner:iron_dust=Iron Dust\n§9@Digital Miner§r
+
+## Gold
+item.digital_miner:gold_dust=Gold Dust\n§9@Digital Miner§r
+item.digital_miner:gold_plate=Gold Plate\n§9@Digital Miner§r
+
+## Quartz
+item.digital_miner:redstone_enriched_quartz=Redstone Enriched Quartz\n§9@Digital Miner§r
+
+## Steel
+item.digital_miner:steel_dust=Steel Dust\n§9@Digital Miner§r
+item.digital_miner:steel_ingot=Steel Ingot\n§9@Digital Miner§r
+item.digital_miner:steel_nugget=Steel Nugget\n§9@Digital Miner§r
+item.digital_miner:steel_plate=Steel Plate\n§9@Digital Miner§r
+
+### Tool
+item.digital_miner:guidebook=Guidebook\n§9@Digital Miner§r
+item.digital_miner:hammer=Hammer\n§9@Digital Miner§r
+item.digital_miner:ore_scanner=Ore Scanner\n§9@Digital Miner§r
+
+### Upgrades
+item.digital_miner:upgrade_template=Upgrade Template\n§9@Digital Miner§r
+item.digital_miner:speed_upgrade_1=Speed Upgrade Tier 1\n§9@Digital Miner§r
+item.digital_miner:speed_upgrade_2=Speed Upgrade Tier 2\n§9@Digital Miner§r
+item.digital_miner:speed_upgrade_3=Speed Upgrade Tier 3\n§9@Digital Miner§r
+item.digital_miner:speed_upgrade_4=Speed Upgrade Tier 4\n§9@Digital Miner§r
+item.digital_miner:stack_upgrade_1=Stack Upgrade Tier 1\n§9@Digital Miner§r
+item.digital_miner:stack_upgrade_2=Stack Upgrade Tier 2\n§9@Digital Miner§r
+item.digital_miner:stack_upgrade_3=Stack Upgrade Tier 3\n§9@Digital Miner§r
+item.digital_miner:stack_upgrade_4=Stack Upgrade Tier 4\n§9@Digital Miner§r
+item.digital_miner:energy_upgrade_1=Energy Upgrade Tier 1\n§9@Digital Miner§r
+item.digital_miner:energy_upgrade_2=Energy Upgrade Tier 2\n§9@Digital Miner§r
+item.digital_miner:energy_upgrade_3=Energy Upgrade Tier 3\n§9@Digital Miner§r
+item.digital_miner:energy_upgrade_4=Energy Upgrade Tier 4\n§9@Digital Miner§r
+item.digital_miner:fortune_upgrade_1=Fortune Upgrade Tier 1\n§9@Digital Miner§r
+item.digital_miner:fortune_upgrade_2=Fortune Upgrade Tier 2\n§9@Digital Miner§r
+item.digital_miner:fortune_upgrade_3=Fortune Upgrade Tier 3\n§9@Digital Miner§r
+item.digital_miner:fortune_upgrade_4=Fortune Upgrade Tier 4\n§9@Digital Miner§r
+item.digital_miner:silk_touch_upgrade_1=Silk Touch Upgrade\n§9@Digital Miner§r
+item.digital_miner:anchor_upgrade_1=Anchor Upgrade\n§9@Digital Miner§r
+
+
+
+## --------------------------------------------------
+## Item Catalog
+## --------------------------------------------------
+
+digital_miner:itemGroup.name.dust=Ore Dusts
+digital_miner:itemGroup.name.plate=Ore Plates
+digital_miner:itemGroup.name.steel=Steel
+digital_miner:itemGroup.name.components=Components
+digital_miner:itemGroup.name.upgrades=Upgrades
+
+
+
+## --------------------------------------------------
+## UI - Digital Miner
+## --------------------------------------------------
+
+ui.digital_miner:yes=Yes
+ui.digital_miner:no=No
+
+### Main
+## Default
+ui.digital_miner:miner.title=Digital Miner
+ui.digital_miner:miner.body=§lMine:§r %1 Blocks every %2 second.\n§lFound:§r %3 Blocks\n\n
+ui.digital_miner:miner.start=§2Start Mine
+ui.digital_miner:miner.stop=§cStop Mine
+ui.digital_miner:miner.filter=Filter
+ui.digital_miner:miner.upgrades=Upgrades
+ui.digital_miner:miner.settings=Settings
+
+## Warning
+warn.digital_miner:miner.no_filter=[§cMiner§r]> The Digital Miner needs to have some filter.
+warn.digital_miner:miner.no_container=[§cMiner§r]> The Digital Miner needs to have some chest behind it.
+warn.digital_miner:miner.scanning=Scanning in progress - %1
+warn.digital_miner:miner.processing=Processing %1 Blocks
+warn.digital_miner:miner.found_blocks=Found %1 Blocks
+warn.digital_miner:miner.container_full=[§cMiner§r]> Digital Miner container is full.
+
+### Filter
+## Tags
+ui.digital_miner:tag.bedrock_awakening:all_log=All Log
+ui.digital_miner:tag.bedrock_awakening:all_ore=All Ore
+
+ui.digital_miner:tag.bedrock_awakening:amethyst=Amethyst
+ui.digital_miner:tag.bedrock_awakening:deepslate=Deepslate
+ui.digital_miner:tag.bedrock_awakening:deepslate_ore=Deepslate Ore
+ui.digital_miner:tag.bedrock_awakening:dirt=Dirt
+ui.digital_miner:tag.bedrock_awakening:geode=Geode
+ui.digital_miner:tag.bedrock_awakening:gravity_blocks=Blocks With Gravity
+ui.digital_miner:tag.bedrock_awakening:leaves=Leaves
+ui.digital_miner:tag.bedrock_awakening:log=Log
+ui.digital_miner:tag.bedrock_awakening:ore=Ore
+ui.digital_miner:tag.bedrock_awakening:ore_block=Ore Block
+ui.digital_miner:tag.bedrock_awakening:nether_ore=Nether Ore
+ui.digital_miner:tag.bedrock_awakening:stone=Stone
+ui.digital_miner:tag.bedrock_awakening:stripped_log=Stripped Log
+
+## Default
+ui.digital_miner:miner.filter.body=Current filters: %1\n\n
+ui.digital_miner:miner.filter.label=\n§7Filter List:§r\n§l> Type:§r\n%2\n\n§l> Tag:§r\n%3
+ui.digital_miner:miner.filter.add_type=Add Type
+ui.digital_miner:miner.filter.add_type.select=Select Type
+ui.digital_miner:miner.filter.add_type.select.body=Select the Block Category of an Addon:\n\n
+ui.digital_miner:miner.filter.add_type.selection.page=Page %1\n\n
+ui.digital_miner:miner.filter.add_type.selection.next=Next Page
+ui.digital_miner:miner.filter.add_type.selection.previous=Previous Page
+ui.digital_miner:miner.filter.add_type.write=Write Type
+ui.digital_miner:miner.filter.add_type.write.text=Write the type of the block to be mined.
+ui.digital_miner:miner.filter.add_type.write.text_hold="grass", "stone", "diamond_ore"
+ui.digital_miner:miner.filter.add_type.hand=Type in Hand
+ui.digital_miner:miner.filter.add_tag=Add Tag
+ui.digital_miner:miner.filter.add_tag.select=Select Tag
+ui.digital_miner:miner.filter.add_tag.select.body=Select a Tag:\n\n
+ui.digital_miner:miner.filter.add_tag.write=Write Tag
+ui.digital_miner:miner.filter.add_tag.write.text=Write the tag of the block to be mined.
+ui.digital_miner:miner.filter.add_tag.write.text_hold="stone", "all_ore", "all_log"
+ui.digital_miner:miner.filter.add_tag.write.custom=Default Tags:§i\n"all_log"\n"all_ore"\n\n"amethyst"\n"deepslate"\n"deepslate_ore"\n"dirt"\n"geode"\n"gravity_blocks"\n"leaves"\n"log"\n"ore"\n"ore_block"\n"nether_ore"\n"stone"\n"stripped_log"
+ui.digital_miner:miner.filter.add_tag.hand=Tag in Hand
+ui.digital_miner:miner.filter.remove=Remove Filter
+ui.digital_miner:miner.filter.remove.type=Type:
+ui.digital_miner:miner.filter.remove.tag=Tag:
+
+## Warning
+warn.digital_miner:miner.filter.change_while_mine=[§cMiner§r]> You cannot do it while the Digital Miner is on.
+warn.digital_miner:miner.filter.no_block=[§cMiner§r]> You need to have an item in your hand.
+warn.digital_miner:miner.filter.not_block=[§cMiner§r]> Item "§c%1§r" isn't a valid block.
+warn.digital_miner:miner.filter.invalid_text=[§cMiner§r]> Invalid Text.
+warn.digital_miner:miner.filter.added_block=[§aMiner§r]> Block "§a%1§r" added to filter.
+warn.digital_miner:miner.filter.added_tag=[§aMiner§r]> Tag "§a%1§r" added to filter.
+warn.digital_miner:miner.filter.changed=[§aMiner§r]> Filters have been changed.
+
+### Upgrades
+## Default
+ui.digital_miner:upgrades.body=Install or remove upgrades that are in this Miner.\n\n
+ui.digital_miner:upgrades.new_upgrade=Install New
+ui.digital_miner:upgrades.speed=Speed Upgrade Tier %1
+ui.digital_miner:upgrades.stack=Stack Upgrade Tier %1
+ui.digital_miner:upgrades.energy=Energy Upgrade Tier %1
+ui.digital_miner:upgrades.fortune=Fortune Upgrade Tier %1
+ui.digital_miner:upgrades.silk_touch=Silk Touch Upgrade
+ui.digital_miner:upgrades.anchor=Anchor Upgrade
+
+## Install
+ui.digital_miner:upgrades.add.body=Select one upgrade to install.\n\n
+
+## Confirm
+ui.digital_miner:upgrades.confirm.title=Remove Upgrade
+ui.digital_miner:upgrades.confirm.body=Would you like to remove: §e
+
+## Warning
+warn.digital_miner:upgrades.dont_have_upgrade_item=[§cMiner§r]> You don't have any uninstalled upgrades in your inventory.
+warn.digital_miner:upgrade.installed=[§aMiner§r]> §e%1§r Installed successfully.
+warn.digital_miner:upgrade.already_installed=[§cMiner§r]> A type of this Upgrade is already installed.
+warn.digital_miner:upgrade.put_fortune_with_silk=[§cMiner§r]> The Silk Touch Upgrade has been removed, it's not compatible with the Fortune Upgrade.
+warn.digital_miner:upgrade.put_silk_with_fortune=[§cMiner§r]> The Fortune Upgrade has been removed, it's not compatible with the Silk Touch Upgrade.
+
+### Settings
+## Default
+ui.digital_miner:settings.radius=Miner's range to the sides.
+ui.digital_miner:settings.radius.hold=Range [0 to 32]
+ui.digital_miner:settings.max_height=Coordinate of the maximum height
+ui.digital_miner:settings.min_height=Coordinate of the minimum height
+ui.digital_miner:settings.height_range=Range [%1 to %2]
+
+## Warning
+warn.digital_miner:settings.invalid_number=[§cMiner§r]> The values ​​passed are not numbers.
+warn.digital_miner:settings.changed=[§aMiner§r]> The settings have been saved.
+
+
+
+## --------------------------------------------------
+## UI - Ore Scanner
+## --------------------------------------------------
+
+## Default
+ui.digital_miner:ore_scanner.title=Ore Scanner
+ui.digital_miner:ore_scanner.submit=Search For
+
+## Warning
+warn.digital_miner:ore_scanner.no_filters=[§cSystem§r]> You need to set some filters in the scanner.
+
+
+
+## --------------------------------------------------
+## UI - Guidebook
+## --------------------------------------------------
+
+## Default
+ui.digital_miner:guidebook.return=Return
+
+### Main
+ui.digital_miner:guidebook.title.main=Guidebook
+ui.digital_miner:guidebook.body.main=§lWelcome to Digital Miner Addon.§r\nIn this book you will learn how to craft and use the items of this Addon.\n\n
+
+### Main/How Work
+ui.digital_miner:guidebook.title.main.how_work=How It Work
+ui.digital_miner:guidebook.body.main.how_work=See how the features of this Addon work.\n\n
+
+### Main/How Work/Digital Miner
+ui.digital_miner:guidebook.title.main.how_work.digital_miner=Digital Miner
+ui.digital_miner:guidebook.body.main.how_work.digital_miner=After crafting your §eDigital Miner§r, you can place it on the ground, but make sure that:\n§l>§r It has a free area of at least 3x3 blocks wide and 2 blocks high.\n§l>§r For it work, you will need to place a chest behind the Miner and add a filter.\n\n
+
+### Main/How Work/Digital Miner/Filter
+ui.digital_miner:guidebook.title.main.how_work.digital_miner.filter=Filters
+ui.digital_miner:guidebook.body.main.how_work.digital_miner.filter=Filters are an essential part, as this is where you will define which blocks the Miner will collect.\nThey can be specified by §bType§r or §bTag§r.\n\n
+
+### Main/How Work/Digital Miner/Filter/Type
+ui.digital_miner:guidebook.title.main.how_work.digital_miner.filter.type=Type
+ui.digital_miner:guidebook.body.main.how_work.digital_miner.filter.type=The §eType Filters§r can be specified by:\n§l>§r Writing the block ID (when the namespace is not specified, "minecraft:" will be used)\n§l>§r The type of block you are holding when you click the button.\n\nExemple: "deepslate_diamond_ore", "iron_ore", "stone", "oak_log"\n\n
+
+### Main/How Work/Digital Miner/Filter/Tag
+ui.digital_miner:guidebook.title.main.how_work.digital_miner.filter.tag=Tag
+ui.digital_miner:guidebook.body.main.how_work.digital_miner.filter.tag=The §eTag Filters§r currently, only can be specified by:\n§l>§r Writing the block tag. If you don't know the tags, there's a list with some custom Tags.\n\n
+
+### Main/How Work/Digital Miner/Filter/Remove
+ui.digital_miner:guidebook.title.main.how_work.digital_miner.filter.remove=Remove
+ui.digital_miner:guidebook.body.main.how_work.digital_miner.filter.remove=To remove the §eFilters§r is simple: Select which filters you want to remove and submit. They will be removed quickly.\n\n
+
+### Main/How Work/Digital Miner/Upgrades
+ui.digital_miner:guidebook.title.main.how_work.digital_miner.upgrades=Upgrades
+ui.digital_miner:guidebook.body.main.how_work.digital_miner.upgrades=The §eUpgrades§r help the §eMiner§r to unlock the potential it was designed to have.\n\n
+
+### Main/How Work/Digital Miner/Upgrades/Speed
+ui.digital_miner:guidebook.title.main.how_work.digital_miner.upgrades.speed=Speed Upgrade
+ui.digital_miner:guidebook.body.main.how_work.digital_miner.upgrades.speed=The §eSpeed Upgrades§r reduce the time between each §eMiner§r operation, being:\n§lTier 1§r = §s15 Seconds\n§r§lTier 2§r = §s10 Seconds\n§r§lTier 3§r = §s5 Seconds\n§r§lTier 4§r = §s1 Second\n\n
+
+### Main/How Work/Digital Miner/Upgrades/Stack
+ui.digital_miner:guidebook.title.main.how_work.digital_miner.upgrades.stack=Stack Upgrade
+ui.digital_miner:guidebook.body.main.how_work.digital_miner.upgrades.stack=The §eStack Upgrades§r increase the amount of blocks broken per §eMiner§r execution, being:\n§lTier 1§r = §s2 Blocks per Execution\n§r§lTier 2§r = §s4 Blocks per Execution\n§r§lTier 3§r = §s6 Blocks per Execution\n§r§lTier 4§r = §s8 Blocks per Execution\n\n
+
+### Main/How Work/Digital Miner/Upgrades/Fortune
+ui.digital_miner:guidebook.title.main.how_work.digital_miner.upgrades.fortune=Fortune Upgrade
+ui.digital_miner:guidebook.body.main.how_work.digital_miner.upgrades.fortune=The §eFortune Upgrades§r increase the number of items generated by each block broken by the §eMiner§r, being:\n§lTier 1§r = §sFortune 1\n§r§lTier 2§r = §sFortune 2\n§r§lTier 3§r = §sFortune 3\n\n
+
+### Main/How Work/Digital Miner/Upgrades/Silk Touch
+ui.digital_miner:guidebook.title.main.how_work.digital_miner.upgrades.silk_touch=Silk Touch Upgrade
+ui.digital_miner:guidebook.body.main.how_work.digital_miner.upgrades.silk_touch=The §eSilk Touch Upgrade§r allows the §eMiner§r to collect the blocks with the enchantment silk touch.\nThere is only one upgrade level.\n\n
+
+### Main/How Work/Digital Miner/Settings
+ui.digital_miner:guidebook.title.main.how_work.digital_miner.settings=Settings
+ui.digital_miner:guidebook.body.main.how_work.digital_miner.settings=The settings are simple, you can configure:\n§l>§r The Miner's operating radius to the sides, from §e0§r to §e32§r blocks.\n§l>§r The minimum operating height of the Miner, from §e-64§r to §e320§r §i(Y coordinate)§r\n§l>§r The maximum operating height of the Miner, from §e-64§r to §e320§r §i(Y coordinate)§r, this variable will never be less than the minimum height.\n\n
+
+### Main/How Work/Ore Scanner
+ui.digital_miner:guidebook.title.main.how_work.ore_scanner=Ore Scanner
+ui.digital_miner:guidebook.body.main.how_work.ore_scanner=After crafting your §eOre Scanner§r the nearby ore will be highlighted with an outline showing their location.\n§l>§r Interact with it in your hand while crouching down to open the ore screen so the scanner can search.\n§l>§r To search for new ores in a new area, interact again but without being crouched.\n\n
+
+### Main/Craft
+ui.digital_miner:guidebook.title.main.craft=Craft
+ui.digital_miner:guidebook.body.main.craft=Learn how to make machines, tools, and much more.\n\n
+
+### Main/Craft/Machines
+ui.digital_miner:guidebook.title.main.craft.machines=Machines
+ui.digital_miner:guidebook.body.main.craft.machines=There are currently 2 machines: The Digital Miner and the Ore Scanner.\n\n
+
+### Main/Craft/Machines/Digital Miner
+ui.digital_miner:guidebook.title.main.craft.machines.digital_miner=Digital Miner - Recipe
+ui.digital_miner:guidebook.body.main.craft.machines.digital_miner=To make the §eDigital Miner§r you'll need:\n§r§l4§r = §sSteel Plates\n§r§l1§r = §sMonitor\n§r§l1§r = §sDigital Processor\n§r§l1§r = §sMotor de Máquina\n§r§l1§r = §sLaser Drill\n§r§l1§r = §sRedstone Block\n\n
+
+### Main/Craft/Machines/Digital Miner/Resource Amount
+ui.digital_miner:guidebook.title.main.craft.machines.digital_miner.resource_amount=Total Resources
+ui.digital_miner:guidebook.body.main.craft.machines.digital_miner.resource_amount=List with the total resources:\n§r§l999§r = §sCoal§i | 15 Stacks + 39\n§r§l995§r = §sRaw Iron§i | 15 Stacks + 35\n§r§l588§r = §sRaw Gold§i | 9 Stacks + 9\n§r§l215§r = §sRedstone§i | 3 Stacks + 23\n§r§l80§r = §sDiamonds§i | 1 stack + 16\n§r§l11§r = §sStones\n§r§l10§r = §sQuartz\n§r§l9§r = §sAmethyst Shards\n§r§l4§r = §sGlowstones\n§r§l2§r = §sSands\n\n
+
+### Main/Craft/Machines/Digital Miner/Monitor
+ui.digital_miner:guidebook.title.main.craft.machines.digital_miner.monitor=Monitor
+ui.digital_miner:guidebook.body.main.craft.machines.digital_miner.monitor=To make the §eMonitor§r you'll need:\n§r§l4§r = §sIntegrated Circuits\n§r§l4§r = §sSteel Ingots\n§r§l1§r = §sDiamond Glass\n\n
+
+### Main/Craft/Machines/Digital Miner/Monitor/Integrated Circuit
+ui.digital_miner:guidebook.title.main.craft.machines.digital_miner.monitor.integrated_circuit=Integrated Circuit
+ui.digital_miner:guidebook.body.main.craft.machines.digital_miner.monitor.integrated_circuit=To make the §eIntegrated Circuit§r you'll need:\n§r§l4§r = §sCapacitors\n§r§l4§r = §sSteel Nuggets\n§r§l1§r = §sRedstone\n\n
+
+### Main/Craft/Machines/Digital Miner/Monitor/Integrated Circuit/Capacitor
+ui.digital_miner:guidebook.title.main.craft.machines.digital_miner.monitor.integrated_circuit.capacitor=Capacitor
+ui.digital_miner:guidebook.body.main.craft.machines.digital_miner.monitor.integrated_circuit.capacitor=To make the §eCapacitor§r you'll need:\n§r§l2§r = §sSteel Nuggets\n§r§l2§r = §sRedstone\n§r§l1§r = §sGold Ingots\n\n
+
+### Main/Craft/Machines/Digital Miner/Monitor/Diamond Glass
+ui.digital_miner:guidebook.title.main.craft.machines.digital_miner.monitor.diamond_glass=Diamond Glass
+ui.digital_miner:guidebook.body.main.craft.machines.digital_miner.monitor.diamond_glass=To make the §eDiamond Glass§r you'll need:\n§r§l8§r = §sDiamond Dusts\n§r§l1§r = §sGlass\n\n
+
+### Main/Craft/Machines/Digital Miner/Digital Processor
+ui.digital_miner:guidebook.title.main.craft.machines.digital_miner.digital_processor=Digital Processor
+ui.digital_miner:guidebook.body.main.craft.machines.digital_miner.digital_processor=To make the §eDigital Processor§r you'll need:\n§r§l4§r = §sAdvanced Circuits\n§r§l1§r = §sSteel Plate\n§r§l2§r = §sGold Plates\n§r§l2§r = §sDiamond Plates\n\n
+
+### Main/Craft/Machines/Digital Miner/Digital Processor/Advanced Circuit
+ui.digital_miner:guidebook.title.main.craft.machines.digital_miner.digital_processor.advanced_circuit=Advanced Circuit
+ui.digital_miner:guidebook.body.main.craft.machines.digital_miner.digital_processor.advanced_circuit=To make the §eAdvanced Circuit§r you'll need:\n§r§l2§r = §sIntegrated Circuits\n§r§l4§r = §sDiamond Plates\n§r§l2§r = §sRedstone Enriched Quartz\n§r§l1§r = §sAmethyst Shard\n\n
+
+### Main/Craft/Machines/Digital Miner/Digital Processor/Advanced Circuit/Redstone Enriched Quartz
+ui.digital_miner:guidebook.title.main.craft.machines.digital_miner.digital_processor.advanced_circuit.redstone_enriched_quartz=Redstone Enriched Quartz
+ui.digital_miner:guidebook.body.main.craft.machines.digital_miner.digital_processor.advanced_circuit.redstone_enriched_quartz=To make the §eRedstone Enriched Quartz§r you'll need:\n§r§l8§r = §sRedstones\n§r§l1§r = §sQuartz\n\n
+
+### Main/Craft/Machines/Digital Miner/Machine Engine
+ui.digital_miner:guidebook.title.main.craft.machines.digital_miner.machine_engine=Machine Engine
+ui.digital_miner:guidebook.body.main.craft.machines.digital_miner.machine_engine=To make the §eMachine Engine§r you'll need:\n§r§l3§r = §sSteel Blocks\n§r§l2§r = §sRedstone Blocks\n§r§l1§r = §sCoal Block\n§r§l1§r = §sBlast Furnace\n\n
+
+### Main/Craft/Machines/Digital Miner/Laser Drill
+ui.digital_miner:guidebook.title.main.craft.machines.digital_miner.laser_drill=Laser Drill
+ui.digital_miner:guidebook.body.main.craft.machines.digital_miner.laser_drill=To make the §eLaser Drill§r you'll need:\n§r§l1§r = §sSteel Plate\n§r§l2§r = §sSteel Ingots\n§r§l2§r = §sRedstone Enriched Quartz\n§r§l1§r = §sLight Generator\n§r§l1§r = §sDiamond Glass\n\n
+
+### Main/Craft/Machines/Digital Miner/Laser Drill/Light Generator
+ui.digital_miner:guidebook.title.main.craft.machines.digital_miner.laser_drill.light_generator=Light Generator
+ui.digital_miner:guidebook.body.main.craft.machines.digital_miner.laser_drill.light_generator=To make the §eLight Generator§r you'll need:\n§r§l1§r = §sSteel Block\n§r§l4§r = §sGlowstones\n§r§l4§r = §sAmethyst Shards\n\n
+
+### Main/Craft/Machines/Ore Scanner
+ui.digital_miner:guidebook.title.main.craft.machines.ore_scanner=Ore Scanner - Recipe
+ui.digital_miner:guidebook.body.main.craft.machines.ore_scanner=To make the §eOre Scanner§r you'll need:\n§r§l2§r = §sSteel Blocks\n§r§l3§r = §sDiamonds\n§r§l1§r = §sRedstone Block\n§r§l1§r = §sLightning rod\n\n
+
+### Main/Craft/Upgrades
+ui.digital_miner:guidebook.title.main.craft.upgrades=Upgrades
+ui.digital_miner:guidebook.body.main.craft.upgrades=The §eDigital Miner§r is weak by default, so use the §eUpgrades§r to improve its efficiency and unlock the potential it was designed to have.\n\n
+
+### Main/Craft/Upgrades/Template
+ui.digital_miner:guidebook.title.main.craft.upgrades.template=Upgrade Template
+ui.digital_miner:guidebook.body.main.craft.upgrades.template=The §eUpgrade Template§r is the base of any upgrade, is made by joining:\n§r§l1§r = §sSteel Plate\n§r§l1§r = §sDiamond Plate\n§r§l2§r = §sGold Plates\n§r§l2§r = §sCoal Dusts\n§r§l2§r = §sSteel Ingots\n§r§l1§r = §sIntegrated Circuit\n\n
+
+### Main/Craft/Upgrades/Speed
+ui.digital_miner:guidebook.title.main.craft.upgrades.speed=Speed Upgrade
+ui.digital_miner:guidebook.body.main.craft.upgrades.speed=The §eSpeed Upgrades§r increase the number of blocks that the §eMiner§r can break per second, see how to make them.\n\n
+
+### Main/Craft/Upgrades/Speed/Tier 1
+ui.digital_miner:guidebook.title.main.craft.upgrades.speed.speed_1=Speed Upgrade Tier 1
+ui.digital_miner:guidebook.body.main.craft.upgrades.speed.speed_1=The §eSpeed Upgrade Tier 1§r is made by joining:\n§r§l1§r = §sUpgrade Template\n§r§l2§r = §sSteel Blocks\n§r§l2§r = §sSteel Ingots\n§r§l2§r = §sSugars\n§r§l2§r = §sRedstone Blocks\n\n
+
+### Main/Craft/Upgrades/Speed/Tier 2
+ui.digital_miner:guidebook.title.main.craft.upgrades.speed.speed_2=Speed Upgrade Tier 2
+ui.digital_miner:guidebook.body.main.craft.upgrades.speed.speed_2=The §eSpeed Upgrade Tier 2§r is made by joining:\n§r§l1§r = §sSpeed Upgrade Tier 1\n§r§l4§r = §sSteel Blocks\n§r§l2§r = §sDiamond Blocks\n§r§l2§r = §sWither Skeleton Skulls\n\n
+
+### Main/Craft/Upgrades/Speed/Tier 3
+ui.digital_miner:guidebook.title.main.craft.upgrades.speed.speed_3=Speed Upgrade Tier 3
+ui.digital_miner:guidebook.body.main.craft.upgrades.speed.speed_3=The §eSpeed Upgrade Tier 3§r is made by joining:\n§r§l1§r = §sSpeed Upgrade Tier 2\n§r§l2§r = §sSteel Plates\n§r§l2§r = §sSteel Blocks\n§r§l2§r = §sNetherite Pickaxes\n§r§l2§r = §sWither Skeleton Skulls\n\n
+
+### Main/Craft/Upgrades/Speed/Tier 4
+ui.digital_miner:guidebook.title.main.craft.upgrades.speed.speed_4=Speed Upgrade Tier 4
+ui.digital_miner:guidebook.body.main.craft.upgrades.speed.speed_4=The §eSpeed Upgrade Tier 4§r is made by joining:\n§r§l1§r = §sSpeed Upgrade Tier 3\n§r§l4§r = §sSteel Plates\n§r§l2§r = §sNetherite Blocks\n§r§l2§r = §sNether Star\n\n
+
+### Main/Craft/Upgrades/Stack
+ui.digital_miner:guidebook.title.main.craft.upgrades.stack=Stack Upgrade
+ui.digital_miner:guidebook.body.main.craft.upgrades.stack=The §eStack Upgrades§r increase the amount of blocks broken per §eMiner§r execution, see how to make them.\n\n
+
+### Main/Craft/Upgrades/Stack/Tier 1
+ui.digital_miner:guidebook.title.main.craft.upgrades.stack.stack_1=Stack Upgrade Tier 1
+ui.digital_miner:guidebook.body.main.craft.upgrades.stack.stack_1=The §eStack Upgrade Tier 1§r is made by joining:\n§r§l1§r = §sUpgrade Template\n§r§l2§r = §sSteel Blocks\n§r§l2§r = §sSteel Ingots\n§r§l2§r = §sEnder Pearls\n§r§l2§r = §sRedstone Blocks\n\n
+
+### Main/Craft/Upgrades/Stack/Tier 2
+ui.digital_miner:guidebook.title.main.craft.upgrades.stack.stack_2=Stack Upgrade Tier 2
+ui.digital_miner:guidebook.body.main.craft.upgrades.stack.stack_2=The §eStack Upgrade Tier 2§r is made by joining:\n§r§l1§r = §sStack Upgrade Tier 1\n§r§l4§r = §sSteel Blocks\n§r§l2§r = §sDiamond Blocks\n§r§l2§r = §sWither Skeleton Skulls\n\n
+
+### Main/Craft/Upgrades/Stack/Tier 3
+ui.digital_miner:guidebook.title.main.craft.upgrades.stack.stack_3=Stack Upgrade Tier 3
+ui.digital_miner:guidebook.body.main.craft.upgrades.stack.stack_3=The §eStack Upgrade Tier 3§r is made by joining:\n§r§l1§r = §sStack Upgrade Tier 2\n§r§l2§r = §sSteel Plates\n§r§l2§r = §sSteel Blocks\n§r§l2§r = §sNetherite Pickaxes\n§r§l2§r = §sWither Skeleton Skulls\n\n
+
+### Main/Craft/Upgrades/Stack/Tier 4
+ui.digital_miner:guidebook.title.main.craft.upgrades.stack.stack_4=Stack Upgrade Tier 4
+ui.digital_miner:guidebook.body.main.craft.upgrades.stack.stack_4=The §eStack Upgrade Tier 4§r is made by joining:\n§r§l1§r = §sStack Upgrade Tier 3\n§r§l4§r = §sSteel Plates\n§r§l2§r = §sNetherite Blocks\n§r§l2§r = §sNether Star\n\n
+
+### Main/Craft/Upgrades/Fortune
+ui.digital_miner:guidebook.title.main.craft.upgrades.fortune=Fortune Upgrade
+ui.digital_miner:guidebook.body.main.craft.upgrades.fortune=The §eFortune Upgrades§r increase the number of items generated by each block broken by the §eMiner§r, see how to make them.\n\n
+
+### Main/Craft/Upgrades/Fortune/Tier 1
+ui.digital_miner:guidebook.title.main.craft.upgrades.fortune.fortune_1=Fortune Upgrade Tier 1
+ui.digital_miner:guidebook.body.main.craft.upgrades.fortune.fortune_1=The §eFortune Upgrade Tier 1§r is made by joining:\n§r§l1§r = §sUpgrade Template\n§r§l4§r = §sSteel Blocks\n§r§l2§r = §sEmerald Blocks\n§r§l2§r = §sWither Skeleton Skulls\n\n
+
+### Main/Craft/Upgrades/Fortune/Tier 2
+ui.digital_miner:guidebook.title.main.craft.upgrades.fortune.fortune_2=Fortune Upgrade Tier 2
+ui.digital_miner:guidebook.body.main.craft.upgrades.fortune.fortune_2=The §eFortune Upgrade Tier 2§r is made by joining:\n§r§l1§r = §sFortune Upgrade Tier 1\n§r§l2§r = §sSteel Plates\n§r§l2§r = §sSteel Blocks\n§r§l2§r = §sNetherite Pickaxes\n§r§l2§r = §sWither Skeleton Skulls\n\n
+
+### Main/Craft/Upgrades/Fortune/Tier 3
+ui.digital_miner:guidebook.title.main.craft.upgrades.fortune.fortune_3=Fortune Upgrade Tier 3
+ui.digital_miner:guidebook.body.main.craft.upgrades.fortune.fortune_3=The §eFortune Upgrade Tier 3§r is made by joining:\n§r§l1§r = §sFortune Upgrade Tier 2\n§r§l4§r = §sSteel Plates\n§r§l2§r = §sNetherite Blocks\n§r§l2§r = §sNether Star\n\n
+
+### Main/Craft/Upgrades/Silk Touch
+ui.digital_miner:guidebook.title.main.craft.upgrades.silk_touch=Silk Touch Upgrade
+ui.digital_miner:guidebook.body.main.craft.upgrades.silk_touch=The §eSilk Touch Upgrade§r allows the §eMiner§r to collect the blocks with the enchantment silk touch.\n\nIt's made by joining:\n§r§l1§r = §sUpgrade Template\n§r§l4§r = §sSteel Blocks\n§r§l2§r = §sFeather\n§r§l2§r = §sWither Skeleton Skulls\n\n
+
+### Main/Craft/Tools
+ui.digital_miner:guidebook.title.main.craft.tools=Tools
+ui.digital_miner:guidebook.body.main.craft.tools=This addon adds some new tools to the game.\n\n
+
+### Main/Craft/Tools/Hammer
+ui.digital_miner:guidebook.title.main.craft.tools.hammer=Hammer
+ui.digital_miner:guidebook.body.main.craft.tools.hammer=The §eHammer§r is widely used, being easily created with §s2 Sticks§r and §s2 Iron Ingots§r in a Crafting Table.\n\n
+
+### Main/Craft/Ore
+ui.digital_miner:guidebook.title.main.craft.ore=Ore
+ui.digital_miner:guidebook.body.main.craft.ore=This Addon give some new functions to some §eOres§r.\n\n
+
+### Main/Craft/Ore/Dust
+ui.digital_miner:guidebook.title.main.craft.ore.dust=Ore Dust
+ui.digital_miner:guidebook.body.main.craft.ore.dust=The §eOre Dust§r are widely used in the Addon, see how to do them.\n\n
+
+### Main/Craft/Ore/Dust/Diamond
+ui.digital_miner:guidebook.title.main.craft.ore.dust.coal=Coal Dust
+ui.digital_miner:guidebook.body.main.craft.ore.dust.coal=The §eCoal Dust§r is made by joining §s1 Hammer§r and §s1 Coal§r in a Crafting Table.\n\n
+
+### Main/Craft/Ore/Dust/Iron
+ui.digital_miner:guidebook.title.main.craft.ore.dust.iron=Iron Dust
+ui.digital_miner:guidebook.body.main.craft.ore.dust.iron=The §eIron Dust§r is made by joining §s1 Hammer§r and §s1 Raw Iron§r in a Crafting Table.\n\n
+
+### Main/Craft/Ore/Dust/Steel
+ui.digital_miner:guidebook.title.main.craft.ore.dust.steel=Steel Dust
+ui.digital_miner:guidebook.body.main.craft.ore.dust.steel=The §eSteel Dust§r is made by joining §s1 Iron Dust§r and §s1 Coal Dust§r in a Crafting Table.\n\n
+
+### Main/Craft/Ore/Dust/Gold
+ui.digital_miner:guidebook.title.main.craft.ore.dust.gold=Gold Dust
+ui.digital_miner:guidebook.body.main.craft.ore.dust.gold=The §eGold Dust§r is made by joining §s1 Hammer§r and §s1 Raw Gold§r in a Crafting Table.\n\n
+
+### Main/Craft/Ore/Dust/Diamond
+ui.digital_miner:guidebook.title.main.craft.ore.dust.diamond=Diamond Dust
+ui.digital_miner:guidebook.body.main.craft.ore.dust.diamond=The §eDiamond Dust§r is made by joining §s1 Hammer§r and §s1 Diamond§r in a Crafting Table.\n\n
+
+### Main/Craft/Ore/Plate
+ui.digital_miner:guidebook.title.main.craft.ore.plate=Ore Plates
+ui.digital_miner:guidebook.body.main.craft.ore.plate=Th §eOre Plates§r are expensive, but essential.\n\n
+
+### Main/Craft/Ore/Plate/Steel Plate
+ui.digital_miner:guidebook.title.main.craft.ore.plate.steel_plate=Steel Plate
+ui.digital_miner:guidebook.body.main.craft.ore.plate.steel_plate=The §eSteel Plate§r is made by joining §s3 Steel Blocks§r in a Crafting Table.\n\n
+
+### Main/Craft/Ore/Plate/Steel Plate/Steel Block
+ui.digital_miner:guidebook.title.main.craft.ore.plate.steel_plate.steel_block=Steel Block
+ui.digital_miner:guidebook.body.main.craft.ore.plate.steel_plate.steel_block=The §eSteel Block§r is made by joining §s9 Steel Ingots§r in a Crafting Table.\n\n
+
+### Main/Craft/Ore/Plate/Steel Plate/Steel Ingot
+ui.digital_miner:guidebook.title.main.craft.ore.plate.steel_plate.steel_ingot=Steel Ingot
+ui.digital_miner:guidebook.body.main.craft.ore.plate.steel_plate.steel_ingot=The §eSteel Ingot§r is made by joining §s9 Steel Nuggets§r in a Crafting Table.\n\n
+
+### Main/Craft/Ore/Plate/Steel Plate/Steel Nugget
+ui.digital_miner:guidebook.title.main.craft.ore.plate.steel_plate.steel_nugget=Steel Nugget
+ui.digital_miner:guidebook.body.main.craft.ore.plate.steel_plate.steel_nugget=The §eSteel Nugget§r is made by smelting §sSteel Dust§r in a Furnace.\n\n
+
+### Main/Craft/Ore/Plate/Gold Plate
+ui.digital_miner:guidebook.title.main.craft.ore.plate.gold_plate=Gold Plate
+ui.digital_miner:guidebook.body.main.craft.ore.plate.gold_plate=The §eGold Plate§r is made by joining §s3 Gold Blocks§r in a Crafting Table.\n\n
+
+### Main/Craft/Ore/Plate/Diamond Plate
+ui.digital_miner:guidebook.title.main.craft.ore.plate.diamond_plate=Diamond Plate
+ui.digital_miner:guidebook.body.main.craft.ore.plate.diamond_plate=The §eDiamond Plate§r is made by joining §s1 Gold Plate§r e §s8Diamond Dusts§r in a Crafting Table.\n\n
+
+### Main/Change Log
+ui.digital_miner:guidebook.title.main.change_log=Change Log
+ui.digital_miner:guidebook.body.main.change_log=See the changes that have occurred in this addon.\n\nCurrent addon version: v1\n\n
+
+### Main/Change Log/Version 1.0
+ui.digital_miner:guidebook.title.main.change_log.version_1.0=Version 1.0
+ui.digital_miner:guidebook.body.main.change_log.version_1.0=§l> Added:§r\n- Digital Miner now considers custom chests as a valid container;\n- Added a craft to Anchor Upgrade;\n- Added the chunk load function to Anchor Upgrade;\n- Digital Miner will save your settings and upgrades when you break it;\n\n§l> Changed:§r\n- Change Diamond Glass texture;\n\n§l> Fixed:§r\n- Fixed some words on the change log panel;\n- Fixed Diamond Glass render (now you can use it in your builds);\n\n§l> Removed:§r\n- Removed the energy upgrades;\n- Removed some spawn eggs from creative inventory;\n\n
+
+### Main/Change Log/Version 0.4
+ui.digital_miner:guidebook.title.main.change_log.version_0.4=Version 0.4 Alpha
+ui.digital_miner:guidebook.body.main.change_log.version_0.4=§l> Additions:§r\n- Added a list to select the type of blocks in the world;\n- Added a list to select the tags registered;\n- Added Stack Upgrade Tier 1-4;\n- Added Fortune Upgrade Tier 1-3;\n- Added Silk Touch Upgrade Tier 1;\n\n§l> Changes:§r\n- Optimized the Scanning Method;\n- Changed the method of scanning from Layers to Chunks;\n- Speed Upgrades now reduces the time between executions;\n- Changed some translations.\n\n
+
+### Main/Change Log/Version 0.3
+ui.digital_miner:guidebook.title.main.change_log.version_0.3=Version 0.3 Alpha
+ui.digital_miner:guidebook.body.main.change_log.version_0.3=§l> Additions:§r\n- Added a Guidebook;\n- Added a Settings Panel to change the Radius and Height range;\n- Added a craft to transform 1 Steel Plate into 3 Steel Block;\n- Added a craft to transform 1 Gold Plate into 3 Gold Block;\n- Added a craft to transform 1 Diamond Plate into 1 Gold Plate and 8 Diamond Dust;\n- Added a sound when enable and disable the Digital Miner;\n- Added some icons on the Miner Interface;\n- Added a Guidebook;\n- Added speed Upgrades;\n- Added a custom tag system;\n\n§l> Changes:§r\n- Changed the Diamond Glass to use 8 Diamond Dust;\n- Changed the defaul speed to 1 block per second (increases with upgrades);\n- Changed some translations;\n\n§l> Removed:§r\n- Removed vanilla tags as valid tags, because the game doesn't have many useful tags;\n\n§l> Fixed:§r\n- Fixed a problem where adding a new type or tag didn't take you back to the filters screen;\n- Fixed a problem when you try to place a Digital Miner at the world's build limit;\n- Fixed some incorrect translations.\n\n
+
+### Main/Change Log/Version 0.2
+ui.digital_miner:guidebook.title.main.change_log.version_0.2=Version 0.2 Alpha
+ui.digital_miner:guidebook.body.main.change_log.version_0.2=§l> Additions:§r\n- Added addon identifier to blocks and items;\n- Added Steel Nuggets, Steel Block and Steel Plate;\n- Added Monitor, Integrated Circuit and Capacitor;\n- Added Diamond Glass;\n- Added Diamond and Gold Dust;\n- Added Diamond and Gold Plate;\n- Added Redstone Enriched Quartz;\n- Added Advanced Circuit and Digital Processor;\n- Added Laser Drill and Light Generator;\n- Added Machine Engine;\n- Added Ore Scanner;\n\n§l> Changes:§r\n- Now Steel and Iron Dust can be smelting in a Blast Furnace;\n- Steel Dust result in a Steel Nugget now;\n- Changed Steel Ingot recipe to use Steel Nuggets;\n- Changed Digital Miner recipe to use the new items;\n- Changed counting message to only show the progress;\n- Optimized the system for find blocks;\n\n§l> Fixed:§r\n- Fixed the issue with counting blocks that could duplicate;\n- Fixed the problem that prevented the Miner interface from opening through the central block;\n\n§l> Known Bug:§r\n- Block Outline may not work on ores that are very close to water.\n\n
+
+### Main/Change Log/Version 0.1
+ui.digital_miner:guidebook.title.main.change_log.version_0.1=Version 0.1 Alpha
+ui.digital_miner:guidebook.body.main.change_log.version_0.1=§l> Additions:§r\n- Added a Digital Miner;\n- Added a Hammer;\n- Added coal, iron and steel dust;\n- Added Steel Ingot;\n- Added a configurable filters to Digital Miner.\n\n
+
+
+
+## --------------------------------------------------
+## Null
+## --------------------------------------------------
+
+## Spawn Egg
+item.spawn_egg.entity.digital_miner:block_outline.name=§c
+
+
+
+## --------------------------------------------------
+## Pack Name
+## --------------------------------------------------
+
+
+
+
+
+disenchanter.ui.title=Disenchant
+disenchanter.ui.rejected.title=Rejected Enchant
+disenchanter.ui.rejected.body=The enchantments below cannot be obtained from regular books. Would you like to delete these enchantments from your item? (§l§cWarning:§r the enchantment will be lost forever)
+disenchanter.ui.rejected.keep=Keep
+disenchanter.ui.rejected.delete=Delete
+
+disenchanter.warning.no_enchants=§cThis item has no enchantments
+disenchanter.warning.no_space=§cYou have no inventory space
+disenchanter.warning.no_selected=§cYou have not selected any enchantments
+
+disenchanter.enchant.aqua_affinity=Aqua Affinity %1
+disenchanter.enchant.bane_of_arthropods=Bane Of Arthropods %1
+disenchanter.enchant.binding=Curse Of Binding %1
+disenchanter.enchant.blast_protection=Blast Protection %1
+disenchanter.enchant.breach=Breach %1
+disenchanter.enchant.channeling=Channeling %1
+disenchanter.enchant.density=Density %1
+disenchanter.enchant.depth_strider=Deep Strider %1
+disenchanter.enchant.efficiency=Efficiency %1
+disenchanter.enchant.feather_falling=Feather Falling %1
+disenchanter.enchant.fire_aspect=Fire Aspect %1
+disenchanter.enchant.fire_protection=Fire Protection %1
+disenchanter.enchant.flame=Flame %1
+disenchanter.enchant.fortune=Fortune %1
+disenchanter.enchant.frost_walker=Frost Walker %1
+disenchanter.enchant.impaling=Impaling %1
+disenchanter.enchant.infinity=Infinity %1
+disenchanter.enchant.knockback=Knockback %1
+disenchanter.enchant.looting=Looting %1
+disenchanter.enchant.loyalty=Loyalty %1
+disenchanter.enchant.luck_of_the_sea=Luck Of The Sea %1
+disenchanter.enchant.lure=Lure %1
+disenchanter.enchant.mending=Mending %1
+disenchanter.enchant.multishot=Multishot %1
+disenchanter.enchant.piercing=Piercing %1
+disenchanter.enchant.power=Power %1
+disenchanter.enchant.projectile_protection=Projectile Protection %1
+disenchanter.enchant.protection=Protection %1
+disenchanter.enchant.punch=Punch %1
+disenchanter.enchant.quick_charge=Quick Charge %1
+disenchanter.enchant.respiration=Respiration %1
+disenchanter.enchant.riptide=Reptide %1
+disenchanter.enchant.sharpness=Sharpness %1
+disenchanter.enchant.silk_touch=Silk Touch %1
+disenchanter.enchant.smite=Smite %1
+disenchanter.enchant.soul_speed=Soul Speed %1
+disenchanter.enchant.swift_sneak=Swift Sneak %1
+disenchanter.enchant.thorns=Thorns %1
+disenchanter.enchant.unbreaking=Unbreaking %1
+disenchanter.enchant.vanishing=Curse of Vanishing %1
+disenchanter.enchant.wind_burst=Wind Burst %1
+
+item.db:dark_essence=Dark Essence
+item.db:disenchanter_book=Disenchanter Book
+
+
+
+
+
+
+
+## --------------------------------
+### Block
+## --------------------------------
+
+## Akinari
+tile.gravestone_death_path:gravestone_akinari_dummy.name=Gravestone with Akinari Head
+tile.gravestone_death_path:gravestone_end_akinari_dummy.name=The End Gravestone with Akinari Head
+tile.gravestone_death_path:gravestone_nether_akinari_dummy.name=Nether Gravestone with Akinari Head
+## Akirasky2663
+tile.gravestone_death_path:gravestone_akirasky2663.name=Gravestone with Akirasky2663 Head
+tile.gravestone_death_path:gravestone_end_akirasky2663.name=The End Gravestone with Akirasky2663 Head
+tile.gravestone_death_path:gravestone_nether_akirasky2663.name=Nether Gravestone with Akirasky2663 Head
+## Aniralacradx
+tile.gravestone_death_path:gravestone_aniralacradx.name=Gravestone with Aniralacradx Head
+tile.gravestone_death_path:gravestone_end_aniralacradx.name=The End Gravestone with Aniralacradx Head
+tile.gravestone_death_path:gravestone_nether_aniralacradx.name=Nether Gravestone with Aniralacradx Head
+## Blaze
+tile.gravestone_death_path:gravestone_blaze.name=Gravestone with Blaze Head
+tile.gravestone_death_path:gravestone_end_blaze.name=The End Gravestone with Blaze Head
+tile.gravestone_death_path:gravestone_nether_blaze.name=Nether Gravestone with Blaze Head
+## Bogged
+tile.gravestone_death_path:gravestone_bogged.name=Gravestone with Bogged Skull
+tile.gravestone_death_path:gravestone_end_bogged.name=The End Gravestone with Bogged Skull
+tile.gravestone_death_path:gravestone_nether_bogged.name=Nether Gravestone with Bogged Skull
+## Breeze
+tile.gravestone_death_path:gravestone_breeze.name=Gravestone with Breeze Head
+tile.gravestone_death_path:gravestone_end_breeze.name=The End Gravestone with Breeze Head
+tile.gravestone_death_path:gravestone_nether_breeze.name=Nether Gravestone with Breeze Head
+## Cave Spider
+tile.gravestone_death_path:gravestone_cave_spider.name=Gravestone with Cave Spider Head
+tile.gravestone_death_path:gravestone_end_cave_spider.name=The End Gravestone with Cave Spider Head
+tile.gravestone_death_path:gravestone_nether_cave_spider.name=Nether Gravestone with Cave Spider Head
+## Creaking
+tile.gravestone_death_path:gravestone_creaking.name=Gravestone with Creaking Head
+tile.gravestone_death_path:gravestone_end_creaking.name=The End Gravestone with Creaking Head
+tile.gravestone_death_path:gravestone_nether_creaking.name=Nether Gravestone with Creaking Head
+## Creeper
+tile.gravestone_death_path:gravestone_creeper.name=Gravestone with Creeper Head
+tile.gravestone_death_path:gravestone_end_creeper.name=The End Gravestone with Creeper Head
+tile.gravestone_death_path:gravestone_nether_creeper.name=Nether Gravestone with Creeper Head
+## Default
+tile.gravestone_death_path:gravestone.name=Gravestone
+tile.gravestone_death_path:gravestone_end.name=The End Gravestone
+tile.gravestone_death_path:gravestone_nether.name=Nether Gravestone
+## Enderman
+tile.gravestone_death_path:gravestone_enderman.name=Gravestone with Enderman Head
+tile.gravestone_death_path:gravestone_end_enderman.name=The End Gravestone with Enderman Head
+tile.gravestone_death_path:gravestone_nether_enderman.name=Nether Gravestone with Enderman Head
+## Endermen76428
+tile.gravestone_death_path:gravestone_endermen76428.name=Gravestone with Endermen76428 Head
+tile.gravestone_death_path:gravestone_end_endermen76428.name=The End Gravestone with Endermen76428 Head
+tile.gravestone_death_path:gravestone_nether_endermen76428.name=Nether Gravestone with Endermen76428 Head
+## Evoker
+tile.gravestone_death_path:gravestone_evoker.name=Gravestone with Evoker Head
+tile.gravestone_death_path:gravestone_end_evoker.name=The End Gravestone with Evoker Head
+tile.gravestone_death_path:gravestone_nether_evoker.name=Nether Gravestone with Evoker Head
+## Ghast
+tile.gravestone_death_path:gravestone_ghast.name=Gravestone with Ghast Head
+tile.gravestone_death_path:gravestone_end_ghast.name=The End Gravestone with Ghast Head
+tile.gravestone_death_path:gravestone_nether_ghast.name=Nether Gravestone with Ghast Head
+## Hoglin
+tile.gravestone_death_path:gravestone_hoglin.name=Gravestone with Hoglin Head
+tile.gravestone_death_path:gravestone_end_hoglin.name=The End Gravestone with Hoglin Head
+tile.gravestone_death_path:gravestone_nether_hoglin.name=Nether Gravestone with Hoglin Head
+## Iron Golem
+tile.gravestone_death_path:gravestone_iron_golem.name=Gravestone with Iron Golem Head
+tile.gravestone_death_path:gravestone_end_iron_golem.name=The End Gravestone with Iron Golem Head
+tile.gravestone_death_path:gravestone_nether_iron_golem.name=Nether Gravestone with Iron Golem Head
+## Piglin
+tile.gravestone_death_path:gravestone_piglin.name=Gravestone with Piglin Head
+tile.gravestone_death_path:gravestone_end_piglin.name=The End Gravestone with Piglin Head
+tile.gravestone_death_path:gravestone_nether_piglin.name=Nether Gravestone with Piglin Head
+## Piglin Brute
+tile.gravestone_death_path:gravestone_piglin_brute.name=Gravestone with Piglin Brute Head
+tile.gravestone_death_path:gravestone_end_piglin_brute.name=The End Gravestone with Piglin Brute Head
+tile.gravestone_death_path:gravestone_nether_piglin_brute.name=Nether Gravestone with Piglin Brute Head
+## Player
+tile.gravestone_death_path:gravestone_player.name=Gravestone with Player Head
+tile.gravestone_death_path:gravestone_end_player.name=The End Gravestone with Player Head
+tile.gravestone_death_path:gravestone_nether_player.name=Nether Gravestone with Player Head
+## Ravager
+tile.gravestone_death_path:gravestone_ravager.name=Gravestone with Ravager Head
+tile.gravestone_death_path:gravestone_end_ravager.name=The End Gravestone with Ravager Head
+tile.gravestone_death_path:gravestone_nether_ravager.name=Nether Gravestone with Ravager Head
+## Replay1977
+tile.gravestone_death_path:gravestone_replay1977.name=Gravestone with Replay1977 Head
+tile.gravestone_death_path:gravestone_end_replay1977.name=The End Gravestone with Replay1977 Head
+tile.gravestone_death_path:gravestone_nether_replay1977.name=Nether Gravestone with Replay1977 Head
+## Shulker
+tile.gravestone_death_path:gravestone_shulker.name=Gravestone with Shulker Head
+tile.gravestone_death_path:gravestone_end_shulker.name=The End Gravestone with Shulker Head
+tile.gravestone_death_path:gravestone_nether_shulker.name=Nether Gravestone with Shulker Head
+## Skeleton
+tile.gravestone_death_path:gravestone_skeleton.name=Gravestone with Skeleton Skull
+tile.gravestone_death_path:gravestone_end_skeleton.name=The End Gravestone with Skeleton Skull
+tile.gravestone_death_path:gravestone_nether_skeleton.name=Nether Gravestone with Skeleton Skull
+## Slime
+tile.gravestone_death_path:gravestone_slime.name=Gravestone with Slime Head
+tile.gravestone_death_path:gravestone_end_slime.name=The End Gravestone with Slime Head
+tile.gravestone_death_path:gravestone_nether_slime.name=Nether Gravestone with Slime Head
+## Spider
+tile.gravestone_death_path:gravestone_spider.name=Gravestone with Spider Head
+tile.gravestone_death_path:gravestone_end_spider.name=The End Gravestone with Spider Head
+tile.gravestone_death_path:gravestone_nether_spider.name=Nether Gravestone with Spider Head
+## StrangeTNT27
+tile.gravestone_death_path:gravestone_strangetnt27.name=Gravestone with StrangeTNT27 Head
+tile.gravestone_death_path:gravestone_end_strangetnt27.name=The End Gravestone with StrangeTNT27 Head
+tile.gravestone_death_path:gravestone_nether_strangetnt27.name=Nether Gravestone with StrangeTNT27 Head
+## Stray
+tile.gravestone_death_path:gravestone_stray.name=Gravestone with Stray Skull
+tile.gravestone_death_path:gravestone_end_stray.name=The End Gravestone with Stray Skull
+tile.gravestone_death_path:gravestone_nether_stray.name=Nether Gravestone with Stray Skull
+## Wither Skeleton
+tile.gravestone_death_path:gravestone_wither_skeleton.name=Gravestone with Wither Skeleton Skull
+tile.gravestone_death_path:gravestone_end_wither_skeleton.name=The End Gravestone with Wither Skeleton Skull
+tile.gravestone_death_path:gravestone_nether_wither_skeleton.name=Nether Gravestone with Wither Skeleton Skull
+## Xuxinrui5201314
+tile.gravestone_death_path:gravestone_xuxinrui5201314.name=Gravestone with Xuxinrui5201314 Head
+tile.gravestone_death_path:gravestone_end_xuxinrui5201314.name=The End Gravestone with Xuxinrui5201314 Head
+tile.gravestone_death_path:gravestone_nether_xuxinrui5201314.name=Nether Gravestone with Xuxinrui5201314 Head
+## Xxxx41523
+tile.gravestone_death_path:gravestone_xxxx41523.name=Gravestone with Xxxx41523 Head
+tile.gravestone_death_path:gravestone_end_xxxx41523.name=The End Gravestone with Xxxx41523 Head
+tile.gravestone_death_path:gravestone_nether_xxxx41523.name=Nether Gravestone with Xxxx41523 Head
+## Zombie
+tile.gravestone_death_path:gravestone_zombie.name=Gravestone with Zombie Head
+tile.gravestone_death_path:gravestone_end_zombie.name=The End Gravestone with Zombie Head
+tile.gravestone_death_path:gravestone_nether_zombie.name=Nether Gravestone with Zombie Head
+## Zombie Piglin
+tile.gravestone_death_path:gravestone_zombie_pigman.name=Gravestone with Zombie Piglin Head
+tile.gravestone_death_path:gravestone_end_zombie_pigman.name=The End Gravestone with Zombie Piglin Head
+tile.gravestone_death_path:gravestone_nether_zombie_pigman.name=Nether Gravestone with Zombie Piglin Head
+
+block.warn.gravestone_death_path:gravestone.collect.other_owner=§cThis is not your Gravestone, you cannot open it.
+block.warn.gravestone_death_path:gravestone.already_collected=This Gravestone has already been collected!
+block.warn.gravestone_death_path:collect.key.need_key=§cYou need a Key to open this gravestone.
+block.warn.gravestone_death_path:collect.key.other_gravestone=§cThis key does not belong to this Gravestone!
+
+
+
+## --------------------------------
+### Commands
+## --------------------------------
+
+commands.gravestone_death_path:config=Open personal Settings
+commands.gravestone_death_path:config_adm=Open global Settings
+commands.gravestone_death_path:skill=Open your Death Knowledges
+
+
+
+## --------------------------------
+### Dimensions
+## --------------------------------
+
+dimension.gravestone_death_path:die1=You die at %1 in 
+dimension.gravestone_death_path:die2=Use the key and follow your Death!
+dimension.gravestone_death_path:overworld=<§2Overworld§r> - 
+dimension.gravestone_death_path:nether=<§4Nether§r> - 
+dimension.gravestone_death_path:the_end=<§5The End§r> - 
+
+
+
+## --------------------------------
+### Entity
+## --------------------------------
+
+entity.gravestone_death_path:gravestone_entity.name=Gravestone
+entity.gravestone_death_path:ghost.name=Reaper
+
+
+
+## --------------------------------
+### Items
+## --------------------------------
+
+## Key
+item.gravestone_death_path:gravestone_key=Gravestone Key
+item.gravestone_death_path:gravestone_key_tp=Enchanted Gravestone Key
+
+item.warn.gravestone_death_path:key.corrupted=§cCorrupted Gravestone Key.
+item.warn.gravestone_death_path:key.invalid_owner=§cYou are not the owner of this Key.
+item.warn.gravestone_death_path:key.teleport_disabled=§cTeleport has been disabled in settings.
+
+
+
+## --------------------------------
+### Item Catalog
+## --------------------------------
+
+gravestone_death_path:itemGroup.name.gravestones=Overworld Gravestones
+gravestone_death_path:itemGroup.name.gravestones_nether=Nether Gravestones
+gravestone_death_path:itemGroup.name.gravestones_end=The End Gravestones
+
+
+
+## --------------------------------
+### Notifications
+## --------------------------------
+
+## Death Knowledge
+notification.gravestone_death_path:death_knowledge.incrised=You received §e%1§r experience of death knowledge.
+
+
+
+## --------------------------------
+### UI
+## --------------------------------
+
+## Config
+ui.gravestone_death_path:config.title=Settings
+ui.gravestone_death_path:config.drop_gravestone=Drop Gravestone when collect
+ui.gravestone_death_path:config.path_type=Death Path Type
+ui.gravestone_death_path:config.path_type.random_flame=Random Flame
+ui.gravestone_death_path:config.path_type.random_flame_reaper=Random Flame with Reaper
+ui.gravestone_death_path:config.path_type.dark_flame=Dark Flame
+ui.gravestone_death_path:config.path_type.dark_flame_reaper=Dark Flame with Reaper
+ui.gravestone_death_path:config.path_type.basic_flame=Basic Flame
+ui.gravestone_death_path:config.path_type.basic_flame_reaper=Basic Flame with Reaper
+
+ui.warn.gravestone_death_path:config.saved=Saved Settings
+
+## Config Admin
+ui.gravestone_death_path:config.admin.title=Admin Settings
+ui.gravestone_death_path:config.admin.allow_teleport=Allow Teleport
+ui.gravestone_death_path:config.admin.need_key_to_open=Need a Key to open Gravestone
+ui.gravestone_death_path:config.admin.skip_respawn_screen=Skip Respawn Screen
+
+## Death Knowledge
+ui.gravestone_death_path:death_knowledge.title=Death Knowledge
+ui.gravestone_death_path:death_knowledge.remaining_points=Remaining points: %1
+ui.gravestone_death_path:death_knowledge.status.experience=[%1] - %2% Xp Saved
+ui.gravestone_death_path:death_knowledge.status.teleport_key=[%1] - %2% Get Enchanted Key
+ui.gravestone_death_path:death_knowledge.experience=Xp \n§7[%1]
+ui.gravestone_death_path:death_knowledge.teleport_key=Get Enchanted Key\n§7[%1]
+
+ui.warn.grssavestone_death_path:no_point_remaining=§cYou have no point to use.
+
+## Key Panel
+ui.gravestone_death_path:key.transform_into_tp=Create Teleport Key
+
+ui.warn.gravestone_death_path:key.no_ender_pearl=§cYou need an Ender Pearl in your inventory to create a Teleport Key.
+ui.warn.gravestone_death_path:key.invalid_hand_key=§cThe item in your hand is not a Key.
+ui.warn.gravestone_death_path:key.transformated_into_tp=Now you can teleport with this key.
+
+
+
+## --------------------------------
+### Description
+## --------------------------------
+
+
+
+
+
+## --------------------------------------------------
+## Blocks
+## --------------------------------------------------
+
+tile.ws:waystone_polished_andesite.name=Waystone Polished Andesite
+tile.ws:waystone_polished_diorite.name=Waystone Polished Diorite
+tile.ws:waystone_polished_granite.name=Waystone Polished Granite
+tile.ws:waystone_chiseled_stone_bricks.name=Waystone Chiseled Stone Bricks
+
+tile.ws:waystone_polished_tuff.name=Waystone Polished Tuff
+tile.ws:waystone_chiseled_tuff.name=Waystone Chiseled Tuff
+tile.ws:waystone_chiseled_tuff_bricks.name=Waystone Chiseled Tuff Bricks
+
+tile.ws:waystone_polished_deepslate.name=Waystone Polished Deepslate
+
+tile.ws:waystone_polished_blackstone.name=Waystone Polished Blackstone
+
+tile.ws:waystone_polished_basalt.name=Waystone Polished Basalt
+
+tile.ws:waystone_chiseled_nether_bricks.name=Waystone Nether Bricks
+
+tile.ws:waystone_prismarine_bricks.name=Waystone Prismarine Bricks
+
+tile.ws:waystone_cut_sandstone.name=Waystone Cut Sandstone
+tile.ws:waystone_cut_red_sandstone.name=Waystone Cut Red Sandstone
+
+tile.ws:waystone_chiseled_resin_bricks.name=Waystone Chiseled Resin Bricks
+
+tile.ws:waystone_quartz_pillar.name=Waystone Quartz Pillar
+
+
+
+tile.ws:warpstone_pedestal.name=Warpstone Pedestal
+
+
+
+tile.ws:teleporter_pad.name=Teleporter Pad
+tile.ws:teleporter_pad_empty.name=Teleporter Pad Empty
+
+
+
+## --------------------------------------------------
+## Items
+## --------------------------------------------------
+
+item.bedrock_awakening:simple_waystone=§kSimple Waystone
+
+item.ws:warpstone=Warpstone
+item.ws:golden_feather=Golden Feather
+item.ws:return_scroll=Return Scroll
+item.ws:teleport_shard=Teleport Shard
+item.ws:teleport_shard_broken=Broken Teleport Shard
+
+
+
+## --------------------------------------------------
+## Item Catalog
+## --------------------------------------------------
+
+item_catalog.ws:itemGroup.name.waystone_items=Waystones Items
+item_catalog.ws:itemGroup.name.waystones=Waystones
+
+
+
+## --------------------------------------------------
+## Ui
+## --------------------------------------------------
+
+ui.simple_waystone:waystone.create.title=Create Waystone
+ui.simple_waystone:waystone.create.textfield=Waystone Name:
+ui.simple_waystone:waystone.create.textfieldHold=Waystone Name
+ui.simple_waystone:waystone.create.toggle=Public
+ui.simple_waystone:waystone.create.button=Save
+
+ui.simple_waystone:waystone.settings_menu.title=Player Settings
+ui.simple_waystone:waystone.settings_menu.body=Configure some options about your Waystones.\n\n
+ui.simple_waystone:waystone.settings_menu.button.edit=Edit
+
+ui.simple_waystone:waystone.edit.title=Edit Waystone
+
+ui.simple_waystone:waystone.settings.toggle.organize=A-z / Z-a
+ui.simple_waystone:waystone.settings.dropdown.organizeDimension=Order of dimensions:
+ui.simple_waystone:waystone.settings.dropdown.organize_dimension.current=Current
+ui.simple_waystone:waystone.settings.dropdown.organize_dimension.overworld-nether-the_end=§aOverworld§r>§4Nether§r>§5End
+ui.simple_waystone:waystone.settings.dropdown.organize_dimension.overworld-the_end-nether=§aOverworld§r>§5End§r>§4Nether
+ui.simple_waystone:waystone.settings.dropdown.organize_dimension.nether-overworld-the_end=§4Nether§r>§aOverworld§r>§5End
+ui.simple_waystone:waystone.settings.dropdown.organize_dimension.nether-the_end-overworld=§4Nether§r>§5End§r>§aOverworld
+ui.simple_waystone:waystone.settings.dropdown.organize_dimension.the_end-overworld-nether=§5End§r>§aOverworld§r>§4Nether
+ui.simple_waystone:waystone.settings.dropdown.organize_dimension.the_end-nether-overworld=§5End§r>§4Nether§r>§aOverworld
+ui.simple_waystone:waystone.settings.dropdown.show_dimension=Show Dimension:
+ui.simple_waystone:waystone.settings.dropdown.show_dimension.all=All
+ui.simple_waystone:waystone.settings.dropdown.show_dimension.overworld=§aOverworld
+ui.simple_waystone:waystone.settings.dropdown.show_dimension.nether=§4Nether
+ui.simple_waystone:waystone.settings.dropdown.show_dimension.the_end=§5The End
+
+ui.simple_waystone:waystone.remove_waystone.title=Remove Waystone
+ui.simple_waystone:waystone.remove_waystone.body=Select one Waystone to remove.\n§7This will only remove the information from the global list, the Waystone block will remain in the world.\n\n
+ui.simple_waystone:waystone.remove_waystone.confirm.body=Do you would to delete - %1
+
+ui.simple_waystone:waystone.info.title=Waystone Info
+ui.simple_waystone:waystone.info.xp_discount=Current Xp Discount %1%
+ui.simple_waystone:waystone.info.exit_direction=Exit direction: 
+ui.simple_waystone:waystone.info.exit_direction.auto=Auto
+ui.simple_waystone:waystone.info.exit_direction.north=North
+ui.simple_waystone:waystone.info.exit_direction.east=East
+ui.simple_waystone:waystone.info.exit_direction.south=South
+ui.simple_waystone:waystone.info.exit_direction.west=West
+
+ui.simple_waystone:waystone.transform.title=Waystone Transform
+ui.simple_waystone:waystone.transform.body=Do you want to transform your Waystone into a Warpstone?
+
+ui.simple_waystone:waystone.list.title.0=Private Waystones%1
+ui.simple_waystone:waystone.list.title.1=Public Waystones%1
+ui.simple_waystone:waystone.list.body=Choose one to teleport:
+ui.simple_waystone:waystone.list.0=Private
+ui.simple_waystone:waystone.list.1=Public
+ui.simple_waystone:waystone.list.other_dimension=Other Dimension
+
+ui.simple_waystone:favorite.title=Favorite Waystones
+ui.simple_waystone:favorite.body=Select which type of waystone you want to add to favorites.\n\n
+ui.simple_waystone:favorite.list.body=Select the waystones that will appear at the top of the list.\n\n
+
+ui.simple_waystone:admin.settings.title=Administrator
+ui.simple_waystone:admin.settings.xp_max=Maximum XP cost
+ui.simple_waystone:admin.settings.xp_by_distance=Increases +1 XP per distance
+ui.simple_waystone:admin.settings.xp_between_dimension=Cost between dimensions
+ui.simple_waystone:admin.settings.tp_by_block=Can teleport using Waystone.
+ui.simple_waystone:admin.settings.tp_between_dimension=Can teleport between dimensions.
+ui.simple_waystone:admin.settings.tp_cooldown=Waystone Cooldown
+ui.simple_waystone:admin.settings.item_cooldown=Warpstone Cooldown
+ui.simple_waystone:admin.settings.disable_discount=Disable Discount Upgrades.
+
+ui.simple_waystone:waystone.no=No
+ui.simple_waystone:waystone.yes=Yes
+
+warning.simple_waystone:waystone.fail_create_waystone=§cInvalid Name!
+warning.simple_waystone:waystone.create_waystone=Waystone "%1§r" Created!
+warning.simple_waystone:waystone.not_owner=§cYou are not the owner of this Waystone!
+warning.simple_waystone:waystone.claimed_waystone=Waystone "%1§r" acquired!
+warning.simple_waystone:waystone.corrupted=§cCorrupted Waystone!
+warning.simple_waystone:waystone.cancel_settings=§cChanges undone!
+warning.simple_waystone:waystone.save_settings=§aChanges saved!
+warning.simple_waystone:waystone.fail_find_waystones=§cCouldn't find any Waystone!
+warning.simple_waystone:waystone.insufficient_xp=§cYou don't have enough XP!
+warning.simple_waystone:waystone.tp_current_waystone=You're already on this Waystone!
+warning.simple_waystone:waystone.dont_deleted_waystones=§cNo Waystone deleted!
+warning.simple_waystone:waystone.deleted_waystones=Waystone %1 deleted!
+warning.simple_waystone:waystone.admin.save_settings=<§aSimple Waystone§r> Player §e%1§r has been changed the addon configuration.
+
+warning.simple_waystone:waysone.teleport_cooldown=Waystone on Cooldown: %1
+
+warning.simple_waystone:waysone.disabled=§cTeleportation using Waystones has been disabled by an Administrator.
+
+warning.simple_waystone:teleport_item.invalid_teleport_item=§cInvalid teleport item!
+warning.simple_waystone:teleport_item.cooldown=Warpstone on Cooldown: %1
+
+warning.simple_waystone:upgrades.xp_cost.removed=§cTeleport discounts removed.
+warning.simple_waystone:upgrades.xp_cost.success=Teleports using this waystone cost %1% less Xp.
+
+warning.simple_waystone:teleporter.not_owner=§cYou are not the owner of this Teleporter Pad!
+warning.simple_waystone:teleporter.place_shard.same=§cThis Teleport Shard belongs to this Pad. It cannot be placed here.
+warning.simple_waystone:teleporter.place_shard.target_no_longer_exist=The location registered in the Teleport Shard no longer exists.
+
+
+
+
+
+
+
+## --------------------------------
+### Commands
+## --------------------------------
+
+warn.temporal_bottle:custom_command.give_time.fail.invalid_item=Invalid Item! You need to hold a Temporal Bottle in your hand.
+warn.temporal_bottle:custom_command.give_time.success.add=Time added to the Temporal Bottle.
+warn.temporal_bottle:custom_command.give_time.success.set=Time setted to the Temporal Bottle.
+
+## --------------------------------
+### Entity
+## --------------------------------
+
+entity.temporal_bottle:temporal_bottle_entity.name=Temporal Energy
+
+## --------------------------------
+### Items
+## --------------------------------
+
+item.temporal_bottle:temporal_bottle=Temporal Bottle
+
+## --------------------------------
+### Items Subtitle
+## --------------------------------
+
+item_subtitle.temporal_bottle:stored_time=§aStored Time %1
+item_subtitle.temporal_bottle:total_time=§7Total Time %1
+
+
+
+
+
+
+
+## --------------------------------------------------
+## Block
+## --------------------------------------------------
+
+## Backpack
+tile.travel_backpack:leather_backpack.name=Leather Backpack
+tile.travel_backpack:copper_backpack.name=Copper Backpack
+tile.travel_backpack:iron_backpack.name=Iron Backpack
+tile.travel_backpack:gold_backpack.name=Gold Backpack
+tile.travel_backpack:diamond_backpack.name=Diamond Backpack
+tile.travel_backpack:netherite_backpack.name=Netherite Backpack
+
+
+
+## --------------------------------------------------
+## Entity
+## --------------------------------------------------
+
+entity.travel_backpack:backpack.name=Backpack
+entity.travel_backpack:chunk_loader.name=Chunk Loader
+
+
+
+## --------------------------------------------------
+## Item
+## --------------------------------------------------
+
+item.bedrock_awakening:travel_backpack=§kTravel Backpack
+
+item.travel_backpack:lock_slot=Lock Slot
+
+## Backpack
+item.travel_backpack:leather_backpack=Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:copper_backpack=Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:iron_backpack=Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:gold_backpack=Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:diamond_backpack=Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:netherite_backpack=Netherite Backpack\n§9Travel Backpacks
+
+## upgrade
+item.travel_backpack:upgrade_template=Template Upgrade\n§9Travel Backpacks
+
+## Upgrade Tier
+item.travel_backpack:copper_upgrade_tier=Copper Upgrade Tier\n§9Travel Backpacks
+item.travel_backpack:iron_upgrade_tier=Iron Upgrade Tier\n§9Travel Backpacks
+item.travel_backpack:gold_upgrade_tier=Gold Upgrade Tier\n§9Travel Backpacks
+item.travel_backpack:diamond_upgrade_tier=Diamond Upgrade Tier\n§9Travel Backpacks
+item.travel_backpack:netherite_upgrade_tier=Netherite Upgrade Tier\n§9Travel Backpacks
+
+## Upgrade Functions
+item.travel_backpack:craft_upgrade=§c§r§a§f§t§rCraft Upgrade\n§9Travel Backpacks
+
+
+
+## --------------------------------------------------
+## Item Catalog
+## --------------------------------------------------
+
+travel_backpack:itemGroup.name.backpacks=Backpacks
+travel_backpack:itemGroup.name.upgrade_tier=Upgrades Tier
+
+
+
+## --------------------------------------------------
+## Item Lore
+## --------------------------------------------------
+
+lore.travel_backpack:backpack.id=Backpack: %1
+
+
+
+## --------------------------------------------------
+## UI
+## --------------------------------------------------
+
+## Custom Chest
+ui.travel_backpack:backpack.size.0=Leather Backpack
+ui.travel_backpack:backpack.size.1=Copper Backpack
+ui.travel_backpack:backpack.size.2=Iron Backpack
+ui.travel_backpack:backpack.size.3=Gold Backpack
+ui.travel_backpack:backpack.size.4=Diamond Backpack
+ui.travel_backpack:backpack.size.5=Netherite Backpack
+
+
+
+
+
+
+
+## Commands
+commands.utilities_vein_miner.settings_panel=Open the Utilities Vein Miner settings panel.
+
+## Entity
+entity.utilities_vein_miner:selected_block.name=Selected Block
+
+## UI
+ui.utilities_vein_miner:config.title=Vein Miner
+ui.utilities_vein_miner:config.show_selection=Show Edge
+ui.utilities_vein_miner:config.show_when_sneaking=Show Edge When Sneaking
+
+ui.utilities_vein_miner:config.function_type=Function
+ui.utilities_vein_miner:config.function_type.off=Disabled
+ui.utilities_vein_miner:config.function_type.all=All
+ui.utilities_vein_miner:config.function_type.1x1_tunnel=1x1 Tunnel
+ui.utilities_vein_miner:config.function_type.1x2_tunnel=1x2 Tunnel
+ui.utilities_vein_miner:config.function_type.1x3_tunnel=1x3 Tunnel
+ui.utilities_vein_miner:config.function_type.3x2_tunnel=3x2 Tunnel
+ui.utilities_vein_miner:config.function_type.3x2_tunnel_small=3x2 Tunnel Small
+ui.utilities_vein_miner:config.function_type.3x3_tunnel=3x3 Tunnel
+ui.utilities_vein_miner:config.function_type.3x3_tunnel_small=3x3 Tunnel Small
+ui.utilities_vein_miner:config.function_type.mining_tunnel=Mining Tunnel
+ui.utilities_vein_miner:config.function_type.escape_tunnel=Escape Tunnel
+
+ui.utilities_vein_miner:config.turn_off=Turn off after not using for:
+ui.utilities_vein_miner:config.turn_off.no=Don't Turn Off
+ui.utilities_vein_miner:config.turn_off.1_minute=1 Minute
+ui.utilities_vein_miner:config.turn_off.2_minute=2 Minutes
+ui.utilities_vein_miner:config.turn_off.5_minute=5 Minutes
+ui.utilities_vein_miner:config.turn_off.10_minute=10 Minutes
+
+ui.utilities_vein_miner:config.advanced=Advanced Settings
+ui.utilities_vein_miner:config.show_info=Show Action Bar Info
+ui.utilities_vein_miner:config.show_info.tooltip=Show how many block will be broken or have been broken
+ui.utilities_vein_miner:config.max_size=Max Size
+ui.utilities_vein_miner:config.thick_edges=Thickness of Edges
+ui.utilities_vein_miner:config.cancel_no_drop=Cancel When no Drop
+ui.utilities_vein_miner:config.auto_all=Auto Function "All"
+ui.utilities_vein_miner:config.only_ore=Enable Only in Ore
+ui.utilities_vein_miner:config.only_log=Enable Only in Log
+ui.utilities_vein_miner:config.accuracy=Edges Accuracy
+ui.utilities_vein_miner:config.cancel_open_item=No Open Panel With Pickaxe
+ui.utilities_vein_miner:config.connected_diagonals=Connected Diagonals
+ui.utilities_vein_miner:config.delete_blocks=Delete Blocks
+ui.utilities_vein_miner:config.delete_blocks.list=Deleting: §7
+
+ui.utilities_vein_miner:config.quick_settings=Quick Settings
+
+## Waring
+warning.utilities_vein_miner:config_complete=§aSettings Saved.
+warning.utilities_vein_miner:config_canceled=§cSettings Undone.
+warning.utilities_vein_miner:disabled_delete_blocks=§cDisabled Delete Block.
+warning.utilities_vein_miner:quick_setting=[§a!§r] Current Vein Miner Function: 
+warning.utilities_vein_miner:quick_setting_enabled=[§c!§r]§c Quick Settings doesn't work properly on phones with Classic Gui.
+warning.utilities_vein_miner:will_break=%1 Blocks Selected
+warning.utilities_vein_miner:breaking=Broken %1 Blocks
+warning.utilities_vein_miner:turned_off=Vein Miner was deactivated due to inactivity
+
+
+

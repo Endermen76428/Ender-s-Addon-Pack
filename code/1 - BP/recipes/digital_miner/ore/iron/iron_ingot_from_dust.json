@@ -1,0 +1,9 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": { "identifier": "digital_miner:iron_ingot_from_dust" },  
+    "tags": [ "furnace", "blast_furnace" ],
+    "input": "digital_miner:iron_dust",
+    "output": "minecraft:iron_ingot"
+  }
+}

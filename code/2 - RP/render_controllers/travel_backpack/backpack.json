@@ -1,0 +1,23 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.travel_backpack.backpack": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "part_visibility": [
+        { "body": true },
+        { "tier": false }
+      ]
+    },
+    "controller.render.travel_backpack.backpack.tier": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.tier" ],
+      "part_visibility": [
+        { "body": false },
+        { "tier": true }
+      ]
+    }
+  }
+}

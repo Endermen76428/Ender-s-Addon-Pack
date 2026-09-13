@@ -1,0 +1,44 @@
+{
+  "format_version": "1.19.0",
+  "animation_controllers": {
+    "controller.animation.advanced_waypoints.waypoint.info": {
+      "initial_state": "disabled",
+      "states": {
+        "disabled": {
+          "animations": ["info_disabled"],
+          "transitions": [
+            {"enabled": "v.need_look_show_info == true ? v.looking == true : true"}
+          ],
+          "blend_transition": 0.1
+        },
+        "enabled": {
+          "animations": ["info_enabled"],
+          "transitions": [
+            {"disabled": "v.need_look_show_info == true ? v.looking == false : false"}
+          ],
+          "blend_transition": 0.1
+        }
+      }
+    },
+
+    "controller.animation.advanced_waypoints.waypoint.beacon": {
+      "initial_state": "disabled",
+      "states": {
+        "disabled": {
+          "animations": ["beacon_disabled"],
+          "transitions": [
+            {"enabled": "v.need_look_show_beam == true ? v.looking == true && v.waypoint_pitch_dist > 7 : v.waypoint_pitch_dist > 7"}
+          ],
+          "blend_transition": 0.1
+        },
+        "enabled": {
+          "animations": ["beacon_enabled"],
+          "transitions": [
+            {"disabled": "v.need_look_show_beam == true ? v.looking == false || v.waypoint_pitch_dist < 7 : v.waypoint_pitch_dist < 7"}
+          ],
+          "blend_transition": 0.1
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "digital_miner:diamond_dust_7" },
+    "priority": 2,
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "HII",
+      "III",
+      "II "
+    ],
+    "key": {
+      "H": { "item": "digital_miner:hammer" },
+      "I": { "item": "minecraft:diamond" }
+    },
+    "unlock": [ { "item": "minecraft:diamond" } ],
+    "result": [
+      { "item": "digital_miner:diamond_dust", "count": 14 },
+      { "item": "digital_miner:hammer" }
+    ]
+  }
+}

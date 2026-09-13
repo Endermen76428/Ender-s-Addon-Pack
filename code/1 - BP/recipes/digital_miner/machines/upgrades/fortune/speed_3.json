@@ -1,0 +1,20 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:fortune_upgrade_2" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BNP",
+      "STS",
+      "PNB"
+    ],
+    "key": {
+      "P": { "item": "digital_miner:steel_plate" },
+      "B": { "item": "digital_miner:steel_block" },
+      "N": { "item": "minecraft:netherite_pickaxe" },
+      "S": { "item": "minecraft:wither_skeleton_skull" },
+      "T": { "item": "digital_miner:fortune_upgrade_1" }
+    },
+    "unlock": [ { "item": "digital_miner:upgrade_template" } ],
+    "result": { "item": "digital_miner:fortune_upgrade_2" }
+  }
+}

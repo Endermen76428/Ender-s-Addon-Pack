@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@minecraft/server": "^2.8.0",
+    "jsonc-parser": "^3.3.1"
+  },
+  "devDependencies": {
+    "@minecraft/server": "^2.7.0",
+    "@minecraft/server-ui": "^2.0.0",
+    "esbuild": "^0.28.2"
+  },
+  "scripts": {
+    "build": "esbuild typeScript/src/main.ts --bundle --minify --outfile=\"Ender's Addon Pack/Ender Addon Pack (Addon)/scripts/ender_addon_pack/main.js\" --format=esm --external:@minecraft/server --external:@minecraft/server-ui"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:advanced_circuit" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "PDQ",
+      "DAD",
+      "QDP"
+    ],
+    "key": {
+      "P": { "item": "digital_miner:integrated_circuit" },
+      "D": { "item": "digital_miner:diamond_plate" },
+      "Q": { "item": "digital_miner:redstone_enriched_quartz" },
+      "A": { "item": "minecraft:amethyst_shard" }
+    },
+    "unlock": [ { "item": "digital_miner:integrated_circuit" } ],
+    "result": { "item": "digital_miner:advanced_circuit" }
+  }
+}

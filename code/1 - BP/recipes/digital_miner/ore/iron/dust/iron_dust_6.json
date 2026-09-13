@@ -1,0 +1,22 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "digital_miner:iron_dust_6" },
+    "priority": 3,
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "HII",
+      "III",
+      "I "
+    ],
+    "key": {
+      "H": { "item": "digital_miner:hammer" },
+      "I": { "item": "minecraft:raw_iron" }
+    },
+    "unlock": [ { "item": "minecraft:raw_iron" } ],
+    "result": [
+      { "item": "digital_miner:iron_dust", "count": 12 },
+      { "item": "digital_miner:hammer" }
+    ]
+  }
+}

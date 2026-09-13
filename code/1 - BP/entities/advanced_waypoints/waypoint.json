@@ -1,0 +1,34 @@
+{
+  "format_version": "1.19.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "advanced_waypoints:waypoint",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+      "advanced_waypoints:despawn": {
+        "minecraft:timer": { "time": 1.5, "time_down_event": { "event": "advanced_waypoints:despawn" } }
+      },
+
+      "advanced_waypoints:instant_despawn": { "minecraft:instant_despawn": {} }
+    },
+
+    "components": {
+      "minecraft:type_family": { "family": [ "waypoint" ] },
+      "minecraft:damage_sensor": { "triggers": { "cause": "all", "deals_damage": false } },
+      "minecraft:fire_immune": true,
+      "minecraft:movement": { "value": 0 },
+      "minecraft:collision_box": { "width": 0, "height": 0 },
+      "minecraft:physics": { "has_collision": false, "has_gravity": false },
+      "minecraft:tick_world": {}
+    },
+
+    "events": {
+      "advanced_waypoints:start_despawn": { "add": { "component_groups": [ "advanced_waypoints:despawn" ] } },
+      "advanced_waypoints:despawn": { "add": { "component_groups": [ "advanced_waypoints:instant_despawn" ] } }
+    }
+  }
+}

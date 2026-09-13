@@ -1,0 +1,11 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_smithing_transform": {
+    "description": { "identifier": "builder_wand:netherite_builder_wand" },
+    "tags": [ "smithing_table" ],
+    "template": "minecraft:netherite_upgrade_smithing_template",
+    "base": "builder_wand:diamond_builder_wand",
+    "addition": "minecraft:netherite_ingot",
+    "result": "builder_wand:netherite_builder_wand"
+  }
+}

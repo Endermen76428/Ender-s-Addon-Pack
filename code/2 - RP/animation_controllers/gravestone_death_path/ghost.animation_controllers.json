@@ -1,0 +1,86 @@
+{
+  "format_version": "1.19.0",
+  "animation_controllers": {
+    "controller.animation.gravestone_death_path.ghost.scale": {
+      "states": {
+        "default": {
+          "on_entry": ["v.scale = 0;"],
+          "transitions": [
+            {
+              "scale_down": "q.property('gravestone_death_path:despawn') == true"
+            }
+          ],
+          "blend_transition": 0.2
+        },
+        "scale_down": {
+          "animations": ["scale_down"],
+          "on_entry": ["v.scale = 1;"],
+          "blend_transition": 0.2
+        }
+      }
+    },
+    "controller.animation.gravestone_death_path.ghost.fly": {
+      "initial_state": "spawn",
+      "states": {
+        "spawn": {
+          "animations": ["spawn", "scale_up"],
+          "particle_effects": [
+            {
+              "effect": "ghost_shadow",
+              "locator": "shadow"
+            }
+          ],
+          "transitions": [
+            {
+              "stop_fly": "q.property('gravestone_death_path:fly_type') != 0"
+            }
+          ],
+          "blend_transition": 0.5
+        },
+        "start_fly": {
+          "animations": ["start_fly"],
+          "particle_effects": [
+            {
+              "effect": "ghost_shadow",
+              "locator": "shadow"
+            }
+          ],
+          "sound_effects": [
+            {
+              "effect": ""
+            }
+          ],
+          "transitions": [
+            {
+              "stop_fly": "q.property('gravestone_death_path:fly_type') != 1"
+            }
+          ],
+          "blend_transition": 0.2
+        },
+        "stop_fly": {
+          "animations": ["stop_fly"],
+          "particle_effects": [
+            {
+              "effect": "ghost_shadow",
+              "locator": "shadow"
+            }
+          ],
+          "sound_effects": [
+            {
+              "effect": "ghost_ambient"
+            },
+            {
+              "effect": ""
+            }
+          ],
+          "transitions": [
+            {
+              "start_fly": "q.property('gravestone_death_path:fly_type') != 2"
+            }
+          ],
+          "blend_transition": 0.2
+        }
+      }
+    }
+  }
+}

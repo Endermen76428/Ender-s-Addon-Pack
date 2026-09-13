@@ -1,0 +1,20 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:monitor" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "SCS",
+      "CGC",
+      "SCS"
+    ],
+    "key": {
+      "S": { "item": "digital_miner:steel_ingot" },
+      "C": { "item": "digital_miner:integrated_circuit" },
+      "G": { "item": "digital_miner:diamond_glass" }
+    },
+    "unlock": [
+      { "item": "digital_miner:steel_ingot" }
+    ],
+    "result": { "item": "digital_miner:monitor" }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": { "identifier": "digital_miner:steel_nugget" },  
+    "tags": [ "furnace", "blast_furnace" ],
+    "input": "digital_miner:steel_dust",
+    "output": "digital_miner:steel_nugget"
+  }
+}

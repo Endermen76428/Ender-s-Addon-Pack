@@ -1,0 +1,17 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:hammer" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " X ",
+      " SX",
+      "S  "
+    ],
+    "key": {
+      "X": { "item": "minecraft:iron_ingot" },
+      "S": { "item": "minecraft:stick" }
+    },
+    "unlock": [ { "item": "minecraft:iron_ingot" } ],
+    "result": { "item": "digital_miner:hammer" }
+  }
+}

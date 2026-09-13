@@ -1,0 +1,23 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "travel_backpack:leather_backpack" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "SLS",
+      "SCS",
+      "LLL"
+    ],
+    "key": {
+      "L": { "item": "minecraft:leather" },
+      "S": { "item": "minecraft:string" },
+      "C": { "item": "minecraft:chest" }
+    },
+    "unlock": [
+      { "item": "minecraft:leather" },
+      { "item": "minecraft:string" },
+      { "item": "minecraft:chest" }
+    ],
+    "result": { "item": "travel_backpack:leather_backpack" }
+  }
+}

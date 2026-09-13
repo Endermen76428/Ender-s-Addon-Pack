@@ -1,0 +1,19 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:fortune_upgrade_3" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "PNP",
+      "STS",
+      "PNP"
+    ],
+    "key": {
+      "P": { "item": "digital_miner:steel_plate" },
+      "N": { "item": "minecraft:netherite_block" },
+      "S": { "item": "minecraft:nether_star" },
+      "T": { "item": "digital_miner:fortune_upgrade_2" }
+    },
+    "unlock": [ { "item": "digital_miner:upgrade_template" } ],
+    "result": { "item": "digital_miner:fortune_upgrade_3" }
+  }
+}

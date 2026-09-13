@@ -1,0 +1,215 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "advanced_waypoints:waypoint",
+      "materials": {
+        "default": "waypoint_material",
+        "beacon_visible": "entity_beam"
+        // "beacon_visible": "waypoint_beam"
+      },
+      "textures": {
+        "icon_waypoint": "textures/advanced_waypoints/entity/waypoint_icons",
+        "icon_death": "textures/advanced_waypoints/entity/death_icon",
+        "icon_letters": "textures/advanced_waypoints/entity/letters_icon",
+        "letters": "textures/advanced_waypoints/entity/letters",
+        "beam": "textures/advanced_waypoints/entity/waypoint_beam"
+      },
+      "geometry": { "default": "geometry.advanced_waypoint.waypoint" },
+      "scripts": {
+        "should_update_bones_and_effects_offscreen": true,
+        "scale": "0.5",
+        "initialize": [
+          "v.is_visible = false;",
+          /* Config */
+          "v.need_look_show_info = true;",
+          "v.need_look_show_beam = true;",
+          "v.show_distance = true;",
+          "v.show_name = true;",
+          "v.show_beam = true;",
+
+          /* Distance */
+          "v.waypoint_x = 0; v.waypoint_y = 0; v.waypoint_z = 0;", /* Waypoint Info Position */
+          "v.entity_x = q.position(0); v.entity_y = q.position(1); v.entity_z = q.position(2);", /* Waypoint Entity Position */
+
+          "v.show_plus = false;",
+          "v.distance_base = -20;",
+          "v.display_distance_offset = 0;",
+          "v.max_distance = 0;",
+
+          /* Name */
+          "v.letter1 = -1;",
+          "v.letter2 = -1;",
+          "v.letter3 = -1;",
+          "v.letter4 = -1;",
+          "v.letter5 = -1;",
+          "v.letter6 = -1;",
+          "v.letter7 = -1;",
+          "v.letter8 = -1;",
+          "v.letter9 = -1;",
+          "v.letter10 = -1;",
+          "v.letter11 = -1;",
+          "v.letter12 = -1;",
+          "v.letter13 = -1;",
+
+          "v.name_amount = 0;",
+          "v.name_base = -7.5;",
+
+          /* Other */
+          "v.waypoint_scale_default = 0.1;",
+          "v.beacon_size = 0;",
+          "v.color_r = 200; v.color_g = 200; v.color_b = 200;",
+          "v.icon = 0;",
+
+          "v.looking = false;"
+        ],
+        "pre_animation": [
+          "v.player_pos_x = v.entity_x - q.distance_from_camera * Math.cos(q.rotation_to_camera(0)) * Math.sin(q.rotation_to_camera(1));",
+          "v.player_pos_y = v.entity_y - q.distance_from_camera * Math.sin(q.rotation_to_camera(0));",
+          "v.player_pos_z = v.entity_z + q.distance_from_camera * Math.cos(q.rotation_to_camera(0)) * Math.cos(q.rotation_to_camera(1));",
+
+          "v.camera_offset_x = v.entity_x - v.player_pos_x;",
+          "v.camera_offset_y = v.entity_y - v.player_pos_y;",
+          "v.camera_offset_z = v.player_pos_z - v.entity_z;",
+          "v.distance_x = v.waypoint_x - v.player_pos_x;",
+          "v.distance_y = v.waypoint_y - v.player_pos_y;",
+          "v.distance_z = v.waypoint_z - v.player_pos_z;",
+          "v.waypoint_distance_real = Math.sqrt((v.distance_x * v.distance_x) + (v.distance_y * v.distance_y) + (v.distance_z * v.distance_z));",
+          "v.waypoint_distance = Math.clamp(v.waypoint_distance_real, 0, v.max_distance);",
+
+
+
+          "v.player_pitch = q.camera_rotation(0);", // Vertical
+          "v.player_yaw = q.camera_rotation(1);", // Horizontal
+
+          "v.waypoint_pitch_dist = Math.sqrt(v.distance_x * v.distance_x + v.distance_z * v.distance_z);",
+          "v.waypoint_pitch = -Math.atan2(v.distance_y, v.waypoint_pitch_dist);", // Vertical
+          "v.waypoint_yaw = Math.atan2(v.distance_z, v.distance_x);", // Horizontal
+
+          "v.pitch = v.waypoint_pitch - v.player_pitch;",
+          "v.yaw = v.waypoint_yaw - v.player_yaw +0.5;",
+
+          "v.is_looking_pitch = (v.pitch > -2.5 && v.pitch < 2.5);", // Vertical
+          "v.is_looking_yaw = (v.yaw > 87 && v.yaw < 93) || (v.yaw > -272 && v.yaw < -266);", // Horizontal
+          "v.looking = v.is_looking_pitch && v.is_looking_yaw;",
+
+
+
+          "v.distance_1 = Math.floor(Math.mod(v.waypoint_distance, 10));",
+          "v.distance_2 = Math.floor(Math.mod(v.waypoint_distance, 100) / 10);",
+          "v.distance_3 = Math.floor(Math.mod(v.waypoint_distance, 1000) / 100);",
+          "v.distance_4 = Math.floor(Math.mod(v.waypoint_distance, 10000) / 1000);",
+          "v.distance_5 = Math.floor(Math.mod(v.waypoint_distance, 100000) / 10000);",
+          "v.distance_6 = Math.floor(Math.mod(v.waypoint_distance, 1000000) / 100000);",
+          "v.distance_7 = Math.floor(Math.mod(v.waypoint_distance, 10000000) / 1000000);",
+
+          "v.distance_digit_1 = v.distance_1;",
+          "v.distance_digit_2 = v.distance_2 == 0 && v.distance_3 == 0 && v.distance_4 == 0 && v.distance_5 == 0 && v.distance_6 == 0 && v.distance_7 == 0 ? -1 : v.distance_2;",
+          "v.distance_digit_3 = v.distance_3 == 0 && v.distance_4 == 0 && v.distance_5 == 0 && v.distance_6 == 0 && v.distance_7 == 0 ? -1 : v.distance_3;",
+          "v.distance_digit_4 = v.distance_4 == 0 && v.distance_5 == 0 && v.distance_6 == 0 && v.distance_7 == 0 ? -1 : v.distance_4;",
+          "v.distance_digit_5 = v.distance_5 == 0 && v.distance_6 == 0 && v.distance_7 == 0 ? -1 : v.distance_5;",
+          "v.distance_digit_6 = v.distance_6 == 0 && v.distance_7 == 0 ? -1 : v.distance_6;",
+          "v.distance_digit_7 = v.distance_7 == 0 ? -1 : v.distance_7;",
+
+          "v.show_plus = v.waypoint_distance_real > 10000000;",
+          "v.distance_amount = v.waypoint_distance_real > 10000000 ? 8 : v.waypoint_distance > 1000000 ? 7 : v.waypoint_distance > 100000 ? 6 : v.waypoint_distance > 10000 ? 5 : v.waypoint_distance > 1000 ? 4 : v.waypoint_distance > 100 ? 3 : v.waypoint_distance > 10 ? 2 : 1;",
+          "v.number_distance_offset = v.show_plus ? 0 : v.distance_digit_7 != -1 ? -5 : v.distance_digit_6 != -1 ? -10 : v.distance_digit_5 != -1 ? -15 : v.distance_digit_4 != -1 ? -20 : v.distance_digit_3 != -1 ? -25 : v.distance_digit_2 != -1 ? -30 : -35;",
+          "v.display_distance_offset = v.distance_base - (Math.clamp(v.distance_amount -1, 0, 99) * 2.5);",
+
+
+
+          "v.name_digit_1_x = v.letter1 == 0 ? -1 : Math.floor(Math.mod(v.letter1, 26));",
+          "v.name_digit_2_x = v.letter2 == 0 ? -1 : Math.floor(Math.mod(v.letter2, 26));",
+          "v.name_digit_3_x = v.letter3 == 0 ? -1 : Math.floor(Math.mod(v.letter3, 26));",
+          "v.name_digit_4_x = v.letter4 == 0 ? -1 : Math.floor(Math.mod(v.letter4, 26));",
+          "v.name_digit_5_x = v.letter5 == 0 ? -1 : Math.floor(Math.mod(v.letter5, 26));",
+          "v.name_digit_6_x = v.letter6 == 0 ? -1 : Math.floor(Math.mod(v.letter6, 26));",
+          "v.name_digit_7_x = v.letter7 == 0 ? -1 : Math.floor(Math.mod(v.letter7, 26));",
+          "v.name_digit_8_x = v.letter8 == 0 ? -1 : Math.floor(Math.mod(v.letter8, 26));",
+          "v.name_digit_9_x = v.letter9 == 0 ? -1 : Math.floor(Math.mod(v.letter9, 26));",
+          "v.name_digit_10_x = v.letter10 == 0 ? -1 : Math.floor(Math.mod(v.letter10, 26));",
+          "v.name_digit_11_x = v.letter11 == 0 ? -1 : Math.floor(Math.mod(v.letter11, 26));",
+          "v.name_digit_12_x = v.letter12 == 0 ? -1 : Math.floor(Math.mod(v.letter12, 26));",
+          "v.name_digit_13_x = v.letter13 == 0 ? -1 : Math.floor(Math.mod(v.letter13, 26));",
+
+          "v.name_digit_1_y = Math.floor(v.letter1 / 26);",
+          "v.name_digit_2_y = Math.floor(v.letter2 / 26);",
+          "v.name_digit_3_y = Math.floor(v.letter3 / 26);",
+          "v.name_digit_4_y = Math.floor(v.letter4 / 26);",
+          "v.name_digit_5_y = Math.floor(v.letter5 / 26);",
+          "v.name_digit_6_y = Math.floor(v.letter6 / 26);",
+          "v.name_digit_7_y = Math.floor(v.letter7 / 26);",
+          "v.name_digit_8_y = Math.floor(v.letter8 / 26);",
+          "v.name_digit_9_y = Math.floor(v.letter9 / 26);",
+          "v.name_digit_10_y = Math.floor(v.letter10 / 26);",
+          "v.name_digit_11_y = Math.floor(v.letter11 / 26);",
+          "v.name_digit_12_y = Math.floor(v.letter12 / 26);",
+          "v.name_digit_13_y = Math.floor(v.letter13 / 26);",
+
+          "v.display_name_offset = v.name_base + (Math.clamp(v.name_amount -1, 0, 99) * 2.5);",
+
+
+
+          "v.display_offset = (v.show_name ? v.display_name_offset : 0) + (v.show_distance ? v.display_distance_offset : 0) + (v.show_name && v.show_distance ? 12.5);",
+
+
+
+          "v.offset_waypoint_x = (v.camera_offset_x * -32) - ((v.distance_x / v.waypoint_distance) * -16);",
+          "v.offset_waypoint_y = (v.camera_offset_y * -32) - ((v.distance_y / v.waypoint_distance) * -16) +8.5;",
+          "v.offset_waypoint_z = (v.camera_offset_z * -32) + ((v.distance_z / v.waypoint_distance) * -16);",
+
+          "v.is_on_128_blocks = ((v.distance_x > -128 && v.distance_x < 128) && (v.distance_y > -128 && v.distance_y < 128) && (v.distance_z > -128 && v.distance_z < 128));",
+          "v.offset_beam_x = (v.camera_offset_x * -32) - ((v.is_on_128_blocks ? v.distance_x : (v.distance_x / (v.waypoint_distance * 0.0078125))) * -16);",
+          "v.offset_beam_y = (v.camera_offset_y * -32) - ((v.is_on_128_blocks ? v.distance_y : (v.distance_y / (v.waypoint_distance * 0.0078125))) * -16);",
+          "v.offset_beam_z = (v.camera_offset_z * -32) + ((v.is_on_128_blocks ? v.distance_z : (v.distance_z / (v.waypoint_distance * 0.0078125))) * -16);"
+        ],
+        "animate": [
+          "idle",
+          { "controller_info": "v.need_look_show_info == true" },
+          { "info_enabled_always": "v.need_look_show_info == false" },
+          { "controller_beacon": "v.show_beam == true" },
+          { "beacon_disabled": "v.show_beam == false" }
+        ]
+      },
+      "animations": {
+        "controller_info": "controller.animation.advanced_waypoints.waypoint.info",
+        "controller_beacon": "controller.animation.advanced_waypoints.waypoint.beacon",
+
+        "idle": "animation.advanced_waypoints.waypoint.idle",
+        "info_enabled": "animation.advanced_waypoints.waypoint.info_enabled",
+        "info_disabled": "animation.advanced_waypoints.waypoint.info_disabled",
+        "info_enabled_always": "animation.advanced_waypoints.waypoint.info_enabled_always",
+        "beacon_enabled": "animation.advanced_waypoints.waypoint.beacon_enabled",
+        "beacon_disabled": "animation.advanced_waypoints.waypoint.beacon_disabled"
+      },
+      "render_controllers": [
+        { "controller.render.advanced_waypoints.waypoint_icon": "v.is_visible" },
+        { "controller.render.advanced_waypoints.waypoint_beam": "v.is_visible" },
+        { "controller.render.advanced_waypoints.waypoint_adds": "v.is_visible && v.show_distance == true" },
+
+        { "controller.render.advanced_waypoints.waypoint_distance_1": "v.is_visible && v.show_distance == true && v.distance_digit_1 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_distance_2": "v.is_visible && v.show_distance == true && v.distance_digit_2 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_distance_3": "v.is_visible && v.show_distance == true && v.distance_digit_3 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_distance_4": "v.is_visible && v.show_distance == true && v.distance_digit_4 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_distance_5": "v.is_visible && v.show_distance == true && v.distance_digit_5 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_distance_6": "v.is_visible && v.show_distance == true && v.distance_digit_6 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_distance_7": "v.is_visible && v.show_distance == true && v.distance_digit_7 != -1" },
+
+        { "controller.render.advanced_waypoints.waypoint_letter_padding": "v.is_visible && v.show_name && v.letter1 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_letter_1": "v.is_visible && v.show_name && v.letter1 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_letter_2": "v.is_visible && v.show_name && v.letter2 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_letter_3": "v.is_visible && v.show_name && v.letter3 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_letter_4": "v.is_visible && v.show_name && v.letter4 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_letter_5": "v.is_visible && v.show_name && v.letter5 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_letter_6": "v.is_visible && v.show_name && v.letter6 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_letter_7": "v.is_visible && v.show_name && v.letter7 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_letter_8": "v.is_visible && v.show_name && v.letter8 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_letter_9": "v.is_visible && v.show_name && v.letter9 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_letter_10": "v.is_visible && v.show_name && v.letter10 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_letter_11": "v.is_visible && v.show_name && v.letter11 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_letter_12": "v.is_visible && v.show_name && v.letter12 != -1" },
+        { "controller.render.advanced_waypoints.waypoint_letter_13": "v.is_visible && v.show_name && v.letter13 != -1" }
+      ]
+    }
+  }
+}

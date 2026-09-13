@@ -1,0 +1,80 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "gravestone_death_path:ghost",
+      "is_summonable": true,
+      "is_spawnable": false,
+      "is_experimental": false,
+      "properties": {
+        "gravestone_death_path:rotate": { "type": "float", "range": [-360.0, 360.0], "default": 0.0, "client_sync": true },
+        "gravestone_death_path:fly_type": { "type": "int", "range": [0, 2], "default": 0, "client_sync": true },
+        "gravestone_death_path:update_rotate": { "type": "bool", "default": true, "client_sync": true },
+        "gravestone_death_path:despawn": { "type": "bool", "default": false, "client_sync": true }
+      }
+    },
+
+    "component_groups": {
+      "gravestone_death_path:despawn": { "minecraft:instant_despawn": {} },
+      "gravestone_death_path:check_near_player": {
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": [ { "test": "distance_to_nearest_player", "subject": "self", "operator": ">", "value": 24 } ],
+              "event": "gravestone_death_path:despawn"
+            },
+            {
+              "filters": [ { "test": "distance_to_nearest_player", "subject": "self", "operator": ">", "value": 16 } ],
+              "event": "gravestone_death_path:stop_move"
+            },
+            {
+              "filters": [ { "test": "distance_to_nearest_player", "subject": "self", "operator": "<", "value": 12 } ],
+              "event": "gravestone_death_path:start_move"
+            }
+          ]
+        }
+      },
+
+      "gravestone_death_path:timer_spawn": { "minecraft:timer": { "time": 3.5, "time_down_event": { "event": "gravestone_death_path:start_check_near" } } },
+      "gravestone_death_path:timer_move": { "minecraft:timer": { "time": 0.75, "looping": true, "time_down_event": { "event": "gravestone_death_path:move" } } },
+      "gravestone_death_path:timer_despawn": { "minecraft:timer": { "time": 0.275, "time_down_event": { "event": "gravestone_death_path:despawn" } } }
+    },
+
+    "components": {
+      "minecraft:type_family": { "family": [ "ghost" ] },
+      "minecraft:damage_sensor": { "triggers": { "cause": "all", "deals_damage": "no_but_side_effects_apply" } },
+      "minecraft:health": { "value": 1, "min": 1 },
+      "minecraft:fire_immune": true,
+      "minecraft:collision_box": { "width": 0.1, "height": 2 },
+      "minecraft:physics": { "has_collision": false, "has_gravity": false }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": { "add": { "component_groups": [ "gravestone_death_path:timer_spawn" ] } },
+      "gravestone_death_path:start_check_near": { "add": { "component_groups": [ "gravestone_death_path:check_near_player" ] } },
+
+      "gravestone_death_path:move": {
+        "queue_command": { "command": ["scriptevent gravestone_death_path:ghost_move"] },
+        "add": { "component_groups": [ "gravestone_death_path:check_near_player" ] }
+      },
+      "gravestone_death_path:start_move": {
+        "add": { "component_groups": [ "gravestone_death_path:timer_move" ] },
+        "remove": { "component_groups": [ "gravestone_death_path:check_near_player" ] },
+        "set_property": { "gravestone_death_path:fly_type": 1 }
+      },
+      "gravestone_death_path:stop_move": {
+        "remove": { "component_groups": [ "gravestone_death_path:timer_move" ] },
+        "set_property": { "gravestone_death_path:fly_type": 2 }
+      },
+
+      "gravestone_death_path:despawn_ghost": {
+        "remove": { "component_groups": ["gravestone_death_path:timer_spawn", "gravestone_death_path:timer_move", "gravestone_death_path:check_near_player"] },
+        "add": { "component_groups": [ "gravestone_death_path:timer_despawn" ] },
+        "set_property": { "gravestone_death_path:despawn": true }
+      },
+      "gravestone_death_path:despawn": { "add": { "component_groups": [ "gravestone_death_path:despawn" ] } },
+
+      "gravestone_death_path:remove_timer": { "remove": { "component_groups": [ "gravestone_death_path:timer_despawn" ] } }
+    }
+  }
+}

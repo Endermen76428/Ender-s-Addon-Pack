@@ -1,0 +1,22 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "digital_miner:steel_block",
+      "menu_category": { "category": "construction" }
+    },
+    "components": {
+      "tag:addon:digital_miner": {},
+      "tag:digital_miner:steel": {},
+      "tag:bedrock_awakening:ore_block": {},
+      "tag:minecraft:is_pickaxe_item_destructible": {},
+
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:material_instances": { "*": { "texture": "digital_miner:steel_block", "render_method": "alpha_test" } },
+
+      // "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:destructible_by_explosion": { "explosion_resistance": 4 },
+      "minecraft:destructible_by_mining": { "seconds_to_destroy": 4 }
+    }
+  }
+}

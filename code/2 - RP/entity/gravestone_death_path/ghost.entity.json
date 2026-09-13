@@ -1,0 +1,46 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "gravestone_death_path:ghost",
+      "materials": {
+        "default": "gravestone_death_path_reaper_body",
+        "eyes": "gravestone_death_path_reaper_eyes"
+      },
+      "textures": { "default": "textures/gravestone_death_path/entity/ghost" },
+      "geometry": { "default": "geometry.gravestone_death_path.ghost" },
+      "animations": {
+        "controller_scale": "controller.animation.gravestone_death_path.ghost.scale",
+        "controller_fly": "controller.animation.gravestone_death_path.ghost.fly",
+
+        "idle": "animation.gravestone_death_path.ghost.idle",
+        "scale_up": "animation.gravestone_death_path.ghost.scale_up",
+        "scale_down": "animation.gravestone_death_path.ghost.scale_down",
+        "spawn": "animation.gravestone_death_path.ghost.spawn",
+        "start_fly": "animation.gravestone_death_path.ghost.start_fly",
+        "stop_fly": "animation.gravestone_death_path.ghost.stop_fly",
+        "rotate": "animation.gravestone_death_path.ghost.rotate"
+      },
+      "sound_effects": {
+        "ghost_spawn": "entity.gravestone_death_path:ghost.spawn",
+        "ghost_flap": "entity.gravestone_death_path:ghost.flap",
+        "ghost_ambient": "entity.gravestone_death_path:ghost.ambient"
+      },
+      "particle_effects": {
+        "ghost_shadow": "gravestone_death_path:ghost_shadow"
+      },
+      "scripts": {
+        "should_update_bones_and_effects_offscreen": true,
+        "scale": "1",
+        "initialize": [
+          "variable.scale = 0;"
+        ],
+        "animate": [ "idle", "controller_scale", "controller_fly" ]
+      },
+      "render_controllers": [
+        "controller.render.gravestone_death_path.ghost",
+        "controller.render.gravestone_death_path.ghost_eyes"
+      ]
+    }
+  }
+}

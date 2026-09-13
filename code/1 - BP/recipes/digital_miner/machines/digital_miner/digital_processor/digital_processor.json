@@ -1,0 +1,19 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:digital_processor" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "DAG",
+      "APA",
+      "GAD"
+    ],
+    "key": {
+      "P": { "item": "digital_miner:steel_plate" },
+      "A": { "item": "digital_miner:advanced_circuit" },
+      "D": { "item": "digital_miner:diamond_plate" },
+      "G": { "item": "digital_miner:gold_plate" }
+    },
+    "unlock": [ { "item": "digital_miner:integrated_circuit" } ],
+    "result": { "item": "digital_miner:digital_processor" }
+  }
+}

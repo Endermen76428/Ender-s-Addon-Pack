@@ -1,0 +1,19 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "travel_backpack:craft_upgrade" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "ICI",
+      "CTC",
+      "ICI"
+    ],
+    "key": {
+      "T": { "item": "travel_backpack:upgrade_template" },
+      "I": { "item": "minecraft:iron_ingot" },
+      "C": { "item": "minecraft:crafting_table" }
+    },
+    "unlock": [ { "item": "travel_backpack:upgrade_template" } ],
+    "result": { "item": "travel_backpack:craft_upgrade" }
+  }
+}

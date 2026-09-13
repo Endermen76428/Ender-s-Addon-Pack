@@ -1,0 +1,13 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "digital_miner:coal_dust",
+      "menu_category": { "category": "items" }
+    },
+    "components": {
+      "minecraft:icon": "digital_miner:coal_dust",
+      "minecraft:fuel": { "duration": 80 }
+    }
+  }
+}

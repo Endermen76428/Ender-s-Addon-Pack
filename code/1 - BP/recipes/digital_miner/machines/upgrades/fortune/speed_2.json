@@ -1,0 +1,19 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:fortune_upgrade_1" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BEB",
+      "STS",
+      "BEB"
+    ],
+    "key": {
+      "B": { "item": "digital_miner:steel_block" },
+      "E": { "item": "minecraft:emerald_block" },
+      "S": { "item": "minecraft:wither_skeleton_skull" },
+      "T": { "item": "digital_miner:upgrade_template" }
+    },
+    "unlock": [ { "item": "digital_miner:upgrade_template" } ],
+    "result": { "item": "digital_miner:fortune_upgrade_1" }
+  }
+}

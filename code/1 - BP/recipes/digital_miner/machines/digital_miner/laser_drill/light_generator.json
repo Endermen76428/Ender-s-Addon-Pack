@@ -1,0 +1,18 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:light_generator" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AGA",
+      "GSG",
+      "AGA"
+    ],
+    "key": {
+      "S": { "item": "digital_miner:steel_block" },
+      "A": { "item": "minecraft:amethyst_shard" },
+      "G": { "item": "minecraft:glowstone" }
+    },
+    "unlock": [ { "item": "digital_miner:steel_ingot" } ],
+    "result": { "item": "digital_miner:light_generator" }
+  }
+}

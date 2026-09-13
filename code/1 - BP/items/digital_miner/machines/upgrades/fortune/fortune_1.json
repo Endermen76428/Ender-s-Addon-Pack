@@ -1,0 +1,14 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "digital_miner:fortune_upgrade_1",
+      "menu_category": { "category": "items" }
+    },
+    "components": {
+      "minecraft:tags": { "tags": [ "digital_miner:upgrade" ] },
+      "minecraft:max_stack_size": 16,
+      "minecraft:icon": "digital_miner:fortune_upgrade_2"
+    }
+  }
+}

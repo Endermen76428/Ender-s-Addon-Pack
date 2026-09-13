@@ -1,0 +1,21 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "travel_backpack:diamond_upgrade_tier" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "MMM",
+      "MTM",
+      "MMM"
+    ],
+    "key": {
+      "T": { "item": "travel_backpack:gold_upgrade_tier" },
+      "M": { "item": "minecraft:diamond" }
+    },
+    "unlock": [
+      { "item": "travel_backpack:upgrade_template" },
+      { "item": "minecraft:diamond" }
+    ],
+    "result": { "item": "travel_backpack:diamond_upgrade_tier" }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": { "identifier": "db:disenchanter_book" },
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      { "item": "db:dark_essence" },
+      { "item": "minecraft:book" }
+    ],
+    "unlock": [
+      { "item": "db:dark_essence" }
+    ],
+    "result": { "item": "db:disenchanter_book" }
+  }
+}

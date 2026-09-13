@@ -1,0 +1,28 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.digital_miner.block_outline": {
+      "geometry": "Geometry.default",
+      "textures": [ "Texture.default" ],
+      "materials": [ { "*": "Material.default" } ],
+      "part_visibility": [ { "root": false } ],
+      "overlay_color": {
+        "r": "q.property('digital_miner:red') / 255",
+        "g": "q.property('digital_miner:green') / 255",
+        "b": "q.property('digital_miner:blue') / 255"
+      },
+      "is_hurt_color": { "a": 0 },
+      "on_fire_color": { "a": 0 },
+      "ignore_lighting": true
+    },
+    "controller.render.digital_miner.block_outline.invisible": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.overwrite" } ],
+      "textures": [ "Texture.default" ],
+      "part_visibility": [ { "outline": false } ],
+      "is_hurt_color": { "a": 0 },
+      "on_fire_color": { "a": 0 },
+      "ignore_lighting": true
+    }
+  }
+}

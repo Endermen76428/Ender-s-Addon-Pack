@@ -1,0 +1,18 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "temporal_bottle:temporal_bottle" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " C ",
+      "GLG",
+      " G "
+    ],
+    "key": {
+      "C": { "item": "minecraft:clock" },
+      "G": { "item": "minecraft:gold_ingot" },
+      "L": { "item": "minecraft:lapis_lazuli" }
+    },
+    "unlock": [ { "item": "minecraft:gold_ingot" } ],
+    "result": { "item": "temporal_bottle:temporal_bottle" }
+  }
+}

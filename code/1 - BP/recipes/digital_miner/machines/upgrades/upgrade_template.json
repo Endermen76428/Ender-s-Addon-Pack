@@ -1,0 +1,21 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:upgrade_template" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CDC",
+      "GPG",
+      "SIS"
+    ],
+    "key": {
+      "C": { "item": "digital_miner:coal_dust" },
+      "D": { "item": "digital_miner:diamond_plate" },
+      "P": { "item": "digital_miner:steel_plate" },
+      "G": { "item": "digital_miner:gold_plate" },
+      "S": { "item": "digital_miner:steel_ingot" },
+      "I": { "item": "digital_miner:integrated_circuit" }
+    },
+    "unlock": [ { "item": "digital_miner:steel_ingot" } ],
+    "result": { "item": "digital_miner:upgrade_template" }
+  }
+}

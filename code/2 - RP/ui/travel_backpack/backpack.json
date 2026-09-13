@@ -1,0 +1,131 @@
+{
+  "namespace": "travel_backpack-backpack",
+
+  "backpack_panel": {
+    "$inventory_size|default": 49, /*Se não colocar |default o valor não é alterado pelos elementos anteriores, legal saber*/
+    "$root_panel_size|default": [ 176, 162 ],
+    "$backpack_panel_size|default": [ 176, 68 ],
+    "$grid_panel_size|default": [ 162, 54 ],
+    "$grid_panel_dimension|default": [ 9, 3 ],
+
+    "type": "panel",
+    "controls": [
+      { "container_gamepad_helpers@common.container_gamepad_helpers": {} },
+      { "selected_item_details_factory@common.selected_item_details_factory": { "control_name": "@chest.selected_item_details" } },
+      { "item_lock_notification_factory@common.item_lock_notification_factory": { "control_name": "@common.item_lock_notification" } },
+      {
+        "root_panel": {
+          "type": "panel",
+          "size": "$root_panel_size",
+          "controls": [
+            {
+              "inventory_panel": {
+                "type": "panel",
+                "size": [ 176, 94 ],
+                "anchor_from": "bottom_middle",
+                "anchor_to": "bottom_middle",
+                "controls": [
+                  { "background@common.dialog_background_opaque": {} },
+                  { "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": {} },
+                  { "hotbar_grid@common.hotbar_grid_template": {} },
+                  { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} },
+                  { "flying_item_renderer@common.flying_item_renderer": { "layer": 15 } }
+                ]
+              }
+            },
+            {
+              "backpack_panel": {
+                "type": "panel",
+                "size": "$backpack_panel_size",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "controls": [
+                  { "close@common.close_button": { "offset": [ -1, -8] } },
+                  { "upgrade_slots@travel_backpack-upgrades.upgrade_slots_panel": {} },
+                  { "upgrade_functions@travel_backpack-upgrades.upgrade_functions_panel": { "ignored": "(not $is_desktop)" } },
+                  { "upgrade_functions_mobile@travel_backpack-upgrades.upgrade_functions_mobile_panel": { "ignored": "$is_desktop" } },
+                  { "background@travel_backpack-common.backpack_background": { "size": [ "100%", "100% + 12px" ] } },
+                  { "item_grid@travel_backpack-backpack.inventory_grid_panel": { "ignored": "(not $is_desktop)" } },
+                  { "item_grid_scrolling@travel_backpack-backpack.inventory_grid_panel_scrolling": { "ignored": "$is_desktop" } }
+                  // { "item_grid_scrolling@travel_backpack-backpack.inventory_grid_panel_scrolling": {} }
+                ]
+              }
+            },
+            { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+            { "gamepad_cursor@common.gamepad_cursor_button": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "inventory_name": {
+    "type": "label",
+    "layer": 2,
+    "offset": [ 7, -1 ],
+    "size": [ "90%", "default" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "text": "$container_title",
+    "color": "white",
+    "localize": true
+  },
+
+  "inventory_grid_panel": {
+    "type": "panel",
+    "controls": [
+      { "inventory_name@travel_backpack-backpack.inventory_name": {} },
+      {
+        "items_grid": {
+          "type": "grid",
+          "offset": [ 0, 10 ],
+          "size": "$grid_panel_size",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "grid_dimensions": "$grid_panel_dimension",
+          "grid_item_template": "chest.chest_grid_item",
+          "collection_name": "container_items"
+        }
+      }
+    ]
+  },
+
+  "inventory_grid_panel_scrolling": {
+    "type": "panel",
+    "controls": [
+      { "inventory_name@travel_backpack-backpack.inventory_name": {} },
+      {
+        "scrolling_panel@common.scrolling_panel": {
+          "size": "$backpack_panel_size",
+          "offset": [ 0, 10 ],
+          "anchor_to": "top_left",
+          "anchor_from": "top_left",
+          "$show_background": false,
+          "$scrolling_content": "travel_backpack-backpack.items_grid_scrolling",
+          "$scroll_size": [ 5, "100% -4px" ],
+          "$scrolling_pane_size": [ "100% - 4px", "100% -13px" ],
+          "$scrolling_pane_offset": [ 7, 0 ],
+          "$scroll_bar_right_padding_size": [ 0, 0 ]
+        }
+      }
+    ]
+  },
+
+  "items_grid_scrolling": {
+    "type": "stack_panel",
+    "controls": [
+      {
+        "grid": {
+          "type": "grid",
+          "size": "$grid_panel_size",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "grid_dimensions": "$grid_panel_dimension",
+          "grid_item_template": "chest.chest_grid_item",
+          "collection_name": "container_items"
+        }
+      },
+      { "padding": { "type": "panel", "size": [ 0, 1 ] } }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.utilities_vein_miner.selected_block.edges": {
+      "animation_length": 3,
+      "bones": {
+        "all": {
+          "rotation": [0, 180, 0]
+        }
+      }
+    }
+  }
+}

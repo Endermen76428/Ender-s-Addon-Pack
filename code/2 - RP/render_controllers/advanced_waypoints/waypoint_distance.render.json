@@ -1,0 +1,103 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.advanced_waypoints.waypoint_distance_1": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "(v.distance_digit_1 +16) / 26", 0 ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "distance1": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_distance_2": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "(v.distance_digit_2 +16) / 26", 0 ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "distance2": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_distance_3": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "(v.distance_digit_3 +16) / 26", 0 ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "distance3": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_distance_4": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "(v.distance_digit_4 +16) / 26", 0 ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "distance4": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_distance_5": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "(v.distance_digit_5 +16) / 26", 0 ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "distance5": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_distance_6": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "(v.distance_digit_6 +16) / 26", 0 ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "distance6": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_distance_7": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "(v.distance_digit_7 +16) / 26", 0 ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "distance7": true }
+      ]
+    }
+  }
+}

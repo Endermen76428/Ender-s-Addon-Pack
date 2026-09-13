@@ -1,0 +1,10 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": { "identifier": "digital_miner:gold_block_from_plate" },
+    "tags": [ "crafting_table" ],
+    "ingredients": [ { "item": "digital_miner:gold_plate" } ],
+    "unlock": [ { "item": "minecraft:gold_block" } ],
+    "result": [ { "item": "minecraft:gold_block", "count": 3 } ]
+  }
+}

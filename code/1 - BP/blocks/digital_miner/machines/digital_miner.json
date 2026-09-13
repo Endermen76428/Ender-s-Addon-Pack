@@ -1,0 +1,297 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "digital_miner:digital_miner",
+      "menu_category": { "category": "items" },
+      "traits": { "minecraft:placement_direction": { "enabled_states": [ "minecraft:cardinal_direction" ] } },
+      "states": {
+        "digital_miner:position": { "values": { "min": 0, "max": 9 } },
+        "digital_miner:speed": { "values": { "min": 0, "max": 4 } },
+        "digital_miner:upper_bit": [false, true],
+        "digital_miner:enabled": [false, true]
+      }
+    },
+    "components": {
+      "tag:addon:digital_miner": {},
+      "tag:bedrock_awakening:script_no_break": {},
+      "tag:minecraft:is_pickaxe_item_destructible": {},
+
+      "digital_miner:miner": {},
+      "minecraft:light_dampening": 0,
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:destructible_by_explosion": false,
+      "minecraft:destructible_by_mining": { "seconds_to_destroy": 2 },
+      "minecraft:movable": { "movement_type": "immovable" }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('digital_miner:speed') == 0 && q.block_state('digital_miner:position') == 5 && q.block_state('digital_miner:upper_bit') == false && q.block_state('digital_miner:enabled') == true",
+        "components": {
+          "digital_miner:miner": {},
+          "digital_miner:dig": {},
+          "minecraft:tick": { "interval_range": [ 400, 400 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:speed') == 1 && q.block_state('digital_miner:position') == 5 && q.block_state('digital_miner:upper_bit') == false && q.block_state('digital_miner:enabled') == true",
+        "components": {
+          "digital_miner:miner": {},
+          "digital_miner:dig": {},
+          "minecraft:tick": { "interval_range": [ 300, 300 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:speed') == 2 && q.block_state('digital_miner:position') == 5 && q.block_state('digital_miner:upper_bit') == false && q.block_state('digital_miner:enabled') == true",
+        "components": {
+          "digital_miner:miner": {},
+          "digital_miner:dig": {},
+          "minecraft:tick": { "interval_range": [ 200, 200 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:speed') == 3 && q.block_state('digital_miner:position') == 5 && q.block_state('digital_miner:upper_bit') == false && q.block_state('digital_miner:enabled') == true",
+        "components": {
+          "digital_miner:miner": {},
+          "digital_miner:dig": {},
+          "minecraft:tick": { "interval_range": [ 100, 100 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:speed') == 4 && q.block_state('digital_miner:position') == 5 && q.block_state('digital_miner:upper_bit') == false && q.block_state('digital_miner:enabled') == true",
+        "components": {
+          "digital_miner:miner": {},
+          "digital_miner:dig": {},
+          "minecraft:tick": { "interval_range": [ 20, 20 ] }
+        }
+      },
+
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": { "minecraft:transformation": { "rotation": [ 0, 180, 0 ] } }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": { "minecraft:transformation": { "rotation": [ 0, 0, 0 ] } }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": { "minecraft:transformation": { "rotation": [ 0, -90, 0 ] } }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": { "minecraft:transformation": { "rotation": [ 0, 90, 0 ] } }
+      },
+
+      {
+        "condition": "q.block_state('digital_miner:enabled') == false",
+        "components": {
+          "minecraft:material_instances": {
+            "*": { "texture": "digital_miner:digital_miner_side", "render_method": "alpha_test" },
+            "monitor": { "texture": "digital_miner:digital_miner_monitor_off", "render_method": "alpha_test" },
+            "monitor_on_center": { "texture": "digital_miner:null", "render_method": "alpha_test" },
+            "monitor_on_left": { "texture": "digital_miner:null", "render_method": "alpha_test" },
+            "keyboard": { "texture": "digital_miner:digital_miner_monitor_keyboard", "render_method": "alpha_test" },
+            "front": { "texture": "digital_miner:digital_miner_front", "render_method": "alpha_test" },
+            "back": { "texture": "digital_miner:digital_miner_front", "render_method": "alpha_test" },
+            "up": { "texture": "digital_miner:digital_miner_top", "render_method": "alpha_test" },
+            "down": { "texture": "digital_miner:digital_miner_bottom", "render_method": "alpha_test" },
+            "support": { "texture": "digital_miner:digital_miner_support", "render_method": "alpha_test" },
+            "output": { "texture": "digital_miner:digital_miner_output", "render_method": "alpha_test" }
+          },
+          "minecraft:geometry": "geometry.digital_miner.digital_miner_item"
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:enabled') == true",
+        "components": {
+          "minecraft:material_instances": {
+            "*": { "texture": "digital_miner:digital_miner_side", "render_method": "alpha_test" },
+            "monitor": { "texture": "digital_miner:digital_miner_monitor_on", "render_method": "alpha_test" },
+            "monitor_on_center": { "texture": "digital_miner:null", "render_method": "alpha_test" },
+            "monitor_on_left": { "texture": "digital_miner:null", "render_method": "alpha_test" },
+            "keyboard": { "texture": "digital_miner:digital_miner_monitor_keyboard", "render_method": "alpha_test" },
+            "front": { "texture": "digital_miner:digital_miner_front", "render_method": "alpha_test" },
+            "back": { "texture": "digital_miner:digital_miner_front", "render_method": "alpha_test" },
+            "up": { "texture": "digital_miner:digital_miner_top", "render_method": "alpha_test" },
+            "down": { "texture": "digital_miner:digital_miner_bottom", "render_method": "alpha_test" },
+            "support": { "texture": "digital_miner:digital_miner_support", "render_method": "alpha_test" },
+            "output": { "texture": "digital_miner:digital_miner_output", "render_method": "alpha_test" }
+          },
+          "minecraft:geometry": "geometry.digital_miner.digital_miner_item"
+        }
+      },
+
+      {
+        "condition": "q.block_state('digital_miner:position') == 2 && q.block_state('digital_miner:upper_bit') == false",
+        "components": { "minecraft:geometry": "geometry.digital_miner.digital_miner_back" }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 4 && q.block_state('digital_miner:upper_bit') == false",
+        "components": { "minecraft:geometry": "geometry.digital_miner.digital_miner_support_left" }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 5 && q.block_state('digital_miner:upper_bit') == false",
+        "components": { "minecraft:geometry": "geometry.digital_miner.digital_miner_center" }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 6 && q.block_state('digital_miner:upper_bit') == false",
+        "components": { "minecraft:geometry": "geometry.digital_miner.digital_miner_support_right" }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 8 && q.block_state('digital_miner:upper_bit') == false",
+        "components": { "minecraft:geometry": "geometry.digital_miner.digital_miner_front" }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 7 && q.block_state('digital_miner:upper_bit') == true",
+        "components": { "minecraft:geometry": "geometry.digital_miner.digital_miner_monitor_left" }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 8 && q.block_state('digital_miner:upper_bit') == true",
+        "components": { "minecraft:geometry": "geometry.digital_miner.digital_miner_monitor_center" }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 9 && q.block_state('digital_miner:upper_bit') == true",
+        "components": { "minecraft:geometry": "geometry.digital_miner.digital_miner_monitor_right" }
+      },
+
+      {
+        "condition": "q.block_state('digital_miner:upper_bit') == false && !(q.block_state('digital_miner:position') == 0 || (q.block_state('digital_miner:position') == 2 || q.block_state('digital_miner:position') == 4 || q.block_state('digital_miner:position') == 5 || q.block_state('digital_miner:position') == 6 || q.block_state('digital_miner:position') == 8))",
+        "components": { "minecraft:geometry": "geometry.digital_miner.null" }
+      },
+      {
+        "condition": "q.block_state('digital_miner:upper_bit') == true && !(q.block_state('digital_miner:position') == 0 || (q.block_state('digital_miner:position') == 7 || q.block_state('digital_miner:position') == 8 || q.block_state('digital_miner:position') == 9))",
+        "components": { "minecraft:geometry": "geometry.digital_miner.null" }
+      },
+
+      {
+        "condition": "q.block_state('digital_miner:position') == 1 && q.block_state('digital_miner:upper_bit') == false",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -8, 0, -8 ], "size": [ 13, 16, 8 ] },
+          "minecraft:selection_box": { "origin": [ -8, 0, -8 ], "size": [ 13, 16, 8 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 1 && q.block_state('digital_miner:upper_bit') == true",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -8, 0, -8 ], "size": [ 13, 12, 8 ] },
+          "minecraft:selection_box": { "origin": [ -8, 0, -8 ], "size": [ 13, 12, 8 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 2 && q.block_state('digital_miner:upper_bit') == false",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -8, 0, -8 ], "size": [ 16, 16, 8 ] },
+          "minecraft:selection_box": { "origin": [ -8, 0, -8 ], "size": [ 16, 16, 8 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 2 && q.block_state('digital_miner:upper_bit') == true",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -8, 0, -8 ], "size": [ 16, 12, 8 ] },
+          "minecraft:selection_box": { "origin": [ -8, 0, -8 ], "size": [ 16, 12, 8 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 3 && q.block_state('digital_miner:upper_bit') == false",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -5, 0, -8 ], "size": [ 13, 16, 8 ] },
+          "minecraft:selection_box": { "origin": [ -5, 0, -8 ], "size": [ 13, 16, 8 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 3 && q.block_state('digital_miner:upper_bit') == true",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -5, 0, -8 ], "size": [ 13, 12, 8 ] },
+          "minecraft:selection_box": { "origin": [ -5, 0, -8 ], "size": [ 13, 12, 8 ] }
+        }
+      },
+
+      {
+        "condition": "q.block_state('digital_miner:position') == 4 && q.block_state('digital_miner:upper_bit') == false",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -8, 0, -8 ], "size": [ 13, 16, 16 ] },
+          "minecraft:selection_box": { "origin": [ -8, 0, -8 ], "size": [ 13, 16, 16 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 4 && q.block_state('digital_miner:upper_bit') == true",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -8, 0, -8 ], "size": [ 13, 12, 16 ] },
+          "minecraft:selection_box": { "origin": [ -8, 0, -8 ], "size": [ 13, 12, 16 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 5 && q.block_state('digital_miner:upper_bit') == false",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -8, 0, -8 ], "size": [ 16, 16, 16 ] },
+          "minecraft:selection_box": { "origin": [ -8, 0, -8 ], "size": [ 16, 16, 16 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 5 && q.block_state('digital_miner:upper_bit') == true",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -8, 0, -8 ], "size": [ 16, 12, 16 ] },
+          "minecraft:selection_box": { "origin": [ -8, 0, -8 ], "size": [ 16, 12, 16 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 6 && q.block_state('digital_miner:upper_bit') == false",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -5, 0, -8 ], "size": [ 13, 16, 16 ] },
+          "minecraft:selection_box": { "origin": [ -5, 0, -8 ], "size": [ 13, 16, 16 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 6 && q.block_state('digital_miner:upper_bit') == true",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -5, 0, -8 ], "size": [ 13, 12, 16 ] },
+          "minecraft:selection_box": { "origin": [ -5, 0, -8 ], "size": [ 13, 12, 16 ] }
+        }
+      },
+
+      {
+        "condition": "q.block_state('digital_miner:position') == 7 && q.block_state('digital_miner:upper_bit') == false",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -8, 0, -2 ], "size": [ 13, 16, 10 ] },
+          "minecraft:selection_box": { "origin": [ -8, 0, -2 ], "size": [ 13, 16, 10 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 7 && q.block_state('digital_miner:upper_bit') == true",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -8, 0, -2 ], "size": [ 13, 12, 10 ] },
+          "minecraft:selection_box": { "origin": [ -8, 0, -2 ], "size": [ 13, 12, 10 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 8 && q.block_state('digital_miner:upper_bit') == false",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -8, 0, -2 ], "size": [ 16, 16, 10 ] },
+          "minecraft:selection_box": { "origin": [ -8, 0, -2 ], "size": [ 16, 16, 10 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 8 && q.block_state('digital_miner:upper_bit') == true",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -8, 0, -2 ], "size": [ 16, 12, 10 ] },
+          "minecraft:selection_box": { "origin": [ -8, 0, -2 ], "size": [ 16, 12, 10 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 9 && q.block_state('digital_miner:upper_bit') == false",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -5, 0, -2 ], "size": [ 13, 16, 10 ] },
+          "minecraft:selection_box": { "origin": [ -5, 0, -2 ], "size": [ 13, 16, 10 ] }
+        }
+      },
+      {
+        "condition": "q.block_state('digital_miner:position') == 9 && q.block_state('digital_miner:upper_bit') == true",
+        "components": {
+          "minecraft:collision_box": { "origin": [ -5, 0, -2 ], "size": [ 13, 12, 10 ] },
+          "minecraft:selection_box": { "origin": [ -5, 0, -2 ], "size": [ 13, 12, 10 ] }
+        }
+      }
+    ]
+  }
+}

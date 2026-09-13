@@ -1,0 +1,14 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": { "identifier": "advanced_waypoints:waypoint_crafting_table" },
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      { "item": "minecraft:paper" },
+      { "item": "minecraft:paper" },
+      { "item": "minecraft:paper" }
+    ],
+    "unlock": [ { "item": "minecraft:paper" } ],
+    "result": { "item": "wp:waypoint_item" }
+  }
+}

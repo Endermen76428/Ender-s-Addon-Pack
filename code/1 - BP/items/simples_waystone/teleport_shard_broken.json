@@ -1,0 +1,1 @@
+{"format_version":"1.21.100","minecraft:item":{"description":{"identifier":"ws:teleport_shard_broken","menu_category":{"category":"equipment"}},"components":{"ws:teleport_shard":{},"minecraft:tags":{"tags":["simple_waystone:teleport_shard"]},"minecraft:icon":"simple_waystone:teleport_shard_broken","minecraft:max_stack_size":1}}}

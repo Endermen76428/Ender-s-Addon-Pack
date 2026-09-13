@@ -1,0 +1,20 @@
+{
+  "format_version": "1.26.20",
+  "minecraft:item": {
+    "description": {
+      "identifier": "travel_backpack:copper_backpack",
+      "menu_category": { "category": "equipment" }
+    },
+    "components": {
+      "travel_backpack:backpack": {},
+      "minecraft:tags": { "tags": [ "travel_backpack:backpack" ] },
+      "minecraft:max_stack_size": 1,
+      "minecraft:allow_off_hand": true,
+      "minecraft:wearable": { "slot": "slot.armor.chest" },
+      "minecraft:block_placer": {
+        "block": "travel_backpack:copper_backpack",
+        "replace_block_item": true
+      }
+    }
+  }
+}

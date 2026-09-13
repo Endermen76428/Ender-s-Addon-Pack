@@ -1,0 +1,19 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "builder_wand:golden_builder_wand" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " O",
+      "S "
+    ],
+    "key": {
+      "S": { "item": "minecraft:stick" },
+      "O": { "item": "minecraft:gold_ingot" }
+    },
+    "unlock": [
+      { "item": "minecraft:gold_ingot" }
+    ],
+    "result": { "item": "builder_wand:golden_builder_wand" }
+  }
+}

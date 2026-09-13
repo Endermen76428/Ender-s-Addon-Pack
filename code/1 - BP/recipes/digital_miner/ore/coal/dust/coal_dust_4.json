@@ -1,0 +1,21 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "digital_miner:coal_dust_4" },
+    "priority": 5,
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "HII",
+      "II "
+    ],
+    "key": {
+      "H": { "item": "digital_miner:hammer" },
+      "I": { "item": "minecraft:coal" }
+    },
+    "unlock": [ { "item": "minecraft:coal" } ],
+    "result": [
+      { "item": "digital_miner:coal_dust", "count": 8 },
+      { "item": "digital_miner:hammer" }
+    ]
+  }
+}

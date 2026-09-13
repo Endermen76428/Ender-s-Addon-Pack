@@ -1,0 +1,17 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:diamond_glass" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "DDD",
+      "DGD",
+      "DDD"
+    ],
+    "key": {
+      "D": { "item": "digital_miner:diamond_dust" },
+      "G": { "item": "minecraft:glass" }
+    },
+    "unlock": [ { "item": "minecraft:diamond" } ],
+    "result": { "item": "digital_miner:diamond_glass" }
+  }
+}

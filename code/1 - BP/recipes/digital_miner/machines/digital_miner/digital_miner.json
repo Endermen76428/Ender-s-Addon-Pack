@@ -1,0 +1,27 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:digital_miner" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "PMP",
+      "CED",
+      "PRP"
+    ],
+    "key": {
+      "P": { "item": "digital_miner:steel_plate" },
+      "M": { "item": "digital_miner:monitor" },
+      "C": { "item": "digital_miner:digital_processor" },
+      "E": { "item": "digital_miner:machine_engine" },
+      "D": { "item": "digital_miner:laser_drill" },
+      "R": { "item": "minecraft:redstone_block" }
+    },
+    "unlock": [
+      { "item": "digital_miner:steel_plate" },
+      { "item": "digital_miner:monitor" },
+      { "item": "digital_miner:digital_processor" },
+      { "item": "digital_miner:machine_engine" },
+      { "item": "digital_miner:laser_drill" }
+    ],
+    "result": { "item": "digital_miner:digital_miner" }
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.advanced_waypoints.waypoint_letter_padding": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "part_visibility": [
+        { "*": false },
+        { "padding_letter_1": "v.name_amount==1" },
+        { "padding_letter_2": "v.name_amount==2" },
+        { "padding_letter_3": "v.name_amount==3" },
+        { "padding_letter_4": "v.name_amount==4" },
+        { "padding_letter_5": "v.name_amount==5" },
+        { "padding_letter_6": "v.name_amount==6" },
+        { "padding_letter_7": "v.name_amount==7" },
+        { "padding_letter_8": "v.name_amount==8" },
+        { "padding_letter_9": "v.name_amount==9" },
+        { "padding_letter_10": "v.name_amount==10" },
+        { "padding_letter_11": "v.name_amount==11" },
+        { "padding_letter_12": "v.name_amount==12" },
+        { "padding_letter_13": "v.name_amount==13" }
+      ]
+    },
+
+    "controller.render.advanced_waypoints.waypoint_letter_1": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ], /* The-scale-refers-to-the-size-of-the-UV-on-the-bone,-not-the-texture. */
+        "offset": [ "v.name_digit_1_x / 26", "v.name_digit_1_y / 26" ] /* The-offset-refers-to-the-size-of-texture,-not-the-UV. */
+      },
+      "part_visibility": [
+        { "*": false },
+        { "letter_1": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_letter_2": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "v.name_digit_2_x / 26", "v.name_digit_2_y / 26" ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "letter_2": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_letter_3": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "v.name_digit_3_x / 26", "v.name_digit_3_y / 26" ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "letter_3": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_letter_4": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "v.name_digit_4_x / 26", "v.name_digit_4_y / 26" ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "letter_4": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_letter_5": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "v.name_digit_5_x / 26", "v.name_digit_5_y / 26" ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "letter_5": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_letter_6": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "v.name_digit_6_x / 26", "v.name_digit_6_y / 26" ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "letter_6": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_letter_7": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "v.name_digit_7_x / 26", "v.name_digit_7_y / 26" ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "letter_7": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_letter_8": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "v.name_digit_8_x / 26", "v.name_digit_8_y / 26" ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "letter_8": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_letter_9": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "v.name_digit_9_x / 26", "v.name_digit_9_y / 26" ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "letter_9": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_letter_10": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "v.name_digit_10_x / 26", "v.name_digit_10_y / 26" ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "letter_10": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_letter_11": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "v.name_digit_11_x / 26", "v.name_digit_11_y / 26" ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "letter_11": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_letter_12": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "v.name_digit_12_x / 26", "v.name_digit_12_y / 26" ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "letter_12": true }
+      ]
+    },
+    "controller.render.advanced_waypoints.waypoint_letter_13": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.letters" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1/26" ],
+        "offset": [ "v.name_digit_13_x / 26", "v.name_digit_13_y / 26" ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "letter_13": true }
+      ]
+    }
+  }
+}

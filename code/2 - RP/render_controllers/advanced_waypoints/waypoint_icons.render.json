@@ -1,0 +1,33 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.advanced_waypoints.waypoint_icon": {
+      "ignore_lighting": true,
+      "arrays": {
+        "textures": {
+          "Array.icons": [
+            "Texture.icon_letters",
+            "Texture.icon_waypoint"
+          ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "array.icons[v.icon < 26 ? 0 : 1]" ],
+      "uv_anim": {
+        "scale": [ "1/26", "1" ],
+        "offset": [ "(v.icon < 26 ? v.icon : v.icon -26) / 26", 0 ]
+      },
+      "part_visibility": [
+        { "*": false },
+        { "waypoint": true }
+      ],
+      "overlay_color": {
+        "r": "v.color_r / 255",
+        "g": "v.color_g / 255",
+        "b": "v.color_b / 255",
+        "a": "v.icon -26 != 1 ? 0.61 : 0"
+      }
+    }
+  }
+}

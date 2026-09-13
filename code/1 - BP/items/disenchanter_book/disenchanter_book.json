@@ -1,0 +1,13 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:item": {
+		"description": {
+			"identifier": "db:disenchanter_book",
+			"menu_category": { "category": "items" }
+		},
+		"components": {
+			"minecraft:icon": "disenchanter_book",
+			"minecraft:allow_off_hand": true
+		}
+	}
+}

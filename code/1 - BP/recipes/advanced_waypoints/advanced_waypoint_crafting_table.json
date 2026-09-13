@@ -1,0 +1,19 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "advanced_waypoints:advanced_waypoint_crafting_table" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "ADA",
+      "DWD",
+      "ADA"
+    ],
+    "key": {
+      "A": { "item": "minecraft:amethyst_shard" },
+      "D": { "item": "minecraft:diamond" },
+      "W": { "item": "wp:waypoint_item" }
+    },
+    "unlock": [ { "item": "wp:waypoint_item" } ],
+    "result": { "item": "wp:advanced_waypoint_item" }
+  }
+}

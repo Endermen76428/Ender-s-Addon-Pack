@@ -1,0 +1,62 @@
+{
+  "namespace": "travel_backpack-common",
+
+  "backpack_background": {
+    "type": "image",
+    "texture": "textures/travel_backpack/ui/backpack_background",
+    "size": [ "100%", "100%" ]
+  },
+
+  "upgrade_toggle_button": {
+    "$index|default": 1,
+    "$toggle_size|default": [ 20, 20 ],
+    "$padding|default": [ 23, 23 ],
+    "$name|default": "view_toggle",
+    "$off_texture|default": "textures/travel_backpack/items/upgrade_template",
+    "$off_hover_texture|default": "textures/travel_backpack/items/upgrade_template",
+    "$on_texture|default": "textures/travel_backpack/items/upgrade_tier/diamond_tier",
+    "$on_hover_texture|default": "textures/travel_backpack/items/upgrade_tier/diamond_tier",
+    "type": "panel",
+    "size": "$padding",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "controls": [
+      {
+        "custom_toggle@common_toggles.light_text_toggle": {
+          "size": "$toggle_size",
+          // "offset": [ 5, 0 ],
+          "$default_texture": "$off_texture",
+          "$pressed_texture": "$off_hover_texture",
+          "$hover_texture": "$on_texture",
+          "$pressed_no_hover_texture": "$on_hover_texture",
+
+          "$toggle_name": "our_toggle",
+          "$toggle_view_binding_name": "$name",
+          "$toggle_group_default_selected": 1,
+          "$toggle_group_forced_index": "$index",
+          "$default_border_visible": false,
+          "$hover_border_visible": false
+        }
+      }
+      // {
+      //   "display_name": {
+      //     "type": "panel",
+      //     "size": [ "100%c", "100%" ],
+      //     "anchor_from": "center",
+      //     "anchor_to": "right_middle",
+      //     "controls": [
+      //       {
+      //         "toggle_display_name": {
+      //           "type": "label",
+      //           "text": "$display_name",
+      //           "offset": [ 10, 0 ],
+      //           "shadow": true,
+      //           "layer": 10
+      //         }
+      //       }
+      //     ]
+      //   }
+      // }
+    ]
+  }
+}

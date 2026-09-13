@@ -1,0 +1,53 @@
+{
+  "format_version": "1.19.30",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "temporal_bottle:temporal_bottle_entity",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "properties": {
+        "temporal_bottle:tier": { "type": "int", "range": [0, 999], "default": 0, "client_sync": true }
+      }
+    },
+
+    "component_groups": {
+      "temporal_bottle:despawn": { "minecraft:instant_despawn": {} },
+
+      "temporal_bottle:timer": { "minecraft:timer": { "looping": false, "time": 30.05, "time_down_event": { "event": "temporal_bottle:despawn" } } },
+      "temporal_bottle:reset_timer": { "minecraft:timer": { "looping": false, "time": 0.05, "time_down_event": { "event": "temporal_bottle:remove_reset_timer" } } }
+    },
+
+    "components": {
+      "minecraft:type_family": { "family": [ "temporal_bottle" ] },
+      "minecraft:damage_sensor": { "triggers": { "cause": "all", "deals_damage": false } },
+      "minecraft:fire_immune": true,
+      "minecraft:movement": { "value": 0.0 },
+      "minecraft:collision_box": { "width": 0, "height": 0 },
+      "minecraft:physics": { "has_collision": false, "has_gravity": false },
+      "minecraft:nameable": { "always_show": false, "allow_name_tag_renaming": false },
+      "minecraft:water_movement": { "drag_factor": 0 }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": { "component_groups": [ "temporal_bottle:timer" ] },
+        "queue_command": { "command": ["scriptevent temporal_bottle:start_acceleration"] }
+      },
+
+      "temporal_bottle:despawn": { "add": { "component_groups": [ "temporal_bottle:despawn" ] } },
+
+      "temporal_bottle:remove_reset_timer": {
+        "add": { "component_groups": [ "temporal_bottle:timer" ] },
+        "remove": { "component_groups": [ "temporal_bottle:reset_timer" ] }
+      },
+
+      "temporal_bottle:increase_tier": {
+        "add": { "component_groups": [ "temporal_bottle:reset_timer" ] },
+        "remove": { "component_groups": [ "temporal_bottle:timer" ] },
+        "set_property": { "temporal_bottle:tier": "q.property('temporal_bottle:tier') +1" },
+        "queue_command": { "command": ["scriptevent temporal_bottle:start_acceleration"] }
+      }
+    }
+  }
+}

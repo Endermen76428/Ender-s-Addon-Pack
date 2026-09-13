@@ -1,0 +1,15 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "digital_miner:steel_ingot" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "NNN",
+      "NNN",
+      "NNN"
+    ],
+    "key": { "N": { "item": "digital_miner:steel_nugget" } },
+    "unlock": [ { "item": "digital_miner:steel_nugget" } ],
+    "result": { "item": "digital_miner:steel_ingot" }
+  }
+}

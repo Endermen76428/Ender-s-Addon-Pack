@@ -1,0 +1,18 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": { "identifier": "digital_miner:redstone_enriched_quartz" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "RRR",
+      "RQR",
+      "RRR"
+    ],
+    "key": {
+      "Q": { "item": "minecraft:quartz" },
+      "R": { "item": "minecraft:redstone" }
+    },
+    "unlock": [ { "item": "minecraft:redstone" } ],
+    "result": [ { "item": "digital_miner:redstone_enriched_quartz" } ]
+  }
+}

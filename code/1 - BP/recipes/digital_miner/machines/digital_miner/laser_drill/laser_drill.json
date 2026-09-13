@@ -1,0 +1,20 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:laser_drill" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "SPS",
+      "QLQ",
+      " G "
+    ],
+    "key": {
+      "P": { "item": "digital_miner:steel_plate" },
+      "S": { "item": "digital_miner:steel_ingot" },
+      "L": { "item": "digital_miner:light_generator" },
+      "Q": { "item": "digital_miner:redstone_enriched_quartz" },
+      "G": { "item": "digital_miner:diamond_glass" }
+    },
+    "unlock": [ { "item": "digital_miner:steel_ingot" } ],
+    "result": { "item": "digital_miner:laser_drill" }
+  }
+}

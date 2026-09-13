@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.gravestone_death_path.ghost": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "ignore_lighting": true
+    },
+    "controller.render.gravestone_death_path.ghost_eyes": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.eyes" } ],
+      "textures": [ "Texture.default" ],
+      "ignore_lighting": true,
+      "part_visibility": [
+        { "*": false },
+        { "eyes": true },
+        { "brightChest": true },
+        { "brightHead": true }
+      ]
+    }
+  }
+}

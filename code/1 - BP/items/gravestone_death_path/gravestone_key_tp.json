@@ -1,0 +1,18 @@
+{
+	"format_version": "1.21.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "gravestone_death_path:gravestone_key_tp",
+			"menu_category": { "category": "equipment" }
+		},
+		"components": {
+			"gravestone_death_path:gravestone_key": {},
+			"minecraft:tags": {
+				"tags": [ "gravestone_death_path:gravestone_key" ]
+			},
+			"minecraft:glint": true,
+			"minecraft:max_stack_size": 1,
+			"minecraft:icon": "gravestone_death_path:gravestone_key"
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "digital_miner:light_generator",
+      "menu_category": { "category": "items" }
+    },
+    "components": {
+      "tag:addon:digital_miner": {},
+      "tag:minecraft:is_pickaxe_item_destructible": {},
+
+      "minecraft:geometry": "geometry.digital_miner.light_generator",
+      "minecraft:material_instances": { "*": { "texture": "digital_miner:light_generator", "render_method": "alpha_test" } },
+
+      "minecraft:light_dampening": 0,
+      "minecraft:light_emission": 15,
+
+      "minecraft:collision_box": { "origin": [ -4, 0, -4 ], "size": [ 8, 8.1, 8 ] },
+      "minecraft:selection_box": { "origin": [ -4, 0, -4 ], "size": [ 8, 8.1, 8 ] },
+
+      // "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:destructible_by_explosion": { "explosion_resistance": 2 },
+      "minecraft:destructible_by_mining": { "seconds_to_destroy": 2 },
+      "minecraft:movable": { "movement_type": "immovable" }
+    }
+  }
+}

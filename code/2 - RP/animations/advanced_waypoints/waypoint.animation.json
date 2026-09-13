@@ -1,0 +1,115 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.advanced_waypoints.waypoint.offset": {
+      "loop": true,
+      "bones": {
+        "all": { "position": [0, 16000, 0] }
+      }
+    },
+
+    "animation.advanced_waypoints.waypoint.idle": {
+      "loop": true,
+      "bones": {
+        "waypoint": {
+          "scale": "v.waypoint_scale_default",
+          "position": [
+            "v.offset_waypoint_x",
+            "v.offset_waypoint_y",
+            "v.offset_waypoint_z"
+          ],
+          "rotation": [
+            "Math.atan2(v.distance_y, Math.sqrt(Math.pow(v.distance_x, 2) + Math.pow(v.distance_z, 2)) )",
+            "Math.atan2(v.distance_x, -v.distance_z)",
+            0
+          ]
+        },
+        "rotate_beacon": {
+          "position": [
+            "v.offset_beam_x",
+            "v.offset_beam_y",
+            "v.offset_beam_z"
+          ]
+        },
+        "beacon": {
+          "rotation": [0, "query.anim_time * 90", 0]
+        }
+      }
+    },
+
+    "animation.advanced_waypoints.waypoint.info_enabled": {
+      "loop": "hold_on_last_frame",
+      "bones": {
+        "waypoint": {
+          "scale": [
+            "v.waypoint_scale_default",
+            "v.waypoint_scale_default",
+            "v.waypoint_scale_default"
+          ]
+        },
+        "display": {
+          "scale": ["this", "this", "this"],
+          "position": ["v.display_offset", 0, 0]
+        },
+        "distance": {
+          "position": ["v.number_distance_offset", 0, 0]
+        }
+      }
+    },
+    "animation.advanced_waypoints.waypoint.info_disabled": {
+      "loop": "hold_on_last_frame",
+      "bones": {
+        "waypoint": {
+          "scale": [
+            "v.waypoint_scale_default * 0.5",
+            "v.waypoint_scale_default * 0.5",
+            "v.waypoint_scale_default * 0.5"
+          ]
+        },
+        "display": {
+          "scale": [0, 0, 0],
+          "position": [0, 0, 0]
+        },
+        "distance": {
+          "position": ["v.number_distance_offset", 0, 0]
+        }
+      }
+    },
+    "animation.advanced_waypoints.waypoint.info_enabled_always": {
+      "loop": "hold_on_last_frame",
+      "bones": {
+        "waypoint": {
+          "scale": [
+            "v.waypoint_scale_default * 0.5",
+            "v.waypoint_scale_default * 0.5",
+            "v.waypoint_scale_default * 0.5"
+          ]
+        },
+        "display": {
+          "scale": ["this", "this", "this"],
+          "position": ["v.display_offset", 0, 0]
+        },
+        "distance": {
+          "position": ["v.number_distance_offset", 0, 0]
+        }
+      }
+    },
+
+    "animation.advanced_waypoints.waypoint.beacon_enabled": {
+      "loop": "hold_on_last_frame",
+      "bones": {
+        "beacon": {
+          "scale": [1, 2.5, 1]
+        }
+      }
+    },
+    "animation.advanced_waypoints.waypoint.beacon_disabled": {
+      "loop": "hold_on_last_frame",
+      "bones": {
+        "beacon": {
+          "scale": [0, 0, 0]
+        }
+      }
+    }
+  }
+}

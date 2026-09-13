@@ -1,0 +1,30 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Ender's Addon Pack v1 (Texture)",
+    "description": "pack.description",
+    "uuid": "37ae5b3c-4b10-4966-997e-bf72d567a33a",
+    "min_engine_version": [1, 26, 30],
+    "version": [1, 0, 0],
+    "pack_scope": "world"
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "7370a205-3301-40a7-bf3c-42030c1b9de3",
+      "version": [1, 0, 0]
+    }
+  ],
+  "capabilities" : ["pbr"],
+  "metadata": {
+    "product_type": "addon",
+    "authors": ["§bEndermen76428§r & §5Heartiorn"],
+    "url": "https://www.curseforge.com/minecraft-bedrock/addons/enders-addon-pack"
+  },
+  "dependencies": [
+    {
+      "uuid": "2d0b331a-62d6-4a97-9721-edeb973e26b5",
+      "version": [1, 0, 0]
+    }
+  ]
+}

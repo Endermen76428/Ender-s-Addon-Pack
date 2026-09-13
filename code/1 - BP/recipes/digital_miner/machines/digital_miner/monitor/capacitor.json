@@ -1,0 +1,20 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": { "description": { "identifier": "digital_miner:capacitor" },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " N ",
+      "RGR",
+      " N "
+    ],
+    "key": {
+      "N": { "item": "digital_miner:steel_nugget" },
+      "G": { "item": "minecraft:gold_ingot" },
+      "R": { "item": "minecraft:redstone" }
+    },
+    "unlock": [
+      { "item": "digital_miner:steel_ingot" }
+    ],
+    "result": { "item": "digital_miner:capacitor" }
+  }
+}
