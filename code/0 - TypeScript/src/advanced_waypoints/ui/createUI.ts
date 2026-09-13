@@ -1,10 +1,10 @@
 import { apiWaypointCreate } from "../lib/waypoints/info/create"
 import { apiWaypointsEdit } from "../lib/waypoints/info/edit"
-import { world, Player, Vector3 } from "@minecraft/server"
+import { apiNumbers } from "../../0-lib/math/numbers"
 import { ModalFormData } from "@minecraft/server-ui"
-import { apiNumbers } from "../lib/math/numbers"
-import { WaypointsInfo } from "../lib/variables"
+import { Player, Vector3 } from "@minecraft/server"
 import { apiWarn } from "../../0-lib/player/warn"
+import { WaypointsInfo } from "../lib/variables"
 import { waypointsUIEdit } from "./editUI"
 
 export function waypointsUICreate(player: Player, edit?: WaypointsInfo): void {

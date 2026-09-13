@@ -3,10 +3,10 @@ import { waypointsEntity } from "../lib/waypoints/entity/entity"
 import { waypointsInfo } from "../lib/waypoints/info/general"
 import { Variables, iconPathId } from "../lib/variables"
 import { ActionFormData } from "@minecraft/server-ui"
-import { apiConfig } from "../lib/player/config"
-import { apiNumbers } from "../lib/math/numbers"
-import { apiVec3 } from "../lib/math/vector"
+import { apiNumbers } from "../../0-lib/math/numbers"
 import { apiWarn } from "../../0-lib/player/warn"
+import { apiConfig } from "../lib/player/config"
+import { apiVec3 } from "../lib/math/vector"
 
 
 export function waypointUITeleport(player: Player): void {

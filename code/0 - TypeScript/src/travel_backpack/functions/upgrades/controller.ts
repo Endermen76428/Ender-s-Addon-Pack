@@ -1,5 +1,6 @@
-import { world, system, Container, Entity, Player, EntityComponentTypes } from "@minecraft/server"
+import { Container, Entity, EntityComponentTypes, Player, system } from "@minecraft/server"
 import { backpackUpgradesIndex, lockSlotItem } from "../../lib/variables"
+import { furnaceUpgradeFunctions } from "./furnace/upFurnaceHandler"
 import { craftUpgradeFunctions } from "./craft/upCraftHandler"
 
 const backpackPlayersListenList: { [key: string]: IntervalInfo } = {} // Player Id > Interval Info
@@ -14,7 +15,7 @@ function startInverval(executeTime = 0): void {
   for(let i = 0; i < length; i++){
     const [ key, info ] = players[i] ?? []
     if(key == undefined || info == undefined) continue
-    const { player, backpack, playerInv, backpackInv, slots, upgrades } = info
+    const { player, backpack, backpackInv, slots, upgrades } = info
 
     // Remove o player da lista, ocorre quando o jogador sai do mundo
     if(!player.isValid || !backpack.isValid){
@@ -60,7 +61,7 @@ function startInverval(executeTime = 0): void {
         }
 
         const exe = addFunctions[change]
-        exe && exe(backpack, backpackInv, firstSlot, upgrades)
+        exe && exe(backpack, backpackInv, firstSlot)
         upgrades[slot] = change
       }
     }
@@ -85,7 +86,7 @@ export function addPlayerUpgradeListen(player: Player, backpack: Entity): void {
   if(info == undefined) return
   const [ firstSlot, size ] = info
 
-  const upgradesToEnable: EnableUpgrades = { craft: false }
+  const upgradesToEnable: EnableUpgrades = { craft: false, furnace: false }
   const upgrades: UpgradesList = ["", "", "", "", "", ""]
   for(let i = firstSlot, len = firstSlot + size; i < len; i++){
     const item = backpackInv.getItem(i)
@@ -111,16 +112,27 @@ export function removePlayerUpgradeListen(player: Player): void {
   delete backpackPlayersListenList[player.id]
 }
 
-const addFunctions: { [key: string]: (entity: Entity, inventory: Container, firstSlot: number, oldUpgrades: UpgradesList) => void } = {
-  "travel_backpack:craft_upgrade": (entity, inventory, firstSlot) => {
+const addFunctions: { [key: string]: (entity: Entity, inventory: Container, endSlot: number) => void } = {
+  "travel_backpack:craft_upgrade": (entity, inventory, endSlot) => {
+    const firstSlot = endSlot +10
     // Evita de substituir os itens do craft terminal caso coloque outro upgrade de craft
-    if(inventory.getItem(firstSlot +10)?.typeId != "travel_backpack:lock_slot") return
+    if(inventory.getItem(firstSlot)?.typeId != "travel_backpack:lock_slot") return
 
-    for(let i = firstSlot +10, len = firstSlot +19; i < len; i++){
-      inventory.setItem(i, undefined)
-    }
+    for(let i = firstSlot, len = firstSlot +9; i < len; i++) inventory.setItem(i, undefined)
 
     craftUpgradeFunctions.add(entity, inventory, firstSlot)
+  },
+
+  "travel_backpack:furnace_upgrade": (entity, inventory, endSlot) => {
+    const firstSlot = endSlot +25
+    // Evita de substituir os itens da fornalha caso coloque outro upgrade de fornalha
+    if(!entity.hasTag("030")){
+      entity.addTag("030") // 0.3.0 Evitar bug com as backpacks já geradas
+    } else if(inventory.getItem(firstSlot)?.typeId != "travel_backpack:lock_slot") return
+
+    for(let i = firstSlot, len = firstSlot +3; i < len; i++) inventory.setItem(i, undefined)
+
+    furnaceUpgradeFunctions.add(entity, inventory, firstSlot)
   }
 }
 
@@ -140,6 +152,23 @@ const removeFunctions: { [key: string]: (player: Player, entity: Entity, invento
     }
 
     craftUpgradeFunctions.remove(entity)
+  },
+
+  "travel_backpack:furnace_upgrade": (player, entity, inventory, firstSlot, oldUpgrades) => {
+    let upgradesEnabled = -1 // -1 porque o oldUpgrades mostra os ativos então o script soma esse valor pra no final ser algum numero igual a 0 ou maior pra inciar a quantia certa de upgrades ativo
+    for(let i = 0, len = oldUpgrades.length; i < len; i++){
+      const upgrade = oldUpgrades[i]
+      if(upgrade == "travel_backpack:furnace_upgrade") upgradesEnabled++
+    }
+    if(upgradesEnabled > 0) return
+
+    for(let i = firstSlot +25, len = firstSlot +30; i < len; i++){
+      const item = inventory.getItem(i)
+      item && !item.hasTag("travel_backpack:lock_slot") && player.dimension.spawnItem(item, player.location)
+      inventory.setItem(i, lockSlotItem)
+    }
+
+    furnaceUpgradeFunctions.remove(entity)
   }
 }
 
@@ -149,7 +178,15 @@ const enableUpgrades: { [key: string]: (upgrades: EnableUpgrades, entity: Entity
     if(upgrades.craft == true) return
 
     upgrades.craft = true
-    craftUpgradeFunctions.add(entity, inventory, firstSlot)
+    craftUpgradeFunctions.add(entity, inventory, firstSlot +10)
+  },
+
+  "travel_backpack:furnace_upgrade": (upgrades, entity, inventory, firstSlot) => {
+    // Se o craft já tiver ativo é porque tem mais de um então não executa pra não executar a mesma coisa já que esse upgrade é fixo
+    if(upgrades.furnace == true) return
+
+    upgrades.furnace = true
+    furnaceUpgradeFunctions.add(entity, inventory, firstSlot +25)
   }
 }
 
@@ -166,6 +203,7 @@ interface IntervalInfo {
 
 interface EnableUpgrades {
   craft: boolean
+  furnace: boolean
 }
 
 type UpgradesList = [string, string, string, string, string, string]

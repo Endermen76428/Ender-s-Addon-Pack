@@ -1,5 +1,5 @@
-import { world, ItemStack } from "@minecraft/server"
-import { apiNumbers } from "../math/numbers"
+import { apiNumbers } from "../../../0-lib/math/numbers"
+import { ItemStack } from "@minecraft/server"
 
 export const apiItemAmount = new class ApiItemAmount {
   increase(item: ItemStack | string, amount = 1): ItemStack | false {

@@ -1,4 +1,4 @@
-import { world, Vector3 } from "@minecraft/server"
+import { Vector3 } from "@minecraft/server"
 
 export const apiVec3 = new class ApiVec3 {
   public offsetDirection: Record<string, Vector3> = {

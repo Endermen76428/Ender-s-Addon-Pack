@@ -1,9 +1,9 @@
 import { ScoreboardObjective, world } from "@minecraft/server"
+import { apiScoreboard } from "../../../0-lib/math/scoreboard"
 import { TeleporterPadStructure } from "./teleporter"
 import { PlayerCacheStructure } from "./waystone"
 import { WaystoneInfo } from "../waystone/info"
 import { AddonConfig } from "../../variables"
-import { apiScoreboard } from "../math/scoreboard"
 
 export const globalCacheWaystones = new Map<string, WaystoneInfo>() // Dimension/Location > Info
 export const globalCachePlayerWaystones = new Map<string, PlayerCacheStructure>() // Player Id > Dimension/Location

@@ -1,1 +1,1 @@
-{"entity_sounds":{"entities":{"digital_miner:block_outline":{"events":{"death":"mob.digital_miner:block_outline.death","hurt":"mob.digital_miner:block_outline.hurt"},"pitch":[0.8,1],"variants":{"key":null},"volume":0}}}}
+{"entity_sounds":{"entities":{"digital_miner:block_outline":{"events":{"death":"","hurt":""},"pitch":[0.8,1],"variants":{"key":null},"volume":0}}}}

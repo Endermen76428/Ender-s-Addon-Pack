@@ -2,7 +2,7 @@ import { world, Player, ItemStack, EntityComponentTypes } from "@minecraft/serve
 import { gravestoneGenerateTomb } from "../functions/gravestone/generate"
 import { gravestoneSaveItens } from "../functions/gravestone/saveItens"
 import { apiDeathKnowledge } from "../lib/player/deathKnowledge"
-import { apiScoreboard } from "../lib/math/scoreboard"
+import { apiScoreboard } from "../../0-lib/math/scoreboard"
 import { apiItemDynamic } from "../lib/item/dynamic"
 import { apiWarn } from "../../0-lib/player/warn"
 

@@ -1,4 +1,4 @@
-import { world, Player } from "@minecraft/server"
+import { Player } from "@minecraft/server"
 
 const configCache = new Map<string, ConfigInfo>()
 
@@ -8,10 +8,10 @@ export const apiConfig = new class apiConfig {
     if(cacheConfig) return cacheConfig
 
     const dynamic = player.getDynamicProperty("utilities_vein_miner:config_info")
-    if(typeof dynamic != "string") return defaultConfig
+    if(typeof dynamic != "string") return {...defaultConfig}
 
     const config = JSON.parse(dynamic)
-    if(!this.isValid(config)) return defaultConfig
+    if(!this.isValid(config)) return {...defaultConfig}
 
     return config
   }
@@ -46,7 +46,7 @@ export const apiConfig = new class apiConfig {
   }
 }
 
-export const defaultConfig: ConfigInfo = {
+const defaultConfig: ConfigInfo = {
   showSelection: false,
   functionType: "all",
   turnOff: 0,

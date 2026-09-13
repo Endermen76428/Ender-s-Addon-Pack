@@ -1,7 +1,7 @@
 import { apiWaypointsCache } from "./waypoints/info/cache"
 import { world, Player, Vector3 } from "@minecraft/server"
 import { waypointsEntity } from "./waypoints/entity/entity"
-import { apiScoreboard } from "./math/scoreboard"
+import { apiScoreboard } from "../../0-lib/math/scoreboard"
 import { Variables } from "./variables"
 
 export const backwardCompatibilityPlayer = new class BackwardCompatibilityPlayer {

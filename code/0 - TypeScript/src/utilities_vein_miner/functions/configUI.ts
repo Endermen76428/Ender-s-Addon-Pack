@@ -1,4 +1,4 @@
-import { apiConfig, ConfigInfo, defaultConfig } from "../lib/player/config"
+import { apiConfig, ConfigInfo } from "../lib/player/config"
 import { apiDeleteBlocks } from "../lib/player/deleteBlocks"
 import { ModalFormData } from "@minecraft/server-ui"
 import { playersList } from "../events/runInterval"
@@ -105,7 +105,7 @@ export const configPanel = new class configPanel {
 
 function validateFunctionType(input: number): functionType {
   function isFunctionType(value: any): value is functionType { return functionList.includes(value) }
-  if(typeof functionList[input] !== "string" || !isFunctionType(functionList[input])) return defaultConfig.functionType
+  if(typeof functionList[input] !== "string" || !isFunctionType(functionList[input])) return "all"
   return functionList[input]
 }
 

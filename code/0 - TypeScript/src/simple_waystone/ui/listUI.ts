@@ -1,13 +1,13 @@
 import { world, system, ItemStack, Block, GameMode, Player, Vector3 } from "@minecraft/server"
 import { waystoneInfo, WaystoneInfo } from "../lib/waystone/info"
-import { apiWaystoneSpace } from "../lib/waystone/space"
 import { apiTeleportItem } from "../lib/item/teleportItem"
+import { apiWaystoneSpace } from "../lib/waystone/space"
 import { waystonesList } from "../lib/waystone/list"
 import { ActionFormData } from "@minecraft/server-ui"
+import { apiWarn } from "../../0-lib/player/warn"
 import { apiCooldown } from "../lib/apiCooldown"
 import { AddonConfig } from "../variables"
 import { apiVec3 } from "../lib/vector"
-import { apiWarn } from "../../0-lib/player/warn"
 
 const xpSprite = ["", " - \ue701", " - \ue702", " - \ue703", "\ue700"]
 export const colorDimension: { [key: string]: string } = {"minecraft:overworld": "§2", "minecraft:nether": "§4", "minecraft:the_end": "§5"}

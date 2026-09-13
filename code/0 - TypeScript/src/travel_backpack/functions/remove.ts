@@ -1,4 +1,4 @@
-import { world, Entity, EntityComponentTypes, EquipmentSlot, ItemStack, Player } from "@minecraft/server"
+import { Entity, EntityComponentTypes, EquipmentSlot, ItemStack, Player } from "@minecraft/server"
 
 export const removeBackpack = new class RemoveBackpack {
   remove(player: Player, entity: Entity): void {

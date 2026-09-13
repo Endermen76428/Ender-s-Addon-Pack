@@ -1,10 +1,10 @@
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui"
-import { apiScoreboard } from "../lib/math/scoreboard"
+import { apiScoreboard } from "../../0-lib/math/scoreboard"
 import { waystoneCache } from "../lib/cache/waystone"
 import { waystonesList } from "../lib/waystone/list"
 import { world, Player } from "@minecraft/server"
-import { colorDimension } from "./listUI"
 import { apiWarn } from "../../0-lib/player/warn"
+import { colorDimension } from "./listUI"
 
 export function waystoneUIFavorite(player: Player): void {
   new ActionFormData()

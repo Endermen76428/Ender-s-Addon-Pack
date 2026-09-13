@@ -1,11 +1,11 @@
 import { world, Player, RGB, Vector3 } from "@minecraft/server"
-import { waypointsInfo } from "./general"
+import { forceUpdateList } from "../../../functions/locator"
+import { apiWarn } from "../../../../0-lib/player/warn"
 import { waypointsEntity } from "../entity/entity"
 import { stringFormat } from "../../stringFormat"
 import { apiVec3 } from "../../math/vector"
-import { apiWarn } from "../../../../0-lib/player/warn"
 import { colorRBG } from "../../variables"
-import { forceUpdateList } from "../../../functions/locator"
+import { waypointsInfo } from "./general"
 
 export const apiWaypointCreate = new class ApiWaypointCreate {
   create(player: Player, info: WaypointInfoCreate, message = "create", isShare = false): void {

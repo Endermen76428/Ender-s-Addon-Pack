@@ -6,13 +6,13 @@ import { collectGravestone } from "../functions/gravestone/collect"
 import { deathPathLocator } from "../functions/deathPath/locator"
 import { apiDeathKnowledge } from "../lib/player/deathKnowledge"
 import { teleportToGravestone } from "../functions/key/teleport"
+import { apiScoreboard } from "../../0-lib/math/scoreboard"
 import { showKeyPanel } from "../functions/key/keyPanel"
-import { apiScoreboard } from "../lib/math/scoreboard"
 import { apiConfigAdmin } from "../lib/configAdmin"
 import { apiTracking } from "../lib/math/tracking"
+import { apiWarn } from "../../0-lib/player/warn"
 import { apiConfig } from "../lib/player/config"
 import { apiTimer } from "../lib/player/timer"
-import { apiWarn } from "../../0-lib/player/warn"
 
 system.run(() => { world.gameRules.keepInventory = true })
 export let usedOnBlock = false
@@ -90,7 +90,7 @@ system.beforeEvents.startup.subscribe(({blockComponentRegistry: customB, itemCom
 
   customC.registerCommand({
     name: "eap:skill",
-    description: "commands.gravestone_death_path.skill",
+    description: "commands.gravestone_death_path:skill",
     permissionLevel: CommandPermissionLevel.Any,
     cheatsRequired: false
   },
@@ -102,7 +102,7 @@ system.beforeEvents.startup.subscribe(({blockComponentRegistry: customB, itemCom
   customC.registerEnum("eap:xpFunc", ["give", "remove", "set"])
   customC.registerCommand({
     name: "eap:deathxp",
-    description: "commands.gravestone_death_path.deathxp",
+    description: "commands.gravestone_death_path:deathxp",
     permissionLevel: CommandPermissionLevel.GameDirectors,
     cheatsRequired: true,
     mandatoryParameters: [
@@ -125,7 +125,7 @@ system.beforeEvents.startup.subscribe(({blockComponentRegistry: customB, itemCom
   customC.registerEnum("eap:skillFunc", ["reset"])
   customC.registerCommand({
     name: "eap:deathskill",
-    description: "commands.gravestone_death_path.deathskill",
+    description: "commands.gravestone_death_path:deathskill",
     permissionLevel: CommandPermissionLevel.GameDirectors,
     cheatsRequired: true,
     mandatoryParameters: [

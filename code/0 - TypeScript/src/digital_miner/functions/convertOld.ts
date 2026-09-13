@@ -1,4 +1,4 @@
-import { apiScoreboard } from "../lib/math/scoreboard"
+import { apiScoreboard } from "../../0-lib/math/scoreboard"
 import { world, system } from "@minecraft/server"
 
 system.run(() => {

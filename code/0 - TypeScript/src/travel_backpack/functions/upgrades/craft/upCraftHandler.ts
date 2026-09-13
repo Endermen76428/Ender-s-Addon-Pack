@@ -1,4 +1,4 @@
-import { world, system, Container, Entity, Player, ItemStack } from "@minecraft/server"
+import { Container, Entity, ItemStack, system } from "@minecraft/server"
 import { craftUpgradeRecipes } from "./recipes"
 
 const craftListenList: { [key: string]: IntervalInfo } = {} // Backpack Id > Interval Info
@@ -18,7 +18,7 @@ function startInverval(): void {
     // Remove a backpack da lista quando ela fica inválida
     if(!backpack.isValid){
       invalidPlayers++
-      craftListenList[key]
+      delete craftListenList[key]
       continue
     }
 
@@ -70,7 +70,7 @@ function startInverval(): void {
     }
   }
 
-  // Cancela o loop se não tiver mais jogadores
+  // Cancela o loop se não tiver mais backpacks
   if(length == invalidPlayers){
     amountOfListeners = 0
     return
@@ -82,7 +82,7 @@ function startInverval(): void {
 
 export const craftUpgradeFunctions = new class CraftUpgradeFunctions {
   add(backpack: Entity, backpackInv: Container, firstSlot: number): void {
-    craftListenList[backpack.id] = { backpack, backpackInv, firstSlot: firstSlot +10 }
+    craftListenList[backpack.id] = { backpack, backpackInv, firstSlot }
     amountOfListeners == 0 && startInverval()
   }
 

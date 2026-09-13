@@ -1,6 +1,6 @@
 import { globalWaypointsCache, WaypointsInfo } from "../../variables"
+import { apiScoreboard } from "../../../../0-lib/math/scoreboard"
 import { playersEntity } from "../../../functions/locator"
-import { apiScoreboard } from "../../math/scoreboard"
 import { waypointsEntity } from "../entity/entity"
 import { world, Player } from "@minecraft/server"
 

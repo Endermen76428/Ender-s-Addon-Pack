@@ -1,7 +1,7 @@
-import { world, system, CommandPermissionLevel, CustomCommand, CustomCommandOrigin, CustomCommandParamType, CustomCommandResult, CustomCommandStatus as Status, EquipmentSlot, Player } from "@minecraft/server"
+import { system, CommandPermissionLevel, CustomCommand, CustomCommandOrigin, CustomCommandParamType, CustomCommandResult, CustomCommandStatus as Status, EquipmentSlot, Player } from "@minecraft/server"
 import { temporalBottleItem } from "../../lib/temporalBottle/bottle"
 import { apiEquippable } from "../../lib/player/equippable"
-import { apiNumbers } from "../../lib/math/numbers"
+import { apiNumbers } from "../../../0-lib/math/numbers"
 
 export const startUpCommandFunc: Record<StartUpCommandIds, (origin: CustomCommandOrigin, ...args: any[]) => CustomCommandResult | undefined> = {
   "giveTime": ({sourceEntity: player}, functionType, timeAmount) => {

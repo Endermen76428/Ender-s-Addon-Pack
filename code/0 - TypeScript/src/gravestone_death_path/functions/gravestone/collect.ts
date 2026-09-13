@@ -1,12 +1,12 @@
 import { apiDeathKnowledge, apiDeathKnowledgeXp, maxDeathKnowledgeXp } from "../../lib/player/deathKnowledge"
 import { world, Block, Player, EquipmentSlot, EntityComponentTypes } from "@minecraft/server"
-import { apiScoreboard } from "../../lib/math/scoreboard"
+import { apiScoreboard } from "../../../0-lib/math/scoreboard"
+import { cacheDeathPathBykey } from "../deathPath/locator"
 import { apiConfigAdmin } from "../../lib/configAdmin"
+import { apiWarn } from "../../../0-lib/player/warn"
 import { apiConfig } from "../../lib/player/config"
 import { apiTimer } from "../../lib/player/timer"
 import { equippableSlotsIds } from "./saveItens"
-import { apiWarn } from "../../../0-lib/player/warn"
-import { cacheDeathPathBykey } from "../deathPath/locator"
 
 export function collectGravestone(block: Block, player: Player): void {
   const gravestoneEntity = block.dimension.getEntities({type: "gravestone_death_path:gravestone_entity", location: block.bottomCenter(), maxDistance: 0.5, closest: 1})[0]

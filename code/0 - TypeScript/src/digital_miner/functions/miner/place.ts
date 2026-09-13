@@ -1,6 +1,6 @@
 import { world, system, BlockComponentPlayerPlaceBeforeEvent, StructureRotation, EntityComponentTypes, EquipmentSlot } from "@minecraft/server"
+import { apiScoreboard } from "../../../0-lib/math/scoreboard"
 import { apiMinerSpace } from "../../lib/block/minerSpace"
-import { apiScoreboard } from "../../lib/math/scoreboard"
 import { apiVec3 } from "../../lib/math/vector3"
 import { apiString } from "../../lib/string"
 

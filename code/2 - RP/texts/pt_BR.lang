@@ -917,8 +917,8 @@ block.warn.gravestone_death_path:collect.key.other_gravestone=§cEssa chave não
 ### Commands
 ## --------------------------------
 
-commands.gravestone_death_path:config=Abra as Configurações Pessoais
-commands.gravestone_death_path:config_adm=Abra as Configurações Globais
+commands.gravestone_death_path.config=Abra as Configurações Pessoais
+commands.gravestone_death_path.config_adm=Abra as Configurações Globais
 commands.gravestone_death_path:skill=Abra seus Conhecimentos da Morte
 
 

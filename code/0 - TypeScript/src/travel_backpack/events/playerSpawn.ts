@@ -1,4 +1,4 @@
-import { EntityComponentTypes, EquipmentSlot, system, world } from "@minecraft/server"
+import { EntityComponentTypes, EquipmentSlot, world } from "@minecraft/server"
 import { addPlayerHoldListen } from "../functions/hold"
 
 world.afterEvents.playerSpawn.subscribe(({player, initialSpawn}) => {

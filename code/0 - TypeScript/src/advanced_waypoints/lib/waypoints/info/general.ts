@@ -1,4 +1,4 @@
-import { apiScoreboard } from "../../math/scoreboard"
+import { apiScoreboard } from "../../../../0-lib/math/scoreboard"
 import { world, Player } from "@minecraft/server"
 import { WaypointsInfo } from "../../variables"
 import { apiWaypointsCache } from "./cache"

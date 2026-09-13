@@ -1,11 +1,11 @@
 import { world, Player, Vector3, ItemStack } from "@minecraft/server"
+import { apiScoreboard } from "../../../0-lib/math/scoreboard"
+import { apiWarn } from "../../../0-lib/player/warn"
 import { upgradeXpDiscount } from "../../variables"
-import { apiScoreboard } from "../math/scoreboard"
 import { waystoneCache } from "../cache/waystone"
 import { colorDimension } from "../../ui/listUI"
 import { apiOrganize } from "../apiOrganize"
 import { waystonesList } from "./list"
-import { apiWarn } from "../../../0-lib/player/warn"
 
 export const waystoneInfo = new class ApiWaystoneInfo {
   saveWaystone(player: Player, info: WaystoneCreateInfo): string {

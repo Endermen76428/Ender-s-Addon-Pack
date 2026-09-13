@@ -1,5 +1,5 @@
 import { world, Block, BlockComponentTypes, BlockPermutation, BlockVolume, Container, Dimension, EntityComponentTypes, Vector3 } from "@minecraft/server"
-import { apiScoreboard } from "../math/scoreboard"
+import { apiScoreboard } from "../../../0-lib/math/scoreboard"
 import { apiVec3 } from "../math/vector3"
 import { apiString } from "../string"
 

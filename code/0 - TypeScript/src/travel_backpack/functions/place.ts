@@ -1,5 +1,6 @@
-import { world, Block, Direction, EntityComponentTypes, EquipmentSlot, GameMode, ItemStack, Player, Vector3, system } from "@minecraft/server"
+import { Block, Direction, EntityComponentTypes, EquipmentSlot, GameMode, ItemStack, Player, Vector3, world } from "@minecraft/server"
 import { spawnBackpack } from "../lib/backpack/spawn"
+import { apiWarn } from "../../0-lib/player/warn"
 
 export const placeBackpack = new class PlaceBackpack {
   place(player: Player, item: ItemStack, blockTarget: Block, direction: Direction): void {
@@ -13,6 +14,7 @@ export const placeBackpack = new class PlaceBackpack {
     if(!player.isSneaking){
       block.setType("minecraft:air")
       player.getComponent(EntityComponentTypes.Equippable)?.setEquipment(EquipmentSlot.Mainhand, item)
+      apiWarn.notify(player, "item.warn.travel_backpack:backpack.need_shift.place", {type: "actionbar", sound: "warn.ender_addon_pack:pop"})
       return
     }
 
@@ -52,13 +54,4 @@ const offsetDirection: Record<Direction, Vector3> = {
   "West":  { x: -1, y:  0, z:  0 },
   "Up":    { x:  0, y:  1, z:  0 },
   "Down":  { x:  0, y: -1, z:  0 }
-}
-
-export const backpackSizeEvent: { [key: string]: number } = {
-  "travel_backpack:leather_backpack":   0,
-  "travel_backpack:copper_backpack":    1,
-  "travel_backpack:iron_backpack":      2,
-  "travel_backpack:gold_backpack":      3,
-  "travel_backpack:diamond_backpack":   4,
-  "travel_backpack:netherite_backpack": 5,
 }

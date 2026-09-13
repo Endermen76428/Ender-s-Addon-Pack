@@ -94,6 +94,11 @@ const textureFunctions = {
     copyFolder(currentPath, "../2 - RP/animations")
   },
 
+  "attachables": (fullPath) => {
+    const currentPath = path.join(fullPath, "attachables")
+    copyFolder(currentPath, "../2 - RP/attachables")
+  },
+
   "animation_controllers": (fullPath) => {
     const currentPath = path.join(fullPath, "animation_controllers")
     copyFolder(currentPath, "../2 - RP/animation_controllers")
@@ -328,9 +333,34 @@ for(let i = 0, len = rootAddons.length; i < len; i++){
     const textureExe = textureFunctions[folderType]
     if(textureExe) textureExe(texturePath)
   }
-
-  // console.log("Name:", name.padEnd(23, "-"), "| Addon:", addonFiles.length.toString().padEnd(2, " "), "| Texture:", texureFiles.length.toString())
+// console.log("Name:", name.padEnd(23, "-"), "| Addon:", addonFiles.length.toString().padEnd(2, " "), "| Texture:", texureFiles.length.toString())
 }
+
+function textureList(currentPath){
+  const files = fs.readdirSync(currentPath)
+  for(let i = 0, len = files.length; i < len; i++){
+    const file = files[i]
+    if(!file) continue
+
+    const targetPath = path.join(currentPath, file)
+
+    const stats = fs.statSync(targetPath)
+    if(stats.isDirectory()){
+      // console.warn(">", targetPath)
+      textureList(targetPath)
+      continue
+    }
+    if(!file.endsWith(".png")) continue
+    if(file.endsWith("mer.png")) continue
+    if(file == "null.png") continue
+
+    // console.warn(file)
+    defaultTextureList.push(targetPath.replaceAll("\\", "/").slice(0, targetPath.length -4).slice(10))
+  }
+
+  fs.writeFileSync("../2 - RP/textures/texture_list.json", JSON.stringify(defaultTextureList), "utf-8")
+}
+textureList("../2 - RP/textures")
 
 fs.writeFileSync("../1 - BP/item_catalog/crafting_item_catalog.json", JSON.stringify(defaultItemCatalog), "utf8");
 fs.writeFileSync("../2 - RP/blocks.json", JSON.stringify(defaultBlocksJson), "utf8");

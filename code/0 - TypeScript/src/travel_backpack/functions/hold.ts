@@ -1,4 +1,4 @@
-import { world, system, Entity, EntityComponentTypes, Container, ItemLockMode, ItemStack, Player, StructureSaveMode } from "@minecraft/server"
+import { Container, Entity, EntityComponentTypes, ItemLockMode, ItemStack, Player, StructureSaveMode, system, world } from "@minecraft/server"
 import { spawnBackpack } from "../lib/backpack/spawn"
 import { apiWarn } from "../../0-lib/player/warn"
 
@@ -161,7 +161,7 @@ function removePlayerHoldListen(player: Player, slot: number, sneaking = false):
   const entity = world.getEntity(backpackId)
   if(!entity || !entity.isValid) return
 
-  if(!sneaking) entity.triggerEvent("travel_backpack:add_timer")
+  if(!sneaking && !entity.hasTag("can_enable_timer")) entity.triggerEvent("travel_backpack:add_timer")
 
   const savePos = {x: player.location.x, y: player.dimension.heightRange.min +1, z: player.location.z}
   const maxHeight = player.dimension.heightRange.max

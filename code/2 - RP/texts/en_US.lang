@@ -917,8 +917,8 @@ block.warn.gravestone_death_path:collect.key.other_gravestone=§cThis key does n
 ### Commands
 ## --------------------------------
 
-commands.gravestone_death_path:config=Open personal Settings
-commands.gravestone_death_path:config_adm=Open global Settings
+commands.gravestone_death_path.config=Open personal Settings
+commands.gravestone_death_path.config_adm=Open global Settings
 commands.gravestone_death_path:skill=Open your Death Knowledges
 
 

@@ -1,12 +1,12 @@
+import { globalToolCache, globalUpgradesCache } from "../../../lib/variables"
 import { world, ItemStack, Block, Player, Vector3 } from "@minecraft/server"
 import { ActionFormData, MessageFormData } from "@minecraft/server-ui"
+import { apiScoreboard } from "../../../../0-lib/math/scoreboard"
 import { apiMinerSpace } from "../../../lib/block/minerSpace"
 import { apiInventory } from "../../../lib/entity/inventory"
-import { apiScoreboard } from "../../../lib/math/scoreboard"
-import { globalToolCache, globalUpgradesCache } from "../../../lib/variables"
+import { apiWarn } from "../../../../0-lib/player/warn"
 import { apiVec3 } from "../../../lib/math/vector3"
 import { interactDigitalMiner } from "../interact"
-import { apiWarn } from "../../../../0-lib/player/warn"
 import { apiString } from "../../../lib/string"
 
 export const minerUIUpgrades = new class MinerUIUpgrades {

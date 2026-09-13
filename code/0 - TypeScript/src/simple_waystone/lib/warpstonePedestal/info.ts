@@ -1,5 +1,5 @@
 import { world, Block, Player, Vector3 } from "@minecraft/server"
-import { apiScoreboard } from "../math/scoreboard"
+import { apiScoreboard } from "../../../0-lib/math/scoreboard"
 
 export const warpstonePedestalInfo = new class WarpstonePedestalInfo {
   create(block: Block, player: Player): void {

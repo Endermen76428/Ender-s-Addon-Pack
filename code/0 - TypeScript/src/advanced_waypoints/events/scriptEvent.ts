@@ -1,8 +1,8 @@
 import { apiWaypointCreate } from "../lib/waypoints/info/create"
 import { waypointsEntity } from "../lib/waypoints/entity/entity"
 import { waypointsInfo } from "../lib/waypoints/info/general"
+import { apiScoreboard } from "../../0-lib/math/scoreboard"
 import { world, system, Player } from "@minecraft/server"
-import { apiScoreboard } from "../lib/math/scoreboard"
 
 system.afterEvents.scriptEventReceive.subscribe(({id, message}) => {
   const args = message.match(/"([^"]*)"|[^\s]+/g)?.map(a => a.replace(/^"|"$/g, ""))

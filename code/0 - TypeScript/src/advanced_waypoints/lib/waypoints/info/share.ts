@@ -1,9 +1,9 @@
-import { apiScoreboard } from "../../math/scoreboard"
-import { world, Player } from "@minecraft/server"
-import { apiNumbers } from "../../math/numbers"
+import { apiScoreboard } from "../../../../0-lib/math/scoreboard"
+import { apiNumbers } from "../../../../0-lib/math/numbers"
+import { apiWarn } from "../../../../0-lib/player/warn"
 import { WaypointsInfo } from "../../variables"
 import { apiWaypointCreate } from "./create"
-import { apiWarn } from "../../../../0-lib/player/warn"
+import { Player } from "@minecraft/server"
 
 export const waypointsShare = new class ApiWaypointShare {
   share(player: Player, target: Player, info: WaypointsInfo): void {

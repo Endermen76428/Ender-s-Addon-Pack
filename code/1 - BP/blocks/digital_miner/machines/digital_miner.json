@@ -89,8 +89,6 @@
           "minecraft:material_instances": {
             "*": { "texture": "digital_miner:digital_miner_side", "render_method": "alpha_test" },
             "monitor": { "texture": "digital_miner:digital_miner_monitor_off", "render_method": "alpha_test" },
-            "monitor_on_center": { "texture": "digital_miner:null", "render_method": "alpha_test" },
-            "monitor_on_left": { "texture": "digital_miner:null", "render_method": "alpha_test" },
             "keyboard": { "texture": "digital_miner:digital_miner_monitor_keyboard", "render_method": "alpha_test" },
             "front": { "texture": "digital_miner:digital_miner_front", "render_method": "alpha_test" },
             "back": { "texture": "digital_miner:digital_miner_front", "render_method": "alpha_test" },
@@ -108,8 +106,6 @@
           "minecraft:material_instances": {
             "*": { "texture": "digital_miner:digital_miner_side", "render_method": "alpha_test" },
             "monitor": { "texture": "digital_miner:digital_miner_monitor_on", "render_method": "alpha_test" },
-            "monitor_on_center": { "texture": "digital_miner:null", "render_method": "alpha_test" },
-            "monitor_on_left": { "texture": "digital_miner:null", "render_method": "alpha_test" },
             "keyboard": { "texture": "digital_miner:digital_miner_monitor_keyboard", "render_method": "alpha_test" },
             "front": { "texture": "digital_miner:digital_miner_front", "render_method": "alpha_test" },
             "back": { "texture": "digital_miner:digital_miner_front", "render_method": "alpha_test" },

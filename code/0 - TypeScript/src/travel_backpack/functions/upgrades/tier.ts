@@ -1,5 +1,5 @@
 import { BlockPermutation, Entity, EntityComponentTypes, EquipmentSlot, ItemStack, Player, system } from "@minecraft/server"
-import { backpackSizeFill, backpackSizeTier, backpackUpgradesIndex, lockSlotItem } from "../../lib/variables"
+import { backpackSizeTier, backpackUpgradesIndex, lockSlotItem } from "../../lib/variables"
 import { apiEquippable } from "../../lib/player/equippable"
 import { apiWarn } from "../../../0-lib/player/warn"
 

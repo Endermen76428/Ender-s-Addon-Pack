@@ -1,5 +1,5 @@
 // This file will execute once time, only to convert the old saved waystones to the new format
-import { apiScoreboard } from "../lib/math/scoreboard"
+import { apiScoreboard } from "../../0-lib/math/scoreboard"
 import { apiGlobalCache } from "../lib/cache/global"
 import { world, system } from "@minecraft/server"
 import { AddonConfig } from "../variables"

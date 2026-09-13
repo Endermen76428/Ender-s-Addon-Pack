@@ -1,9 +1,9 @@
 import { globalFilterTagCache, globalFilterTypeCache, globalFilterTypeTagCache } from "../../lib/variables"
 import { Dimension, Player, ScoreboardIdentity, ScoreboardObjective, Vector3 } from "@minecraft/server"
-import { world, BlockTypes, ItemStack, ItemTypes } from "@minecraft/server"
-import { apiScoreboard } from "../../lib/math/scoreboard"
-import { apiVec3 } from "../../lib/math/vector3"
+import { BlockTypes, ItemStack, ItemTypes } from "@minecraft/server"
+import { apiScoreboard } from "../../../0-lib/math/scoreboard"
 import { apiWarn } from "../../../0-lib/player/warn"
+import { apiVec3 } from "../../lib/math/vector3"
 import { apiString } from "../../lib/string"
 import { customTags } from "./ui/tagList"
 

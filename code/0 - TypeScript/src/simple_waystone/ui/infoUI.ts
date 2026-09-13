@@ -1,10 +1,10 @@
-import { world, Block, Player, ItemStack } from "@minecraft/server"
-import { apiScoreboard } from "../lib/math/scoreboard"
+import { Block, Player, ItemStack } from "@minecraft/server"
+import { apiScoreboard } from "../../0-lib/math/scoreboard"
 import { ActionFormData } from "@minecraft/server-ui"
+import { apiNumbers } from "../../0-lib/math/numbers"
 import { waystoneCache } from "../lib/cache/waystone"
-import { apiNumbers } from "../lib/math/numbers"
-import { upgradeXpDiscount } from "../variables"
 import { apiWarn } from "../../0-lib/player/warn"
+import { upgradeXpDiscount } from "../variables"
 
 export const exitDirection: ["auto", "north", "east", "south", "west"] = ["auto", "north", "east", "south", "west"]
 

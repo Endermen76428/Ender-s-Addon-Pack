@@ -2,7 +2,7 @@ import { world, Block, Player, Vector3, EquipmentSlot, ItemTypes } from "@minecr
 import { addonNamePriority, blockTypeIdCategory } from "../../../../lib/variables"
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui"
 import { apiEquippable } from "../../../../lib/entity/equippable"
-import { apiNumbers } from "../../../../lib/math/numbers"
+import { apiNumbers } from "../../../../../0-lib/math/numbers"
 import { apiWarn } from "../../../../../0-lib/player/warn"
 import { apiString } from "../../../../lib/string"
 import { filterDigitalMiner } from "../../filter"

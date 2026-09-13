@@ -1,11 +1,11 @@
 import { world, ItemStack, BlockPermutation, Block, Dimension, EntityComponentTypes, EquipmentSlot, GameMode, Player, Vector3 } from "@minecraft/server"
 import { AddonConfig, upgradeXpDiscount } from "../../variables"
+import { apiScoreboard } from "../../../0-lib/math/scoreboard"
 import { MessageFormData } from "@minecraft/server-ui"
+import { apiWarn } from "../../../0-lib/player/warn"
 import { waystoneInfo, WaystoneInfo } from "./info"
 import { apiItemAmount } from "../item/itemAmount"
-import { apiScoreboard } from "../math/scoreboard"
 import { waystoneCache } from "../cache/waystone"
-import { apiWarn } from "../../../0-lib/player/warn"
 
 export const apiWaystoneSpace = new class ApiWaystoneSpace {
   setOff(player: Player, block: Block){

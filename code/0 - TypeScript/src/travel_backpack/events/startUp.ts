@@ -1,4 +1,4 @@
-import { world, system, Player } from "@minecraft/server"
+import { Player, system } from "@minecraft/server"
 import { placeBackpack } from "../functions/place"
 
 system.beforeEvents.startup.subscribe(({itemComponentRegistry: customI}) => {
