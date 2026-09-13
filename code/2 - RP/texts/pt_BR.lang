@@ -1225,30 +1225,140 @@ item_subtitle.temporal_bottle:total_time=§7Tempo Total %1
 
 
 ## --------------------------------------------------
-## Block
+## #region Block
 ## --------------------------------------------------
 
 ## Backpack
 tile.travel_backpack:leather_backpack.name=Mochila de Couro
+tile.travel_backpack:white_leather_backpack.name=Mochila de Couro Branca
+tile.travel_backpack:light_gray_leather_backpack.name=Mochila de Couro Cinza-clara
+tile.travel_backpack:gray_leather_backpack.name=Mochila de Couro Cinza
+tile.travel_backpack:black_leather_backpack.name=Mochila de Couro Preta
+tile.travel_backpack:brown_leather_backpack.name=Mochila de Couro Marrom
+tile.travel_backpack:red_leather_backpack.name=Mochila de Couro Vermelho
+tile.travel_backpack:orange_leather_backpack.name=Mochila de Couro Laranja
+tile.travel_backpack:yellow_leather_backpack.name=Mochila de Couro Amarelo
+tile.travel_backpack:lime_leather_backpack.name=Mochila de Couro Verde-limão
+tile.travel_backpack:green_leather_backpack.name=Mochila de Couro Verde
+tile.travel_backpack:cyan_leather_backpack.name=Mochila de Couro Ciano
+tile.travel_backpack:light_blue_leather_backpack.name=Mochila de Couro Azul-clara
+tile.travel_backpack:blue_leather_backpack.name=Mochila de Couro Azul
+tile.travel_backpack:purple_leather_backpack.name=Mochila de Couro Roxo
+tile.travel_backpack:magenta_leather_backpack.name=Mochila de Couro Magenta
+tile.travel_backpack:pink_leather_backpack.name=Mochila de Couro Rosa
+
 tile.travel_backpack:copper_backpack.name=Mochila de Cobre
+tile.travel_backpack:white_copper_backpack.name=Mochila de Cobre Branca
+tile.travel_backpack:light_gray_copper_backpack.name=Mochila de Cobre Cinza-clara
+tile.travel_backpack:gray_copper_backpack.name=Mochila de Cobre Cinza
+tile.travel_backpack:black_copper_backpack.name=Mochila de Cobre Preta
+tile.travel_backpack:brown_copper_backpack.name=Mochila de Cobre Marrom
+tile.travel_backpack:red_copper_backpack.name=Mochila de Cobre Vermelho
+tile.travel_backpack:orange_copper_backpack.name=Mochila de Cobre Laranja
+tile.travel_backpack:yellow_copper_backpack.name=Mochila de Cobre Amarelo
+tile.travel_backpack:lime_copper_backpack.name=Mochila de Cobre Verde-limão
+tile.travel_backpack:green_copper_backpack.name=Mochila de Cobre Verde
+tile.travel_backpack:cyan_copper_backpack.name=Mochila de Cobre Ciano
+tile.travel_backpack:light_blue_copper_backpack.name=Mochila de Cobre Azul-clara
+tile.travel_backpack:blue_copper_backpack.name=Mochila de Cobre Azul
+tile.travel_backpack:purple_copper_backpack.name=Mochila de Cobre Roxo
+tile.travel_backpack:magenta_copper_backpack.name=Mochila de Cobre Magenta
+tile.travel_backpack:pink_copper_backpack.name=Mochila de Cobre Rosa
+
 tile.travel_backpack:iron_backpack.name=Mochila de Ferro
+tile.travel_backpack:white_iron_backpack.name=Mochila de Ferro Branca
+tile.travel_backpack:light_gray_iron_backpack.name=Mochila de Ferro Cinza-clara
+tile.travel_backpack:gray_iron_backpack.name=Mochila de Ferro Cinza
+tile.travel_backpack:black_iron_backpack.name=Mochila de Ferro Preta
+tile.travel_backpack:brown_iron_backpack.name=Mochila de Ferro Marrom
+tile.travel_backpack:red_iron_backpack.name=Mochila de Ferro Vermelho
+tile.travel_backpack:orange_iron_backpack.name=Mochila de Ferro Laranja
+tile.travel_backpack:yellow_iron_backpack.name=Mochila de Ferro Amarelo
+tile.travel_backpack:lime_iron_backpack.name=Mochila de Ferro Verde-limão
+tile.travel_backpack:green_iron_backpack.name=Mochila de Ferro Verde
+tile.travel_backpack:cyan_iron_backpack.name=Mochila de Ferro Ciano
+tile.travel_backpack:light_blue_iron_backpack.name=Mochila de Ferro Azul-clara
+tile.travel_backpack:blue_iron_backpack.name=Mochila de Ferro Azul
+tile.travel_backpack:purple_iron_backpack.name=Mochila de Ferro Roxo
+tile.travel_backpack:magenta_iron_backpack.name=Mochila de Ferro Magenta
+tile.travel_backpack:pink_iron_backpack.name=Mochila de Ferro Rosa
+
 tile.travel_backpack:gold_backpack.name=Mochila de Ouro
+tile.travel_backpack:white_gold_backpack.name=Mochila de Ouro Branca
+tile.travel_backpack:light_gray_gold_backpack.name=Mochila de Ouro Cinza-clara
+tile.travel_backpack:gray_gold_backpack.name=Mochila de Ouro Cinza
+tile.travel_backpack:black_gold_backpack.name=Mochila de Ouro Preta
+tile.travel_backpack:brown_gold_backpack.name=Mochila de Ouro Marrom
+tile.travel_backpack:red_gold_backpack.name=Mochila de Ouro Vermelho
+tile.travel_backpack:orange_gold_backpack.name=Mochila de Ouro Laranja
+tile.travel_backpack:yellow_gold_backpack.name=Mochila de Ouro Amarelo
+tile.travel_backpack:lime_gold_backpack.name=Mochila de Ouro Verde-limão
+tile.travel_backpack:green_gold_backpack.name=Mochila de Ouro Verde
+tile.travel_backpack:cyan_gold_backpack.name=Mochila de Ouro Ciano
+tile.travel_backpack:light_blue_gold_backpack.name=Mochila de Ouro Azul-clara
+tile.travel_backpack:blue_gold_backpack.name=Mochila de Ouro Azul
+tile.travel_backpack:purple_gold_backpack.name=Mochila de Ouro Roxo
+tile.travel_backpack:magenta_gold_backpack.name=Mochila de Ouro Magenta
+tile.travel_backpack:pink_gold_backpack.name=Mochila de Ouro Rosa
+
 tile.travel_backpack:diamond_backpack.name=Mochila de Diamante
+tile.travel_backpack:white_diamond_backpack.name=Mochila de Diamante Branca
+tile.travel_backpack:light_gray_diamond_backpack.name=Mochila de Diamante Cinza-clara
+tile.travel_backpack:gray_diamond_backpack.name=Mochila de Diamante Cinza
+tile.travel_backpack:black_diamond_backpack.name=Mochila de Diamante Preta
+tile.travel_backpack:brown_diamond_backpack.name=Mochila de Diamante Marrom
+tile.travel_backpack:red_diamond_backpack.name=Mochila de Diamante Vermelho
+tile.travel_backpack:orange_diamond_backpack.name=Mochila de Diamante Laranja
+tile.travel_backpack:yellow_diamond_backpack.name=Mochila de Diamante Amarelo
+tile.travel_backpack:lime_diamond_backpack.name=Mochila de Diamante Verde-limão
+tile.travel_backpack:green_diamond_backpack.name=Mochila de Diamante Verde
+tile.travel_backpack:cyan_diamond_backpack.name=Mochila de Diamante Ciano
+tile.travel_backpack:light_blue_diamond_backpack.name=Mochila de Diamante Azul-clara
+tile.travel_backpack:blue_diamond_backpack.name=Mochila de Diamante Azul
+tile.travel_backpack:purple_diamond_backpack.name=Mochila de Diamante Roxo
+tile.travel_backpack:magenta_diamond_backpack.name=Mochila de Diamante Magenta
+tile.travel_backpack:pink_diamond_backpack.name=Mochila de Diamante Rosa
+
 tile.travel_backpack:netherite_backpack.name=Mochila de Netherita
-
-
+tile.travel_backpack:white_netherite_backpack.name=Mochila de Netherita Branca
+tile.travel_backpack:light_gray_netherite_backpack.name=Mochila de Netherita Cinza-clara
+tile.travel_backpack:gray_netherite_backpack.name=Mochila de Netherita Cinza
+tile.travel_backpack:black_netherite_backpack.name=Mochila de Netherita Preta
+tile.travel_backpack:brown_netherite_backpack.name=Mochila de Netherita Marrom
+tile.travel_backpack:red_netherite_backpack.name=Mochila de Netherita Vermelho
+tile.travel_backpack:orange_netherite_backpack.name=Mochila de Netherita Laranja
+tile.travel_backpack:yellow_netherite_backpack.name=Mochila de Netherita Amarelo
+tile.travel_backpack:lime_netherite_backpack.name=Mochila de Netherita Verde-limão
+tile.travel_backpack:green_netherite_backpack.name=Mochila de Netherita Verde
+tile.travel_backpack:cyan_netherite_backpack.name=Mochila de Netherita Ciano
+tile.travel_backpack:light_blue_netherite_backpack.name=Mochila de Netherita Azul-clara
+tile.travel_backpack:blue_netherite_backpack.name=Mochila de Netherita Azul
+tile.travel_backpack:purple_netherite_backpack.name=Mochila de Netherita Roxo
+tile.travel_backpack:magenta_netherite_backpack.name=Mochila de Netherita Magenta
+tile.travel_backpack:pink_netherite_backpack.name=Mochila de Netherita Rosa
+## #endregion
 
 ## --------------------------------------------------
-## Entity
+## #region Entity
 ## --------------------------------------------------
 
 entity.travel_backpack:backpack.name=Mochila
-entity.travel_backpack:chunk_loader.name=Carregador de Chunk
 
+### Action
 
+action.interact.travel_backpack:backpack.unpaint=Remover Cor
+action.interact.travel_backpack:backpack.paint=Pintar
+
+### Warn
+
+entity.warn.travel_backpack:furnace.start_search=§r não foi encontrado no banco de dados, espere 10s enquanto procuramos pela receita.
+entity.warn.travel_backpack:furnace.unexpected_error=§cAlgo interferiu na pesquisa, tente novamente.
+entity.warn.travel_backpack:furnace.recipe_not_found=§r Não foi encontrado como uma receita válida.
+entity.warn.travel_backpack:furnace.recipe_found=§r Registrado como resultado de §a
+## #endregion
 
 ## --------------------------------------------------
-## Item
+## #region Item
 ## --------------------------------------------------
 
 item.bedrock_awakening:travel_backpack=§kTravel Backpack
@@ -1257,46 +1367,261 @@ item.travel_backpack:lock_slot=Trava de Slot
 
 ## Backpack
 item.travel_backpack:leather_backpack=Mochila de Couro\n§9Travel Backpacks
+item.travel_backpack:leather_backpack.bacs=Mochila de Couro
+item.travel_backpack:white_leather_backpack=Mochila de Couro Branca\n§9Travel Backpacks
+item.travel_backpack:white_leather_backpack.bacs=Mochila de Couro Branca
+item.travel_backpack:light_gray_leather_backpack=Mochila de Couro Cinza-clara\n§9Travel Backpacks
+item.travel_backpack:light_gray_leather_backpack.bacs=Mochila de Couro Cinza-clara
+item.travel_backpack:gray_leather_backpack=Mochila de Couro Cinza\n§9Travel Backpacks
+item.travel_backpack:gray_leather_backpack.bacs=Mochila de Couro Cinza
+item.travel_backpack:black_leather_backpack=Mochila de Couro Preta\n§9Travel Backpacks
+item.travel_backpack:black_leather_backpack.bacs=Mochila de Couro Preta
+item.travel_backpack:brown_leather_backpack=Mochila de Couro Marrom\n§9Travel Backpacks
+item.travel_backpack:brown_leather_backpack.bacs=Mochila de Couro Marrom
+item.travel_backpack:red_leather_backpack=Mochila de Couro Vermelho\n§9Travel Backpacks
+item.travel_backpack:red_leather_backpack.bacs=Mochila de Couro Vermelho
+item.travel_backpack:orange_leather_backpack=Mochila de Couro Laranja\n§9Travel Backpacks
+item.travel_backpack:orange_leather_backpack.bacs=Mochila de Couro Laranja
+item.travel_backpack:yellow_leather_backpack=Mochila de Couro Amarelo\n§9Travel Backpacks
+item.travel_backpack:yellow_leather_backpack.bacs=Mochila de Couro Amarelo
+item.travel_backpack:lime_leather_backpack=Mochila de Couro Verde-limão\n§9Travel Backpacks
+item.travel_backpack:lime_leather_backpack.bacs=Mochila de Couro Verde-limão
+item.travel_backpack:green_leather_backpack=Mochila de Couro Verde\n§9Travel Backpacks
+item.travel_backpack:green_leather_backpack.bacs=Mochila de Couro Verde
+item.travel_backpack:cyan_leather_backpack=Mochila de Couro Ciano\n§9Travel Backpacks
+item.travel_backpack:cyan_leather_backpack.bacs=Mochila de Couro Ciano
+item.travel_backpack:light_blue_leather_backpack=Mochila de Couro Azul-clara\n§9Travel Backpacks
+item.travel_backpack:light_blue_leather_backpack.bacs=Mochila de Couro Azul-clara
+item.travel_backpack:blue_leather_backpack=Mochila de Couro Azul\n§9Travel Backpacks
+item.travel_backpack:blue_leather_backpack.bacs=Mochila de Couro Azul
+item.travel_backpack:purple_leather_backpack=Mochila de Couro Roxo\n§9Travel Backpacks
+item.travel_backpack:purple_leather_backpack.bacs=Mochila de Couro Roxo
+item.travel_backpack:magenta_leather_backpack=Mochila de Couro Magenta\n§9Travel Backpacks
+item.travel_backpack:magenta_leather_backpack.bacs=Mochila de Couro Magenta
+item.travel_backpack:pink_leather_backpack=Mochila de Couro Rosa\n§9Travel Backpacks
+item.travel_backpack:pink_leather_backpack.bacs=Mochila de Couro Rosa
+
 item.travel_backpack:copper_backpack=Mochila de Cobre\n§9Travel Backpacks
+item.travel_backpack:copper_backpack.bacs=Mochila de Cobre
+item.travel_backpack:white_copper_backpack=Mochila de Cobre Branca\n§9Travel Backpacks
+item.travel_backpack:white_copper_backpack.bacs=Mochila de Cobre Branca
+item.travel_backpack:light_gray_copper_backpack=Mochila de Cobre Cinza-clara\n§9Travel Backpacks
+item.travel_backpack:light_gray_copper_backpack.bacs=Mochila de Cobre Cinza-clara
+item.travel_backpack:gray_copper_backpack=Mochila de Cobre Cinza\n§9Travel Backpacks
+item.travel_backpack:gray_copper_backpack.bacs=Mochila de Cobre Cinza
+item.travel_backpack:black_copper_backpack=Mochila de Cobre Preta\n§9Travel Backpacks
+item.travel_backpack:black_copper_backpack.bacs=Mochila de Cobre Preta
+item.travel_backpack:brown_copper_backpack=Mochila de Cobre Marrom\n§9Travel Backpacks
+item.travel_backpack:brown_copper_backpack.bacs=Mochila de Cobre Marrom
+item.travel_backpack:red_copper_backpack=Mochila de Cobre Vermelho\n§9Travel Backpacks
+item.travel_backpack:red_copper_backpack.bacs=Mochila de Cobre Vermelho
+item.travel_backpack:orange_copper_backpack=Mochila de Cobre Laranja\n§9Travel Backpacks
+item.travel_backpack:orange_copper_backpack.bacs=Mochila de Cobre Laranja
+item.travel_backpack:yellow_copper_backpack=Mochila de Cobre Amarelo\n§9Travel Backpacks
+item.travel_backpack:yellow_copper_backpack.bacs=Mochila de Cobre Amarelo
+item.travel_backpack:lime_copper_backpack=Mochila de Cobre Verde-limão\n§9Travel Backpacks
+item.travel_backpack:lime_copper_backpack.bacs=Mochila de Cobre Verde-limão
+item.travel_backpack:green_copper_backpack=Mochila de Cobre Verde\n§9Travel Backpacks
+item.travel_backpack:green_copper_backpack.bacs=Mochila de Cobre Verde
+item.travel_backpack:cyan_copper_backpack=Mochila de Cobre Ciano\n§9Travel Backpacks
+item.travel_backpack:cyan_copper_backpack.bacs=Mochila de Cobre Ciano
+item.travel_backpack:light_blue_copper_backpack=Mochila de Cobre Azul-clara\n§9Travel Backpacks
+item.travel_backpack:light_blue_copper_backpack.bacs=Mochila de Cobre Azul-clara
+item.travel_backpack:blue_copper_backpack=Mochila de Cobre Azul\n§9Travel Backpacks
+item.travel_backpack:blue_copper_backpack.bacs=Mochila de Cobre Azul
+item.travel_backpack:purple_copper_backpack=Mochila de Cobre Roxo\n§9Travel Backpacks
+item.travel_backpack:purple_copper_backpack.bacs=Mochila de Cobre Roxo
+item.travel_backpack:magenta_copper_backpack=Mochila de Cobre Magenta\n§9Travel Backpacks
+item.travel_backpack:magenta_copper_backpack.bacs=Mochila de Cobre Magenta
+item.travel_backpack:pink_copper_backpack=Mochila de Cobre Rosa\n§9Travel Backpacks
+item.travel_backpack:pink_copper_backpack.bacs=Mochila de Cobre Rosa
+
 item.travel_backpack:iron_backpack=Mochila de Ferro\n§9Travel Backpacks
+item.travel_backpack:iron_backpack.bacs=Mochila de Ferro
+item.travel_backpack:white_iron_backpack=Mochila de Ferro Branca\n§9Travel Backpacks
+item.travel_backpack:white_iron_backpack.bacs=Mochila de Ferro Branca
+item.travel_backpack:light_gray_iron_backpack=Mochila de Ferro Cinza-clara\n§9Travel Backpacks
+item.travel_backpack:light_gray_iron_backpack.bacs=Mochila de Ferro Cinza-clara
+item.travel_backpack:gray_iron_backpack=Mochila de Ferro Cinza\n§9Travel Backpacks
+item.travel_backpack:gray_iron_backpack.bacs=Mochila de Ferro Cinza
+item.travel_backpack:black_iron_backpack=Mochila de Ferro Preta\n§9Travel Backpacks
+item.travel_backpack:black_iron_backpack.bacs=Mochila de Ferro Preta
+item.travel_backpack:brown_iron_backpack=Mochila de Ferro Marrom\n§9Travel Backpacks
+item.travel_backpack:brown_iron_backpack.bacs=Mochila de Ferro Marrom
+item.travel_backpack:red_iron_backpack=Mochila de Ferro Vermelho\n§9Travel Backpacks
+item.travel_backpack:red_iron_backpack.bacs=Mochila de Ferro Vermelho
+item.travel_backpack:orange_iron_backpack=Mochila de Ferro Laranja\n§9Travel Backpacks
+item.travel_backpack:orange_iron_backpack.bacs=Mochila de Ferro Laranja
+item.travel_backpack:yellow_iron_backpack=Mochila de Ferro Amarelo\n§9Travel Backpacks
+item.travel_backpack:yellow_iron_backpack.bacs=Mochila de Ferro Amarelo
+item.travel_backpack:lime_iron_backpack=Mochila de Ferro Verde-limão\n§9Travel Backpacks
+item.travel_backpack:lime_iron_backpack.bacs=Mochila de Ferro Verde-limão
+item.travel_backpack:green_iron_backpack=Mochila de Ferro Verde\n§9Travel Backpacks
+item.travel_backpack:green_iron_backpack.bacs=Mochila de Ferro Verde
+item.travel_backpack:cyan_iron_backpack=Mochila de Ferro Ciano\n§9Travel Backpacks
+item.travel_backpack:cyan_iron_backpack.bacs=Mochila de Ferro Ciano
+item.travel_backpack:light_blue_iron_backpack=Mochila de Ferro Azul-clara\n§9Travel Backpacks
+item.travel_backpack:light_blue_iron_backpack.bacs=Mochila de Ferro Azul-clara
+item.travel_backpack:blue_iron_backpack=Mochila de Ferro Azul\n§9Travel Backpacks
+item.travel_backpack:blue_iron_backpack.bacs=Mochila de Ferro Azul
+item.travel_backpack:purple_iron_backpack=Mochila de Ferro Roxo\n§9Travel Backpacks
+item.travel_backpack:purple_iron_backpack.bacs=Mochila de Ferro Roxo
+item.travel_backpack:magenta_iron_backpack=Mochila de Ferro Magenta\n§9Travel Backpacks
+item.travel_backpack:magenta_iron_backpack.bacs=Mochila de Ferro Magenta
+item.travel_backpack:pink_iron_backpack=Mochila de Ferro Rosa\n§9Travel Backpacks
+item.travel_backpack:pink_iron_backpack.bacs=Mochila de Ferro Rosa
+
 item.travel_backpack:gold_backpack=Mochila de Ouro\n§9Travel Backpacks
+item.travel_backpack:gold_backpack.bacs=Mochila de Ouro
+item.travel_backpack:white_gold_backpack=Mochila de Ouro Branca\n§9Travel Backpacks
+item.travel_backpack:white_gold_backpack.bacs=Mochila de Ouro Branca
+item.travel_backpack:light_gray_gold_backpack=Mochila de Ouro Cinza-clara\n§9Travel Backpacks
+item.travel_backpack:light_gray_gold_backpack.bacs=Mochila de Ouro Cinza-clara
+item.travel_backpack:gray_gold_backpack=Mochila de Ouro Cinza\n§9Travel Backpacks
+item.travel_backpack:gray_gold_backpack.bacs=Mochila de Ouro Cinza
+item.travel_backpack:black_gold_backpack=Mochila de Ouro Preta\n§9Travel Backpacks
+item.travel_backpack:black_gold_backpack.bacs=Mochila de Ouro Preta
+item.travel_backpack:brown_gold_backpack=Mochila de Ouro Marrom\n§9Travel Backpacks
+item.travel_backpack:brown_gold_backpack.bacs=Mochila de Ouro Marrom
+item.travel_backpack:red_gold_backpack=Mochila de Ouro Vermelho\n§9Travel Backpacks
+item.travel_backpack:red_gold_backpack.bacs=Mochila de Ouro Vermelho
+item.travel_backpack:orange_gold_backpack=Mochila de Ouro Laranja\n§9Travel Backpacks
+item.travel_backpack:orange_gold_backpack.bacs=Mochila de Ouro Laranja
+item.travel_backpack:yellow_gold_backpack=Mochila de Ouro Amarelo\n§9Travel Backpacks
+item.travel_backpack:yellow_gold_backpack.bacs=Mochila de Ouro Amarelo
+item.travel_backpack:lime_gold_backpack=Mochila de Ouro Verde-limão\n§9Travel Backpacks
+item.travel_backpack:lime_gold_backpack.bacs=Mochila de Ouro Verde-limão
+item.travel_backpack:green_gold_backpack=Mochila de Ouro Verde\n§9Travel Backpacks
+item.travel_backpack:green_gold_backpack.bacs=Mochila de Ouro Verde
+item.travel_backpack:cyan_gold_backpack=Mochila de Ouro Ciano\n§9Travel Backpacks
+item.travel_backpack:cyan_gold_backpack.bacs=Mochila de Ouro Ciano
+item.travel_backpack:light_blue_gold_backpack=Mochila de Ouro Azul-clara\n§9Travel Backpacks
+item.travel_backpack:light_blue_gold_backpack.bacs=Mochila de Ouro Azul-clara
+item.travel_backpack:blue_gold_backpack=Mochila de Ouro Azul\n§9Travel Backpacks
+item.travel_backpack:blue_gold_backpack.bacs=Mochila de Ouro Azul
+item.travel_backpack:purple_gold_backpack=Mochila de Ouro Roxo\n§9Travel Backpacks
+item.travel_backpack:purple_gold_backpack.bacs=Mochila de Ouro Roxo
+item.travel_backpack:magenta_gold_backpack=Mochila de Ouro Magenta\n§9Travel Backpacks
+item.travel_backpack:magenta_gold_backpack.bacs=Mochila de Ouro Magenta
+item.travel_backpack:pink_gold_backpack=Mochila de Ouro Rosa\n§9Travel Backpacks
+item.travel_backpack:pink_gold_backpack.bacs=Mochila de Ouro Rosa
+
 item.travel_backpack:diamond_backpack=Mochila de Diamante\n§9Travel Backpacks
+item.travel_backpack:diamond_backpack.bacs=Mochila de Diamante
+item.travel_backpack:white_diamond_backpack=Mochila de Diamante Branca\n§9Travel Backpacks
+item.travel_backpack:white_diamond_backpack.bacs=Mochila de Diamante Branca
+item.travel_backpack:light_gray_diamond_backpack=Mochila de Diamante Cinza-clara\n§9Travel Backpacks
+item.travel_backpack:light_gray_diamond_backpack.bacs=Mochila de Diamante Cinza-clara
+item.travel_backpack:gray_diamond_backpack=Mochila de Diamante Cinza\n§9Travel Backpacks
+item.travel_backpack:gray_diamond_backpack.bacs=Mochila de Diamante Cinza
+item.travel_backpack:black_diamond_backpack=Mochila de Diamante Preta\n§9Travel Backpacks
+item.travel_backpack:black_diamond_backpack.bacs=Mochila de Diamante Preta
+item.travel_backpack:brown_diamond_backpack=Mochila de Diamante Marrom\n§9Travel Backpacks
+item.travel_backpack:brown_diamond_backpack.bacs=Mochila de Diamante Marrom
+item.travel_backpack:red_diamond_backpack=Mochila de Diamante Vermelho\n§9Travel Backpacks
+item.travel_backpack:red_diamond_backpack.bacs=Mochila de Diamante Vermelho
+item.travel_backpack:orange_diamond_backpack=Mochila de Diamante Laranja\n§9Travel Backpacks
+item.travel_backpack:orange_diamond_backpack.bacs=Mochila de Diamante Laranja
+item.travel_backpack:yellow_diamond_backpack=Mochila de Diamante Amarelo\n§9Travel Backpacks
+item.travel_backpack:yellow_diamond_backpack.bacs=Mochila de Diamante Amarelo
+item.travel_backpack:lime_diamond_backpack=Mochila de Diamante Verde-limão\n§9Travel Backpacks
+item.travel_backpack:lime_diamond_backpack.bacs=Mochila de Diamante Verde-limão
+item.travel_backpack:green_diamond_backpack=Mochila de Diamante Verde\n§9Travel Backpacks
+item.travel_backpack:green_diamond_backpack.bacs=Mochila de Diamante Verde
+item.travel_backpack:cyan_diamond_backpack=Mochila de Diamante Ciano\n§9Travel Backpacks
+item.travel_backpack:cyan_diamond_backpack.bacs=Mochila de Diamante Ciano
+item.travel_backpack:light_blue_diamond_backpack=Mochila de Diamante Azul-clara\n§9Travel Backpacks
+item.travel_backpack:light_blue_diamond_backpack.bacs=Mochila de Diamante Azul-clara
+item.travel_backpack:blue_diamond_backpack=Mochila de Diamante Azul\n§9Travel Backpacks
+item.travel_backpack:blue_diamond_backpack.bacs=Mochila de Diamante Azul
+item.travel_backpack:purple_diamond_backpack=Mochila de Diamante Roxo\n§9Travel Backpacks
+item.travel_backpack:purple_diamond_backpack.bacs=Mochila de Diamante Roxo
+item.travel_backpack:magenta_diamond_backpack=Mochila de Diamante Magenta\n§9Travel Backpacks
+item.travel_backpack:magenta_diamond_backpack.bacs=Mochila de Diamante Magenta
+item.travel_backpack:pink_diamond_backpack=Mochila de Diamante Rosa\n§9Travel Backpacks
+item.travel_backpack:pink_diamond_backpack.bacs=Mochila de Diamante Rosa
+
 item.travel_backpack:netherite_backpack=Mochila de Netherita\n§9Travel Backpacks
+item.travel_backpack:netherite_backpack.bacs=Mochila de Netherita
+item.travel_backpack:white_netherite_backpack=Mochila de Netherita Branca\n§9Travel Backpacks
+item.travel_backpack:white_netherite_backpack.bacs=Mochila de Netherita Branca
+item.travel_backpack:light_gray_netherite_backpack=Mochila de Netherita Cinza-clara\n§9Travel Backpacks
+item.travel_backpack:light_gray_netherite_backpack.bacs=Mochila de Netherita Cinza-clara
+item.travel_backpack:gray_netherite_backpack=Mochila de Netherita Cinza\n§9Travel Backpacks
+item.travel_backpack:gray_netherite_backpack.bacs=Mochila de Netherita Cinza
+item.travel_backpack:black_netherite_backpack=Mochila de Netherita Preta\n§9Travel Backpacks
+item.travel_backpack:black_netherite_backpack.bacs=Mochila de Netherita Preta
+item.travel_backpack:brown_netherite_backpack=Mochila de Netherita Marrom\n§9Travel Backpacks
+item.travel_backpack:brown_netherite_backpack.bacs=Mochila de Netherita Marrom
+item.travel_backpack:red_netherite_backpack=Mochila de Netherita Vermelho\n§9Travel Backpacks
+item.travel_backpack:red_netherite_backpack.bacs=Mochila de Netherita Vermelho
+item.travel_backpack:orange_netherite_backpack=Mochila de Netherita Laranja\n§9Travel Backpacks
+item.travel_backpack:orange_netherite_backpack.bacs=Mochila de Netherita Laranja
+item.travel_backpack:yellow_netherite_backpack=Mochila de Netherita Amarelo\n§9Travel Backpacks
+item.travel_backpack:yellow_netherite_backpack.bacs=Mochila de Netherita Amarelo
+item.travel_backpack:lime_netherite_backpack=Mochila de Netherita Verde-limão\n§9Travel Backpacks
+item.travel_backpack:lime_netherite_backpack.bacs=Mochila de Netherita Verde-limão
+item.travel_backpack:green_netherite_backpack=Mochila de Netherita Verde\n§9Travel Backpacks
+item.travel_backpack:green_netherite_backpack.bacs=Mochila de Netherita Verde
+item.travel_backpack:cyan_netherite_backpack=Mochila de Netherita Ciano\n§9Travel Backpacks
+item.travel_backpack:cyan_netherite_backpack.bacs=Mochila de Netherita Ciano
+item.travel_backpack:light_blue_netherite_backpack=Mochila de Netherita Azul-clara\n§9Travel Backpacks
+item.travel_backpack:light_blue_netherite_backpack.bacs=Mochila de Netherita Azul-clara
+item.travel_backpack:blue_netherite_backpack=Mochila de Netherita Azul\n§9Travel Backpacks
+item.travel_backpack:blue_netherite_backpack.bacs=Mochila de Netherita Azul
+item.travel_backpack:purple_netherite_backpack=Mochila de Netherita Roxo\n§9Travel Backpacks
+item.travel_backpack:purple_netherite_backpack.bacs=Mochila de Netherita Roxo
+item.travel_backpack:magenta_netherite_backpack=Mochila de Netherita Magenta\n§9Travel Backpacks
+item.travel_backpack:magenta_netherite_backpack.bacs=Mochila de Netherita Magenta
+item.travel_backpack:pink_netherite_backpack=Mochila de Netherita Rosa\n§9Travel Backpacks
+item.travel_backpack:pink_netherite_backpack.bacs=Mochila de Netherita Rosa
 
 ## Upgrade
 item.travel_backpack:upgrade_template=Base de Melhoria\n§9Travel Backpacks
+item.travel_backpack:upgrade_template.bacs=Base de Melhoria
 
 ## Upgrade Tier
 item.travel_backpack:copper_upgrade_tier=§rMelhoria de Nível de Cobre\n§9Travel Backpacks
+item.travel_backpack:copper_upgrade_tier.bacs=§rMelhoria de Nível de Cobre
 item.travel_backpack:iron_upgrade_tier=Melhoria de Nível de Ferro\n§9Travel Backpacks
+item.travel_backpack:iron_upgrade_tier.bacs=Melhoria de Nível de Ferro
 item.travel_backpack:gold_upgrade_tier=Melhoria de Nível de Ouro\n§9Travel Backpacks
+item.travel_backpack:gold_upgrade_tier.bacs=Melhoria de Nível de Ouro
 item.travel_backpack:diamond_upgrade_tier=Melhoria de Nível de Diamante\n§9Travel Backpacks
+item.travel_backpack:diamond_upgrade_tier.bacs=Melhoria de Nível de Diamante
 item.travel_backpack:netherite_upgrade_tier=Melhoria de Nível de Netherita\n§9Travel Backpacks
+item.travel_backpack:netherite_upgrade_tier.bacs=Melhoria de Nível de Netherita
 
 ## Upgrade Functions
 item.travel_backpack:craft_upgrade=§c§r§a§f§t§rMelhoria de Craft\n§9Travel Backpacks
+item.travel_backpack:craft_upgrade.bacs=§c§r§a§f§t§rMelhoria de Craft
+item.travel_backpack:furnace_upgrade=§f§u§r§n§a§rMelhoria de Fornalha\n§9Travel Backpacks
+item.travel_backpack:furnace_upgrade.bacs=§f§u§r§n§a§rMelhoria de Fornalha
 
+### Warn
 
+item.warn.travel_backpack:backpack.need_shift.place=§cVocê precisa estar agachado para colocar a mochila no chão.
+item.warn.travel_backpack:backpack.need_shift.remove=§cVocê precisa estar agachado para remover a mochila do chão.
+## #endregion
 
 ## --------------------------------------------------
-## Item Catalog
+## #region Item Catalog
 ## --------------------------------------------------
 
 travel_backpack:itemGroup.name.backpacks=Mochilas
 travel_backpack:itemGroup.name.upgrade_tier=Melhorias de Nível
-
-
+travel_backpack:itemGroup.name.upgrade_functions=Melhorias Funcionais
+## #endregion
 
 ## --------------------------------------------------
-## Item Lore
+## #region Item Lore
 ## --------------------------------------------------
 
 lore.travel_backpack:backpack.id=Mochila: %1
-
-
+## #endregion
 
 ## --------------------------------------------------
-## UI
+## #region UI
 ## --------------------------------------------------
 
 ## Custom Chest
@@ -1306,6 +1631,7 @@ ui.travel_backpack:backpack.size.2=Mochila de Ferro
 ui.travel_backpack:backpack.size.3=Mochila de Ouro
 ui.travel_backpack:backpack.size.4=Mochila de Diamante
 ui.travel_backpack:backpack.size.5=Mochila de Netherita
+## #endregion
 
 
 

@@ -1,0 +1,53 @@
+{
+  "format_version": "1.26.10",
+  "minecraft:jigsaw": {
+    "description": {
+      "identifier": "simple_waystone:default_waystone"
+    },
+    "biome_filters": [
+      {
+        "all_of": [
+          { "test": "has_biome_tag", "operator": "==", "value": "overworld" },
+          { "test": "has_biome_tag", "operator": "!=", "value": "beach" },
+          {
+            "all_of": [
+              { "test": "has_biome_tag", "operator": "!=", "value": "desert" },
+              { "test": "has_biome_tag", "operator": "!=", "value": "desert_hills" },
+              { "test": "has_biome_tag", "operator": "!=", "value": "desert_mutated" }
+            ]
+          },
+          {
+            "all_of": [
+              { "test": "has_biome_tag", "operator": "!=", "value": "cold_taiga" },
+              { "test": "has_biome_tag", "operator": "!=", "value": "cold_taiga_hills" },
+              { "test": "has_biome_tag", "operator": "!=", "value": "cold_taiga_mutated" },
+              { "test": "has_biome_tag", "operator": "!=", "value": "mega_taiga" },
+              { "test": "has_biome_tag", "operator": "!=", "value": "mega_taiga_hills" },
+              { "test": "has_biome_tag", "operator": "!=", "value": "redwood_taiga_hills_mutated" },
+              { "test": "has_biome_tag", "operator": "!=", "value": "redwood_taiga_mutated" },
+              { "test": "has_biome_tag", "operator": "!=", "value": "taiga" },
+              { "test": "has_biome_tag", "operator": "!=", "value": "taiga_hills" },
+              { "test": "has_biome_tag", "operator": "!=", "value": "taiga_mutated" }
+            ]
+          },
+          {
+            "all_of": [
+              { "test": "has_biome_tag", "operator": "!=", "value": "ocean" },
+              { "test": "has_biome_tag", "operator": "!=", "value": "deep" }
+            ]
+          }
+        ]
+      }
+    ],
+    "start_pool": "simple_waystone:simple_waystone/default_waystone",
+    "heightmap_projection": "world_surface",
+    "step": "surface_structures",
+    "terrain_adaptation": "beard_thin",
+    "start_height": {
+      "type": "uniform",
+      "min": { "absolute": 1 },
+      "max": { "absolute": 1 }
+    },
+    "max_depth": 1
+  }
+}

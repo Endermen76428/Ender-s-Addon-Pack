@@ -1,0 +1,27 @@
+{
+  "format_version": "1.26.10",
+  "minecraft:jigsaw": {
+    "description": {
+      "identifier": "simple_waystone:desert_waystone"
+    },
+    "biome_filters": [
+      {
+        "any_of": [
+          { "test": "has_biome_tag", "operator": "==", "value": "desert" },
+          { "test": "has_biome_tag", "operator": "==", "value": "desert_hills" },
+          { "test": "has_biome_tag", "operator": "==", "value": "desert_mutated" }
+        ]
+      }
+    ],
+    "start_pool": "simple_waystone:simple_waystone/desert_waystone",
+    "heightmap_projection": "world_surface",
+    "step": "surface_structures",
+    "terrain_adaptation": "beard_thin",
+    "start_height": {
+      "type": "uniform",
+      "min": { "absolute": 1 },
+      "max": { "absolute": 1 }
+    },
+    "max_depth": 1
+  }
+}

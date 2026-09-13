@@ -2,13 +2,14 @@
   "namespace": "travel_backpack-backpack",
 
   "backpack_panel": {
-    "$inventory_size|default": 49, /*Se não colocar |default o valor não é alterado pelos elementos anteriores, legal saber*/
+    "$inventory_size|default": 27, /*Se não colocar |default o valor não é alterado pelos elementos anteriores, legal saber*/
     "$root_panel_size|default": [ 176, 162 ],
     "$backpack_panel_size|default": [ 176, 68 ],
     "$grid_panel_size|default": [ 162, 54 ],
     "$grid_panel_dimension|default": [ 9, 3 ],
 
     "type": "panel",
+    "offset": [ 0, 3 ],
     "controls": [
       { "container_gamepad_helpers@common.container_gamepad_helpers": {} },
       { "selected_item_details_factory@common.selected_item_details_factory": { "control_name": "@chest.selected_item_details" } },
@@ -19,14 +20,13 @@
           "size": "$root_panel_size",
           "controls": [
             {
-              "inventory_panel": {
-                "type": "panel",
-                "size": [ 176, 94 ],
+              "inventory_panel@common.root_panel": {
+                "size": [ 176, 85 ],
                 "anchor_from": "bottom_middle",
                 "anchor_to": "bottom_middle",
                 "controls": [
                   { "background@common.dialog_background_opaque": {} },
-                  { "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": {} },
+                  { "inventory_panel_bottom_half@common.inventory_panel": {} },
                   { "hotbar_grid@common.hotbar_grid_template": {} },
                   { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} },
                   { "flying_item_renderer@common.flying_item_renderer": { "layer": 15 } }
@@ -34,14 +34,24 @@
               }
             },
             {
-              "backpack_panel": {
-                "type": "panel",
+              "backpack_panel@common.root_panel": {
                 "size": "$backpack_panel_size",
                 "anchor_from": "top_middle",
                 "anchor_to": "top_middle",
                 "controls": [
-                  { "close@common.close_button": { "offset": [ -1, -8] } },
-                  { "upgrade_slots@travel_backpack-upgrades.upgrade_slots_panel": {} },
+                  { "close@common.close_button": { "offset": [ -1, -8 ] } },
+                  {
+                    "upgrade_slots_root@common.root_panel": {
+                      "size": [ "100%c", "100%c" ],
+                      "offset": [ -25, 0 ],
+                      "layer": 0,
+                      "anchor_from": "top_left",
+                      "anchor_to": "top_left",
+                      "controls": [
+                        { "upgrade_slots@travel_backpack-upgrades.upgrade_slots_panel": {} }
+                      ]
+                    }
+                  },
                   { "upgrade_functions@travel_backpack-upgrades.upgrade_functions_panel": { "ignored": "(not $is_desktop)" } },
                   { "upgrade_functions_mobile@travel_backpack-upgrades.upgrade_functions_mobile_panel": { "ignored": "$is_desktop" } },
                   { "background@travel_backpack-common.backpack_background": { "size": [ "100%", "100% + 12px" ] } },
@@ -125,7 +135,7 @@
           "collection_name": "container_items"
         }
       },
-      { "padding": { "type": "panel", "size": [ 0, 1 ] } }
+      { "padding@common.empty_panel": { "size": [ 0, 1 ] } }
     ]
   }
 }

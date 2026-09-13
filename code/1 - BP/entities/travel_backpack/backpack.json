@@ -7,7 +7,9 @@
       "is_spawnable": false,
       "is_experimental": false,
       "properties": {
-        "travel_backpack:on_ground": { "type": "bool", "default": false }
+        "travel_backpack:on_ground": { "type": "bool", "default": false },
+        "travel_backpack:level": { "type": "int", "range": [-1, 5], "default": -1 },
+        "travel_backpack:color": { "type": "int", "range": [0, 16], "default": 0 }
       }
     },
 
@@ -23,11 +25,107 @@
                 {
                   "all_of": [
                     { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:white_leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:light_gray_leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:gray_leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:black_leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:brown_leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:red_leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:orange_leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:yellow_leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:lime_leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:green_leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:cyan_leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:light_blue_leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:blue_leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:purple_leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:magenta_leather_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:pink_leather_backpack" },
                     { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:white_copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:light_gray_copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:gray_copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:black_copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:brown_copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:red_copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:orange_copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:yellow_copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:lime_copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:green_copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:cyan_copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:light_blue_copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:blue_copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:purple_copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:magenta_copper_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:pink_copper_backpack" },
                     { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:white_iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:light_gray_iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:gray_iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:black_iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:brown_iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:red_iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:orange_iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:yellow_iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:lime_iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:green_iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:cyan_iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:light_blue_iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:blue_iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:purple_iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:magenta_iron_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:pink_iron_backpack" },
                     { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:white_gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:light_gray_gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:gray_gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:black_gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:brown_gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:red_gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:orange_gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:yellow_gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:lime_gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:green_gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:cyan_gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:light_blue_gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:blue_gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:purple_gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:magenta_gold_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:pink_gold_backpack" },
                     { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:diamond_backpack" },
-                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:netherite_backpack" }
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:white_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:light_gray_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:gray_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:black_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:brown_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:red_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:orange_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:yellow_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:lime_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:green_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:cyan_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:light_blue_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:blue_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:purple_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:magenta_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:pink_diamond_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:white_netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:light_gray_netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:gray_netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:black_netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:brown_netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:red_netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:orange_netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:yellow_netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:lime_netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:green_netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:cyan_netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:light_blue_netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:blue_netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:purple_netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:magenta_netherite_backpack" },
+                    { "test": "in_block", "subject": "self", "operator": "!=", "value": "travel_backpack:pink_netherite_backpack" }
                   ]
                 }
               ],
@@ -42,12 +140,12 @@
         "minecraft:timer": { "time": 60.0, "time_down_event": { "event": "travel_backpack:archive" } }
       },
 
-      "travel_backpack:inventory0": { "minecraft:inventory": { "container_type": "container", "inventory_size": 49  } }, /* 27  - Leather */
-      "travel_backpack:inventory1": { "minecraft:inventory": { "container_type": "container", "inventory_size": 57  } }, /* 36  - Copper */
-      "travel_backpack:inventory2": { "minecraft:inventory": { "container_type": "container", "inventory_size": 75  } }, /* 54  - Iron */
-      "travel_backpack:inventory3": { "minecraft:inventory": { "container_type": "container", "inventory_size": 102 } }, /* 81  - Gold */
-      "travel_backpack:inventory4": { "minecraft:inventory": { "container_type": "container", "inventory_size": 121 } }, /* 100 - Diamond */
-      "travel_backpack:inventory5": { "minecraft:inventory": { "container_type": "container", "inventory_size": 141 } }  /* 120 - Netherite */
+      "travel_backpack:inventory0": { "minecraft:inventory": { "container_type": "container", "inventory_size": 62  } }, /* 27,-10-Upgrade,-15-Craft,-10-Furnace  - Leather */
+      "travel_backpack:inventory1": { "minecraft:inventory": { "container_type": "container", "inventory_size": 74  } }, /* 36,-10-Upgrade,-15-Craft,-10-Furnace  - Copper */
+      "travel_backpack:inventory2": { "minecraft:inventory": { "container_type": "container", "inventory_size": 89  } }, /* 54,-10-Upgrade,-15-Craft,-10-Furnace  - Iron */
+      "travel_backpack:inventory3": { "minecraft:inventory": { "container_type": "container", "inventory_size": 116 } }, /* 81,-10-Upgrade,-15-Craft,-10-Furnace  - Gold */
+      "travel_backpack:inventory4": { "minecraft:inventory": { "container_type": "container", "inventory_size": 135 } }, /* 100,-10-Upgrade,-15-Craft,-10-Furnace - Diamond */
+      "travel_backpack:inventory5": { "minecraft:inventory": { "container_type": "container", "inventory_size": 155 } }  /* 120,-10-Upgrade,-15-Craft,-10-Furnace - Netherite */
     },
 
     "components": {
@@ -58,7 +156,233 @@
       "minecraft:nameable": { "allow_name_tag_renaming": false },
       "minecraft:fire_immune": {},
       "minecraft:persistent": {},
-      "minecraft:physics": { "has_collision": false, "has_gravity": false }
+      "minecraft:physics": { "has_collision": false, "has_gravity": false },
+      "minecraft:knockback_resistance": { "value": 999 },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.unpaint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 0 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:ink_sac" }
+                ]
+              },
+              "event": "travel_backpack:undye_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 1 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:white_dye" }
+                ]
+              },
+              "event": "travel_backpack:white_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 2 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:light_gray_dye" }
+                ]
+              },
+              "event": "travel_backpack:light_gray_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 3 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:gray_dye" }
+                ]
+              },
+              "event": "travel_backpack:gray_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 4 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:black_dye" }
+                ]
+              },
+              "event": "travel_backpack:black_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 5 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:brown_dye" }
+                ]
+              },
+              "event": "travel_backpack:brown_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 6 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:red_dye" }
+                ]
+              },
+              "event": "travel_backpack:red_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 7 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:orange_dye" }
+                ]
+              },
+              "event": "travel_backpack:orange_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 8 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:yellow_dye" }
+                ]
+              },
+              "event": "travel_backpack:yellow_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 9 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:lime_dye" }
+                ]
+              },
+              "event": "travel_backpack:lime_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 10 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:green_dye" }
+                ]
+              },
+              "event": "travel_backpack:green_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 11 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:cyan_dye" }
+                ]
+              },
+              "event": "travel_backpack:cyan_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 12 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:light_blue_dye" }
+                ]
+              },
+              "event": "travel_backpack:light_blue_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 13 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:blue_dye" }
+                ]
+              },
+              "event": "travel_backpack:blue_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 14 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:purple_dye" }
+                ]
+              },
+              "event": "travel_backpack:purple_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 15 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:magenta_dye" }
+                ]
+              },
+              "event": "travel_backpack:magenta_color"
+            }
+          },
+          {
+            "interact_text": "action.interact.travel_backpack:backpack.paint",
+            "use_item": true,
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "int_property", "domain": "travel_backpack:color", "operator": "not", "value": 16 },
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "minecraft:pink_dye" }
+                ]
+              },
+              "event": "travel_backpack:pink_color"
+            }
+          }
+        ]
+      }
     },
 
     "events": {
@@ -80,12 +404,77 @@
       "travel_backpack:add_timer": { "add": { "component_groups": [ "travel_backpack:timer" ] } },
       "travel_backpack:remove_timer": { "remove": { "component_groups": [ "travel_backpack:timer" ] } },
 
-      "travel_backpack:inventory0": { "add": { "component_groups": [ "travel_backpack:inventory0" ] } },
-      "travel_backpack:inventory1": { "add": { "component_groups": [ "travel_backpack:inventory1" ] } },
-      "travel_backpack:inventory2": { "add": { "component_groups": [ "travel_backpack:inventory2" ] } },
-      "travel_backpack:inventory3": { "add": { "component_groups": [ "travel_backpack:inventory3" ] } },
-      "travel_backpack:inventory4": { "add": { "component_groups": [ "travel_backpack:inventory4" ] } },
-      "travel_backpack:inventory5": { "add": { "component_groups": [ "travel_backpack:inventory5" ] } }
+      "travel_backpack:inventory0": {
+        "add": { "component_groups": [ "travel_backpack:inventory0" ] },
+        "set_property": { "travel_backpack:level": 0 },
+        "queue_command": { "command": "scriptevent travel_backpack:update_level" }
+      },
+      "travel_backpack:inventory1": {
+        "remove": { "component_groups": [ "travel_backpack:inventory0" ] },
+        "add": { "component_groups": [ "travel_backpack:inventory1" ] },
+        "set_property": { "travel_backpack:level": 1 },
+        "queue_command": { "command": "scriptevent travel_backpack:update_level" }
+      },
+      "travel_backpack:inventory2": {
+        "remove": { "component_groups": [
+          "travel_backpack:inventory0",
+          "travel_backpack:inventory1"
+        ] },
+        "add": { "component_groups": [ "travel_backpack:inventory2" ] },
+        "set_property": { "travel_backpack:level": 2 },
+        "queue_command": { "command": "scriptevent travel_backpack:update_level" }
+      },
+      "travel_backpack:inventory3": {
+        "remove": { "component_groups": [
+          "travel_backpack:inventory0",
+          "travel_backpack:inventory1",
+          "travel_backpack:inventory2"
+        ] },
+        "add": { "component_groups": [ "travel_backpack:inventory3" ] },
+        "set_property": { "travel_backpack:level": 3 },
+        "queue_command": { "command": "scriptevent travel_backpack:update_level" }
+      },
+      "travel_backpack:inventory4": {
+        "remove": { "component_groups": [
+          "travel_backpack:inventory0",
+          "travel_backpack:inventory1",
+          "travel_backpack:inventory2",
+          "travel_backpack:inventory3"
+        ] },
+        "add": { "component_groups": [ "travel_backpack:inventory4" ] },
+        "set_property": { "travel_backpack:level": 4 },
+        "queue_command": { "command": "scriptevent travel_backpack:update_level" }
+      },
+      "travel_backpack:inventory5": {
+        "remove": { "component_groups": [
+          "travel_backpack:inventory0",
+          "travel_backpack:inventory1",
+          "travel_backpack:inventory2",
+          "travel_backpack:inventory3",
+          "travel_backpack:inventory4"
+        ] },
+        "add": { "component_groups": [ "travel_backpack:inventory5" ] },
+        "set_property": { "travel_backpack:level": 5 },
+        "queue_command": { "command": "scriptevent travel_backpack:update_level" }
+      },
+
+      "travel_backpack:undye_color":       { "set_property": { "travel_backpack:color": 0 }, "queue_command": { "command": "scriptevent travel_backpack:paint undye" } },
+      "travel_backpack:white_color":       { "set_property": { "travel_backpack:color": 1 }, "queue_command": { "command": "scriptevent travel_backpack:paint white" } },
+      "travel_backpack:light_gray_color":  { "set_property": { "travel_backpack:color": 2 }, "queue_command": { "command": "scriptevent travel_backpack:paint light_gray" } },
+      "travel_backpack:gray_color":        { "set_property": { "travel_backpack:color": 3 }, "queue_command": { "command": "scriptevent travel_backpack:paint gray" } },
+      "travel_backpack:black_color":       { "set_property": { "travel_backpack:color": 4 }, "queue_command": { "command": "scriptevent travel_backpack:paint black" } },
+      "travel_backpack:brown_color":       { "set_property": { "travel_backpack:color": 5 }, "queue_command": { "command": "scriptevent travel_backpack:paint brown" } },
+      "travel_backpack:red_color":         { "set_property": { "travel_backpack:color": 6 }, "queue_command": { "command": "scriptevent travel_backpack:paint red" } },
+      "travel_backpack:orange_color":      { "set_property": { "travel_backpack:color": 7 }, "queue_command": { "command": "scriptevent travel_backpack:paint orange" } },
+      "travel_backpack:yellow_color":      { "set_property": { "travel_backpack:color": 8 }, "queue_command": { "command": "scriptevent travel_backpack:paint yellow" } },
+      "travel_backpack:lime_color":        { "set_property": { "travel_backpack:color": 9 }, "queue_command": { "command": "scriptevent travel_backpack:paint lime" } },
+      "travel_backpack:green_color":       { "set_property": { "travel_backpack:color": 10 }, "queue_command": { "command": "scriptevent travel_backpack:paint green" } },
+      "travel_backpack:cyan_color":        { "set_property": { "travel_backpack:color": 11 }, "queue_command": { "command": "scriptevent travel_backpack:paint cyan" } },
+      "travel_backpack:light_blue_color":  { "set_property": { "travel_backpack:color": 12 }, "queue_command": { "command": "scriptevent travel_backpack:paint light_blue" } },
+      "travel_backpack:blue_color":        { "set_property": { "travel_backpack:color": 13 }, "queue_command": { "command": "scriptevent travel_backpack:paint blue" } },
+      "travel_backpack:purple_color":      { "set_property": { "travel_backpack:color": 14 }, "queue_command": { "command": "scriptevent travel_backpack:paint purple" } },
+      "travel_backpack:magenta_color":     { "set_property": { "travel_backpack:color": 15 }, "queue_command": { "command": "scriptevent travel_backpack:paint magenta" } },
+      "travel_backpack:pink_color":        { "set_property": { "travel_backpack:color": 16 }, "queue_command": { "command": "scriptevent travel_backpack:paint pink" } }
     }
   }
 }

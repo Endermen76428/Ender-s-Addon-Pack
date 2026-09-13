@@ -1,18 +1,18 @@
 {
   "format_version": "1.8.0",
   "animations": {
-    "animation.travel_backpack.attachables.backpack.third_person_hold": {
+    "animation.travel_backpack.backpack.chestplate_hold": {
       "loop": true,
       "bones": {
         "body": {
           "rotation": [0, -180, 0],
-          "position": [0, -10, 5],
-          "scale": 0.85
+          "position": [0, -10.25, 5],
+          "scale": 0.92
         },
         "tier": {
           "rotation": [0, 180, 0],
-          "position": [0, 11.75, 6],
-          "scale": 1.19
+          "position": [0, 11.25, 5.5],
+          "scale": 1.08
         }
       }
     }

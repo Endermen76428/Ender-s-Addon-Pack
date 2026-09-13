@@ -1,0 +1,193 @@
+{
+  "namespace": "travel_backpack-upgrade_furnace",
+
+  "upgrade_furnace_panel@common.root_panel": {
+    "size": [ "100%cm", "100%cm" ],
+    "controls": [
+      {
+        "craft_toggle@travel_backpack-common.upgrade_toggle_button": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ -1.5, 0 ],
+          "$index": 1,
+          "$name": "toggle_furnace_upgrade",
+          "$off_texture|default": "textures/travel_backpack/ui/upgrades/furnace/furnace_off",
+          "$off_hover_texture|default": "textures/travel_backpack/ui/upgrades/furnace/furnace_off_hover",
+          "$on_texture|default": "textures/travel_backpack/ui/upgrades/furnace/furnace_on",
+          "$on_hover_texture|default": "textures/travel_backpack/ui/upgrades/furnace/furnace_on_hover"
+        }
+      },
+      {
+        "furnace_panel@travel_backpack-common.backpack_background": {
+          "type": "image",
+          "size": [ "100%c", "100%c" ],
+          "offset": [ -0.5, 1 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "controls": [
+            { "default_size@common.empty_panel": { "size": [21, 21] } },
+            {
+              "furnace_panel": {
+                "type": "panel",
+                "size": [ 87, 64 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "controls": [
+                  {
+                    "furnace_label": {
+                      "type": "label",
+                      "text": "container.furnace",
+                      "localize": true,
+                      "offset": [ 23, 6 ],
+                      "text_alignment": "left",
+                      "anchor_from": "top_left",
+                      "anchor_to": "top_left"
+                    }
+                  },
+                  {
+                    "column_1": {
+                      "type": "stack_panel",
+                      "size": [ 54, 18 ],
+                      "orientation": "vertical",
+                      "collection_name": "container_items",
+                      "controls": [
+                        { "input@chest.chest_grid_item": { "collection_index": "($inventory_size +25)" } },
+                        {
+                          "flame_panel@common.empty_panel": {
+                            "size": [ 18, 20 ],
+                            "controls": [
+                              {
+                                "empty_flame": {
+                                  "type": "image",
+                                  "texture": "textures/ui/flame_empty_image",
+                                  "size": [ 13, 13 ]
+                                }
+                              },
+                              {
+                                "flame_stack": {
+                                  "type": "stack_panel",
+                                  "offset": [ 1.5, -0.5 ],
+                                  "collection_name": "container_items",
+                                  "controls": [
+                                    { "flame@travel_backpack-upgrade_general.item_visual": { "collection_index": "($inventory_size +28)" } }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        { "fuel@chest.chest_grid_item": { "collection_index": "($inventory_size +26)" } }
+                      ]
+                    }
+                  },
+                  {
+                    "column_2@common.empty_panel": {
+                      "controls": [
+                        {
+                          "arrow": {
+                            "type": "image",
+                            "texture": "textures/ui/arrow_inactive",
+                            "size": [ 22, 15 ],
+                            "offset": [ 11, 19 ]
+                          }
+                        },
+                        {
+                          "arrow_stack": {
+                            "type": "stack_panel",
+                            "size": [ 22, 22 ],
+                            "offset": [ 11, 19 ],
+                            "collection_name": "container_items",
+                            "controls": [
+                              { "arrow@travel_backpack-upgrade_general.item_visual": { "collection_index": "($inventory_size +29)", "$item_render_size": [ 22, 22 ] } }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "output": {
+                      "type": "stack_panel",
+                      "offset": [ 74.5, 19 ],
+                      "collection_name": "container_items",
+                      "controls": [
+                        {
+                          "output@common.container_item": {
+                            "size": [ 26, 26 ],
+                            "$button_ref": "travel_backpack-upgrade_general.output_button",
+                            "$cell_image_size": [ 26, 26 ],
+                            "$item_collection_name": "container_items",
+                            "collection_index": "($inventory_size +27)"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                  // {
+                  //   "horizontal_elements": {
+                  //     "type": "stack_panel",
+                  //     "orientation": "horizontal",
+                  //     "controls": [
+                  //     ]
+                  //   }
+                  // }
+                ],
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "toggle_furnace_upgrade",
+                    "source_property_name": "#toggle_state",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "hover_data_control_1",
+        "source_property_name": "#preserved_hover_text",
+        "target_property_name": "#info_1"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "hover_data_control_2",
+        "source_property_name": "#preserved_hover_text",
+        "target_property_name": "#info_2"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "hover_data_control_3",
+        "source_property_name": "#preserved_hover_text",
+        "target_property_name": "#info_3"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "hover_data_control_4",
+        "source_property_name": "#preserved_hover_text",
+        "target_property_name": "#info_4"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "hover_data_control_5",
+        "source_property_name": "#preserved_hover_text",
+        "target_property_name": "#info_5"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "hover_data_control_6",
+        "source_property_name": "#preserved_hover_text",
+        "target_property_name": "#info_6"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((('%.21s' * #info_1) = '§f§f§u§r§n§a§r') or (('%.21s' * #info_2) = '§f§f§u§r§n§a§r') or (('%.21s' * #info_3) = '§f§f§u§r§n§a§r') or (('%.21s' * #info_4) = '§f§f§u§r§n§a§r') or (('%.21s' * #info_5) = '§f§f§u§r§n§a§r') or (('%.21s' * #info_6) = '§f§f§u§r§n§a§r'))", /* Cada-combinação-de-§-considerá-como-3-e-possui-um-§f-no-inicio-de-todo-hover_text-por-algum-motivo,-sofri-pra-descobrir-isso-:( */
+        "target_property_name": "#visible"
+      }
+    ]
+  }
+}

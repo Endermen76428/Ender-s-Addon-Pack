@@ -1230,30 +1230,140 @@ item_subtitle.temporal_bottle:total_time=§7Total Time %1
 
 
 ## --------------------------------------------------
-## Block
-## --------------------------------------------------
+## #region Block
+## ------------------------------------------------
 
 ## Backpack
 tile.travel_backpack:leather_backpack.name=Leather Backpack
+tile.travel_backpack:white_leather_backpack.name=White Leather Backpack
+tile.travel_backpack:light_gray_leather_backpack.name=Light Gray Leather Backpack
+tile.travel_backpack:gray_leather_backpack.name=Gray Leather Backpack
+tile.travel_backpack:black_leather_backpack.name=Black Leather Backpack
+tile.travel_backpack:brown_leather_backpack.name=Brown Leather Backpack
+tile.travel_backpack:red_leather_backpack.name=Red Leather Backpack
+tile.travel_backpack:orange_leather_backpack.name=Orange Leather Backpack
+tile.travel_backpack:yellow_leather_backpack.name=Yellow Leather Backpack
+tile.travel_backpack:lime_leather_backpack.name=Lime Leather Backpack
+tile.travel_backpack:green_leather_backpack.name=Green Leather Backpack
+tile.travel_backpack:cyan_leather_backpack.name=Cyan Leather Backpack
+tile.travel_backpack:light_blue_leather_backpack.name=Light Blue Leather Backpack
+tile.travel_backpack:blue_leather_backpack.name=Blue Leather Backpack
+tile.travel_backpack:purple_leather_backpack.name=Purple Leather Backpack
+tile.travel_backpack:magenta_leather_backpack.name=Magenta Leather Backpack
+tile.travel_backpack:pink_leather_backpack.name=Pink Leather Backpack
+
 tile.travel_backpack:copper_backpack.name=Copper Backpack
+tile.travel_backpack:white_copper_backpack.name=White Copper Backpack
+tile.travel_backpack:light_gray_copper_backpack.name=Light Gray Copper Backpack
+tile.travel_backpack:gray_copper_backpack.name=Gray Copper Backpack
+tile.travel_backpack:black_copper_backpack.name=Black Copper Backpack
+tile.travel_backpack:brown_copper_backpack.name=Brown Copper Backpack
+tile.travel_backpack:red_copper_backpack.name=Red Copper Backpack
+tile.travel_backpack:orange_copper_backpack.name=Orange Copper Backpack
+tile.travel_backpack:yellow_copper_backpack.name=Yellow Copper Backpack
+tile.travel_backpack:lime_copper_backpack.name=Lime Copper Backpack
+tile.travel_backpack:green_copper_backpack.name=Green Copper Backpack
+tile.travel_backpack:cyan_copper_backpack.name=Cyan Copper Backpack
+tile.travel_backpack:light_blue_copper_backpack.name=Light Blue Copper Backpack
+tile.travel_backpack:blue_copper_backpack.name=Blue Copper Backpack
+tile.travel_backpack:purple_copper_backpack.name=Purple Copper Backpack
+tile.travel_backpack:magenta_copper_backpack.name=Magenta Copper Backpack
+tile.travel_backpack:pink_copper_backpack.name=Pink Copper Backpack
+
 tile.travel_backpack:iron_backpack.name=Iron Backpack
+tile.travel_backpack:white_iron_backpack.name=White Iron Backpack
+tile.travel_backpack:light_gray_iron_backpack.name=Light Gray Iron Backpack
+tile.travel_backpack:gray_iron_backpack.name=Gray Iron Backpack
+tile.travel_backpack:black_iron_backpack.name=Black Iron Backpack
+tile.travel_backpack:brown_iron_backpack.name=Brown Iron Backpack
+tile.travel_backpack:red_iron_backpack.name=Red Iron Backpack
+tile.travel_backpack:orange_iron_backpack.name=Orange Iron Backpack
+tile.travel_backpack:yellow_iron_backpack.name=Yellow Iron Backpack
+tile.travel_backpack:lime_iron_backpack.name=Lime Iron Backpack
+tile.travel_backpack:green_iron_backpack.name=Green Iron Backpack
+tile.travel_backpack:cyan_iron_backpack.name=Cyan Iron Backpack
+tile.travel_backpack:light_blue_iron_backpack.name=Light Blue Iron Backpack
+tile.travel_backpack:blue_iron_backpack.name=Blue Iron Backpack
+tile.travel_backpack:purple_iron_backpack.name=Purple Iron Backpack
+tile.travel_backpack:magenta_iron_backpack.name=Magenta Iron Backpack
+tile.travel_backpack:pink_iron_backpack.name=Pink Iron Backpack
+
 tile.travel_backpack:gold_backpack.name=Gold Backpack
+tile.travel_backpack:white_gold_backpack.name=White Gold Backpack
+tile.travel_backpack:light_gray_gold_backpack.name=Light Gray Gold Backpack
+tile.travel_backpack:gray_gold_backpack.name=Gray Gold Backpack
+tile.travel_backpack:black_gold_backpack.name=Black Gold Backpack
+tile.travel_backpack:brown_gold_backpack.name=Brown Gold Backpack
+tile.travel_backpack:red_gold_backpack.name=Red Gold Backpack
+tile.travel_backpack:orange_gold_backpack.name=Orange Gold Backpack
+tile.travel_backpack:yellow_gold_backpack.name=Yellow Gold Backpack
+tile.travel_backpack:lime_gold_backpack.name=Lime Gold Backpack
+tile.travel_backpack:green_gold_backpack.name=Green Gold Backpack
+tile.travel_backpack:cyan_gold_backpack.name=Cyan Gold Backpack
+tile.travel_backpack:light_blue_gold_backpack.name=Light Blue Gold Backpack
+tile.travel_backpack:blue_gold_backpack.name=Blue Gold Backpack
+tile.travel_backpack:purple_gold_backpack.name=Purple Gold Backpack
+tile.travel_backpack:magenta_gold_backpack.name=Magenta Gold Backpack
+tile.travel_backpack:pink_gold_backpack.name=Pink Gold Backpack
+
 tile.travel_backpack:diamond_backpack.name=Diamond Backpack
+tile.travel_backpack:white_diamond_backpack.name=White Diamond Backpack
+tile.travel_backpack:light_gray_diamond_backpack.name=Light Gray Diamond Backpack
+tile.travel_backpack:gray_diamond_backpack.name=Gray Diamond Backpack
+tile.travel_backpack:black_diamond_backpack.name=Black Diamond Backpack
+tile.travel_backpack:brown_diamond_backpack.name=Brown Diamond Backpack
+tile.travel_backpack:red_diamond_backpack.name=Red Diamond Backpack
+tile.travel_backpack:orange_diamond_backpack.name=Orange Diamond Backpack
+tile.travel_backpack:yellow_diamond_backpack.name=Yellow Diamond Backpack
+tile.travel_backpack:lime_diamond_backpack.name=Lime Diamond Backpack
+tile.travel_backpack:green_diamond_backpack.name=Green Diamond Backpack
+tile.travel_backpack:cyan_diamond_backpack.name=Cyan Diamond Backpack
+tile.travel_backpack:light_blue_diamond_backpack.name=Light Blue Diamond Backpack
+tile.travel_backpack:blue_diamond_backpack.name=Blue Diamond Backpack
+tile.travel_backpack:purple_diamond_backpack.name=Purple Diamond Backpack
+tile.travel_backpack:magenta_diamond_backpack.name=Magenta Diamond Backpack
+tile.travel_backpack:pink_diamond_backpack.name=Pink Diamond Backpack
+
 tile.travel_backpack:netherite_backpack.name=Netherite Backpack
-
-
+tile.travel_backpack:white_netherite_backpack.name=White Netherite Backpack
+tile.travel_backpack:light_gray_netherite_backpack.name=Light Gray Netherite Backpack
+tile.travel_backpack:gray_netherite_backpack.name=Gray Netherite Backpack
+tile.travel_backpack:black_netherite_backpack.name=Black Netherite Backpack
+tile.travel_backpack:brown_netherite_backpack.name=Brown Netherite Backpack
+tile.travel_backpack:red_netherite_backpack.name=Red Netherite Backpack
+tile.travel_backpack:orange_netherite_backpack.name=Orange Netherite Backpack
+tile.travel_backpack:yellow_netherite_backpack.name=Yellow Netherite Backpack
+tile.travel_backpack:lime_netherite_backpack.name=Lime Netherite Backpack
+tile.travel_backpack:green_netherite_backpack.name=Green Netherite Backpack
+tile.travel_backpack:cyan_netherite_backpack.name=Cyan Netherite Backpack
+tile.travel_backpack:light_blue_netherite_backpack.name=Light Blue Netherite Backpack
+tile.travel_backpack:blue_netherite_backpack.name=Blue Netherite Backpack
+tile.travel_backpack:purple_netherite_backpack.name=Purple Netherite Backpack
+tile.travel_backpack:magenta_netherite_backpack.name=Magenta Netherite Backpack
+tile.travel_backpack:pink_netherite_backpack.name=Pink Netherite Backpack
+## #endregion
 
 ## --------------------------------------------------
-## Entity
+## #region Entity
 ## --------------------------------------------------
 
 entity.travel_backpack:backpack.name=Backpack
-entity.travel_backpack:chunk_loader.name=Chunk Loader
 
+### Action
 
+action.interact.travel_backpack:backpack.unpaint=Unpaint
+action.interact.travel_backpack:backpack.paint=Paint
+
+### Warn
+
+entity.warn.travel_backpack:furnace.start_search=§r wasn't found in the database, please wait 10s while we search for the recipe.
+entity.warn.travel_backpack:furnace.unexpected_error=§cSomething interfered with the search, please try again.
+entity.warn.travel_backpack:furnace.recipe_not_found=§r wasn't found to be a valid recipe.
+entity.warn.travel_backpack:furnace.recipe_found=§r Registered as a result of §a
+## #endregion
 
 ## --------------------------------------------------
-## Item
+## #region Item
 ## --------------------------------------------------
 
 item.bedrock_awakening:travel_backpack=§kTravel Backpack
@@ -1262,46 +1372,261 @@ item.travel_backpack:lock_slot=Lock Slot
 
 ## Backpack
 item.travel_backpack:leather_backpack=Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:leather_backpack.bacs=Leather Backpack
+item.travel_backpack:white_leather_backpack=White Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:white_leather_backpack.bacs=White Leather Backpack
+item.travel_backpack:light_gray_leather_backpack=Light Gray Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:light_gray_leather_backpack.bacs=Light Gray Leather Backpack
+item.travel_backpack:gray_leather_backpack=Gray Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:gray_leather_backpack.bacs=Gray Leather Backpack
+item.travel_backpack:black_leather_backpack=Black Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:black_leather_backpack.bacs=Black Leather Backpack
+item.travel_backpack:brown_leather_backpack=Brown Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:brown_leather_backpack.bacs=Brown Leather Backpack
+item.travel_backpack:red_leather_backpack=Red Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:red_leather_backpack.bacs=Red Leather Backpack
+item.travel_backpack:orange_leather_backpack=Orange Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:orange_leather_backpack.bacs=Orange Leather Backpack
+item.travel_backpack:yellow_leather_backpack=Yellow Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:yellow_leather_backpack.bacs=Yellow Leather Backpack
+item.travel_backpack:lime_leather_backpack=Lime Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:lime_leather_backpack.bacs=Lime Leather Backpack
+item.travel_backpack:green_leather_backpack=Green Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:green_leather_backpack.bacs=Green Leather Backpack
+item.travel_backpack:cyan_leather_backpack=Cyan Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:cyan_leather_backpack.bacs=Cyan Leather Backpack
+item.travel_backpack:light_blue_leather_backpack=Light Blue Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:light_blue_leather_backpack.bacs=Light Blue Leather Backpack
+item.travel_backpack:blue_leather_backpack=Blue Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:blue_leather_backpack.bacs=Blue Leather Backpack
+item.travel_backpack:purple_leather_backpack=Purple Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:purple_leather_backpack.bacs=Purple Leather Backpack
+item.travel_backpack:magenta_leather_backpack=Magenta Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:magenta_leather_backpack.bacs=Magenta Leather Backpack
+item.travel_backpack:pink_leather_backpack=Pink Leather Backpack\n§9Travel Backpacks
+item.travel_backpack:pink_leather_backpack.bacs=Pink Leather Backpack
+
 item.travel_backpack:copper_backpack=Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:copper_backpack.bacs=Copper Backpack
+item.travel_backpack:white_copper_backpack=White Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:white_copper_backpack.bacs=White Copper Backpack
+item.travel_backpack:light_gray_copper_backpack=Light Gray Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:light_gray_copper_backpack.bacs=Light Gray Copper Backpack
+item.travel_backpack:gray_copper_backpack=Gray Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:gray_copper_backpack.bacs=Gray Copper Backpack
+item.travel_backpack:black_copper_backpack=Black Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:black_copper_backpack.bacs=Black Copper Backpack
+item.travel_backpack:brown_copper_backpack=Brown Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:brown_copper_backpack.bacs=Brown Copper Backpack
+item.travel_backpack:red_copper_backpack=Red Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:red_copper_backpack.bacs=Red Copper Backpack
+item.travel_backpack:orange_copper_backpack=Orange Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:orange_copper_backpack.bacs=Orange Copper Backpack
+item.travel_backpack:yellow_copper_backpack=Yellow Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:yellow_copper_backpack.bacs=Yellow Copper Backpack
+item.travel_backpack:lime_copper_backpack=Lime Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:lime_copper_backpack.bacs=Lime Copper Backpack
+item.travel_backpack:green_copper_backpack=Green Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:green_copper_backpack.bacs=Green Copper Backpack
+item.travel_backpack:cyan_copper_backpack=Cyan Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:cyan_copper_backpack.bacs=Cyan Copper Backpack
+item.travel_backpack:light_blue_copper_backpack=Light Blue Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:light_blue_copper_backpack.bacs=Light Blue Copper Backpack
+item.travel_backpack:blue_copper_backpack=Blue Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:blue_copper_backpack.bacs=Blue Copper Backpack
+item.travel_backpack:purple_copper_backpack=Purple Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:purple_copper_backpack.bacs=Purple Copper Backpack
+item.travel_backpack:magenta_copper_backpack=Magenta Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:magenta_copper_backpack.bacs=Magenta Copper Backpack
+item.travel_backpack:pink_copper_backpack=Pink Copper Backpack\n§9Travel Backpacks
+item.travel_backpack:pink_copper_backpack.bacs=Pink Copper Backpack
+
 item.travel_backpack:iron_backpack=Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:iron_backpack.bacs=Iron Backpack
+item.travel_backpack:white_iron_backpack=White Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:white_iron_backpack.bacs=White Iron Backpack
+item.travel_backpack:light_gray_iron_backpack=Light Gray Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:light_gray_iron_backpack.bacs=Light Gray Iron Backpack
+item.travel_backpack:gray_iron_backpack=Gray Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:gray_iron_backpack.bacs=Gray Iron Backpack
+item.travel_backpack:black_iron_backpack=Black Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:black_iron_backpack.bacs=Black Iron Backpack
+item.travel_backpack:brown_iron_backpack=Brown Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:brown_iron_backpack.bacs=Brown Iron Backpack
+item.travel_backpack:red_iron_backpack=Red Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:red_iron_backpack.bacs=Red Iron Backpack
+item.travel_backpack:orange_iron_backpack=Orange Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:orange_iron_backpack.bacs=Orange Iron Backpack
+item.travel_backpack:yellow_iron_backpack=Yellow Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:yellow_iron_backpack.bacs=Yellow Iron Backpack
+item.travel_backpack:lime_iron_backpack=Lime Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:lime_iron_backpack.bacs=Lime Iron Backpack
+item.travel_backpack:green_iron_backpack=Green Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:green_iron_backpack.bacs=Green Iron Backpack
+item.travel_backpack:cyan_iron_backpack=Cyan Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:cyan_iron_backpack.bacs=Cyan Iron Backpack
+item.travel_backpack:light_blue_iron_backpack=Light Blue Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:light_blue_iron_backpack.bacs=Light Blue Iron Backpack
+item.travel_backpack:blue_iron_backpack=Blue Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:blue_iron_backpack.bacs=Blue Iron Backpack
+item.travel_backpack:purple_iron_backpack=Purple Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:purple_iron_backpack.bacs=Purple Iron Backpack
+item.travel_backpack:magenta_iron_backpack=Magenta Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:magenta_iron_backpack.bacs=Magenta Iron Backpack
+item.travel_backpack:pink_iron_backpack=Pink Iron Backpack\n§9Travel Backpacks
+item.travel_backpack:pink_iron_backpack.bacs=Pink Iron Backpack
+
 item.travel_backpack:gold_backpack=Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:gold_backpack.bacs=Gold Backpack
+item.travel_backpack:white_gold_backpack=White Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:white_gold_backpack.bacs=White Gold Backpack
+item.travel_backpack:light_gray_gold_backpack=Light Gray Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:light_gray_gold_backpack.bacs=Light Gray Gold Backpack
+item.travel_backpack:gray_gold_backpack=Gray Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:gray_gold_backpack.bacs=Gray Gold Backpack
+item.travel_backpack:black_gold_backpack=Black Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:black_gold_backpack.bacs=Black Gold Backpack
+item.travel_backpack:brown_gold_backpack=Brown Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:brown_gold_backpack.bacs=Brown Gold Backpack
+item.travel_backpack:red_gold_backpack=Red Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:red_gold_backpack.bacs=Red Gold Backpack
+item.travel_backpack:orange_gold_backpack=Orange Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:orange_gold_backpack.bacs=Orange Gold Backpack
+item.travel_backpack:yellow_gold_backpack=Yellow Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:yellow_gold_backpack.bacs=Yellow Gold Backpack
+item.travel_backpack:lime_gold_backpack=Lime Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:lime_gold_backpack.bacs=Lime Gold Backpack
+item.travel_backpack:green_gold_backpack=Green Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:green_gold_backpack.bacs=Green Gold Backpack
+item.travel_backpack:cyan_gold_backpack=Cyan Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:cyan_gold_backpack.bacs=Cyan Gold Backpack
+item.travel_backpack:light_blue_gold_backpack=Light Blue Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:light_blue_gold_backpack.bacs=Light Blue Gold Backpack
+item.travel_backpack:blue_gold_backpack=Blue Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:blue_gold_backpack.bacs=Blue Gold Backpack
+item.travel_backpack:purple_gold_backpack=Purple Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:purple_gold_backpack.bacs=Purple Gold Backpack
+item.travel_backpack:magenta_gold_backpack=Magenta Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:magenta_gold_backpack.bacs=Magenta Gold Backpack
+item.travel_backpack:pink_gold_backpack=Pink Gold Backpack\n§9Travel Backpacks
+item.travel_backpack:pink_gold_backpack.bacs=Pink Gold Backpack
+
 item.travel_backpack:diamond_backpack=Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:diamond_backpack.bacs=Diamond Backpack
+item.travel_backpack:white_diamond_backpack=White Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:white_diamond_backpack.bacs=White Diamond Backpack
+item.travel_backpack:light_gray_diamond_backpack=Light Gray Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:light_gray_diamond_backpack.bacs=Light Gray Diamond Backpack
+item.travel_backpack:gray_diamond_backpack=Gray Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:gray_diamond_backpack.bacs=Gray Diamond Backpack
+item.travel_backpack:black_diamond_backpack=Black Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:black_diamond_backpack.bacs=Black Diamond Backpack
+item.travel_backpack:brown_diamond_backpack=Brown Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:brown_diamond_backpack.bacs=Brown Diamond Backpack
+item.travel_backpack:red_diamond_backpack=Red Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:red_diamond_backpack.bacs=Red Diamond Backpack
+item.travel_backpack:orange_diamond_backpack=Orange Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:orange_diamond_backpack.bacs=Orange Diamond Backpack
+item.travel_backpack:yellow_diamond_backpack=Yellow Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:yellow_diamond_backpack.bacs=Yellow Diamond Backpack
+item.travel_backpack:lime_diamond_backpack=Lime Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:lime_diamond_backpack.bacs=Lime Diamond Backpack
+item.travel_backpack:green_diamond_backpack=Green Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:green_diamond_backpack.bacs=Green Diamond Backpack
+item.travel_backpack:cyan_diamond_backpack=Cyan Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:cyan_diamond_backpack.bacs=Cyan Diamond Backpack
+item.travel_backpack:light_blue_diamond_backpack=Light Blue Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:light_blue_diamond_backpack.bacs=Light Blue Diamond Backpack
+item.travel_backpack:blue_diamond_backpack=Blue Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:blue_diamond_backpack.bacs=Blue Diamond Backpack
+item.travel_backpack:purple_diamond_backpack=Purple Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:purple_diamond_backpack.bacs=Purple Diamond Backpack
+item.travel_backpack:magenta_diamond_backpack=Magenta Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:magenta_diamond_backpack.bacs=Magenta Diamond Backpack
+item.travel_backpack:pink_diamond_backpack=Pink Diamond Backpack\n§9Travel Backpacks
+item.travel_backpack:pink_diamond_backpack.bacs=Pink Diamond Backpack
+
 item.travel_backpack:netherite_backpack=Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:netherite_backpack.bacs=Netherite Backpack
+item.travel_backpack:white_netherite_backpack=White Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:white_netherite_backpack.bacs=White Netherite Backpack
+item.travel_backpack:light_gray_netherite_backpack=Light Gray Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:light_gray_netherite_backpack.bacs=Light Gray Netherite Backpack
+item.travel_backpack:gray_netherite_backpack=Gray Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:gray_netherite_backpack.bacs=Gray Netherite Backpack
+item.travel_backpack:black_netherite_backpack=Black Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:black_netherite_backpack.bacs=Black Netherite Backpack
+item.travel_backpack:brown_netherite_backpack=Brown Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:brown_netherite_backpack.bacs=Brown Netherite Backpack
+item.travel_backpack:red_netherite_backpack=Red Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:red_netherite_backpack.bacs=Red Netherite Backpack
+item.travel_backpack:orange_netherite_backpack=Orange Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:orange_netherite_backpack.bacs=Orange Netherite Backpack
+item.travel_backpack:yellow_netherite_backpack=Yellow Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:yellow_netherite_backpack.bacs=Yellow Netherite Backpack
+item.travel_backpack:lime_netherite_backpack=Lime Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:lime_netherite_backpack.bacs=Lime Netherite Backpack
+item.travel_backpack:green_netherite_backpack=Green Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:green_netherite_backpack.bacs=Green Netherite Backpack
+item.travel_backpack:cyan_netherite_backpack=Cyan Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:cyan_netherite_backpack.bacs=Cyan Netherite Backpack
+item.travel_backpack:light_blue_netherite_backpack=Light Blue Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:light_blue_netherite_backpack.bacs=Light Blue Netherite Backpack
+item.travel_backpack:blue_netherite_backpack=Blue Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:blue_netherite_backpack.bacs=Blue Netherite Backpack
+item.travel_backpack:purple_netherite_backpack=Purple Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:purple_netherite_backpack.bacs=Purple Netherite Backpack
+item.travel_backpack:magenta_netherite_backpack=Magenta Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:magenta_netherite_backpack.bacs=Magenta Netherite Backpack
+item.travel_backpack:pink_netherite_backpack=Pink Netherite Backpack\n§9Travel Backpacks
+item.travel_backpack:pink_netherite_backpack.bacs=Pink Netherite Backpack
 
 ## upgrade
 item.travel_backpack:upgrade_template=Template Upgrade\n§9Travel Backpacks
+item.travel_backpack:upgrade_template.bacs=Template Upgrade
 
 ## Upgrade Tier
 item.travel_backpack:copper_upgrade_tier=Copper Upgrade Tier\n§9Travel Backpacks
+item.travel_backpack:copper_upgrade_tier.bacs=Copper Upgrade Tier
 item.travel_backpack:iron_upgrade_tier=Iron Upgrade Tier\n§9Travel Backpacks
+item.travel_backpack:iron_upgrade_tier.bacs=Iron Upgrade Tier
 item.travel_backpack:gold_upgrade_tier=Gold Upgrade Tier\n§9Travel Backpacks
+item.travel_backpack:gold_upgrade_tier.bacs=Gold Upgrade Tier
 item.travel_backpack:diamond_upgrade_tier=Diamond Upgrade Tier\n§9Travel Backpacks
+item.travel_backpack:diamond_upgrade_tier.bacs=Diamond Upgrade Tier
 item.travel_backpack:netherite_upgrade_tier=Netherite Upgrade Tier\n§9Travel Backpacks
+item.travel_backpack:netherite_upgrade_tier.bacs=Netherite Upgrade Tier
 
 ## Upgrade Functions
 item.travel_backpack:craft_upgrade=§c§r§a§f§t§rCraft Upgrade\n§9Travel Backpacks
+item.travel_backpack:craft_upgrade.bacs=§c§r§a§f§t§rCraft Upgrade
+item.travel_backpack:furnace_upgrade=§f§u§r§n§a§rFurnace Upgrade\n§9Travel Backpacks
+item.travel_backpack:furnace_upgrade.bacs=§f§u§r§n§a§rFurnace Upgrade
 
+### Warn
 
+item.warn.travel_backpack:backpack.need_shift.place=§cYou need to be crouching down to put your backpack on the ground.
+item.warn.travel_backpack:backpack.need_shift.remove=§cYou need to be crouching down to lift the backpack off the ground.
+## #endregion
 
 ## --------------------------------------------------
-## Item Catalog
+## #region Item Catalog
 ## --------------------------------------------------
 
 travel_backpack:itemGroup.name.backpacks=Backpacks
 travel_backpack:itemGroup.name.upgrade_tier=Upgrades Tier
-
-
+travel_backpack:itemGroup.name.upgrade_functions=Functional Upgrades
+## #endregion
 
 ## --------------------------------------------------
-## Item Lore
+## #region Item Lore
 ## --------------------------------------------------
 
 lore.travel_backpack:backpack.id=Backpack: %1
-
-
+## #endregion
 
 ## --------------------------------------------------
-## UI
+## #region UI
 ## --------------------------------------------------
 
 ## Custom Chest
@@ -1311,6 +1636,7 @@ ui.travel_backpack:backpack.size.2=Iron Backpack
 ui.travel_backpack:backpack.size.3=Gold Backpack
 ui.travel_backpack:backpack.size.4=Diamond Backpack
 ui.travel_backpack:backpack.size.5=Netherite Backpack
+## #endregion
 
 
 

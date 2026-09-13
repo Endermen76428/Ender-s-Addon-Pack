@@ -13,6 +13,7 @@ const defaultSoundsDefinition = {"format_version":"1.21.60","sound_definitions":
 const defaultMaterial = {"materials":{"version":"1.0.0"}}
 const defaultItemTexture = {"resource_pack_name":"Ender's Addon Pack","texture_name":"atlas.items","texture_data":{}}
 const defaultTerrainTexture = {"resource_pack_name":"Ender's Addon Pack","texture_name":"atlas.terrain","padding":8,"num_mip_levels":4,"texture_data":{}}
+const defaultTextureList = ["textures/null"]
 const defaultUiDefsDefinition = {"ui_defs":[]}
 const texts = {
   "en_US.lang": "pack.description=§5Endermen76428§r don't write descriptions.",
@@ -71,14 +72,19 @@ const addonFunctions = {
     copyFolder(currentPath, "../1 - BP/recipes")
   },
 
-  // "scripts": (fullPath) => {
-  //   const currentPath = path.join(fullPath, "scripts")
-  //   copyFolder(currentPath, "../1 - BP/scripts/ender_addon_pack")
-  // },
+  "shapes": (fullPath) => {
+    const currentPath = path.join(fullPath, "shapes")
+    copyFolder(currentPath, "../1 - BP/shapes")
+  },
 
   "structures": (fullPath) => {
     const currentPath = path.join(fullPath, "structures")
     copyFolder(currentPath, "../1 - BP/structures")
+  },
+
+  "worldgen": (fullPath) => {
+    const currentPath = path.join(fullPath, "worldgen")
+    copyFolder(currentPath, "../1 - BP/worldgen")
   }
 }
 
@@ -239,10 +245,7 @@ const textureFunctions = {
         continue
       }
 
-      if(file == "texture_list.json"){
-        console.warn("Texture List Criar")
-        continue
-      }
+      if(file == "texture_list.json") continue
 
       const raw = fs.readFileSync(filePath, "utf-8")
       const json = parse(raw)["texture_data"]
@@ -312,6 +315,7 @@ for(let i = 0, len = rootAddons.length; i < len; i++){
 
     const addonExe = addonFunctions[folderType]
     if(addonExe) addonExe(addonPath)
+    // else console.warn("<=====", folderType, "=====>")
   }
 
   const texturePath = path.join(currentPath, textureFolder)

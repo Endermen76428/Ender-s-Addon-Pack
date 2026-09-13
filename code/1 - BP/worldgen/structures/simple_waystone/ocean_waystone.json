@@ -1,0 +1,22 @@
+{
+  "format_version": "1.26.10",
+  "minecraft:jigsaw": {
+    "description": {
+      "identifier": "simple_waystone:ocean_waystone"
+    },
+    "biome_filters": [
+      { "test": "has_biome_tag", "operator": "==", "value": "ocean" },
+      { "test": "has_biome_tag", "operator": "==", "value": "deep" }
+    ],
+    "start_pool": "simple_waystone:simple_waystone/ocean_waystone",
+    "heightmap_projection": "ocean_floor",
+    "step": "surface_structures",
+    "terrain_adaptation": "beard_thin",
+    "start_height": {
+      "type": "uniform",
+      "min": { "absolute": 1 },
+      "max": { "absolute": 1 }
+    },
+    "max_depth": 1
+  }
+}

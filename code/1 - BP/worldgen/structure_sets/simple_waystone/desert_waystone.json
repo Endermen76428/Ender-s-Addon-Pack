@@ -1,0 +1,21 @@
+{
+  "format_version": "1.26.10",
+  "minecraft:structure_set": {
+    "description": {
+      "identifier": "simple_waystone:desert_waystone"
+    },
+    "placement": {
+      "type": "minecraft:random_spread",
+      "spread_type": "triangular",
+      "salt": 76428,
+      "spacing": 16,
+      "separation": 1
+    },
+    "structures": [
+      {
+        "structure": "simple_waystone:desert_waystone",
+        "weight": 100
+      }
+    ]
+  }
+}

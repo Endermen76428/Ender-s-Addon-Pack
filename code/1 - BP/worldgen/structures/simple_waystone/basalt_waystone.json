@@ -1,0 +1,26 @@
+{
+  "format_version": "1.26.10",
+  "minecraft:jigsaw": {
+    "description": {
+      "identifier": "simple_waystone:basalt_waystone"
+    },
+    "biome_filters": [
+      {
+        "all_of": [
+          { "test": "has_biome_tag", "operator": "==", "value": "nether" },
+          { "test": "has_biome_tag", "operator": "==", "value": "basalt_deltas" }
+        ]
+      }
+    ],
+    "start_pool": "simple_waystone:simple_waystone/basalt_waystone",
+    "heightmap_projection": "none",
+    "step": "surface_structures",
+    "terrain_adaptation": "bury",
+    "start_height": {
+      "type": "uniform",
+      "min": { "from_sea": 0 },
+      "max": { "from_sea": 0 }
+    },
+    "max_depth": 1
+  }
+}

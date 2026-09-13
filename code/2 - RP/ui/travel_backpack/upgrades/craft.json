@@ -1,0 +1,181 @@
+{
+  "namespace": "travel_backpack-upgrade_craft",
+
+  "upgrade_craft_panel@common.root_panel": {
+    "size": [ "100%cm", "100%cm" ],
+    "controls": [
+      {
+        "craft_toggle@travel_backpack-common.upgrade_toggle_button": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ -1.5, 0 ],
+          "$index": 1,
+          "$name": "toggle_craft_upgrade",
+          "$off_texture|default": "textures/travel_backpack/ui/upgrades/craft/craft_off",
+          "$off_hover_texture|default": "textures/travel_backpack/ui/upgrades/craft/craft_off_hover",
+          "$on_texture|default": "textures/travel_backpack/ui/upgrades/craft/craft_off",
+          "$on_hover_texture|default": "textures/travel_backpack/ui/upgrades/craft/craft_off_hover"
+        }
+      },
+      {
+        "craft_panel@travel_backpack-common.backpack_background": {
+          "type": "image",
+          "size": [ "100%c", "100%c" ],
+          "offset": [ -0.5, 1 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "controls": [
+            { "default_size@common.empty_panel": { "size": [21, 21] } },
+            {
+              "craft_panel": {
+                "type": "panel",
+                "size": [ 87, 64 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "controls": [
+                  {
+                    "crafting_label": {
+                      "type": "label",
+                      "text": "container.crafting",
+                      "localize": true,
+                      "offset": [ 23, 6 ],
+                      "text_alignment": "left",
+                      "anchor_from": "top_left",
+                      "anchor_to": "top_left"
+                    }
+                  },
+                  {
+                    "grid_3x3": {
+                      "type": "stack_panel",
+                      "offset": [ 10, 18 ],
+                      "controls": [
+                        {
+                          "layer_1": {
+                            "type": "stack_panel",
+                            "size": [ 54, 18 ],
+                            "orientation": "horizontal",
+                            "collection_name": "container_items",
+                            "controls": [
+                              { "slot_1@chest.chest_grid_item": { "collection_index": "($inventory_size +10)" } },
+                              { "slot_2@chest.chest_grid_item": { "collection_index": "($inventory_size +11)" } },
+                              { "slot_3@chest.chest_grid_item": { "collection_index": "($inventory_size +12)" } }
+                            ]
+                          }
+                        },
+                        {
+                          "layer_2": {
+                            "type": "stack_panel",
+                            "size": [ 54, 18 ],
+                            "orientation": "horizontal",
+                            "collection_name": "container_items",
+                            "controls": [
+                              { "slot_4@chest.chest_grid_item": { "collection_index": "($inventory_size +13)" } },
+                              { "slot_5@chest.chest_grid_item": { "collection_index": "($inventory_size +14)" } },
+                              { "slot_6@chest.chest_grid_item": { "collection_index": "($inventory_size +15)" } }
+                            ]
+                          }
+                        },
+                        {
+                          "layer_3": {
+                            "type": "stack_panel",
+                            "size": [ 54, 18 ],
+                            "orientation": "horizontal",
+                            "collection_name": "container_items",
+                            "controls": [
+                              { "slot_7@chest.chest_grid_item": { "collection_index": "($inventory_size +16)" } },
+                              { "slot_8@chest.chest_grid_item": { "collection_index": "($inventory_size +17)" } },
+                              { "slot_9@chest.chest_grid_item": { "collection_index": "($inventory_size +18)" } }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "arrow": {
+                      "type": "image",
+                      "texture": "textures/travel_backpack/ui/upgrades/craft/arrow",
+                      "size": [ 16, 13 ],
+                      "offset": [ 40, 23 ],
+                      "anchor_from": "top_middle",
+                      "anchor_to": "top_middle"
+                    }
+                  },
+                  {
+                    "output": {
+                      "type": "stack_panel",
+                      "offset": [ 72, 18 ],
+                      "collection_name": "container_items",
+                      "controls": [
+                        {
+                          "output@common.container_item": {
+                            "size": [ 26, 26 ],
+                            "$button_ref": "travel_backpack-upgrade_general.output_button",
+                            "$cell_image_size": [ 26, 26 ],
+                            "$item_collection_name": "container_items",
+                            "collection_index": "($inventory_size +20)"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "toggle_craft_upgrade",
+                    "source_property_name": "#toggle_state",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "hover_data_control_1",
+        "source_property_name": "#preserved_hover_text",
+        "target_property_name": "#info_1"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "hover_data_control_2",
+        "source_property_name": "#preserved_hover_text",
+        "target_property_name": "#info_2"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "hover_data_control_3",
+        "source_property_name": "#preserved_hover_text",
+        "target_property_name": "#info_3"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "hover_data_control_4",
+        "source_property_name": "#preserved_hover_text",
+        "target_property_name": "#info_4"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "hover_data_control_5",
+        "source_property_name": "#preserved_hover_text",
+        "target_property_name": "#info_5"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "hover_data_control_6",
+        "source_property_name": "#preserved_hover_text",
+        "target_property_name": "#info_6"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((('%.21s' * #info_1) = '§f§c§r§a§f§t§r') or (('%.21s' * #info_2) = '§f§c§r§a§f§t§r') or (('%.21s' * #info_3) = '§f§c§r§a§f§t§r') or (('%.21s' * #info_4) = '§f§c§r§a§f§t§r') or (('%.21s' * #info_5) = '§f§c§r§a§f§t§r') or (('%.21s' * #info_6) = '§f§c§r§a§f§t§r'))", /* Cada-combinação-de-§-considerá-como-3-e-possui-um-§f-no-inicio-de-todo-hover_text-por-algum-motivo,-sofri-pra-descobrir-isso-:( */
+        "target_property_name": "#visible"
+      }
+    ]
+  }
+}

@@ -13,8 +13,8 @@
             "$screen_content": "travel_backpack-backpack.backpack_panel",
             "$screen_bg_content": "common.screen_background",
             "$inventory_size": 27,
-            "$root_panel_size": [ 176, 162 ], /* 94px of player inventory + 14px of top padding + 18px slot * 3 slot lines */
-            "$backpack_panel_size": [ 176, 68 ], /* 162px - 94px of player inventory */
+            "$root_panel_size": [ 176, 152 ], /* 86px of player inventory + 14px of top padding + 18px slot * 3 slot lines */
+            "$backpack_panel_size": [ 176, 66 ], /* 152px - 86px of player inventory */
             "$grid_panel_size": [ 162, 54 ], /* Grid dimension * 18 */
             "$grid_panel_dimension": [ 9, 3 ] /* Amount of slots */
           },
@@ -23,8 +23,8 @@
             "$screen_content": "travel_backpack-backpack.backpack_panel",
             "$screen_bg_content": "common.screen_background",
             "$inventory_size": 36,
-            "$root_panel_size": [ 176, 180 ],
-            "$backpack_panel_size": [ 176, 86 ],
+            "$root_panel_size": [ 176, 170 ],
+            "$backpack_panel_size": [ 176, 84 ],
             "$grid_panel_size": [ 162, 72 ],
             "$grid_panel_dimension": [ 9, 4 ]
           },
@@ -33,8 +33,8 @@
             "$screen_content": "travel_backpack-backpack.backpack_panel",
             "$screen_bg_content": "common.screen_background",
             "$inventory_size": 54,
-            "$root_panel_size": [ 176, 216 ],
-            "$backpack_panel_size": [ 176, 122 ],
+            "$root_panel_size": [ 176, 206 ],
+            "$backpack_panel_size": [ 176, 120 ],
             "$grid_panel_size": [ 162, 108 ],
             "$grid_panel_dimension": [ 9, 6 ]
           },
@@ -44,8 +44,8 @@
             "$screen_content": "travel_backpack-backpack.backpack_panel",
             "$screen_bg_content": "common.screen_background",
             "$inventory_size": 81,
-            "$root_panel_size": [ 176, 270 ],
-            "$backpack_panel_size": [ 176, 176 ],
+            "$root_panel_size": [ 176, 260 ],
+            "$backpack_panel_size": [ 176, 174 ],
             "$grid_panel_size": [ 162, 162 ],
             "$grid_panel_dimension": [ 9, 9 ]
           },
@@ -54,8 +54,8 @@
             "$screen_content": "travel_backpack-backpack.backpack_panel",
             "$screen_bg_content": "common.screen_background",
             "$inventory_size": 81,
-            "$root_panel_size": [ 176, 216 ],
-            "$backpack_panel_size": [ 176, 122 ],
+            "$root_panel_size": [ 176, 206 ],
+            "$backpack_panel_size": [ 176, 120 ],
             "$grid_panel_size": [ 162, 162 ],
             "$grid_panel_dimension": [ 9, 9 ]
           },
@@ -64,7 +64,7 @@
             "$screen_content": "travel_backpack-backpack.backpack_panel",
             "$screen_bg_content": "common.screen_background",
             "$inventory_size": 100,
-            "$root_panel_size": [ 176, 288 ],
+            "$root_panel_size": [ 176, 277 ],
             "$backpack_panel_size": [ 194, 191 ],
             "$grid_panel_size": [ 180, 180 ],
             "$grid_panel_dimension": [ 10, 10 ]
@@ -74,8 +74,8 @@
             "$screen_content": "travel_backpack-backpack.backpack_panel",
             "$screen_bg_content": "common.screen_background",
             "$inventory_size": 100,
-            "$root_panel_size": [ 176, 216 ],
-            "$backpack_panel_size": [ 194, 122 ],
+            "$root_panel_size": [ 176, 206 ],
+            "$backpack_panel_size": [ 194, 120 ],
             "$grid_panel_size": [ 180, 180 ],
             "$grid_panel_dimension": [ 10, 10 ]
           },
@@ -84,7 +84,7 @@
             "$screen_content": "travel_backpack-backpack.backpack_panel",
             "$screen_bg_content": "common.screen_background",
             "$inventory_size": 120,
-            "$root_panel_size": [ 176, 288 ],
+            "$root_panel_size": [ 176, 277 ],
             "$backpack_panel_size": [ 230, 191 ],
             "$grid_panel_size": [ 216, 180 ],
             "$grid_panel_dimension": [ 12, 10 ]
@@ -94,8 +94,8 @@
             "$screen_content": "travel_backpack-backpack.backpack_panel",
             "$screen_bg_content": "common.screen_background",
             "$inventory_size": 120,
-            "$root_panel_size": [ 176, 216 ],
-            "$backpack_panel_size": [ 230, 122 ],
+            "$root_panel_size": [ 176, 206 ],
+            "$backpack_panel_size": [ 230, 120 ],
             "$grid_panel_size": [ 216, 180 ],
             "$grid_panel_dimension": [ 12, 10 ]
           }
