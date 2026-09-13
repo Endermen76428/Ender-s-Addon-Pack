@@ -2,7 +2,7 @@ import fs from "fs"
 import path from "path"
 import { parse } from "jsonc-parser"
 
-const rootPath = "./Addons"
+const rootPath = "../0 - Addons"
 const rootAddons = fs.readdirSync(rootPath)
 
 const defaultItemCatalog = {"format_version":"1.21.60","minecraft:crafting_items_catalog":{"categories":[]}}
