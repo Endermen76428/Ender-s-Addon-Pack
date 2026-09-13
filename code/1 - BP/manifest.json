@@ -1,24 +1,24 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Ender's Addon Pack v1 (Addon)",
+    "name": "Ender's Addon Pack v1.1 (Addon)",
     "description": "pack.description",
     "uuid": "2d0b331a-62d6-4a97-9721-edeb973e26b5",
     "min_engine_version": [1, 26, 30],
-    "version": [1, 0, 0]
+    "version": [1, 1, 0]
   },
   "modules": [
     {
       "type": "data",
       "uuid": "9dbfd735-43aa-4245-b025-9b127380d1b8",
-      "version": [1, 0, 0]
+      "version": [1, 1, 0]
     },
     {
       "type": "script",
       "language": "javascript",
       "entry": "scripts/ender_addon_pack/main.js",
       "uuid": "f061743d-dcbb-401a-a290-0bf7e1ffc0a6",
-      "version": [1, 0, 0]
+      "version": [1, 1, 0]
     }
   ],
   "metadata": {
@@ -29,7 +29,7 @@
   "dependencies": [
     {
       "uuid": "37ae5b3c-4b10-4966-997e-bf72d567a33a",
-      "version": [1, 0, 0]
+      "version": [1, 1, 0]
     },
     {
       "module_name": "@minecraft/server",

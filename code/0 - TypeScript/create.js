@@ -1,6 +1,7 @@
 import fs from "fs"
 import path from "path"
 import { parse } from "jsonc-parser"
+import { execSync } from "node:child_process"
 
 const rootPath = "../0 - Addons"
 const rootAddons = fs.readdirSync(rootPath)
@@ -337,6 +338,11 @@ fs.writeFileSync("../2 - RP/textures/terrain_texture.json", JSON.stringify(defau
 fs.writeFileSync("../2 - RP/ui/_ui_defs.json", JSON.stringify(defaultUiDefsDefinition), "utf8");
 fs.writeFileSync("../2 - RP/texts/en_US.lang", texts["en_US.lang"], "utf8");
 fs.writeFileSync("../2 - RP/texts/pt_BR.lang", texts["pt_BR.lang"], "utf8");
+
+execSync(
+  'npx esbuild src/main.ts --bundle --minify --outfile=\"../1 - BP/scripts/ender_addon_pack/main.js\" --format=esm --external:@minecraft/server --external:@minecraft/server-ui',
+  { stdio: "inherit" }
+);
 
 console.warn("------------------------------\nFinalizado a junção de todos os addons.")
 

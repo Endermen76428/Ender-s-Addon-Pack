@@ -10,6 +10,7 @@
     "esbuild": "^0.28.2"
   },
   "scripts": {
-    "build": "esbuild typeScript/src/main.ts --bundle --minify --outfile=\"Ender's Addon Pack/Ender Addon Pack (Addon)/scripts/ender_addon_pack/main.js\" --format=esm --external:@minecraft/server --external:@minecraft/server-ui"
+    "build": "esbuild src/main.ts --bundle --minify --outfile=\"../1 - BP/scripts/ender_addon_pack/main.js\" --format=esm --external:@minecraft/server --external:@minecraft/server-ui",
+    "build2": "esbuild src/main.ts --bundle --outfile=\"../1 - BP/scripts/ender_addon_pack/main.js\" --format=esm --external:@minecraft/server --external:@minecraft/server-ui"
   }
 }
