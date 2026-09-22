@@ -1,6 +1,0 @@
-import "./interactWithEntity"
-import "./entityHitEntity"
-import "./playerSpawn"
-import "./scriptEvent"
-import "./entityDie"
-import "./startUp"

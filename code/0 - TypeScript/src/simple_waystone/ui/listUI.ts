@@ -81,13 +81,14 @@ function teleport(player: Player, info: WaystoneInfo, cost: number): void {
 function hasWaystone(player: Player, pos: Vector3): void {
   try{
     const block = player.dimension.getBlock(pos)
+    console.warn(JSON.stringify(pos), block?.typeId)
 
     if(!block){
       system.runTimeout(() => { hasWaystone(player, pos) }, 5)
       return
     }
 
-    if(!block.hasTag("simple_waystone:waystone")){
+    if(!block.hasTag("ws:waystone")){
       waystoneInfo.removeWaystone(pos, player.dimension.id)
       apiWarn.notify(player, "warning.simple_waystone:waystone.corrupted", {type: "actionbar", sound: "warn.ender_addon_pack:bass"})
     }
