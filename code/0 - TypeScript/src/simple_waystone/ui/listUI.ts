@@ -81,7 +81,6 @@ function teleport(player: Player, info: WaystoneInfo, cost: number): void {
 function hasWaystone(player: Player, pos: Vector3): void {
   try{
     const block = player.dimension.getBlock(pos)
-    console.warn(JSON.stringify(pos), block?.typeId)
 
     if(!block){
       system.runTimeout(() => { hasWaystone(player, pos) }, 5)
