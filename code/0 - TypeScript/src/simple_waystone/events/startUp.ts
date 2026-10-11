@@ -1,17 +1,20 @@
-import { world, system, ItemStack, EquipmentSlot, EntityComponentTypes, GameMode, ItemComponentTypes } from "@minecraft/server"
+import { EntityComponentTypes, EquipmentSlot, GameMode, ItemComponentTypes, ItemStack, system } from "@minecraft/server"
+import { boundScrollRegister, boundScrollTeleport } from "../functions/boundScroll"
+import { structureLoaderManager } from "../functions/structures/manager"
 import { teleporterPadInteract } from "../functions/teleporter/interact"
 import { warpstonePedestalInfo } from "../lib/warpstonePedestal/info"
+import { apiWaystoneSpace, dyesList } from "../lib/waystone/space"
 import { teleporterPadPlace } from "../functions/teleporter/place"
+import { AddonConfig, upgradeXpDiscountItem } from "../variables"
 import { teleporterPadStep } from "../functions/teleporter/step"
-import { AddonConfig, upgradeXpDiscount } from "../variables"
-import { apiWaystoneSpace } from "../lib/waystone/space"
 import { waystoneUISettings } from "../ui/settingsUI"
 import { waystonesList } from "../lib/waystone/list"
 import { waystoneInfo } from "../lib/waystone/info"
+import { apiWarn } from "../../0-lib/player/warn"
 import { waystoneUICreate } from "../ui/createUI"
 import { apiCooldown } from "../lib/apiCooldown"
 import { waystoneUIList } from "../ui/listUI"
-import { apiWarn } from "../../0-lib/player/warn"
+import { apiConfig } from "../lib/apiConfig"
 
 const replaceBlock = ["minecraft:air", "minecraft:lava", "minecraft:water"]
 
@@ -39,27 +42,33 @@ system.beforeEvents.startup.subscribe(({blockComponentRegistry: customB, itemCom
 
       if(!waystone){
         apiWaystoneSpace.setOff(player, block)
-        return apiWarn.notify(player, "warning.simple_waystone:waystone.corrupted", {type: "actionbar", sound: "warn.ender_addon_pack:bass"})
+        return apiWarn.notify(player, "block.warn.simple_waystone:waystone.corrupted", {type: "actionbar", sound: "warn.ender_addon_pack:bass"})
       }
 
-      const item = player.getComponent(EntityComponentTypes.Equippable)?.getEquipment(EquipmentSlot.Mainhand)?.typeId
-      if(player.id == waystone.owner && item){
-        if(dyes.includes(item)) return apiWaystoneSpace.paintWaystone(player, block, dyes)
-        const discountValue = parseInt(Object.entries(upgradeXpDiscount).find(([key, value]) => value == item)?.[0] ?? "a")
-        if(!AddonConfig.disableDiscount && !isNaN(discountValue)) return apiWaystoneSpace.upgradeXp(player, block, discountValue)
-      }
+      const equippable = player.getComponent(EntityComponentTypes.Equippable)
+      if(!equippable) return
+      const itemStack = equippable.getEquipment(EquipmentSlot.Mainhand)
+      if(itemStack != undefined){
+        const itemId = itemStack.typeId
+        if(itemId == "ws:return_scroll" || itemId == "ws:bound_scroll") return boundScrollRegister(player, itemStack, block)
+        if(player.id == waystone.owner){
+          if(dyes.has(itemId)) return apiWaystoneSpace.paintWaystone(player, block)
+          if(itemId == "minecraft:brush") return apiWaystoneSpace.waystoneToWarpstone(player, block)
 
-      if(waystone.owner == player.id && player.getComponent(EntityComponentTypes.Equippable)?.getEquipment(EquipmentSlot.Mainhand)?.typeId == "minecraft:brush") return apiWaystoneSpace.waystoneToWarpstone(player, block)
+          const discountValue = upgradeXpDiscountItem[itemId]
+          if(discountValue != undefined && !AddonConfig.disableDiscount) return apiWaystoneSpace.upgradeXp(player, block, discountValue, itemId)
+        }
+      }
 
       if(waystoneInfo.claimedWaystone(player, waystone)) return
       if(player.isSneaking) return waystoneUISettings(player, waystone.owner, block)
 
-      if(!AddonConfig.tpByBlock) return apiWarn.notify(player, "warning.simple_waystone:waysone.disabled", {sound: "warn.ender_addon_pack:bass"})
+      if(!AddonConfig.tpByBlock) return apiWarn.notify(player, "block.warn.simple_waystone:waystone.disabled", {sound: "warn.ender_addon_pack:bass"})
 
       const cooldown = apiCooldown.timeUp(player, "waystoneCooldown")
-      if(!cooldown.end) return apiWarn.notify(player, {translate: "warning.simple_waystone:waysone.teleport_cooldown", with: [`${cooldown.time}s`]}, {type: "actionbar"})
+      if(!cooldown.end) return apiWarn.notify(player, {translate: "block.warn.simple_waystone:waystone.teleport_cooldown", with: [`${cooldown.time}s`]}, {type: "actionbar"})
 
-      waystoneUIList(player, block, waystone)
+      waystoneUIList(player, block, waystone, undefined, apiConfig.getConfig(player, "publicFirst"))
     }
   })
 
@@ -74,10 +83,10 @@ system.beforeEvents.startup.subscribe(({blockComponentRegistry: customB, itemCom
 
       if(player.isSneaking) return waystoneUISettings(player, player.id, block)
 
-      if(!AddonConfig.tpByBlock) return apiWarn.notify(player, "warning.simple_waystone:waysone.disabled", {sound: "warn.ender_addon_pack:bass"})
+      if(!AddonConfig.tpByBlock) return apiWarn.notify(player, "block.warn.simple_waystone:waystone.disabled", {sound: "warn.ender_addon_pack:bass"})
 
       const cooldown = apiCooldown.timeUp(player, "waystoneCooldown")
-      if(!cooldown.end) return apiWarn.notify(player, {translate: "warning.simple_waystone:waysone.teleport_cooldown", with: [`${cooldown.time}s`]}, {type: "actionbar"})
+      if(!cooldown.end) return apiWarn.notify(player, {translate: "block.warn.simple_waystone:waystone.teleport_cooldown", with: [`${cooldown.time}s`]}, {type: "actionbar"})
 
       waystoneUIList(player, block, undefined, undefined)
     }
@@ -97,6 +106,10 @@ system.beforeEvents.startup.subscribe(({blockComponentRegistry: customB, itemCom
     onPlayerInteract: ({block, player}) => { if(player) teleporterPadInteract.place(block, player) }
   })
 
+  customB.registerCustomComponent("ws:structure_loader", {
+    onTick: ({block}) => { structureLoaderManager(block) }
+  })
+
   customI.registerCustomComponent("ws:warpstone", {
     onUse: ({source: player, itemStack: item}) => {
       if(!item) return
@@ -105,7 +118,7 @@ system.beforeEvents.startup.subscribe(({blockComponentRegistry: customB, itemCom
         return waystoneUIList(player, undefined, undefined, item)
       }
       const cooldown = apiCooldown.timeUp(player, "warpstoneCooldown")
-      if(item.typeId == "ws:warpstone" && !cooldown.end) return apiWarn.notify(player, {translate: "warning.simple_waystone:teleport_item.cooldown", with: [`${cooldown.time}s`]}, {type: "actionbar"})
+      if(item.typeId == "ws:warpstone" && !cooldown.end) return apiWarn.notify(player, {translate: "item.warn.simple_waystone:teleport_item.cooldown", with: [`${cooldown.time}s`]}, {type: "actionbar"})
       waystoneUIList(player, undefined, undefined, item)
     }
   })
@@ -116,11 +129,32 @@ system.beforeEvents.startup.subscribe(({blockComponentRegistry: customB, itemCom
     },
 
     onHitEntity: ({attackingEntity: player, itemStack: item}) => {
-      if(!item){
+      if(item == undefined){
         const newItem = new ItemStack("ws:return_scroll")
         const durability = newItem.getComponent(ItemComponentTypes.Durability)
         if(!durability) return
-        durability.damage = 9
+        durability.damage = 31
+        player.getComponent(EntityComponentTypes.Equippable)?.setEquipment(EquipmentSlot.Mainhand, newItem)
+        return
+      }
+      const durability = item.getComponent(ItemComponentTypes.Durability)
+      if(!durability) return
+      durability.damage = durability.damage -2
+      player.getComponent(EntityComponentTypes.Equippable)?.setEquipment(EquipmentSlot.Mainhand, item)
+    }
+  })
+
+  customI.registerCustomComponent("ws:bound_scroll", {
+    onUse: ({source: player, itemStack: item}) => {
+      item && boundScrollTeleport(player, item)
+    },
+
+    onHitEntity: ({attackingEntity: player, itemStack: item}) => {
+      if(item == undefined){
+        const newItem = new ItemStack("ws:bound_scroll")
+        const durability = newItem.getComponent(ItemComponentTypes.Durability)
+        if(!durability) return
+        durability.damage = 31
         player.getComponent(EntityComponentTypes.Equippable)?.setEquipment(EquipmentSlot.Mainhand, newItem)
         return
       }
@@ -132,21 +166,4 @@ system.beforeEvents.startup.subscribe(({blockComponentRegistry: customB, itemCom
   })
 })
 
-const dyes = [
-  "minecraft:white_dye",
-  "minecraft:light_gray_dye",
-  "minecraft:gray_dye",
-  "minecraft:black_dye",
-  "minecraft:brown_dye",
-  "minecraft:red_dye",
-  "minecraft:orange_dye",
-  "minecraft:yellow_dye",
-  "minecraft:lime_dye",
-  "minecraft:green_dye",
-  "minecraft:cyan_dye",
-  "minecraft:light_blue_dye",
-  "minecraft:blue_dye",
-  "minecraft:purple_dye",
-  "minecraft:magenta_dye",
-  "minecraft:pink_dye"
-]
+const dyes = new Set(dyesList)

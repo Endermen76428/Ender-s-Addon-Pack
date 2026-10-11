@@ -1,0 +1,17 @@
+{
+  "format_version": "1.26.10",
+  "minecraft:template_pool": {
+    "description": {
+      "identifier": "simple_waystone:simple_waystone/teleporter_pad/house_teleporter_pad"
+    },
+    "elements": [
+      {
+        "element": {
+          "location": "simple_waystone/teleporter_pad/house_teleporter_pad",
+          "element_type": "minecraft:single_pool_element",
+          "projection": "rigid"
+        }
+      }
+    ]
+  }
+}

@@ -1,9 +1,11 @@
-import { world, system, Block, Entity, Player } from "@minecraft/server"
+import { Block, Entity, Player, system, world } from "@minecraft/server"
 import { teleporterPadCache } from "../../lib/cache/teleporter"
 import { teleporterPadSpace } from "../../lib/teleporter/space"
 import { teleporterPadInfo } from "../../lib/teleporter/info"
 import { apiWarn } from "../../../0-lib/player/warn"
 import { teleporterPadTimer } from "./place"
+
+const lastDate: { [key: string]: number } = {}
 
 export const teleporterPadStep = new class TeleporterPadStep {
   stepOn(block: Block, entity: Entity): void {
@@ -18,35 +20,49 @@ export const teleporterPadStep = new class TeleporterPadStep {
     if(teleporterPadCache.getTeleporter(`${dimension.replace("minecraft:", "")}/${pos.x},${pos.y},${pos.z}`) == undefined){
       teleporterPadInfo.removeShard(block)
       teleporterPadSpace.spawnShard(block)
-      entity instanceof Player && apiWarn.notify(entity, "warning.simple_waystone:teleporter.place_shard.target_no_longer_exist", {sound: "warn.ender_addon_pack:bass"})
+      entity instanceof Player && apiWarn.notify(entity, "block.warn.simple_waystone:teleporter.place_shard.target_no_longer_exist", {sound: "warn.ender_addon_pack:bass"})
       return
     }
 
     entity.setDynamicProperty("tp_block", block.location)
 
-    entity instanceof Player && entity.playSound("block.simple_waystone:teleporter_pad.teleporting", {location: block.bottomCenter()})
-    block.dimension.spawnParticle("simple_waystone:teleporter_pad_ring", block.bottomCenter())
+    const bottomCenter = block.bottomCenter()
+    if(teleporterPadTimer.has(id) == false){
+      block.dimension.playSound("block.simple_waystone:teleporter_pad.teleporting", bottomCenter)
+      block.dimension.spawnParticle("simple_waystone:teleporter_pad_ring", bottomCenter)
+    }
     teleporterPadTimer.set(id, system.runTimeout(() => {
       if(!entity.isValid) return
       const lastPos = (r => typeof r == "object" ? r : entity.location)(entity.getDynamicProperty("tp_block"))
-      const distance = Math.sqrt((entity.location.x - (lastPos.x +0.5)) ** 2 + (entity.location.z - (lastPos.z +0.5)) ** 2)
+      const disX = (entity.location.x - (lastPos.x +0.5)), disZ = (entity.location.z - (lastPos.z +0.5))
+      const distance = disX * disX + disZ * disZ // 0.64 = 0.8 * 0.8
 
-      const newBlock = entity.dimension.getBlock(distance < 0.8 ? lastPos : entity.location)
+      const newBlock = entity.dimension.getBlock(distance < 0.64 ? lastPos : entity.location)
       if(newBlock?.typeId == "ws:teleporter_pad"){
         if(teleporter.broken){
           teleporterPadSpace.setEmptyPad(block)
           teleporterPadInfo.removeShard(block)
-          entity instanceof Player && apiWarn.playSound(entity, "block.simple_waystone:teleporter.shard_break", {delaySound: 1, volume: 2})
+          block.dimension.playSound("block.simple_waystone:teleporter_pad.shard_break", bottomCenter)
+          system.run(() => {
+            block.dimension.playSound("block.simple_waystone:teleporter_pad.shard_break", entity.location)
+          })
         }
-        entity instanceof Player && apiWarn.playSound(entity, "simple_waystone.block.waystone.teleport", {delaySound: 1})
+        block.dimension.playSound("block.simple_waystone:waystone.teleport", bottomCenter)
+        system.run(() => {
+          block.dimension.playSound("block.simple_waystone:waystone.teleport", entity.location)
+        })
 
         entity.addTag("simple_waystone:teleporter")
-        entity.teleport({x: pos.x +0.5, y: pos.y +0.75, z: pos.z +0.5}, {dimension: world.getDimension(teleporter.dimension)})
+        entity.teleport({x: pos.x +0.5, y: pos.y +0.5, z: pos.z +0.5}, {dimension: world.getDimension(teleporter.dimension)})
       }
+      teleporterPadTimer.delete(id)
     }, 20 * 3))
   }
 
   stepOff(block: Block, entity: Entity): void {
+    if(Date.now() - (lastDate[entity.id] ?? 0) < 150) return
+    lastDate[entity.id] = Date.now()
+
     const lastPos = (r => typeof r == "object" ? r : undefined)(entity.getDynamicProperty("tp_block"))
     if(lastPos){
       if(lastPos.x != block.x || lastPos.y != block.y || lastPos.z != block.z){

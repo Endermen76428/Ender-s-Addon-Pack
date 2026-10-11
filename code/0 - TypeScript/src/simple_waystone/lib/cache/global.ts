@@ -1,12 +1,12 @@
-import { ScoreboardObjective, world } from "@minecraft/server"
 import { apiScoreboard } from "../../../0-lib/math/scoreboard"
+import { ScoreboardObjective, world } from "@minecraft/server"
 import { TeleporterPadStructure } from "./teleporter"
-import { PlayerCacheStructure } from "./waystone"
-import { WaystoneInfo } from "../waystone/info"
+import { IPlayerCacheStructure } from "./waystone"
+import { IWaystoneInfo } from "../waystone/info"
 import { AddonConfig } from "../../variables"
 
-export const globalCacheWaystones = new Map<string, WaystoneInfo>() // Dimension/Location > Info
-export const globalCachePlayerWaystones = new Map<string, PlayerCacheStructure>() // Player Id > Dimension/Location
+export const globalCacheWaystones = new Map<string, IWaystoneInfo>() // Dimension/Location > Info
+export const globalCachePlayerWaystones = new Map<string, IPlayerCacheStructure>() // Player Id > Dimension/Location
 export const globalCacheTeleporterPad = new Map<string, TeleporterPadStructure>() // Dimension/Location > Info
 export const globalCacheWaystonesPublic = new Set<string>() // Dimension/Location
 
@@ -23,7 +23,7 @@ export const apiGlobalCache = new class ApiGlobalCache {
 
     const scoreboards = world.scoreboard.getObjectives()
 
-    // let date = new Date().getTime()
+    // let date = Date.now()
     const { players, waystones, teleporter } = scoreboards.reduce<{players: ScoreboardObjective[], waystones: ScoreboardObjective[], teleporter: ScoreboardObjective[]}>((acc, score) => {
       const type = score.id.slice(15, 18)
       switch(type){
@@ -33,18 +33,17 @@ export const apiGlobalCache = new class ApiGlobalCache {
       }
       return acc
     }, { players: [], waystones: [], teleporter: [] })
-    // world.sendMessage(`Separou as Waystone em <${new Date().getTime() - date}> ms`)
-    // date = new Date().getTime()
 
     this.loadWaystone(waystones)
     this.loadPlayer(players)
     this.loadTeleporter(teleporter)
-    // world.sendMessage(`Carregou as Waystone em <${new Date().getTime() - date}> ms`)
-    // world.sendMessage(`----------\nPlayer: ${globalCachePlayerWaystones.size}\n${JSON.stringify([...globalCachePlayerWaystones.entries()].map(([key, value]) => `Onwer: ${key} = Pri: ${value.private.size}, Pub: ${value.public.size}, Claim: ${value.claim.size}`), null, 2)}`)
   }
 
   private loadWaystone(waystoneScoreList: ScoreboardObjective[]): void {
-    for(const waystoneScore of waystoneScoreList){
+    for(let i = 0, len = waystoneScoreList.length; i < len; i++){
+      const waystoneScore = waystoneScoreList[i]
+      if(!waystoneScore) continue
+
       const id = waystoneScore.id.replace("simple_waystone/w/", "")
       const [ dimensionRaw, pos ] = id.split("/")
       if(dimensionRaw == undefined || pos == undefined) continue
@@ -87,17 +86,25 @@ export const apiGlobalCache = new class ApiGlobalCache {
         icon: waystoneScore.getScore("icon") ?? 0,
         color: waystoneScore.getScore("color") ?? 0,
         claim,
-        favorite
+        favorite,
+        lock: waystoneScore.getScore("lock") == 1
       })
     }
   }
 
   private loadPlayer(playerScoreList: ScoreboardObjective[]): void {
-    for(const playerScore of playerScoreList){
+    for(let i = 0, len = playerScoreList.length; i < len; i++){
+      const playerScore = playerScoreList[i]
+      if(!playerScore) continue
+
       const playerId = playerScore.id.replace("simple_waystone/p/", "")
       const privateWay = new Set<string>(), publicWay = new Set<string>(), claimWay = new Set<string>(), favoritePriWay = new Set<string>(), favoritePubWay = new Set<string>()
 
-      for(const value of playerScore.getParticipants()){
+      const participants = playerScore.getParticipants()
+      for(let i2 = 0, len2 = participants.length; i2 < len2; i2++){
+        const value = participants[i2]
+        if(!value) continue
+
         const type = value.displayName.charAt(0)
         switch(type){
           case "0": { privateWay.add(value.displayName.slice(2)); continue }
@@ -116,7 +123,9 @@ export const apiGlobalCache = new class ApiGlobalCache {
   }
 
   private loadTeleporter(teleporterList: ScoreboardObjective[]): void {
-    for(const score of teleporterList){
+    for(let i = 0, len = teleporterList.length; i < len; i++){
+      const score = teleporterList[i]
+      if(!score) continue
       const padId = score.id.replace("simple_waystone/t/", "")
       const participants = score.getParticipants()
 

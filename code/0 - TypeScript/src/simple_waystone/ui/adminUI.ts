@@ -1,7 +1,7 @@
 import { ModalFormData } from "@minecraft/server-ui"
-import { world, Player } from "@minecraft/server"
-import { AddonConfig } from "../variables"
 import { apiWarn } from "../../0-lib/player/warn"
+import { Player, world } from "@minecraft/server"
+import { AddonConfig } from "../variables"
 
 export function waystoneUIAdmin(player: Player): void {
   new ModalFormData()
@@ -16,7 +16,7 @@ export function waystoneUIAdmin(player: Player): void {
   .toggle("ui.simple_waystone:admin.settings.disable_discount", {defaultValue: AddonConfig.disableDiscount})
   .submitButton("ui.simple_waystone:waystone.create.button")
   .show(player).then(({canceled, formValues}) => {
-    if(canceled || formValues == undefined) return  apiWarn.notify(player, "warning.simple_waystone:waystone.cancel_settings", {type: "actionbar", sound: "warn.ender_addon_pack:break"})
+    if(canceled || formValues == undefined) return  apiWarn.notify(player, "block.warn.simple_waystone:waystone.cancel_settings", {type: "actionbar", sound: "warn.ender_addon_pack:break"})
 
     AddonConfig.xpMax = (r => typeof r == "number" ? r : AddonConfig.xpMax)(formValues[0])
     AddonConfig.xpByDistance = (r => typeof r == "number" ? r : AddonConfig.xpByDistance)(formValues[1])
@@ -37,6 +37,6 @@ export function waystoneUIAdmin(player: Player): void {
     world.setDynamicProperty("config:disable_discount", AddonConfig.disableDiscount)
 
     apiWarn.playSound(player, "warn.ender_addon_pack:levelup")
-    world.sendMessage({translate: "warning.simple_waystone:waystone.admin.save_settings", with: [player.name]})
+    apiWarn.notify(player, {translate: "block.warn.simple_waystone:waystone.admin.save_settings", with: [player.name]})
   })
 }

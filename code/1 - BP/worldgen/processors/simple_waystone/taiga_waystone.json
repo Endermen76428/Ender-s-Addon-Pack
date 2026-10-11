@@ -1,0 +1,251 @@
+{
+  "format_version": "1.26.10",
+  "minecraft:processor_list": {
+    "description": {
+      "identifier": "simple_waystone:simple_waystone/taiga_waystone"
+    },
+    "processors": [
+      {
+        "processor_type": "minecraft:rule",
+        "rules": [
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_block_match",
+              "block": "minecraft:cobblestone_double_slab",
+              "probability": 1
+            },
+            "output_state": { "name": "minecraft:cobblestone" }
+          },
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_block_match",
+              "block": "minecraft:cobblestone",
+              "probability": 0.2
+            },
+            "output_state": { "name": "minecraft:mossy_cobblestone" }
+          },
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_block_match",
+              "block": "minecraft:cobblestone",
+              "probability": 0.1
+            },
+            "output_state": { "name": "minecraft:podzol" }
+          },
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_block_match",
+              "block": "minecraft:vine",
+              "probability": 0.5
+            },
+            "output_state": { "name": "minecraft:air" }
+          },
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_blockstate_match",
+              "block_state": "minecraft:stone_stairs",
+              "probability": 0.2
+            },
+            "output_state": { "name": "minecraft:air" }
+          },
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_blockstate_match",
+              "block_state": {
+                "name": "minecraft:stone_stairs",
+                "states": {
+                  "upside_down_bit": false,
+                  "weirdo_direction": 0
+                }
+              },
+              "probability": 0.3
+            },
+            "output_state": {
+              "name": "minecraft:mossy_cobblestone_stairs",
+              "states": {
+                "upside_down_bit": false,
+                "weirdo_direction": 0
+              }
+            }
+          },
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_blockstate_match",
+              "block_state": {
+                "name": "minecraft:stone_stairs",
+                "states": {
+                  "upside_down_bit": false,
+                  "weirdo_direction": 1
+                }
+              },
+              "probability": 0.3
+            },
+            "output_state": {
+              "name": "minecraft:mossy_cobblestone_stairs",
+              "states": {
+                "upside_down_bit": false,
+                "weirdo_direction": 1
+              }
+            }
+          },
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_blockstate_match",
+              "block_state": {
+                "name": "minecraft:stone_stairs",
+                "states": {
+                  "upside_down_bit": false,
+                  "weirdo_direction": 2
+                }
+              },
+              "probability": 0.3
+            },
+            "output_state": {
+              "name": "minecraft:mossy_cobblestone_stairs",
+              "states": {
+                "upside_down_bit": false,
+                "weirdo_direction": 2
+              }
+            }
+          },
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_blockstate_match",
+              "block_state": {
+                "name": "minecraft:stone_stairs",
+                "states": {
+                  "upside_down_bit": false,
+                  "weirdo_direction": 3
+                }
+              },
+              "probability": 0.3
+            },
+            "output_state": {
+              "name": "minecraft:mossy_cobblestone_stairs",
+              "states": {
+                "upside_down_bit": false,
+                "weirdo_direction": 3
+              }
+            }
+          },
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_blockstate_match",
+              "block_state": {
+                "name": "minecraft:stone_stairs",
+                "states": {
+                  "upside_down_bit": true,
+                  "weirdo_direction": 0
+                }
+              },
+              "probability": 0.3
+            },
+            "output_state": {
+              "name": "minecraft:mossy_cobblestone_stairs",
+              "states": {
+                "upside_down_bit": true,
+                "weirdo_direction": 0
+              }
+            }
+          },
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_blockstate_match",
+              "block_state": {
+                "name": "minecraft:stone_stairs",
+                "states": {
+                  "upside_down_bit": true,
+                  "weirdo_direction": 1
+                }
+              },
+              "probability": 0.3
+            },
+            "output_state": {
+              "name": "minecraft:mossy_cobblestone_stairs",
+              "states": {
+                "upside_down_bit": true,
+                "weirdo_direction": 1
+              }
+            }
+          },
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_blockstate_match",
+              "block_state": {
+                "name": "minecraft:stone_stairs",
+                "states": {
+                  "upside_down_bit": true,
+                  "weirdo_direction": 2
+                }
+              },
+              "probability": 0.3
+            },
+            "output_state": {
+              "name": "minecraft:mossy_cobblestone_stairs",
+              "states": {
+                "upside_down_bit": true,
+                "weirdo_direction": 2
+              }
+            }
+          },
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_blockstate_match",
+              "block_state": {
+                "name": "minecraft:stone_stairs",
+                "states": {
+                  "upside_down_bit": true,
+                  "weirdo_direction": 3
+                }
+              },
+              "probability": 0.3
+            },
+            "output_state": {
+              "name": "minecraft:mossy_cobblestone_stairs",
+              "states": {
+                "upside_down_bit": true,
+                "weirdo_direction": 3
+              }
+            }
+          },
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_blockstate_match",
+              "block_state": {
+                "name": "minecraft:cobblestone_slab",
+                "states": { "minecraft:vertical_half": "bottom" }
+              },
+              "probability": 0.3
+            },
+            "output_state": {
+              "name": "minecraft:mossy_cobblestone_slab",
+              "states": { "minecraft:vertical_half": "bottom" }
+            }
+          },
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_blockstate_match",
+              "block_state": {
+                "name": "minecraft:cobblestone_slab",
+                "states": { "minecraft:vertical_half": "top" }
+              },
+              "probability": 0.2
+            },
+            "output_state": {
+              "name": "minecraft:mossy_cobblestone_slab",
+              "states": { "minecraft:vertical_half": "top" }
+            }
+          },
+          {
+            "input_predicate": {
+              "predicate_type": "minecraft:random_block_match",
+              "block": "minecraft:cobblestone_wall",
+              "probability": 0.2
+            },
+            "output_state": { "name": "minecraft:mossy_cobblestone_wall" }
+          }
+        ] 
+      }
+    ]
+  }
+}

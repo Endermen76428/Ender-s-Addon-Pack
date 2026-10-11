@@ -86,7 +86,7 @@ export const mineDigitalMiner = new class MineDigitalMiner {
     if(!targetSelection) return
 
     const upgrades = mineDigitalMiner.getUpgrade(id)
-    const tool = this.getTool(id, upgrades)
+    const tool = this.getTool(id, upgrades, block.typeId)
 
     for(let i = amount, max = (Math.floor(upgrades.stack * 2) || 1); i < max; i++){
       const { value: pos, done } = targetSelection.next()
@@ -137,7 +137,7 @@ export const mineDigitalMiner = new class MineDigitalMiner {
     return upgrades
   }
 
-  private getTool(id: string, upgrades: Upgrades): ItemStack | undefined {
+  private getTool(id: string, upgrades: Upgrades, block: string): ItemStack | undefined {
     const cache = globalToolCache.get(id)
     if(cache) return cache
 
@@ -149,7 +149,8 @@ export const mineDigitalMiner = new class MineDigitalMiner {
     const enchant = item.getComponent(ItemComponentTypes.Enchantable)
     if(!enchant) return
 
-    if(upgrades.fortune > 0) enchant.addEnchantment({type: new EnchantmentType("minecraft:fortune"), level: upgrades.fortune})
+    if(!block.startsWith("minecraft:")) enchant.addEnchantment({type: new EnchantmentType("minecraft:silk_touch"), level: new EnchantmentType("minecraft:silk_touch").maxLevel})
+    else if(upgrades.fortune > 0) enchant.addEnchantment({type: new EnchantmentType("minecraft:fortune"), level: upgrades.fortune})
     else if(upgrades.silk_touch > 0) enchant.addEnchantment({type: new EnchantmentType("minecraft:silk_touch"), level: new EnchantmentType("minecraft:silk_touch").maxLevel})
 
     globalToolCache.set(id, item)

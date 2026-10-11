@@ -5,26 +5,38 @@ import { world, system } from "@minecraft/server"
 import { AddonConfig } from "../variables"
 
 system.run(() => {
-  if(world.getDynamicProperty("sw:8.0")) apiGlobalCache.load()
+  if(world.getDynamicProperty("sw:9.0")) apiGlobalCache.load()
 
   if(!world.getDynamicProperty("sw:7.0")) return convert_v7_0()
   if(!world.getDynamicProperty("sw:7.3")) return convert_v7_3()
   if(!world.getDynamicProperty("sw:8.0")) return convert_v8_0()
+  if(!world.getDynamicProperty("sw:9.0")) return convert_v9_0()
 })
 
 function convert_v7_0(): void {
   const allDynamics = world.getDynamicPropertyIds().filter(id => id.startsWith("ws:waystone"))
-  for(const waystonePoints of allDynamics){
+
+  for(let i = 0, len = allDynamics.length; i < len; i++){
+    const waystonePoints = allDynamics[i]
+    if(!waystonePoints) continue
+
     const dynamic = world.getDynamicProperty(waystonePoints)
     if(typeof dynamic != "string") continue
-    const allWaystones = JSON.parse(dynamic) as WaystoneInfoArrayBeforeV7_0[]
-    for(const waystone of allWaystones) world.setDynamicProperty(`simple_waystone:${waystone[4]}:${waystone[2]}:${waystone[1][0]},${waystone[1][1]},${waystone[1][2]}`, JSON.stringify({name: waystone[0], owner: waystone[3]}))
+
+    const allWaystones = JSON.parse(dynamic) as IWaystoneInfoArrayBeforeV7_0[]
+    for(let i2 = 0, len2 = allWaystones.length; i2 < len2; i2++){
+      const waystone = allWaystones[i2]
+      waystone && world.setDynamicProperty(`simple_waystone:${waystone[4]}:${waystone[2]}:${waystone[1][0]},${waystone[1][1]},${waystone[1][2]}`, JSON.stringify({name: waystone[0], owner: waystone[3]}))
+    }
     world.setDynamicProperty(waystonePoints, undefined)
   }
 
   const allWaystone = world.getDynamicPropertyIds().filter(id => id.startsWith("simple_waystone:private:") || id.startsWith("simple_waystone:public:"))
   const allClaimWaystone = world.getDynamicPropertyIds().filter(id => id.startsWith("ws:{'x':"))
-  for(const claimWay of allClaimWaystone){
+  for(let i = 0, len = allClaimWaystone.length; i < len; i++){
+    const claimWay = allClaimWaystone[i]
+    if(!claimWay) continue
+
     const dynamic = world.getDynamicProperty(claimWay)
     if(typeof dynamic != "string") continue
     const allPlayers = JSON.parse(dynamic) as string[]
@@ -34,7 +46,11 @@ function convert_v7_0(): void {
 
     const oldWaystone = allWaystone.find(id => id.endsWith(`:${pos.x},${pos.y},${pos.z}`))
     const dimension = oldWaystone ? (oldWaystone.split(":")[3] ? `minecraft:${oldWaystone.split(":")[3]}` : "minecraft:overworld") : "minecraft:overworld"
-    for(const playerId of allPlayers) world.setDynamicProperty(`simple_waystone:claim:${dimension}:${pos.x},${pos.y},${pos.z}:${playerId}`, 0)
+
+    for(let i2 = 0, len2 = allPlayers.length; i2 < len2; i2++){
+      const playerId = allPlayers[i2]
+      playerId && world.setDynamicProperty(`simple_waystone:claim:${dimension}:${pos.x},${pos.y},${pos.z}:${playerId}`, 0)
+    }
     world.setDynamicProperty(claimWay, undefined)
   }
 
@@ -46,11 +62,13 @@ function convert_v7_3(): void {
   world.setDynamicProperty("simple_waystone:conversion_v7.0", undefined)
 
   const allDynamics = world.getDynamicPropertyIds().filter(id => id.startsWith("simple_waystone:"))
-  for(const waystonePoints of allDynamics){
+  for(let i = 0, len = allDynamics.length; i < len; i++){
+    const waystonePoints = allDynamics[i]
+    if(!waystonePoints) continue
     const dynamic = world.getDynamicProperty(waystonePoints)
     if(typeof dynamic != "string" && typeof dynamic != "number") continue
 
-    const info = typeof dynamic == "number" ? 0 : JSON.parse(dynamic) as WaystoneInfoBeforeV7_3 | number | undefined
+    const info = typeof dynamic == "number" ? 0 : JSON.parse(dynamic) as IWaystoneInfoBeforeV7_3 | number | undefined
     if(info == undefined) continue
 
     const [ prefix, access, dimensionPre, dimensionId, pos, id ] = waystonePoints.split(":")
@@ -65,8 +83,9 @@ function convert_v7_3(): void {
 function convert_v8_0(): void {
   const dynamics = world.getDynamicPropertyIds()
 
-  for(const id of dynamics){
-    if(id.startsWith("sw:")) continue
+  for(let i = 0, len = dynamics.length; i < len; i++){
+    const id = dynamics[i]
+    if(!id || id.startsWith("sw:")) continue
 
     if(id.startsWith("pr") || id.startsWith("pu")){ // Private or Public
       const value = world.getDynamicProperty(id)
@@ -118,12 +137,28 @@ function convert_v8_0(): void {
   world.setDynamicProperty("config:item_cooldown", AddonConfig.itemCooldown)
   world.setDynamicProperty("config:disable_discount", AddonConfig.disableDiscount)
   world.setDynamicProperty("sw:8.0", true)
+
+  convert_v9_0()
+}
+
+function convert_v9_0(): void {
+  const scoreboards = world.scoreboard.getObjectives()
+  for(let i = 0, len = scoreboards.length; i < len; i++){
+    const score = scoreboards[i]
+    if(!score) continue
+    if(score.displayName.slice(15, 18) == "/p/") continue
+
+    const xpUpgrade = score.getScore("xp_discount")
+    score.addScore("lock", xpUpgrade == undefined || xpUpgrade == 100 ? 0 : 1)
+  }
+
+  world.setDynamicProperty("sw:9.0", true)
   apiGlobalCache.load()
 }
 
 
 
-interface WaystoneInfoArrayBeforeV7_0 {
+interface IWaystoneInfoArrayBeforeV7_0 {
   0: string, // Name
   1: [number, number, number], // Position
   2: string, // Dimension
@@ -131,7 +166,7 @@ interface WaystoneInfoArrayBeforeV7_0 {
   4: "public" | "private" // Type Access
 }
 
-interface WaystoneInfoBeforeV7_3 {
+interface IWaystoneInfoBeforeV7_3 {
   name: string
   owner: string
 }

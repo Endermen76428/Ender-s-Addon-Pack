@@ -6,12 +6,10 @@
     },
     "elements": [
       {
-        "weight": 100,
         "element": {
-          "location": "simple_waystone/basalt_waystone_structure",
+          "location": "simple_waystone/loaders/basalt_waystone_loader",
           "element_type": "minecraft:single_pool_element",
-          "projection": "rigid",
-          "processors": "simple_waystone:simple_waystone/basalt_waystone"
+          "projection": "rigid"
         }
       }
     ]

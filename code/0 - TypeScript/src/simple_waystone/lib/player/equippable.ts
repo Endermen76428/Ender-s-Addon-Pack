@@ -1,4 +1,4 @@
-import { world, ItemStack, Entity, EquipmentSlot, EntityComponentTypes } from "@minecraft/server"
+import { Entity, EntityComponentTypes, EquipmentSlot, ItemStack } from "@minecraft/server"
 
 export const apiEquippable = new class apiEquippable {
   getItem(entity: Entity, slot: EquipmentSlot): ItemStack | undefined {
@@ -12,9 +12,4 @@ export const apiEquippable = new class apiEquippable {
     if(!equippable) return
     equippable.setEquipment(slot, item)
   }
-}
-
-interface ItemSlot {
-  item: ItemStack,
-  slot: EquipmentSlot
 }

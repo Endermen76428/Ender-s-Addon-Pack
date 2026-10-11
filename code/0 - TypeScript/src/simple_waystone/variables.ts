@@ -1,5 +1,3 @@
-import { world } from "@minecraft/server"
-
 export let SubpackAdminPanelEnabled = false
 
 export const AddonConfig = {
@@ -11,6 +9,12 @@ export const AddonConfig = {
   tpCooldown: 0,
   itemCooldown: 60,
   disableDiscount: false
+}
+
+export const upgradeXpDiscountItem: { [key: string]: number } = {
+  "minecraft:iron_block": 70,
+  "minecraft:diamond_block": 50,
+  "minecraft:netherite_block": 0
 }
 
 export const upgradeXpDiscount: { [key: number]: string } = {

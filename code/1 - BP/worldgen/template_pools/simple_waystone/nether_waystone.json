@@ -6,12 +6,10 @@
     },
     "elements": [
       {
-        "weight": 100,
         "element": {
-          "location": "simple_waystone/nether_waystone_structure",
+          "location": "simple_waystone/loaders/nether_waystone_loader",
           "element_type": "minecraft:single_pool_element",
-          "projection": "rigid",
-          "processors": "simple_waystone:simple_waystone/nether_waystone"
+          "projection": "rigid"
         }
       }
     ]

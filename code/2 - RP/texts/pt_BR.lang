@@ -1027,44 +1027,40 @@ ui.warn.gravestone_death_path:key.transformated_into_tp=Agora você pode telepor
 
 
 ## --------------------------------------------------
-## Blocks
+## #region Blocks
 ## --------------------------------------------------
 
 tile.ws:waystone_polished_andesite.name=Waystone de Andesito Polido
 tile.ws:waystone_polished_diorite.name=Waystone de Diorito Polido
 tile.ws:waystone_polished_granite.name=Waystone de Granito Polido
 tile.ws:waystone_chiseled_stone_bricks.name=Waystone de Tijolos de Pedra Cinzelado
-
 tile.ws:waystone_polished_tuff.name=Waystone de Tufo Polido
 tile.ws:waystone_chiseled_tuff.name=Waystone de Tufo Cinzelado
 tile.ws:waystone_chiseled_tuff_bricks.name=Waystone de Tijolos de Tufo Cinzelado
-
 tile.ws:waystone_polished_deepslate.name=Waystone de Ardosiabissal Polida
-
 tile.ws:waystone_polished_blackstone.name=Waystone Pedra-Negra Polida
-
 tile.ws:waystone_polished_basalt.name=Waystone Basalto Polido
-
 tile.ws:waystone_chiseled_nether_bricks.name=Waystone de Tijolos do Nether
-
 tile.ws:waystone_prismarine_bricks.name=Waystone de Tijolos de Prismarinho
-
 tile.ws:waystone_cut_sandstone.name=Waystone de Arenito Cortado
 tile.ws:waystone_cut_red_sandstone.name=Waystone de Arenito Vermelho Cortado
-
 tile.ws:waystone_chiseled_resin_bricks.name=Waystone de Tijolos de Resina Cinzelado
-
 tile.ws:waystone_quartz_pillar.name=Waystone de Pilar de Quartzo
 
 tile.ws:warpstone_pedestal.name=Pedestal de Warpstone
 
 tile.ws:teleporter_pad.name=Plataforma de Teleporte
-tile.ws:teleporter_pad_empty.name=Plataforma de Teleporte 
+tile.ws:teleporter_pad_empty.name=Plataforma de Teleporte
 
-
+### Loaders
+tile.ws:basalt_waystone_loader.name=§c
+tile.ws:cimson_waystone_loader.name=§c
+tile.ws:nether_waystone_loader.name=§c
+tile.ws:house_teleporter_pad_loader.name=§c
+## #endregion
 
 ## --------------------------------------------------
-## Items
+## #region Items
 ## --------------------------------------------------
 
 item.bedrock_awakening:simple_waystone=§kSimple Waystone
@@ -1072,22 +1068,39 @@ item.bedrock_awakening:simple_waystone=§kSimple Waystone
 item.ws:warpstone=Warpstone
 item.ws:golden_feather=Pena Dourada
 item.ws:return_scroll=Pergaminho da Volta
+item.ws:bound_scroll=Pergaminho Vinculado
 item.ws:teleport_shard=Fragmento de Teleporte
 item.ws:teleport_shard_broken=Fragmento de Teleporte Quebrado
-
-
+## #endregion
 
 ## --------------------------------------------------
-## Item Catalog
+## #region Item Catalog
 ## --------------------------------------------------
 
 item_catalog.ws:itemGroup.name.waystone_item=Itens da Waystone
 item_catalog.ws:itemGroup.name.waystones=Waystones
-
-
+## #endregion
 
 ## --------------------------------------------------
-## Ui
+## #region Sounds
+## --------------------------------------------------
+
+### Items
+subtitles.item.simple_waystone:golden_feather.use=Pena Dourada Usada
+subtitles.item.simple_waystone:return_scroll.use=Pergaminho da Volta Usado
+
+### Blocks
+subtitles.block.simple_waystone:waystone.create=Waystone Registrada
+subtitles.block.simple_waystone:waystone.break=Waystone Desativada
+subtitles.block.simple_waystone:waystone.claim=Waystone Reivindicada
+subtitles.block.simple_waystone:waystone.teleport=Teleporte de Waystone
+subtitles.block.simple_waystone:waystone.paint=Waystone Pintada
+subtitles.block.simple_waystone:teleporter_pad.shard_break=Fragmento Quebra
+subtitles.block.simple_waystone:teleporter_pad.teleporting=Plataforma Teleportando
+## #endregion
+
+## --------------------------------------------------
+## #region Ui
 ## --------------------------------------------------
 
 ui.simple_waystone:waystone.create.title=Criar Waystone
@@ -1103,6 +1116,7 @@ ui.simple_waystone:waystone.settings_menu.button.edit=Editar
 ui.simple_waystone:waystone.edit.title=Editar Waystone
 
 ui.simple_waystone:waystone.settings.toggle.organize=A-z / Z-a
+ui.simple_waystone:waystone.settings.toggle.public_first=Primeiro Waystones Públicas
 ui.simple_waystone:waystone.settings.dropdown.organizeDimension=Ordem das Dimensões:
 ui.simple_waystone:waystone.settings.dropdown.organize_dimension.current=Atual
 ui.simple_waystone:waystone.settings.dropdown.organize_dimension.overworld-nether-the_end=§aOverworld§r>§4Nether§r>§5End
@@ -1129,6 +1143,8 @@ ui.simple_waystone:waystone.info.exit_direction.north=Norte
 ui.simple_waystone:waystone.info.exit_direction.east=Lest
 ui.simple_waystone:waystone.info.exit_direction.south=Sul
 ui.simple_waystone:waystone.info.exit_direction.west=Oeste
+ui.simple_waystone:waystone.info.lock.0=Destrancada
+ui.simple_waystone:waystone.info.lock.1=Trancada
 
 ui.simple_waystone:waystone.transform.title=Transformar Waystone
 ui.simple_waystone:waystone.transform.body=Você quer transformar sua Waystone em uma Warpstone?
@@ -1156,34 +1172,46 @@ ui.simple_waystone:admin.settings.disable_discount=Desabilitar Melhorias de Desc
 
 ui.simple_waystone:waystone.no=Não
 ui.simple_waystone:waystone.yes=Sim
+## #endregion
 
-warning.simple_waystone:waystone.fail_create_waystone=§cNome Inválido!
-warning.simple_waystone:waystone.create_waystone=Waystone "%1§r" Criada!
-warning.simple_waystone:waystone.not_owner=§cVocê não é o dono dessa Waystone!
-warning.simple_waystone:waystone.claimed_waystone=Waystone "%1§r" adquirida!
-warning.simple_waystone:waystone.corrupted=§cWaystone corrompida!
-warning.simple_waystone:waystone.cancel_settings=§cAlterações desfeitas!
-warning.simple_waystone:waystone.save_settings=§aAlterações salvas!
-warning.simple_waystone:waystone.fail_find_waystones=§cNão foi possivel encontrar nenhuma Waystone!
-warning.simple_waystone:waystone.insufficient_xp=§cVocê não tem XP suficiente!
-warning.simple_waystone:waystone.tp_current_waystone=Você já está nessa Waystone!
-warning.simple_waystone:waystone.dont_deleted_waystones=§cNenhuma Waystone deletada!
-warning.simple_waystone:waystone.deleted_waystones=Waystone %1 deletada!
-warning.simple_waystone:waystone.admin.save_settings=<§aWaystones Simples§r> Jogador §e%1§r mudou as configurações do addon.
+## --------------------------------------------------
+## #region Warning
+## --------------------------------------------------
 
-warning.simple_waystone:waysone.teleport_cooldown=Waystone em Cooldown: %1
+### Blocks
+block.warn.simple_waystone:waystone.fail_create_waystone=§cNome Inválido!
+block.warn.simple_waystone:waystone.create_waystone=Waystone "%1§r" Criada!
+block.warn.simple_waystone:waystone.not_owner=§cVocê não é o dono dessa Waystone!
+block.warn.simple_waystone:waystone.claimed_waystone=Waystone "%1§r" adquirida!
+block.warn.simple_waystone:waystone.corrupted=§cWaystone corrompida!
+block.warn.simple_waystone:waystone.cancel_settings=§cAlterações desfeitas!
+block.warn.simple_waystone:waystone.save_settings=§aAlterações salvas!
+block.warn.simple_waystone:waystone.fail_find_waystones=§cNão foi possivel encontrar nenhuma Waystone!
+block.warn.simple_waystone:waystone.insufficient_xp=§cVocê não tem XP suficiente!
+block.warn.simple_waystone:waystone.tp_current_waystone=Você já está nessa Waystone!
+block.warn.simple_waystone:waystone.dont_deleted_waystones=§cNenhuma Waystone deletada!
+block.warn.simple_waystone:waystone.deleted_waystones=Waystone %1 deletada!
+block.warn.simple_waystone:waystone.admin.save_settings=<§aWaystones Simples§r> Jogador §e%1§r mudou as configurações do addon.
 
-warning.simple_waystone:waysone.disabled=§cO teleporte usando Waystones foi desativado por um Administrador.
+block.warn.simple_waystone:waystone.teleport_cooldown=Waystone em Cooldown: %1
+block.warn.simple_waystone:waystone.disabled=§cO teleporte usando Waystones foi desativado por um Administrador.
+block.warn.simple_waystone:waystone.locked=§cVocê não pode quebrar uma Waystone Travada.
 
-warning.simple_waystone:teleport_item.invalid_teleport_item=§cItem de teleporte inválido!
-warning.simple_waystone:teleport_item.cooldown=Warpstone em Cooldown: %1
+block.warn.simple_waystone:teleporter.not_owner=§cVocê não é o dono dessa Plataforma de Teleporte!
+block.warn.simple_waystone:teleporter.place_shard.same=§cEsse Fragmento de Teleporte pertence a essa Plataforma, não pode colocar aqui.
+block.warn.simple_waystone:teleporter.place_shard.target_no_longer_exist=A localização registrada no Fragmente de Teleporter não existe mais.
 
-warning.simple_waystone:upgrades.xp_cost.removed=§cDescontos de teleporte removidos.
-warning.simple_waystone:upgrades.xp_cost.success=Teleportes usando essa waystone custam %1% menos Xp.
+block.warn.simple_waystone:upgrades.xp_cost.removed=§cDescontos de teleporte removidos.
+block.warn.simple_waystone:upgrades.xp_cost.success=Teleportes usando essa waystone custam %1% menos Xp.
 
-warning.simple_waystone:teleporter.not_owner=§cVocê não é o dono dessa Plataforma de Teleporte!
-warning.simple_waystone:teleporter.place_shard.same=§cEsse Fragmento de Teleporte pertence a essa Plataforma, não pode colocar aqui.
-warning.simple_waystone:teleporter.place_shard.target_no_longer_exist=A localização registrada no Fragmente de Teleporter não existe mais.
+### Items
+item.warn.simple_waystone:teleport_item.invalid_teleport_item=§cItem de teleporte inválido!
+item.warn.simple_waystone:teleport_item.cooldown=Warpstone em Cooldown: %1
+
+item.warn.simple_waystone:bound_scroll.registered=Pergaminho vinculado à waystone: %1
+item.warn.simple_waystone:bound_scroll.corrupted=§cPergaminho Corrompido!
+item.warn.simple_waystone:bound_scroll.invalid_waystone=§cA Waystone vinculada não é mais válida.
+## #endregion
 
 
 

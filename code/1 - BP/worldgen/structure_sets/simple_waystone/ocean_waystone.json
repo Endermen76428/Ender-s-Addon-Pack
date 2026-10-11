@@ -12,10 +12,7 @@
       "separation": 1
     },
     "structures": [
-      {
-        "structure": "simple_waystone:ocean_waystone",
-        "weight": 100
-      }
+      { "structure": "simple_waystone:ocean_waystone", "weight": 1 }
     ]
   }
 }

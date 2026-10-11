@@ -1,26 +1,38 @@
-import { world, Player, Vector3, ItemStack } from "@minecraft/server"
+import { ItemStack, Player, Vector3, world } from "@minecraft/server"
 import { apiScoreboard } from "../../../0-lib/math/scoreboard"
+import { apiNumbers } from "../../../0-lib/math/numbers"
 import { apiWarn } from "../../../0-lib/player/warn"
 import { upgradeXpDiscount } from "../../variables"
 import { waystoneCache } from "../cache/waystone"
 import { colorDimension } from "../../ui/listUI"
+import { exitDirection } from "../../ui/infoUI"
 import { apiOrganize } from "../apiOrganize"
 import { waystonesList } from "./list"
 
+const turnDegress = 180 / Math.PI
+const inveseSplit = 1 / 90
+
 export const waystoneInfo = new class ApiWaystoneInfo {
-  saveWaystone(player: Player, info: WaystoneCreateInfo): string {
+  saveWaystone(player: Player, info: IWaystoneCreateInfo): string {
     const name = apiOrganize.sameNames(info.name, waystonesList.getPlayerWaystones(player.id).map(value => value.name))
     const access = info.access ? 1 : 0
     const id = player.dimension.id.replace("minecraft:", "") + `/${info.pos.x},${info.pos.y},${info.pos.z}`
 
+    const disX = player.location.x - (info.pos.x +0.5)
+    const disZ = player.location.z - (info.pos.z +0.5)
+    const degress = Math.atan2(-disX, disZ) * turnDegress +225
+    const offsetIndex = apiNumbers.wrapRange(Math.floor(degress * inveseSplit) +1, 1, 4)
+    const offset = exitDirection[offsetIndex] ?? "auto"
+
     const waystoneScore = apiScoreboard.getObj(`simple_waystone/w/${id}`)
     waystoneScore.setScore(`0/${player.id}`, 0) // Owner
     waystoneScore.setScore(`1/${name}`, 0) // Waystone Name
-    waystoneScore.setScore(`access`, access)
-    waystoneScore.setScore(`icon`, 0)
-    waystoneScore.setScore(`color`, 0)
-    waystoneScore.setScore(`xp_discount`, 100)
-    waystoneScore.setScore(`offset`, 0)
+    waystoneScore.setScore("access", access)
+    waystoneScore.setScore("icon", 0)
+    waystoneScore.setScore("color", 0)
+    waystoneScore.setScore("xp_discount", 100)
+    waystoneScore.setScore("offset", offsetIndex)
+    waystoneScore.setScore("lock", 0)
 
     apiScoreboard.getObj(`simple_waystone/p/${player.id}`).setScore(`${access}/${id}`, 0)
 
@@ -30,12 +42,13 @@ export const waystoneInfo = new class ApiWaystoneInfo {
       name: info.name,
       pos: info.pos,
       dimension: player.dimension.id,
-      offset: "auto",
+      offset,
       xpDiscount: 1,
       icon: 0,
       color: 0,
       claim: new Set<string>(),
-      favorite: new Set<string>()
+      favorite: new Set<string>(),
+      lock: false
     })
 
     return name
@@ -68,11 +81,16 @@ export const waystoneInfo = new class ApiWaystoneInfo {
       }
       return acc
     }, { claimed: new Set<string>(), favorited: new Set<string>() })
-    for(const playerId of claimed){
-      apiScoreboard.removeParticipant(`simple_waystone/p/${playerId}`, `2/${id}`)
+
+    const claim = claimed.values()
+    for(let i = 0, len = claimed.size; i < len; i++){
+      const playerId = claim.next().value
+      playerId && apiScoreboard.removeParticipant(`simple_waystone/p/${playerId}`, `2/${id}`)
     }
-    for(const playerId of favorited){
-      apiScoreboard.removeParticipant(`simple_waystone/p/${playerId}`, `3/${waystone.access}/${id}`)
+    const favorite = favorited.values()
+    for(let i = 0, len = favorited.size; i < len; i++){
+      const playerId = favorite.next().value
+      playerId && apiScoreboard.removeParticipant(`simple_waystone/p/${playerId}`, `3/${waystone.access}/${id}`)
     }
 
     // Remove Waystone Info
@@ -82,7 +100,7 @@ export const waystoneInfo = new class ApiWaystoneInfo {
     waystoneCache.remove(id)
   }
 
-  claimedWaystone(player: Player, waystone: WaystoneInfo): boolean {
+  claimedWaystone(player: Player, waystone: IWaystoneInfo): boolean {
     if(waystone.access == 1) return false
     if(waystone.owner == player.id) return false
     if(waystone.claim.has(player.id)) return false
@@ -96,18 +114,19 @@ export const waystoneInfo = new class ApiWaystoneInfo {
 
     waystoneCache.claim(player.id, id)
 
-    apiWarn.notify(player, {translate: "warning.simple_waystone:waystone.claimed_waystone", with: [`${colorDimension[waystone.dimension]}${waystone.name}`]}, {sound: "warn.ender_addon_pack:levelup"})
+    apiWarn.notify(player, {translate: "block.warn.simple_waystone:waystone.claimed_waystone", with: [`${colorDimension[waystone.dimension] ?? ""}${waystone.name}`]})
+    player.dimension.playSound("block.simple_waystone:waystone.claim", waystone.pos)
     return true
   }
 }
 
-interface WaystoneCreateInfo {
+interface IWaystoneCreateInfo {
   name: string,
   access: boolean,
   pos: Vector3
 }
 
-export interface WaystoneInfo {
+export interface IWaystoneInfo {
   access: 0 | 1 // Private | Public
   owner: string // Player Id
   name: string
@@ -119,4 +138,5 @@ export interface WaystoneInfo {
   color: number
   claim: Set<string>
   favorite: Set<string>
+  lock: boolean
 }

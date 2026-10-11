@@ -1,7 +1,7 @@
 import { MolangVariableMap, Player, RawMessage, system, TitleDisplayOptions, Vector3, world } from "@minecraft/server"
 
 export const apiWarn = new class ApiWarn {
-  notify(player: Player, message: Message, options?: NotifyOptions): void {
+  notify(player: Player, message: TMessage, options?: INotifyOptions): void {
     const type = options && options.type ? options.type : "chat"
     const execute = notifyTypes[type]
     if(execute && message) execute(player, message, options?.subtitle)
@@ -18,14 +18,14 @@ export const apiWarn = new class ApiWarn {
     }, options?.delayParticle)
   }
 
-  playSound(player: Player, sound: string, options?: SoundOptions): void {
+  playSound(player: Player, sound: string, options?: ISoundOptions): void {
     system.runTimeout(() => {
       player.playSound(sound, {volume: options?.volume ?? 1, location: options?.location})
     }, options?.delaySound)
   }
 }
 
-const notifyTypes: { [key: string]: (player: Player, message: Message, subtitle?: TitleDisplayOptions) => void } = {
+const notifyTypes: { [key: string]: (player: Player, message: TMessage, subtitle?: TitleDisplayOptions) => void } = {
   "chat"(player, message){ player.sendMessage(typeof message == "string" ? {translate: message} : message) },
 
   "actionbar"(player, message){ player.onScreenDisplay.setActionBar(typeof message == "string" ? {translate: message} : message) },
@@ -33,9 +33,9 @@ const notifyTypes: { [key: string]: (player: Player, message: Message, subtitle?
   "title"(player, message, subtitle){ player.onScreenDisplay.setTitle(typeof message == "string" ? {translate: message} : message, subtitle) }
 }
 
-type Message = string | RawMessage
+type TMessage = string | RawMessage
 
-interface NotifyOptions extends SoundOptions {
+interface INotifyOptions extends ISoundOptions {
   type?: "chat" | "actionbar" | "title"
   sound?: string
   particle?: { id: string, pos: Vector3, dimension?: string, map?: MolangVariableMap }
@@ -43,7 +43,7 @@ interface NotifyOptions extends SoundOptions {
   subtitle?: TitleDisplayOptions
 }
 
-interface SoundOptions {
+interface ISoundOptions {
   volume?: number
   delaySound?: number
   location?: Vector3

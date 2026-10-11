@@ -1,32 +1,37 @@
-import { world, EquipmentSlot, EntityComponentTypes, GameMode, Player } from "@minecraft/server"
+import { EntityComponentTypes, EquipmentSlot, GameMode, ItemComponentTypes, Player, system, Vector3 } from "@minecraft/server"
 import { AddonConfig } from "../../variables"
 import { apiItemAmount } from "./itemAmount"
 import { apiCooldown } from "../apiCooldown"
-import { apiWarn } from "../../../0-lib/player/warn"
 
 export const apiTeleportItem = new class ApiTeleportItem {
-  [key: string]: (player: Player) => boolean
+  [key: string]: (player: Player, pos: Vector3) => boolean
 
-  "ws:warpstone"(player: Player): false {
+  "ws:warpstone"(player: Player, pos: Vector3): false {
+    player.dimension.playSound("block.simple_waystone:waystone.teleport", player.location)
+    system.run(() => player.dimension.playSound("block.simple_waystone:waystone.teleport", pos))
+
     apiCooldown.set(player, "warpstoneCooldown", AddonConfig.itemCooldown)
-    apiWarn.playSound(player, "simple_waystone.block.waystone.teleport", {delaySound: 1})
     return false
   }
 
-  "ws:golden_feather"(player: Player): boolean {
+  "ws:golden_feather"(player: Player, pos: Vector3): boolean {
+    player.dimension.playSound("item.simple_waystone:golden_feather.used", player.location)
+    system.run(() => player.dimension.playSound("item.simple_waystone:golden_feather.used", pos))
+
     if(player.getGameMode() == GameMode.Creative) return false
     const removed = apiItemAmount.decreaseHand(player, "ws:golden_feather")
-    if(removed) apiWarn.playSound(player, "simple_waystone.item.golden_feather.used", {delaySound: 1})
     return !removed
   }
 
-  "ws:return_scroll"(player: Player): boolean {
+  "ws:return_scroll"(player: Player, pos: Vector3): boolean {
+    player.dimension.playSound("item.simple_waystone:return_scroll.used", player.location)
+    system.run(() => player.dimension.playSound("item.simple_waystone:return_scroll.used", pos))
+
     if(player.getGameMode() == GameMode.Creative) return false
     const item = player.getComponent(EntityComponentTypes.Equippable)?.getEquipment(EquipmentSlot.Mainhand)
-    if(!item || item.typeId != "ws:return_scroll") return true
-    const comp = item.getComponent("durability")
+    if(!item || (item.typeId != "ws:return_scroll" && item.typeId != "ws:bound_scroll")) return true
+    const comp = item.getComponent(ItemComponentTypes.Durability)
     if(!comp) return true
-    apiWarn.playSound(player, "simple_waystone.item.return_scroll.used", {delaySound: 1})
     if(comp.damage +1 > comp.maxDurability){
       player.getComponent(EntityComponentTypes.Equippable)?.setEquipment(EquipmentSlot.Mainhand, undefined)
       return false

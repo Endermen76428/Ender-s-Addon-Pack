@@ -1,5 +1,5 @@
-import { world, Block, Player, Vector3 } from "@minecraft/server"
 import { apiScoreboard } from "../../../0-lib/math/scoreboard"
+import { Block, Player, Vector3 } from "@minecraft/server"
 
 export const warpstonePedestalInfo = new class WarpstonePedestalInfo {
   create(block: Block, player: Player): void {
@@ -9,6 +9,6 @@ export const warpstonePedestalInfo = new class WarpstonePedestalInfo {
   }
 
   remove(pos: Vector3, dimension: string): void {
-    apiScoreboard.removeObj(`simple_waystone/wp/${dimension.replace("minecraft:", "")}/${pos.x},${pos.y},${pos.z}`, true)
+    apiScoreboard.removeObj(`simple_waystone/wp/${dimension.replace("minecraft:", "")}/${pos.x},${pos.y},${pos.z}`)
   }
 }

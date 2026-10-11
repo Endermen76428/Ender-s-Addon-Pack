@@ -2,8 +2,8 @@ import { ActionFormData, ModalFormData } from "@minecraft/server-ui"
 import { apiScoreboard } from "../../0-lib/math/scoreboard"
 import { waystoneCache } from "../lib/cache/waystone"
 import { waystonesList } from "../lib/waystone/list"
-import { world, Player } from "@minecraft/server"
 import { apiWarn } from "../../0-lib/player/warn"
+import { Player } from "@minecraft/server"
 import { colorDimension } from "./listUI"
 
 export function waystoneUIFavorite(player: Player): void {
@@ -36,10 +36,10 @@ function waystoneUIList(player: Player, publicList = false): void {
   const form = new ModalFormData()
   .title({translate: "ui.simple_waystone:waystone.list.title." + access, with: [""]})
   .label("ui.simple_waystone:favorite.list.body")
-  buttons.forEach(waystone => form.toggle(`${colorDimension[waystone.dimension]}${waystone.name}§r`, {defaultValue: waystone.isFavorite}) )
+  buttons.forEach(waystone => form.toggle(`${colorDimension[waystone.dimension] ?? ""}${waystone.name}§r`, {defaultValue: waystone.isFavorite}) )
   form.submitButton("ui.simple_waystone:waystone.create.button")
   .show(player).then(({canceled, formValues}) => {
-    if(canceled || formValues == undefined) return apiWarn.notify(player, "warning.simple_waystone:waystone.cancel_settings", {type: "actionbar", sound: "warn.ender_addon_pack:break"})
+    if(canceled || formValues == undefined) return apiWarn.notify(player, "block.warn.simple_waystone:waystone.cancel_settings", {type: "actionbar", sound: "warn.ender_addon_pack:break"})
 
     formValues.forEach((value, index) => {
       if(index == 0) return
@@ -59,6 +59,6 @@ function waystoneUIList(player: Player, publicList = false): void {
       }
     })
 
-    apiWarn.notify(player, "warning.simple_waystone:waystone.save_settings", {type: "actionbar", sound: "warn.ender_addon_pack:levelup"})
+    apiWarn.notify(player, "block.warn.simple_waystone:waystone.save_settings", {type: "actionbar", sound: "warn.ender_addon_pack:levelup"})
   })
 }

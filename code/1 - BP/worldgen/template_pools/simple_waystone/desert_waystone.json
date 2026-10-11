@@ -6,11 +6,30 @@
     },
     "elements": [
       {
-        "weight": 100,
+        "weight": 5,
         "element": {
-          "location": "simple_waystone/desert_waystone_structure",
+          "location": "simple_waystone/normal/desert_waystone_structure",
           "element_type": "minecraft:single_pool_element",
-          "projection": "rigid"
+          "projection": "rigid",
+          "processors": "simple_waystone:simple_waystone/desert_waystone"
+        }
+      },
+      {
+        "weight": 4,
+        "element": {
+          "location": "simple_waystone/plates/desert_waystone_structure",
+          "element_type": "minecraft:single_pool_element",
+          "projection": "rigid",
+          "processors": "simple_waystone:simple_waystone/desert_waystone"
+        }
+      },
+      {
+        "weight": 1,
+        "element": {
+          "location": "simple_waystone/classic/desert_waystone_structure",
+          "element_type": "minecraft:single_pool_element",
+          "projection": "rigid",
+          "processors": "simple_waystone:simple_waystone/desert_waystone"
         }
       }
     ]

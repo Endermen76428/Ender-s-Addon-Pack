@@ -1,20 +1,19 @@
 import { globalCachePlayerWaystones, globalCacheWaystones, globalCacheWaystonesPublic } from "./global"
+import { IWaystoneInfo } from "../waystone/info"
 import { exitDirection } from "../../ui/infoUI"
-import { WaystoneInfo } from "../waystone/info"
-import { world } from "@minecraft/server"
 
 export const waystoneCache = new class WaystoneCache {
-  private getPlayerCache(playerId: string): PlayerCacheStructure {
+  private getPlayerCache(playerId: string): IPlayerCacheStructure {
     const cache = globalCachePlayerWaystones.get(playerId)
 
     if(cache) return cache
 
-    const empty: PlayerCacheStructure = { private: new Set(), public: new Set(), claim: new Set(), favorite: {private: new Set(), public: new Set()} }
+    const empty: IPlayerCacheStructure = { private: new Set(), public: new Set(), claim: new Set(), favorite: {private: new Set(), public: new Set()} }
     globalCachePlayerWaystones.set(playerId, empty)
     return empty
   }
 
-  create(info: WaystoneInfo): void {
+  create(info: IWaystoneInfo): void {
     const id = info.dimension.replace("minecraft:", "") + `/${info.pos.x},${info.pos.y},${info.pos.z}`;
 
     this.getPlayerCache(info.owner)[info.access == 0 ? "private" : "public"].add(id)
@@ -69,23 +68,32 @@ export const waystoneCache = new class WaystoneCache {
     }
   }
 
-  getWaystone(id: string): WaystoneInfo | undefined { return globalCacheWaystones.get(id) }
+  updateLock(lock: boolean, id: string): void {
+    const cache = globalCacheWaystones.get(id)
+    if(cache) cache.lock = lock
+  }
 
-  getPlayerWaystoneIds(playerId: string): PlayerCacheStructure {
-    return this.getPlayerCache(playerId)  }
+  getWaystone(id: string): IWaystoneInfo | undefined { return globalCacheWaystones.get(id) }
 
-  getPublicWaystones(): WaystoneInfo[] {
-    const waystones: WaystoneInfo[] = []
+  getPlayerWaystoneIds(playerId: string): IPlayerCacheStructure { return this.getPlayerCache(playerId) }
 
-    for(const id of globalCacheWaystonesPublic){
+  getPublicWaystones(): IWaystoneInfo[] {
+    const waystones: IWaystoneInfo[] = []
+
+    const publicWaystones = globalCacheWaystonesPublic.values()
+    for(let i = 0, len = globalCacheWaystonesPublic.size; i < len; i++){
+      const id = publicWaystones.next().value
+      if(!id) continue
+
       const value = globalCacheWaystones.get(id)
       if(value) waystones.push(value)
     }
+
     return waystones
   }
 }
 
-export interface PlayerCacheStructure {
+export interface IPlayerCacheStructure {
   private: Set<string>
   public: Set<string>
   claim: Set<string>

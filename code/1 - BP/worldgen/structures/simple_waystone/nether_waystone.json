@@ -15,11 +15,11 @@
     "start_pool": "simple_waystone:simple_waystone/nether_waystone",
     "heightmap_projection": "none",
     "step": "surface_structures",
-    "terrain_adaptation": "bury",
+    "terrain_adaptation": "beard_thin",
     "start_height": {
       "type": "uniform",
-      "min": { "from_sea": 0 },
-      "max": { "from_sea": 0 }
+      "min": { "absolute": 1 },
+      "max": { "absolute": 1 }
     },
     "max_depth": 1
   }

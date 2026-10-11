@@ -1,9 +1,9 @@
 import { ActionFormData, ModalFormData } from "@minecraft/server-ui"
-import { world, Block, Player } from "@minecraft/server"
 import { SubpackAdminPanelEnabled } from "../variables"
+import { apiWarn } from "../../0-lib/player/warn"
+import { Block, Player } from "@minecraft/server"
 import { waystoneUIFavorite } from "./favoriteUI"
 import { waystoneUIRemove } from "./removeUI"
-import { apiWarn } from "../../0-lib/player/warn"
 import { apiConfig } from "../lib/apiConfig"
 import { waystoneUIAdmin } from "./adminUI"
 import { waystoneUIInfo } from "./infoUI"
@@ -11,7 +11,7 @@ import { waystoneUIInfo } from "./infoUI"
 export const dimensionsOrder = ["current", "overworld-nether-the_end", "overworld-the_end-nether", "nether-overworld-the_end", "nether-the_end-overworld", "the_end-overworld-nether", "the_end-nether-overworld"]
 
 export function waystoneUISettings(player: Player, owner: string, block: Block): void {
-  if(owner != player.id) return apiWarn.notify(player, "warning.simple_waystone:waystone.not_owner", {sound: "warn.ender_addon_pack:bass"})
+  if(owner != player.id) return apiWarn.notify(player, "block.warn.simple_waystone:waystone.not_owner", {sound: "warn.ender_addon_pack:bass"})
 
   const form = new ActionFormData()
   .title("ui.simple_waystone:waystone.settings_menu.title")
@@ -36,17 +36,19 @@ function waystoneUIConfig(player: Player): void {
   new ModalFormData()
   .title("ui.simple_waystone:waystone.settings_menu.title")
   .toggle("ui.simple_waystone:waystone.settings.toggle.organize", {defaultValue: config.organize})
+  .toggle("ui.simple_waystone:waystone.settings.toggle.public_first", {defaultValue: config.publicFirst})
   .dropdown("ui.simple_waystone:waystone.settings.dropdown.organizeDimension", dimensionsOrder.map(value => (`ui.simple_waystone:waystone.settings.dropdown.organize_dimension.${value}`)), {defaultValueIndex: config.organizeDimension})
   .dropdown("ui.simple_waystone:waystone.settings.dropdown.show_dimension", ["ui.simple_waystone:waystone.settings.dropdown.show_dimension.all", "ui.simple_waystone:waystone.settings.dropdown.show_dimension.overworld", "ui.simple_waystone:waystone.settings.dropdown.show_dimension.nether", "ui.simple_waystone:waystone.settings.dropdown.show_dimension.the_end"], {defaultValueIndex: config.showDimension})
   .submitButton("ui.simple_waystone:waystone.create.button")
   .show(player).then(({canceled, formValues}) => {
-    if(canceled || formValues == undefined) return apiWarn.notify(player, "warning.simple_waystone:waystone.cancel_settings", {type: "actionbar", sound: "warn.ender_addon_pack:break"})
+    if(canceled || formValues == undefined) return apiWarn.notify(player, "block.warn.simple_waystone:waystone.cancel_settings", {type: "actionbar", sound: "warn.ender_addon_pack:break"})
 
     apiConfig.setConfig(player, {
       organize: (r => typeof r == "boolean" ? r : apiConfig.defaultConfig.organize)(formValues[0]),
-      organizeDimension: (r => typeof r == "number" ? r : apiConfig.defaultConfig.organizeDimension)(formValues[1]),
-      showDimension: (r => typeof r == "number" ? r : apiConfig.defaultConfig.showDimension)(formValues[2])
+      publicFirst: (r => typeof r == "boolean" ? r : apiConfig.defaultConfig.publicFirst)(formValues[1]),
+      organizeDimension: (r => typeof r == "number" ? r : apiConfig.defaultConfig.organizeDimension)(formValues[2]),
+      showDimension: (r => typeof r == "number" ? r : apiConfig.defaultConfig.showDimension)(formValues[3])
     })
-    apiWarn.notify(player, "warning.simple_waystone:waystone.save_settings", {type: "actionbar", sound: "warn.ender_addon_pack:levelup"})
+    apiWarn.notify(player, "block.warn.simple_waystone:waystone.save_settings", {type: "actionbar", sound: "warn.ender_addon_pack:levelup"})
   })
 }
