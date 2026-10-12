@@ -1,7 +1,7 @@
 import { Variables } from "../../advanced_waypoints/lib/variables"
 import { Vector3 } from "@minecraft/server"
 
-export const apiNumbers = new class apiNumbers {
+export const apiNumbers = new class ApiNumbers {
   clamp(value: number, min: number, max: number): number { return Math.min(Math.max(value, min), max) }
 
   isOutRange(value: number, min: number, max: number): boolean { return value < min || value > max }
