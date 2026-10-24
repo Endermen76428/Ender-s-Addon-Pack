@@ -1,4 +1,4 @@
-import { world, Entity, EquipmentSlot, ItemStack, EntityComponentTypes } from "@minecraft/server"
+import { Entity, EntityComponentTypes, EquipmentSlot, ItemStack } from "@minecraft/server"
 
 export const apiEquippable = new class apiEquippable {
   getItem(entity: Entity, ids?: string | string[]): ItemSlot | undefined {

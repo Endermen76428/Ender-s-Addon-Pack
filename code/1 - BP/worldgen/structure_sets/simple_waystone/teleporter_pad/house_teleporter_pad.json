@@ -8,8 +8,8 @@
       "type": "minecraft:random_spread",
       "spread_type": "triangular",
       "salt": 764287,
-      "spacing": 24,
-      "separation": 8
+      "spacing": 32,
+      "separation": 10
     },
     "structures": [
       { "structure": "simple_waystone:house_teleporter_pad", "weight": 1 }

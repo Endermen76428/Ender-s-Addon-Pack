@@ -1060,6 +1060,13 @@ tile.ws:nether_waystone_loader.name=§c
 tile.ws:house_teleporter_pad_loader.name=§c
 ## #endregion
 
+## --------------------------------
+## #region Commands
+## --------------------------------
+
+commands.simple_waystone.admin_panel=Open the Waystone Admin Panel
+## #endregion
+
 ## --------------------------------------------------
 ## #region Items
 ## --------------------------------------------------
@@ -1221,31 +1228,124 @@ item.warn.simple_waystone:bound_scroll.invalid_waystone=§cThe linked Waystone i
 
 
 ## --------------------------------
-### Commands
+## #region BACS
 ## --------------------------------
 
+### Warns
+bacs.warn.temporal_bottle:furnace.start_search.10=[§aBACS§r]> §e%1§r don't have a recipe registered at the Time, please wait 10s while we search.
+bacs.warn.temporal_bottle:furnace.start_search.20=[§aBACS§r]> §e%1§r + §e%2§r don't have a recipe registered at the Time, please wait 20s while we search.
+bacs.warn.temporal_bottle:furnace.invalid_block=[§cBACS§r]> Something unexpected interfered with the search.
+
+### UI
+## General
+ui.bacs:pages.next=Next Page
+ui.bacs:pages.previous=Previous Page
+
+## Furnace
+ui.bacs:recipes.furnace.title=Furnace Recipes
+ui.bacs:recipes.furnace.delete.body=Select a registered furnace recipe to delete from the BACS Database:\n
+## #endregion
+
+## --------------------------------
+## #region Commands
+## --------------------------------
+
+commands.temporal_bottle.give_time=Give or set time to a Temporal Bottle
+commands.bacs.recipes=Manage database of BACS Recipes
 warn.temporal_bottle:custom_command.give_time.fail.invalid_item=Invalid Item! You need to hold a Temporal Bottle in your hand.
 warn.temporal_bottle:custom_command.give_time.success.add=Time added to the Temporal Bottle.
 warn.temporal_bottle:custom_command.give_time.success.set=Time setted to the Temporal Bottle.
+## #endregion
 
 ## --------------------------------
-### Entity
+## #region Entity
 ## --------------------------------
 
-entity.temporal_bottle:temporal_bottle_entity.name=Temporal Energy
+entity.temporal_bottle:temporal_zone.name=Temporal Energy
+## #endregion
 
 ## --------------------------------
-### Items
+## #region Items
 ## --------------------------------
 
 item.temporal_bottle:temporal_bottle=Temporal Bottle
+## #endregion
 
 ## --------------------------------
-### Items Subtitle
+## #region Items Lore
 ## --------------------------------
 
 item_subtitle.temporal_bottle:stored_time=§aStored Time %1
 item_subtitle.temporal_bottle:total_time=§7Total Time %1
+## #endregion
+
+## --------------------------------------------------
+## #region Sounds
+## --------------------------------------------------
+
+### System
+subtitles.warn.temporal_bottle:recipe_finished=Recipe Search Finished
+## #endregion
+
+## --------------------------------------------------
+## #region Warning
+## --------------------------------------------------
+
+### Entity
+entity.warn.temporal_bottle:temporal_zone.search.can_not_increase=§cYou cannot increase acceleration during a search.
+## #endregion
+
+## --------------------------------------------------
+## #region Temporary
+## --------------------------------------------------
+
+### Digital Miner
+tile.digital_miner:digital_miner.name.bacs=Digital Miner
+tile.digital_miner:light_generator.name.bacs=Light Generator
+tile.digital_miner:diamond_glass.name.bacs=Diamond Glass
+tile.digital_miner:steel_block.name.bacs=Steel Block
+item.digital_miner:digital_processor.bacs=Digital Processor
+item.digital_miner:advanced_circuit.bacs=Advanced Circuit
+item.digital_miner:laser_drill.bacs=Laser Drill
+item.digital_miner:machine_engine.bacs=Machine Engine
+item.digital_miner:monitor.bacs=Monitor
+item.digital_miner:integrated_circuit.bacs=Integrated Circuit
+item.digital_miner:capacitor.bacs=Capacitor
+item.digital_miner:digital_miner.bacs=Digital Miner
+item.digital_miner:diamond_dust.bacs=Diamond Dust
+item.digital_miner:diamond_plate.bacs=Diamond Plate
+item.digital_miner:coal_dust.bacs=Coal Dust
+item.digital_miner:iron_dust.bacs=Iron Dust
+item.digital_miner:gold_dust.bacs=Gold Dust
+item.digital_miner:gold_plate.bacs=Gold Plate
+item.digital_miner:redstone_enriched_quartz.bacs=Redstone Enriched Quartz
+item.digital_miner:steel_dust.bacs=Steel Dust
+item.digital_miner:steel_ingot.bacs=Steel Ingot
+item.digital_miner:steel_nugget.bacs=Steel Nugget
+item.digital_miner:steel_plate.bacs=Steel Plate
+item.digital_miner:guidebook.bacs=Guidebook
+item.digital_miner:hammer.bacs=Hammer
+item.digital_miner:ore_scanner.bacs=Ore Scanner
+item.digital_miner:upgrade_template.bacs=Upgrade Template
+item.digital_miner:speed_upgrade_1.bacs=Speed Upgrade Tier 1
+item.digital_miner:speed_upgrade_2.bacs=Speed Upgrade Tier 2
+item.digital_miner:speed_upgrade_3.bacs=Speed Upgrade Tier 3
+item.digital_miner:speed_upgrade_4.bacs=Speed Upgrade Tier 4
+item.digital_miner:stack_upgrade_1.bacs=Stack Upgrade Tier 1
+item.digital_miner:stack_upgrade_2.bacs=Stack Upgrade Tier 2
+item.digital_miner:stack_upgrade_3.bacs=Stack Upgrade Tier 3
+item.digital_miner:stack_upgrade_4.bacs=Stack Upgrade Tier 4
+item.digital_miner:energy_upgrade_1.bacs=Energy Upgrade Tier 1
+item.digital_miner:energy_upgrade_2.bacs=Energy Upgrade Tier 2
+item.digital_miner:energy_upgrade_3.bacs=Energy Upgrade Tier 3
+item.digital_miner:energy_upgrade_4.bacs=Energy Upgrade Tier 4
+item.digital_miner:fortune_upgrade_1.bacs=Fortune Upgrade Tier 1
+item.digital_miner:fortune_upgrade_2.bacs=Fortune Upgrade Tier 2
+item.digital_miner:fortune_upgrade_3.bacs=Fortune Upgrade Tier 3
+item.digital_miner:fortune_upgrade_4.bacs=Fortune Upgrade Tier 4
+item.digital_miner:silk_touch_upgrade_1.bacs=Silk Touch Upgrade
+item.digital_miner:anchor_upgrade_1.bacs=Anchor Upgrade
+## #endregion
 
 
 

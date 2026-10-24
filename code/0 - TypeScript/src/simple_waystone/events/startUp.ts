@@ -1,4 +1,4 @@
-import { EntityComponentTypes, EquipmentSlot, GameMode, ItemComponentTypes, ItemStack, system } from "@minecraft/server"
+import { CommandPermissionLevel, CustomCommandStatus, EntityComponentTypes, EquipmentSlot, GameMode, ItemComponentTypes, ItemStack, Player, system } from "@minecraft/server"
 import { boundScrollRegister, boundScrollTeleport } from "../functions/boundScroll"
 import { structureLoaderManager } from "../functions/structures/manager"
 import { teleporterPadInteract } from "../functions/teleporter/interact"
@@ -15,10 +15,11 @@ import { waystoneUICreate } from "../ui/createUI"
 import { apiCooldown } from "../lib/apiCooldown"
 import { waystoneUIList } from "../ui/listUI"
 import { apiConfig } from "../lib/apiConfig"
+import { waystoneUIAdmin } from "../ui/adminUI"
 
 const replaceBlock = ["minecraft:air", "minecraft:lava", "minecraft:water"]
 
-system.beforeEvents.startup.subscribe(({blockComponentRegistry: customB, itemComponentRegistry: customI}) => {
+system.beforeEvents.startup.subscribe(({blockComponentRegistry: customB, itemComponentRegistry: customI, customCommandRegistry: customC}) => {
   customB.registerCustomComponent("ws:waystone", {
     beforeOnPlayerPlace: e => {
       const { block, dimension, player} = e
@@ -163,6 +164,18 @@ system.beforeEvents.startup.subscribe(({blockComponentRegistry: customB, itemCom
       durability.damage = durability.damage -2
       player.getComponent(EntityComponentTypes.Equippable)?.setEquipment(EquipmentSlot.Mainhand, item)
     }
+  })
+
+  customC.registerCommand({
+    name: "eap:adminpanel",
+    description: "commands.simple_waystone.admin_panel",
+    permissionLevel: CommandPermissionLevel.Any,
+    cheatsRequired: false
+  }, ({sourceEntity}) => {
+    if(sourceEntity == undefined || !(sourceEntity instanceof Player)) return
+
+    system.run(() => waystoneUIAdmin(sourceEntity))
+    return { status: CustomCommandStatus.Success }
   })
 })
 

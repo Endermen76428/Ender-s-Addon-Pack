@@ -1,0 +1,58 @@
+{
+  "pools": [
+    {
+      "rolls": { "min": 1, "max": 4 },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:paper",
+          "functions": [ { "function": "set_count", "count": { "min": 0, "max": 3 } } ]
+        }
+      ]
+    },
+    {
+      "rolls": { "min": 1, "max": 4 },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:gold_ingot",
+          "functions": [ { "function": "set_count", "count": { "min": 0, "max": 2 } } ]
+        }
+      ]
+    },
+
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:purple_dye"
+        },
+        {
+          "type": "item",
+          "name": "minecraft:flint"
+        }
+      ]
+    },
+    {
+      "rolls": { "min": 1, "max": 2 },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:ender_pearl",
+          "functions": [ { "function": "set_count", "count": { "min": 0, "max": 3 } } ]
+        }
+      ]
+    },
+    {
+      "rolls": { "min": 1, "max": 2 },
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:amethyst_shard",
+          "functions": [ { "function": "set_count", "count": { "min": 0, "max": 4 } } ]
+        }
+      ]
+    }
+  ]
+}

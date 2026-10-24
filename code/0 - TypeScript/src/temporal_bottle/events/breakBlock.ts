@@ -1,5 +1,5 @@
 import { temporalBottleBlock } from "../lib/temporalBottle/block"
-import { world, system } from "@minecraft/server"
+import { system, world } from "@minecraft/server"
 
 world.beforeEvents.playerBreakBlock.subscribe((ev) => {
   const { block } = ev

@@ -1,9 +1,17 @@
-import { system, CommandPermissionLevel, CustomCommand, CustomCommandOrigin, CustomCommandParamType, CustomCommandResult, CustomCommandStatus as Status, EquipmentSlot, Player } from "@minecraft/server"
+import { CommandPermissionLevel, CustomCommand, CustomCommandOrigin, CustomCommandParamType, CustomCommandResult, CustomCommandStatus as Status, EquipmentSlot, Player, system } from "@minecraft/server"
+import { BACSCommandRecipes } from "../../../1-bacs/recipes/commands/manager"
 import { temporalBottleItem } from "../../lib/temporalBottle/bottle"
 import { apiEquippable } from "../../lib/player/equippable"
 import { apiNumbers } from "../../../0-lib/math/numbers"
 
 export const startUpCommandFunc: Record<StartUpCommandIds, (origin: CustomCommandOrigin, ...args: any[]) => CustomCommandResult | undefined> = {
+  "recipes": ({sourceEntity: player}) => {
+    if(!(player instanceof Player)) return
+
+    system.run(() => { BACSCommandRecipes(player) })
+    return { status: Status.Success }
+  },
+
   "giveTime": ({sourceEntity: player}, functionType, timeAmount) => {
     if(!player || !(player instanceof Player) || typeof functionType != "string" || typeof timeAmount != "number") return { status: Status.Failure }
 
@@ -22,9 +30,16 @@ export const startUpCommandFunc: Record<StartUpCommandIds, (origin: CustomComman
 }
 
 export const startUpCommandHeader: Record<StartUpCommandIds, CustomCommand> = {
+  "recipes": {
+    name: "eap:bacsrecipes",
+    description: "commands.bacs.recipes",
+    cheatsRequired: false,
+    permissionLevel: CommandPermissionLevel.Any
+  },
+
   "giveTime": {
     name: "eap:givetime",
-    description: "commands.temporal_bottle:give_time.description",
+    description: "commands.temporal_bottle.give_time",
     cheatsRequired: true,
     permissionLevel: CommandPermissionLevel.GameDirectors,
     mandatoryParameters: [
@@ -34,4 +49,4 @@ export const startUpCommandHeader: Record<StartUpCommandIds, CustomCommand> = {
   }
 }
 
-type StartUpCommandIds = "giveTime"
+type StartUpCommandIds = "giveTime" | "recipes"

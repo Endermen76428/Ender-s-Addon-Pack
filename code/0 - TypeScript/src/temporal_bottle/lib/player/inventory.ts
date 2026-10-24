@@ -1,4 +1,4 @@
-import { world, ItemStack, Entity, Container, EntityComponentTypes } from "@minecraft/server"
+import { Entity, EntityComponentTypes, ItemStack } from "@minecraft/server"
 
 export const apiInventory = new class apiInventory {
   addItem(entity: Entity, itemId: string | ItemStack, amount = 1): void {

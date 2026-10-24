@@ -1,13 +1,14 @@
 {
-	"format_version": "1.21.60",
-	"minecraft:item": {
-		"description": {
-			"identifier": "temporal_bottle:temporal_bottle",
-			"menu_category": { "category": "equipment" }
-		},
-		"components": {
-			"minecraft:max_stack_size": 1,
-			"minecraft:icon": "temporal_bottle:time_in_a_bottle"
-		}
-	}
+  "format_version": "1.26.30",
+  "minecraft:item": {
+    "description": {
+      "identifier": "temporal_bottle:temporal_bottle",
+      "menu_category": { "category": "equipment" }
+    },
+    "components": {
+      "temporal_bottle:bottle": {},
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "temporal_bottle:time_in_a_bottle"
+    }
+  }
 }

@@ -1,9 +1,8 @@
-import { world, ItemStack, Player, EquipmentSlot, GameMode } from "@minecraft/server"
-import { cachePlayerBottleSlot } from "../variables/cache"
+import { EquipmentSlot, GameMode, ItemStack, Player } from "@minecraft/server"
+import { cachePlayerBottleSlot } from "../variables"
 import { apiEquippable } from "../player/equippable"
 import { apiInventory } from "../player/inventory"
-import { timeCostByUse } from "../variables/cache"
-import { temporalBottleInfo } from "./info"
+import { timeCostByUse } from "../variables"
 
 export const temporalBottleItem = new class TemporalBottleItem {
   increaseTime(player: Player): void {
@@ -27,7 +26,7 @@ export const temporalBottleItem = new class TemporalBottleItem {
     const item = apiEquippable.getItemSlot(player, EquipmentSlot.Mainhand)
     if(!item || item.typeId != "temporal_bottle:temporal_bottle") return
 
-    const time = (r => typeof r != "number" ? 0 : r)(item.getDynamicProperty("bottle:time")) - temporalBottleInfo.timeByTier(tier)
+    const time = (r => typeof r != "number" ? 0 : r)(item.getDynamicProperty("bottle:time")) - timeCostByUse * (1 << tier) - (tier > 0 ? timeCostByUse * (1 << (tier - 1)) : 0)
 
     this.updateTimeText(item, time)
     return apiEquippable.setItem(player, item, EquipmentSlot.Mainhand)
@@ -60,7 +59,7 @@ export const temporalBottleItem = new class TemporalBottleItem {
     let currentTime = item.getDynamicProperty("bottle:time")
     if(typeof currentTime != "number") currentTime = 0
 
-    return currentTime >= timeCostByUse * (2 ** tier)
+    return currentTime >= timeCostByUse * (1 << tier)
   }
 
   getTime(player: Player, slot?: number): number {

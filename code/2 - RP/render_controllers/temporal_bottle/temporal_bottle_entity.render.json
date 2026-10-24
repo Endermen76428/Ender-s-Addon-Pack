@@ -1,16 +1,53 @@
 {
   "format_version": "1.8.0",
   "render_controllers": {
-    "controller.render.temporal_bottle.temporal_bottle_entity": {
+    "controller.render.temporal_bottle.temporal_zone": {
       "ignore_lighting": true,
       "arrays": {
         "textures": {
-          "Array.tier": ["Texture.speed_2x", "Texture.speed_4x", "Texture.speed_8x", "Texture.speed_16x", "Texture.speed_32x", "Texture.speed_64x", "Texture.speed_128x", "Texture.speed_256x"]
+          "Array.tier": ["Texture.speed_2x", "Texture.speed_4x", "Texture.speed_8x", "Texture.speed_16x", "Texture.speed_32x", "Texture.speed_64x", "Texture.speed_128x", "Texture.speed_256x", "Texture.speed_512x", "Texture.speed_1024x"]
         }
       },
       "geometry": "Geometry.default",
       "materials": [ { "*": "Material.default" } ],
-      "textures": [ "Array.tier[v.tier]" ]
+      "textures": [ "v.searching > 0 ? Texture.search_background : Array.tier[v.tier]" ],
+      "part_visibility": [
+        { "*": true },
+        { "timerH1": false },
+        { "timerH2": false },
+        { "timerV": false },
+        { "1": false },
+        { "2": false },
+        { "3": false },
+        { "4": false },
+        { "5": false },
+        { "6": false }
+      ]
+    },
+    "controller.render.temporal_bottle.temporal_zone.timer": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.timer" ],
+      "part_visibility": [
+        { "*": false },
+        { "timerH1": true },
+        { "timerH2": true },
+        { "timerV": true }
+      ]
+    },
+    "controller.render.temporal_bottle.temporal_zone.searching": {
+      "ignore_lighting": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.search_timer" ],
+      "part_visibility": [
+        { "*": true },
+        { "all": false },
+        { "timerH1": false },
+        { "timerH2": false },
+        { "timerV": false }
+      ]
     }
   }
 }

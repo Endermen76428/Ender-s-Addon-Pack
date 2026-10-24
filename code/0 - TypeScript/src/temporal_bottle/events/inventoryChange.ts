@@ -1,6 +1,6 @@
-import { cachePlayerBottleSlot } from "../lib/variables/cache"
+import { cachePlayerBottleSlot } from "../lib/variables"
 import { apiInventory } from "../lib/player/inventory"
-import { world, Player } from "@minecraft/server"
+import { Player, world } from "@minecraft/server"
 
 world.afterEvents.playerInventoryItemChange.subscribe(({player, slot, beforeItemStack: oldItem, itemStack: newItem}) => {
   const remove = oldItem?.typeId == "temporal_bottle:temporal_bottle"

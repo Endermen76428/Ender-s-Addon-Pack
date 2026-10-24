@@ -1,4 +1,4 @@
-export const furnaceFuelList: { [key: string]: number } = { // Amount of items smeltable with one item of fuel
+export const furnaceFuelList: { [key: string]: number } = { // Quantia de Itens fundidos com um unico combustivel
   // Vanilla
   "minecraft:lava_bucket": 100,
   "minecraft:coal_block": 80,

@@ -1,5 +1,33 @@
-export const brewingStandInputOutput: { [key: string]: string } = {
-  // Vanilla
+import { ScoreboardObjective } from "@minecraft/server"
+
+export function BACSLoadBrewingStandRecipe(recipe: ScoreboardObjective, deny: ScoreboardObjective): void {
+  const denied = deny.getParticipants()
+  const denyGetted = new Set<string>()
+  for(let i = 0, len = denied.length; i < len; i++){
+    const id = denied[i]?.displayName
+    if(id == undefined) continue
+
+    brewingStandRecipeDenyList[id] = true
+  }
+
+  denyGetted.clear()
+
+  const recipes = recipe.getParticipants()
+  for(let i = 0, len = recipes.length; i < len; i++){
+    const id = recipes[i]?.displayName
+    if(id == undefined) continue
+
+    const [ base, reagent, output ] = id.split("/", 3)
+
+    if(base == undefined || reagent == undefined || output == undefined) continue
+
+    brewingStandRecipeList[base + "/" + reagent] = output
+  }
+}
+
+
+
+export const brewingStandRecipeList: { [key: string]: string } = {
   "minecraft:awkward/minecraft:blaze_powder": "minecraft:strength",
   "minecraft:awkward/minecraft:breeze_rod": "minecraft:wind_charged",
   "minecraft:awkward/minecraft:fermented_spider_eye": "minecraft:weakness",
@@ -69,14 +97,76 @@ export const brewingStandInputOutput: { [key: string]: string } = {
   "minecraft:water/minecraft:stone": "minecraft:mundane",
   "minecraft:water/minecraft:sugar": "minecraft:mundane",
   "minecraft:water/minecraft:web": "minecraft:mundane",
-  "minecraft:weakness/minecraft:redstone": "minecraft:long_weakness",
+  "minecraft:weakness/minecraft:redstone": "minecraft:long_weakness"
 
   // Addons
-  "minecraft:potion/minecraft:obsidian": "mutant:chemical_x",
-  "minecraft:splash_potion/minecraft:obsidian": "mutant:chemical_x",
-  "minecraft:potion/minecraft:amethyst_shard": "bv:recall_potion",
-  "mbl_ts:fizzy_water/mbl_ts:dried_nether_wart": "mbl_ts:vial_of_netherwart_solution",
-  "mbl_ts:bottle_of_water_dirty_4/mbl_ts:sweet_yeast_mix": "mbl_ts:fizzy_water",
-  "minecraft:potion/mbl_ts:zombie_heart": "mbl_ts:bottle_of_zombie_goo",
-  "mbl_ts:bottle_of_zombie_goo/mbl_ts:vial_of_netherwart_solution": "mbl_ts:zombie_vaccine"
+  // "minecraft:potion/minecraft:obsidian": "mutant:chemical_x",
+  // "minecraft:splash_potion/minecraft:obsidian": "mutant:chemical_x",
+  // "minecraft:potion/minecraft:amethyst_shard": "bv:recall_potion",
+  // "mbl_ts:fizzy_water/mbl_ts:dried_nether_wart": "mbl_ts:vial_of_netherwart_solution",
+  // "mbl_ts:bottle_of_water_dirty_4/mbl_ts:sweet_yeast_mix": "mbl_ts:fizzy_water",
+  // "minecraft:potion/mbl_ts:zombie_heart": "mbl_ts:bottle_of_zombie_goo",
+  // "mbl_ts:bottle_of_zombie_goo/mbl_ts:vial_of_netherwart_solution": "mbl_ts:zombie_vaccine"
+}
+
+export const brewingStandRecipeDenyList: { [key: string]: boolean } = {
+  "minecraft:strength/minecraft:blaze_powder": true,
+  "minecraft:wind_charged/minecraft:breeze_rod": true,
+  "minecraft:weakness/minecraft:fermented_spider_eye": true,
+  "minecraft:regeneration/minecraft:ghast_tear": true,
+  "minecraft:nightvision/minecraft:golden_carrot": true,
+  "minecraft:fire_resistance/minecraft:magma_cream": true,
+  "minecraft:slow_falling/minecraft:phantom_membrane": true,
+  "minecraft:water_breathing/minecraft:pufferfish": true,
+  "minecraft:leaping/minecraft:rabbit_foot": true,
+  "minecraft:oozing/minecraft:slime": true,
+  "minecraft:healing/minecraft:speckled_melon": true,
+  "minecraft:poison/minecraft:spider_eye": true,
+  "minecraft:infested/minecraft:stone": true,
+  "minecraft:swiftness/minecraft:sugar": true,
+  "minecraft:turtle_master/minecraft:turtle_helmet": true,
+  "minecraft:weaving/minecraft:web": true,
+  "minecraft:long_fire_resistance/minecraft:redstone": true,
+  "minecraft:strong_harming/minecraft:glowstone_dust": true,
+  "minecraft:harming/minecraft:fermented_spider_eye": true,
+  "minecraft:strong_healing/minecraft:glowstone_dust": true,
+  "minecraft:long_invisibility/minecraft:redstone": true,
+  "minecraft:slowness/minecraft:fermented_spider_eye": true,
+  "minecraft:strong_leaping/minecraft:glowstone_dust": true,
+  "minecraft:long_leaping/minecraft:redstone": true,
+  "minecraft:long_invisibility/minecraft:fermented_spider_eye": true,
+  "minecraft:long_slowness/minecraft:fermented_spider_eye": true,
+  "minecraft:long_weakness/minecraft:fermented_spider_eye": true,
+  "minecraft:invisibility/minecraft:fermented_spider_eye": true,
+  "minecraft:long_nightvision/minecraft:redstone": true,
+  "minecraft:strong_poison/minecraft:glowstone_dust": true,
+  "minecraft:long_poison/minecraft:redstone": true,
+  "minecraft:strong_regeneration/minecraft:glowstone_dust": true,
+  "minecraft:long_regeneration/minecraft:redstone": true,
+  "minecraft:strong_slowness/minecraft:glowstone_dust": true,
+  "minecraft:long_slowness/minecraft:redstone": true,
+  "minecraft:long_slow_falling/minecraft:redstone": true,
+  "minecraft:strong_strength/minecraft:glowstone_dust": true,
+  "minecraft:long_strength/minecraft:redstone": true,
+  "minecraft:strong_harming/minecraft:fermented_spider_eye": true,
+  "minecraft:strong_swiftness/minecraft:glowstone_dust": true,
+  "minecraft:long_swiftness/minecraft:redstone": true,
+  "minecraft:strong_turtle_master/minecraft:glowstone_dust": true,
+  "minecraft:long_turtle_master/minecraft:redstone": true,
+  "minecraft:mundane/minecraft:blaze_powder": true,
+  "minecraft:long_water_breathing/minecraft:redstone": true,
+  "minecraft:mundane/minecraft:breeze_rod": true,
+  "minecraft:mundane/minecraft:ghast_tear": true,
+  "minecraft:thick/minecraft:glowstone_dust": true,
+  "minecraft:mundane/minecraft:magma_cream": true,
+  "minecraft:awkward/minecraft:nether_wart": true,
+  "minecraft:mundane/minecraft:rabbit_foot": true,
+  "minecraft:mundane/minecraft:redstone": true,
+  "minecraft:mundane/minecraft:slime": true,
+  "minecraft:mundane/minecraft:speckled_melon": true,
+  "minecraft:mundane/minecraft:spider_eye": true,
+  "minecraft:mundane/minecraft:stone": true,
+  "minecraft:mundane/minecraft:sugar": true,
+  "minecraft:mundane/minecraft:web": true,
+  "minecraft:long_weakness/minecraft:redstone": true
 }

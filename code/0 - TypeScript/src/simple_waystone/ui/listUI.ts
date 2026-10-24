@@ -86,8 +86,7 @@ function teleport(player: Player, info: IWaystoneInfo, cost: number): void {
 
   const rideable = player.getComponent(EntityComponentTypes.Rideable)
   const riders = rideable?.getRiders() ?? []
-  if(!rideable) return
-  rideable.ejectRiders()
+  rideable?.ejectRiders()
 
   system.runTimeout(() => {
     const rot = player.getRotation()

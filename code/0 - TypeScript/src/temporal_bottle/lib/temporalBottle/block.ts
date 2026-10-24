@@ -1,8 +1,8 @@
-import { world, system, Block, Entity } from "@minecraft/server"
+import { Block, Entity, system } from "@minecraft/server"
 
 export const temporalBottleBlock = new class TemporalBottleBlock {
   getCurrentSpeed(block: Block): EntitiesTier | undefined {
-    const entities = block.dimension.getEntitiesAtBlockLocation(block).filter(value => value.typeId == "temporal_bottle:temporal_bottle_entity")
+    const entities = block.dimension.getEntitiesAtBlockLocation(block).filter(value => value.typeId == "temporal_bottle:temporal_zone")
     if(entities.length == 0) return
 
     const entitiesTier: EntitiesTier[] = entities.map(value => {
@@ -24,38 +24,22 @@ export const temporalBottleBlock = new class TemporalBottleBlock {
 
     return highestTier
   }
-
-  getBlockTime(blockId: string): BlockTime | undefined {
-    const furnace = furnaceTimeList[blockId]
-    if(furnace) return { type: "furnace", time: furnace}
-
-    const hopper = hopperTimeList[blockId]
-    if(hopper) return { type: "hopper", time: hopper}
-    const brewingStand = brewingStandTimeList[blockId]
-    if(brewingStand) return { type: "brewing_stand", time: brewingStand}
-    return
-  }
 }
 
 // ---------------------
 // Time in Seconds
 // ---------------------
-const brewingStandTimeList: { [key: string]: number } = {
-  "minecraft:brewing_stand": 30
-}
+export const blocksTimeList: { [key: string]: BlockTime } = {
+  "minecraft:furnace": {type: "furnace", time: 10},
+  "minecraft:lit_furnace": {type: "furnace", time: 10},
+  "minecraft:blast_furnace": {type: "furnace", time: 5},
+  "minecraft:lit_blast_furnace": {type: "furnace", time: 5},
+  "minecraft:smoker": {type: "furnace", time: 5},
+  "minecraft:lit_smoker": {type: "furnace", time: 5},
 
-const furnaceTimeList: { [key: string]: number } = {
-  "minecraft:furnace": 10,
-  "minecraft:blast_furnace": 5,
-  "minecraft:smoker": 5,
+  "minecraft:brewing_stand": {type: "brewing_stand", time: 20},
 
-  "minecraft:lit_furnace": 10,
-  "minecraft:lit_blast_furnace": 5,
-  "minecraft:lit_smoker": 5
-}
-
-const hopperTimeList: { [key: string]: number } = {
-  "minecraft:hopper": 2.5
+  "minecraft:hopper": {type: "hopper", time: 2.5} // 2.5 itens por segundo = 1 item a cada 8 ticks
 }
 
 interface EntitiesTier {
@@ -64,6 +48,6 @@ interface EntitiesTier {
 }
 
 interface BlockTime {
-  type: "brewing_stand" | "campfire" | "furnace" | "hopper"
+  type: "brewing_stand" | "furnace" | "hopper"
   time: number
 }

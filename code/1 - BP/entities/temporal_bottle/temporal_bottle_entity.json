@@ -2,12 +2,13 @@
   "format_version": "1.19.30",
   "minecraft:entity": {
     "description": {
-      "identifier": "temporal_bottle:temporal_bottle_entity",
+      "identifier": "temporal_bottle:temporal_zone",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
       "properties": {
-        "temporal_bottle:tier": { "type": "int", "range": [0, 999], "default": 0, "client_sync": true }
+        "temporal_bottle:tier": { "type": "int", "range": [0, 31], "default": 0, "client_sync": true },
+        "temporal_bottle:search": { "type": "int", "range": [0, 2], "default": 0, "client_sync": true }
       }
     },
 
@@ -15,7 +16,10 @@
       "temporal_bottle:despawn": { "minecraft:instant_despawn": {} },
 
       "temporal_bottle:timer": { "minecraft:timer": { "looping": false, "time": 30.05, "time_down_event": { "event": "temporal_bottle:despawn" } } },
-      "temporal_bottle:reset_timer": { "minecraft:timer": { "looping": false, "time": 0.05, "time_down_event": { "event": "temporal_bottle:remove_reset_timer" } } }
+      "temporal_bottle:reset_timer": { "minecraft:timer": { "looping": false, "time": 0.05, "time_down_event": { "event": "temporal_bottle:remove_reset_timer" } } },
+
+      "temporal_bottle:searching_recipe_furnace": { "minecraft:timer": { "looping": false, "time": 10, "time_down_event": { "event": "temporal_bottle:finished_search" } } },
+      "temporal_bottle:searching_recipe_brewing_stand": { "minecraft:timer": { "looping": false, "time": 20, "time_down_event": { "event": "temporal_bottle:finished_search" } } }
     },
 
     "components": {
@@ -37,9 +41,25 @@
 
       "temporal_bottle:despawn": { "add": { "component_groups": [ "temporal_bottle:despawn" ] } },
 
+      "temporal_bottle:search_furnace_recipe": {
+        "add": { "component_groups": [ "temporal_bottle:searching_recipe_furnace" ] },
+        "remove": { "component_groups": [ "temporal_bottle:reset_timer", "temporal_bottle:timer", "temporal_bottle:searching_recipe_brewing_stand" ] },
+        "set_property": { "temporal_bottle:search": 1 }
+      },
+      "temporal_bottle:search_brewing_stand_recipe": {
+        "add": { "component_groups": [ "temporal_bottle:searching_recipe_brewing_stand" ] },
+        "remove": { "component_groups": [ "temporal_bottle:reset_timer", "temporal_bottle:timer", "temporal_bottle:searching_recipe_furnace" ] },
+        "set_property": { "temporal_bottle:search": 2 }
+      },
+      "temporal_bottle:finished_search": {
+        "add": { "component_groups": [ "temporal_bottle:reset_timer" ] },
+        "remove": { "component_groups": [ "temporal_bottle:timer", "temporal_bottle:searching_recipe_furnace", "temporal_bottle:searching_recipe_brewing_stand" ] }
+      },
+
       "temporal_bottle:remove_reset_timer": {
         "add": { "component_groups": [ "temporal_bottle:timer" ] },
-        "remove": { "component_groups": [ "temporal_bottle:reset_timer" ] }
+        "remove": { "component_groups": [ "temporal_bottle:reset_timer" ] },
+        "set_property": { "temporal_bottle:search": 0 }
       },
 
       "temporal_bottle:increase_tier": {
