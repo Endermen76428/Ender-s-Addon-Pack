@@ -1,12 +1,14 @@
-import { EntityComponentTypes, EquipmentSlot, ItemStack, ScoreboardObjective, system, world } from "@minecraft/server"
+import { Container, Dimension, EntityComponentTypes, EquipmentSlot, ItemStack, ScoreboardObjective, system, world } from "@minecraft/server"
+import { feedUpgradeFunctions } from "../functions/upgrades/feed/upFeedHandler"
 import { restartFurnaceFunction } from "../functions/upgrades/furnace/restart"
-import { BACSLoadFurnaceRecipe } from "../functions/upgrades/furnace/recipes"
 import { createFurnaceIcons } from "../functions/upgrades/furnace/visual"
-import { apiScoreboard } from "../../0-lib/math/scoreboard"
+import { apiScoreboard } from "./../../0-lib/math/scoreboard"
 import { addPlayerHoldListen } from "../functions/hold"
 
 export let lockSlotItem: ItemStack
 export let coalItem: ItemStack
+export let BackpackDimension: Dimension
+export const dimensionCenter = {x: 0, y: 0, z: 0}
 
 export const backpackSizeFill: { [key: number]: number } = {
   0: 28,  // 27  slot padrão + 1 upgrade slot
@@ -27,39 +29,32 @@ export const backpackTypeTier: { [key: number]: string } = {
 }
 
 export const backpackSizeTier: { [key: number]: number } = {
-  62:  0,
-  74:  1,
-  89:  2,
-  116: 3,
-  135: 4,
-  155: 5
+  250: 0,
+  251: 1,
+  252: 2,
+  253: 3,
+  255: 4,
+  256: 5
 }
 
 export const backpackUpgradesIndex: { [key: number]: [number, number] } = {
-  62:  [27,  1], // Backpack Size, Upgrade Amount
-  74:  [36,  2],
-  89:  [54,  3],
-  116: [81,  4],
-  135: [100, 5],
-  155: [120, 6]
+  250: [27,  1], // [ Backpack Size, Upgrade Amount ]
+  251: [36,  2],
+  252: [54,  3],
+  253: [81,  4],
+  255: [100, 5],
+  256: [120, 6]
 }
 
 export let furnaceReloadScore: ScoreboardObjective
-export let furnaceRecipeScore: ScoreboardObjective
-export let BACSFurnaceRecipeScore: ScoreboardObjective
-export let BACSFurnaceRecipeDenyScore: ScoreboardObjective
+
+export const openedBackpacks: { [key: string]: [string, Container, number] } = {} // Player ID > [ Backpack Id, Backpack Inventory, Backpack Size]
 
 system.run(() => {
   world.gameRules.showTags = false
 
+  BackpackDimension = world.getDimension("travel_backpack:backpack")
   furnaceReloadScore = apiScoreboard.getObj("travel_backpack:furnace")
-  furnaceRecipeScore = apiScoreboard.getObj("travel_backpack:furnace_r")
-  BACSFurnaceRecipeScore = apiScoreboard.getObj("BACS:furnace_recipes")
-  BACSFurnaceRecipeDenyScore = apiScoreboard.getObj("BACS:furnace_recipes_deny")
-
-  BACSLoadFurnaceRecipe(BACSFurnaceRecipeScore, BACSFurnaceRecipeDenyScore)
-
-  const players = world.getAllPlayers()
 
   lockSlotItem = new ItemStack("travel_backpack:lock_slot")
   coalItem = new ItemStack("minecraft:coal")
@@ -67,15 +62,41 @@ system.run(() => {
 
   restartFurnaceFunction(furnaceReloadScore)
 
+  world.tickingAreaManager.createTickingArea("backpack", {from: {x: 0, y: 0, z: 0}, to: {x: 0, y: 0, z: 0}, dimension: world.getDimension("travel_backpack:backpack")})
+
+  const players = world.getAllPlayers()
   if(players.length > 0){
-    // Adiciona os jogadores ao Listener caso executem um /reload
+    // Adiciona os jogadores aos seus respectivos Listener caso executem um /reload, para quando entra no mapa é no arquivo playerSpawn.ts
     for(let i = 0, len = players.length; i < len; i++){
       const player = players[i]
       if(!player) continue
 
       const item = player.getComponent(EntityComponentTypes.Equippable)?.getEquipment(EquipmentSlot.Mainhand)
-      if(item?.hasTag("travel_backpack:backpack")){
-        addPlayerHoldListen(player, item, player.selectedSlotIndex)
+      if(item?.hasTag("travel_backpack:backpack")) addPlayerHoldListen(player, item, player.selectedSlotIndex)
+
+      const inventory = player.getComponent(EntityComponentTypes.Inventory)?.container
+      if(inventory == undefined) return
+
+      for(let i = 0, len = inventory.size; i < len; i++){
+        const item = inventory.getItem(i)
+        if(item == undefined) continue
+        if(item.hasTag("travel_backpack:backpack") == false) continue
+        if(item.getDynamicProperty("pattern") == undefined) continue
+
+        const backpackId = item.getDynamicProperty("id")
+        if(typeof backpackId != "string") continue
+
+        const backpackEntity = world.getEntity(backpackId)
+        if(backpackEntity == undefined || backpackEntity.isValid == false) continue
+
+        const backpackInv = backpackEntity.getComponent(EntityComponentTypes.Inventory)?.container
+        if(backpackInv == undefined) continue
+
+        const firstSlot = backpackUpgradesIndex[backpackInv.size]?.[0]
+        if(firstSlot == undefined) continue
+
+        feedUpgradeFunctions.add(player, backpackEntity, backpackInv, firstSlot +32, i, true)
+        world.sendMessage(player.nameTag + " possui backpack com feed upgrade")
       }
     }
   }

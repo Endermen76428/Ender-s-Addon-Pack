@@ -1,6 +1,7 @@
-import { BACSFurnaceRecipeDenyScore, BACSFurnaceRecipeScore, coalItem, furnaceReloadScore } from "../../../lib/variables"
-import { Block, BlockComponentTypes, Container, Entity, ItemStack, system } from "@minecraft/server"
-import { furnaceRecipeDenyList, furnaceRecipeList } from "./recipes"
+import { BACSFurnaceRecipeDenyScore, BACSFurnaceRecipeScore } from "../../../../1-bacs/recipes/variables"
+import { furnaceRecipeDenyList, furnaceRecipeList } from "../../../../1-bacs/recipes/furnace/recipes"
+import { Block, BlockComponentTypes, Container, Entity, ItemStack, system, world } from "@minecraft/server"
+import { coalItem, furnaceReloadScore } from "../../../lib/variables"
 import { furnaceArrowIcons, furnaceFlameIcons } from "./visual"
 import { apiWarn } from "../../../../0-lib/player/warn"
 import { furnaceFuelList } from "./fuel"
@@ -46,7 +47,7 @@ function startInverval(): void {
         backpackInv.setItem(firstSlot +4, furnaceArrowIcons[0])
 
         furnaceUpgradeFunctions.remove(backpack)
-        backpack.getProperty("travel_backpack:on_ground") == false && backpack.triggerEvent("travel_backpack:add_timer")
+        backpack.hasTag("can_enable_timer") == false && backpack.getProperty("travel_backpack:on_ground") == false && backpack.triggerEvent("travel_backpack:add_timer")
         continue
       }
     }
@@ -107,8 +108,8 @@ function startInverval(): void {
         inv.clearAll()
         furnaceBlock.setType("minecraft:bedrock")
         if(output == undefined){
-          furnaceRecipeDenyList[input.typeId] = true
-          BACSFurnaceRecipeDenyScore.setScore(input.typeId, 0)
+          furnaceRecipeDenyList[`0/${input.typeId}`] = true
+          BACSFurnaceRecipeDenyScore.setScore(`0/${input.typeId}`, 0)
           for(let pI = 0, pLen = players.length; pI < pLen; pI++){
             const player = players[pI]
             player && apiWarn.notify(player, {rawtext:[{text: "§c"}, {translate: input.localizationKey}, {translate: "entity.warn.travel_backpack:furnace.recipe_not_found"}]}, {sound: "warn.ender_addon_pack:bass"})

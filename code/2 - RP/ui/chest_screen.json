@@ -10,99 +10,76 @@
         "value": [
           {
             "requires": "($new_container_title = 'ui.travel_backpack:backpack.size.0')",
-            "$screen_content": "travel_backpack-backpack.backpack_panel",
+            "$screen_content": "travel_backpack-backpack.backpack_root_panel",
             "$screen_bg_content": "common.screen_background",
             "$inventory_size": 27,
-            "$root_panel_size": [ 176, 152 ], /* 86px of player inventory + 14px of top padding + 18px slot * 3 slot lines */
-            "$backpack_panel_size": [ 176, 66 ], /* 152px - 86px of player inventory */
             "$grid_panel_size": [ 162, 54 ], /* Grid dimension * 18 */
-            "$grid_panel_dimension": [ 9, 3 ] /* Amount of slots */
+            "$grid_panel_dimension": [ 9, 3 ] /* Amount of slots */,
+            "$root_panel_size": [ 176, 152 ], /* 86px of player inventory + 14px of top padding + 18px slot * 3 slot lines */
+            "$root_scrolling_panel_size": [ 176, 152 ],
+            "$backpack_panel_size": [ 176, 66 ], /* 152px - 86px of player inventory */
+            "$backpack_scrolling_panel_size": [ 176, 66 ]
           },
           {
             "requires": "($new_container_title = 'ui.travel_backpack:backpack.size.1')",
-            "$screen_content": "travel_backpack-backpack.backpack_panel",
+            "$screen_content": "travel_backpack-backpack.backpack_root_panel",
             "$screen_bg_content": "common.screen_background",
             "$inventory_size": 36,
-            "$root_panel_size": [ 176, 170 ],
-            "$backpack_panel_size": [ 176, 84 ],
             "$grid_panel_size": [ 162, 72 ],
-            "$grid_panel_dimension": [ 9, 4 ]
+            "$grid_panel_dimension": [ 9, 4 ],
+            "$root_panel_size": [ 176, 170 ],
+            "$root_scrolling_panel_size": [ 176, 170 ],
+            "$backpack_panel_size": [ 176, 84 ],
+            "$backpack_scrolling_panel_size": [ 176, 84 ]
           },
           {
             "requires": "($new_container_title = 'ui.travel_backpack:backpack.size.2')",
-            "$screen_content": "travel_backpack-backpack.backpack_panel",
+            "$screen_content": "travel_backpack-backpack.backpack_root_panel",
             "$screen_bg_content": "common.screen_background",
             "$inventory_size": 54,
-            "$root_panel_size": [ 176, 206 ],
-            "$backpack_panel_size": [ 176, 120 ],
             "$grid_panel_size": [ 162, 108 ],
-            "$grid_panel_dimension": [ 9, 6 ]
-          },
-
-          {
-            "requires": "($new_container_title = 'ui.travel_backpack:backpack.size.3' and $is_desktop)",
-            "$screen_content": "travel_backpack-backpack.backpack_panel",
-            "$screen_bg_content": "common.screen_background",
-            "$inventory_size": 81,
-            "$root_panel_size": [ 176, 260 ],
-            "$backpack_panel_size": [ 176, 174 ],
-            "$grid_panel_size": [ 162, 162 ],
-            "$grid_panel_dimension": [ 9, 9 ]
-          },
-          {
-            "requires": "($new_container_title = 'ui.travel_backpack:backpack.size.3' and (not $is_desktop))",
-            "$screen_content": "travel_backpack-backpack.backpack_panel",
-            "$screen_bg_content": "common.screen_background",
-            "$inventory_size": 81,
+            "$grid_panel_dimension": [ 9, 6 ],
             "$root_panel_size": [ 176, 206 ],
+            "$root_scrolling_panel_size": [ 176, 206 ],
             "$backpack_panel_size": [ 176, 120 ],
+            "$backpack_scrolling_panel_size": [ 176, 120 ]
+          },
+          {
+            "requires": "($new_container_title = 'ui.travel_backpack:backpack.size.3')",
+            "$screen_content": "travel_backpack-backpack.backpack_root_panel",
+            "$screen_bg_content": "common.screen_background",
+            "$inventory_size": 81,
             "$grid_panel_size": [ 162, 162 ],
-            "$grid_panel_dimension": [ 9, 9 ]
+            "$grid_panel_dimension": [ 9, 9 ],
+            "$root_panel_size": [ 176, 260 ],
+            "$root_scrolling_panel_size": [ 176, 206 ],
+            "$backpack_panel_size": [ 176, 174 ],
+            "$backpack_scrolling_panel_size": [ 176, 120 ]
           },
           {
-            "requires": "($new_container_title = 'ui.travel_backpack:backpack.size.4' and $is_desktop)",
-            "$screen_content": "travel_backpack-backpack.backpack_panel",
+            "requires": "($new_container_title = 'ui.travel_backpack:backpack.size.4')",
+            "$screen_content": "travel_backpack-backpack.backpack_root_panel",
             "$screen_bg_content": "common.screen_background",
             "$inventory_size": 100,
+            "$grid_panel_size": [ 180, 180 ],
+            "$grid_panel_dimension": [ 10, 10 ],
             "$root_panel_size": [ 176, 277 ],
+            "$root_scrolling_panel_size": [ 176, 206 ],
             "$backpack_panel_size": [ 194, 191 ],
-            "$grid_panel_size": [ 180, 180 ],
-            "$grid_panel_dimension": [ 10, 10 ]
+            "$backpack_scrolling_panel_size": [ 194, 120 ]
           },
           {
-            "requires": "($new_container_title = 'ui.travel_backpack:backpack.size.4' and (not $is_desktop))",
-            "$screen_content": "travel_backpack-backpack.backpack_panel",
-            "$screen_bg_content": "common.screen_background",
-            "$inventory_size": 100,
-            "$root_panel_size": [ 176, 206 ],
-            "$backpack_panel_size": [ 194, 120 ],
-            "$grid_panel_size": [ 180, 180 ],
-            "$grid_panel_dimension": [ 10, 10 ]
-          },
-          {
-            "requires": "($new_container_title = 'ui.travel_backpack:backpack.size.5' and $is_desktop)",
-            "$screen_content": "travel_backpack-backpack.backpack_panel",
+            "requires": "($new_container_title = 'ui.travel_backpack:backpack.size.5')",
+            "$screen_content": "travel_backpack-backpack.backpack_root_panel",
             "$screen_bg_content": "common.screen_background",
             "$inventory_size": 120,
+            "$grid_panel_size": [ 216, 180 ],
+            "$grid_panel_dimension": [ 12, 10 ],
             "$root_panel_size": [ 176, 277 ],
+            "$root_scrolling_panel_size": [ 176, 206 ],
             "$backpack_panel_size": [ 230, 191 ],
-            "$grid_panel_size": [ 216, 180 ],
-            "$grid_panel_dimension": [ 12, 10 ]
-          },
-          {
-            "requires": "($new_container_title = 'ui.travel_backpack:backpack.size.5' and (not $is_desktop))",
-            "$screen_content": "travel_backpack-backpack.backpack_panel",
-            "$screen_bg_content": "common.screen_background",
-            "$inventory_size": 120,
-            "$root_panel_size": [ 176, 206 ],
-            "$backpack_panel_size": [ 230, 120 ],
-            "$grid_panel_size": [ 216, 180 ],
-            "$grid_panel_dimension": [ 12, 10 ]
+            "$backpack_scrolling_panel_size": [ 230, 120 ]
           }
-
-          // { "requires": "($new_container_title = 'ui.travel_backpack:backpack.size.3')", "$screen_content": "travel_backpack-backpack.backpack_panel", "$screen_bg_content": "common.screen_background", "$inventory_size": 81, "$root_panel_size": [ 176, 216 ], "$backpack_panel_size": [ 176, 122 ], "$grid_panel_size": [ 162, 162 ], "$grid_panel_dimension": [ 9, 9 ] },
-          // { "requires": "($new_container_title = 'ui.travel_backpack:backpack.size.4')", "$screen_content": "travel_backpack-backpack.backpack_panel", "$screen_bg_content": "common.screen_background", "$inventory_size": 100, "$root_panel_size": [ 176, 216 ], "$backpack_panel_size": [ 194, 122 ], "$grid_panel_size": [ 180, 180 ], "$grid_panel_dimension": [ 10, 10 ] },
-          // { "requires": "($new_container_title = 'ui.travel_backpack:backpack.size.5')", "$screen_content": "travel_backpack-backpack.backpack_panel", "$screen_bg_content": "common.screen_background", "$inventory_size": 120, "$root_panel_size": [ 176, 216 ], "$backpack_panel_size": [ 230, 122 ], "$grid_panel_size": [ 216, 180 ], "$grid_panel_dimension": [ 12, 10 ] }
         ]
       }
     ]

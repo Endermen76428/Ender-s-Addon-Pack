@@ -1704,6 +1704,22 @@ item.travel_backpack:magenta_netherite_backpack.bacs=Mochila de Netherita Magent
 item.travel_backpack:pink_netherite_backpack=Mochila de Netherita Rosa\n§9Travel Backpacks
 item.travel_backpack:pink_netherite_backpack.bacs=Mochila de Netherita Rosa
 
+### Config
+item.travel_backpack:ui_mode_default=§1§rUI Padrão
+item.travel_backpack:ui_mode_scrolling=§2§rUI Compacta
+
+item.travel_backpack:organize_alphabetical=Organizar por Nome
+item.travel_backpack:organize_numeric=Organizar por Quantia
+
+## Craft
+item.travel_backpack:craft_amount_1=§1§rFabricar: 1 Item
+item.travel_backpack:craft_amount_2=§2§rFabricar: 2 Itens
+item.travel_backpack:craft_amount_4=§3§rFabricar: 4 Itens
+item.travel_backpack:craft_amount_8=§4§rFabricar: 8 Itens
+item.travel_backpack:craft_amount_16=§5§rFabricar: 16 Itens
+item.travel_backpack:craft_amount_32=§6§rFabricar: 32 Itens
+item.travel_backpack:craft_amount_64=§7§rFabricar: 64 Itens
+
 ## Upgrade
 item.travel_backpack:upgrade_template=Base de Melhoria\n§9Travel Backpacks
 item.travel_backpack:upgrade_template.bacs=Base de Melhoria
@@ -1725,6 +1741,8 @@ item.travel_backpack:craft_upgrade=§c§r§a§f§t§rMelhoria de Craft\n§9Trave
 item.travel_backpack:craft_upgrade.bacs=§c§r§a§f§t§rMelhoria de Craft
 item.travel_backpack:furnace_upgrade=§f§u§r§n§a§rMelhoria de Fornalha\n§9Travel Backpacks
 item.travel_backpack:furnace_upgrade.bacs=§f§u§r§n§a§rMelhoria de Fornalha
+item.travel_backpack:feed_upgrade=§f§e§e§d§rMelhoria de Alimentação\n§9Travel Backpacks
+item.travel_backpack:feed_upgrade.bacs=§f§e§e§d§rMelhoria de Alimentação
 
 ### Warn
 
@@ -1751,6 +1769,8 @@ lore.travel_backpack:backpack.id=Mochila: %1
 ## --------------------------------------------------
 ## #region UI
 ## --------------------------------------------------
+
+container.feed=Alimentador
 
 ## Custom Chest
 ui.travel_backpack:backpack.size.0=Mochila de Couro

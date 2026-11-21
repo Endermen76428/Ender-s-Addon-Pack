@@ -24,7 +24,7 @@ export function restartFurnaceFunction(score: ScoreboardObjective, backpackId?: 
 
     const backpackInv = entity.getComponent(EntityComponentTypes.Inventory)?.container
     if(!backpackInv) return
-  
+
     const info = backpackUpgradesIndex[backpackInv.size]
     if(info == undefined) return
     const [ firstSlot ] = info

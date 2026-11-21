@@ -1,5 +1,5 @@
-import { Block, Entity, EntityComponentTypes, StructureSaveMode, system, world } from "@minecraft/server"
-import { backpackSizeTier } from "../lib/variables"
+import { Block, Entity, EntityComponentTypes, system, world } from "@minecraft/server"
+import { backpackSizeTier, dimensionCenter } from "../lib/variables"
 import { paintBackpack } from "../functions/paint"
 
 system.afterEvents.scriptEventReceive.subscribe(({id, message, sourceEntity, sourceBlock}) => {
@@ -7,7 +7,7 @@ system.afterEvents.scriptEventReceive.subscribe(({id, message, sourceEntity, sou
   if(exe) exe(message, sourceEntity, sourceBlock)
 }, {namespaces: ["travel_backpack"]})
 
-const scriptEventFunctions: { [jey: string]: (message: string, entity?: Entity, block?: Block) => void } = {
+const scriptEventFunctions: { [key: string]: (message: string, entity?: Entity, block?: Block) => void } = {
   "travel_backpack:return": (message, entity) => {
     if(!entity) return
 
@@ -19,11 +19,9 @@ const scriptEventFunctions: { [jey: string]: (message: string, entity?: Entity, 
 
   "travel_backpack:archive": (message, entity) => {
     if(entity?.isValid){
-      const id = `travel_backpack:${entity.id}`
-      world.structureManager.delete(id)
-      world.structureManager.createFromWorld(id, entity.dimension, entity.location, entity.location, {saveMode: StructureSaveMode.World, includeBlocks: false})
-      entity.addTag("can_remove")
-      entity.remove()
+      // console.warn("Arquivado:§a", entity.id, "§r|", entity.dimension.id, "|", JSON.stringify(entity.location))
+      entity.triggerEvent("travel_backpack:remove_timer")
+      entity.teleport(dimensionCenter, {dimension: world.getDimension("travel_backpack:backpack")})
     }
   },
 

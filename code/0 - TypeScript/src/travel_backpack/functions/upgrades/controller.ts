@@ -1,7 +1,8 @@
-import { Container, Entity, EntityComponentTypes, Player, system } from "@minecraft/server"
+import { Container, Entity, EntityComponentTypes, ItemStack, PlatformType, Player, system } from "@minecraft/server"
 import { backpackUpgradesIndex, lockSlotItem } from "../../lib/variables"
 import { furnaceUpgradeFunctions } from "./furnace/upFurnaceHandler"
 import { craftUpgradeFunctions } from "./craft/upCraftHandler"
+import { feedUpgradeFunctions } from "./feed/upFeedHandler"
 
 const backpackPlayersListenList: { [key: string]: IntervalInfo } = {} // Player Id > Interval Info
 let amountOfListeners = 0
@@ -61,7 +62,7 @@ function startInverval(executeTime = 0): void {
         }
 
         const exe = addFunctions[change]
-        exe && exe(backpack, backpackInv, firstSlot)
+        exe && exe(player, backpack, backpackInv, firstSlot)
         upgrades[slot] = change
       }
     }
@@ -86,7 +87,7 @@ export function addPlayerUpgradeListen(player: Player, backpack: Entity): void {
   if(info == undefined) return
   const [ firstSlot, size ] = info
 
-  const upgradesToEnable: EnableUpgrades = { craft: false, furnace: false }
+  const upgradesToEnable: EnableUpgrades = { craft: false, furnace: false, feed: false }
   const upgrades: UpgradesList = ["", "", "", "", "", ""]
   for(let i = firstSlot, len = firstSlot + size; i < len; i++){
     const item = backpackInv.getItem(i)
@@ -99,10 +100,14 @@ export function addPlayerUpgradeListen(player: Player, backpack: Entity): void {
     }
 
     const exe = enableUpgrades[item.typeId]
-    exe && exe(upgradesToEnable, backpack, backpackInv, firstSlot, upgrades)
+    exe && exe(player, upgradesToEnable, backpack, backpackInv, firstSlot)
 
     upgrades[i - firstSlot] = item.typeId
   }
+
+  backpackInv.setItem(firstSlot +6, new ItemStack("travel_backpack:ui_mode_" + (player.getDynamicProperty("uimode") ?? (player.clientSystemInfo.platformType == PlatformType.Desktop ? "default" : "scrolling"))))
+  if(backpackInv.getItem(firstSlot +7)?.hasTag("travel_backpack:organize") != true) backpackInv.setItem(firstSlot +7, new ItemStack("travel_backpack:organize_alphabetical"))
+  if(backpackInv.getItem(firstSlot +8)?.hasTag("travel_backpack:organize") != true) backpackInv.setItem(firstSlot +8, new ItemStack("travel_backpack:organize_numeric"))
 
   backpackPlayersListenList[player.id] = {player, backpack, playerInv, backpackInv, slots: info, upgrades}
   amountOfListeners == 0 && startInverval()
@@ -112,8 +117,8 @@ export function removePlayerUpgradeListen(player: Player): void {
   delete backpackPlayersListenList[player.id]
 }
 
-const addFunctions: { [key: string]: (entity: Entity, inventory: Container, endSlot: number) => void } = {
-  "travel_backpack:craft_upgrade": (entity, inventory, endSlot) => {
+const addFunctions: { [key: string]: (playe: Player, entity: Entity, inventory: Container, endSlot: number) => void } = {
+  "travel_backpack:craft_upgrade": (player, entity, inventory, endSlot) => {
     const firstSlot = endSlot +10
     // Evita de substituir os itens do craft terminal caso coloque outro upgrade de craft
     if(inventory.getItem(firstSlot)?.typeId != "travel_backpack:lock_slot") return
@@ -123,7 +128,7 @@ const addFunctions: { [key: string]: (entity: Entity, inventory: Container, endS
     craftUpgradeFunctions.add(entity, inventory, firstSlot)
   },
 
-  "travel_backpack:furnace_upgrade": (entity, inventory, endSlot) => {
+  "travel_backpack:furnace_upgrade": (player, entity, inventory, endSlot) => {
     const firstSlot = endSlot +25
     // Evita de substituir os itens da fornalha caso coloque outro upgrade de fornalha
     if(!entity.hasTag("030")){
@@ -133,6 +138,15 @@ const addFunctions: { [key: string]: (entity: Entity, inventory: Container, endS
     for(let i = firstSlot, len = firstSlot +3; i < len; i++) inventory.setItem(i, undefined)
 
     furnaceUpgradeFunctions.add(entity, inventory, firstSlot)
+  },
+
+  "travel_backpack:feed_upgrade": (player, entity, inventory, endSlot) => {
+    const firstSlot = endSlot +32
+    if(inventory.getItem(firstSlot)?.typeId != "travel_backpack:lock_slot") return
+
+    for(let i = firstSlot, len = firstSlot +10; i < len; i++) inventory.setItem(i, undefined)
+
+    feedUpgradeFunctions.add(player, entity, inventory, firstSlot, player.selectedSlotIndex)
   }
 }
 
@@ -169,11 +183,28 @@ const removeFunctions: { [key: string]: (player: Player, entity: Entity, invento
     }
 
     furnaceUpgradeFunctions.remove(entity)
+  },
+
+  "travel_backpack:feed_upgrade": (player, entity, inventory, firstSlot, oldUpgrades) => {
+    let upgradesEnabled = -1 // -1 porque o oldUpgrades mostra os ativos então o script soma esse valor pra no final ser algum numero igual a 0 ou maior pra inciar a quantia certa de upgrades ativo
+    for(let i = 0, len = oldUpgrades.length; i < len; i++){
+      const upgrade = oldUpgrades[i]
+      if(upgrade == "travel_backpack:feed_upgrade") upgradesEnabled++
+    }
+    if(upgradesEnabled > 0) return
+
+    for(let i = firstSlot +32, len = firstSlot +42; i < len; i++){
+      const item = inventory.getItem(i)
+      item && !item.hasTag("travel_backpack:lock_slot") && player.dimension.spawnItem(item, player.location)
+      inventory.setItem(i, lockSlotItem)
+    }
+
+    feedUpgradeFunctions.remove(entity)
   }
 }
 
-const enableUpgrades: { [key: string]: (upgrades: EnableUpgrades, entity: Entity, inventory: Container, firstSlot: number, oldUpgrades: UpgradesList) => void } = {
-  "travel_backpack:craft_upgrade": (upgrades, entity, inventory, firstSlot) => {
+const enableUpgrades: { [key: string]: (player: Player, upgrades: EnableUpgrades, entity: Entity, inventory: Container, firstSlot: number) => void } = {
+  "travel_backpack:craft_upgrade": (player, upgrades, entity, inventory, firstSlot) => {
     // Se o craft já tiver ativo é porque tem mais de um então não executa pra não executar a mesma coisa já que esse upgrade é fixo
     if(upgrades.craft == true) return
 
@@ -181,12 +212,20 @@ const enableUpgrades: { [key: string]: (upgrades: EnableUpgrades, entity: Entity
     craftUpgradeFunctions.add(entity, inventory, firstSlot +10)
   },
 
-  "travel_backpack:furnace_upgrade": (upgrades, entity, inventory, firstSlot) => {
+  "travel_backpack:furnace_upgrade": (player, upgrades, entity, inventory, firstSlot) => {
     // Se o craft já tiver ativo é porque tem mais de um então não executa pra não executar a mesma coisa já que esse upgrade é fixo
     if(upgrades.furnace == true) return
 
     upgrades.furnace = true
     furnaceUpgradeFunctions.add(entity, inventory, firstSlot +25)
+  },
+
+  "travel_backpack:feed_upgrade": (player, upgrades, entity, inventory, firstSlot) => {
+    // Se o craft já tiver ativo é porque tem mais de um então não executa pra não executar a mesma coisa já que esse upgrade é fixo
+    if(upgrades.feed == true) return
+
+    upgrades.feed = true
+    feedUpgradeFunctions.add(player, entity, inventory, firstSlot +32, player.selectedSlotIndex)
   }
 }
 
@@ -204,6 +243,7 @@ interface IntervalInfo {
 interface EnableUpgrades {
   craft: boolean
   furnace: boolean
+  feed: boolean
 }
 
 type UpgradesList = [string, string, string, string, string, string]

@@ -28,7 +28,9 @@ export const upgradeBackpackTier = new class UpgradeBackpack {
       for(let i = clearIndex +10, len = backpackInv.size; i < len; i++) functionSlots[i - clearIndex] = backpackInv.getItem(i)
 
       system.run(() => {
-        block.setPermutation(BlockPermutation.resolve(backpackType, block.permutation.getAllStates()))
+        const ids = block.typeId.split("_")
+        const color = ids.length == 4 ? ids[1] : `${ids[1]}_${ids[2]}`
+        block.setPermutation(BlockPermutation.resolve(ids.length == 3 || color == undefined ? backpackType : `travel_backpack:${color.slice(9)}_${backpackType.slice(16)}`, block.permutation.getAllStates()))
         block.dimension.spawnParticle("travel_backpack:upgrade_tier", block.center())
 
         backpack.triggerEvent(`travel_backpack:inventory${upgradeSize}`)

@@ -1,7 +1,7 @@
 {
   "namespace": "travel_backpack-backpack",
 
-  "backpack_panel": {
+  "backpack_root_panel": {
     "$inventory_size|default": 27, /*Se não colocar |default o valor não é alterado pelos elementos anteriores, legal saber*/
     "$root_panel_size|default": [ 176, 162 ],
     "$backpack_panel_size|default": [ 176, 68 ],
@@ -15,57 +15,165 @@
       { "selected_item_details_factory@common.selected_item_details_factory": { "control_name": "@chest.selected_item_details" } },
       { "item_lock_notification_factory@common.item_lock_notification_factory": { "control_name": "@common.item_lock_notification" } },
       {
-        "root_panel": {
-          "type": "panel",
-          "size": "$root_panel_size",
+        "config": {
+          "type": "stack_panel",
+          "offset": [ 2, 0 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "orientation": "horizontal",
+          "collection_name": "container_items",
           "controls": [
+            { "hover_data_control_ui_mode@travel_backpack-upgrades.hover_text_data_control": { "$index": "($inventory_size +6)" } },
             {
-              "inventory_panel@common.root_panel": {
-                "size": [ 176, 85 ],
-                "anchor_from": "bottom_middle",
-                "anchor_to": "bottom_middle",
-                "controls": [
-                  { "background@common.dialog_background_opaque": {} },
-                  { "inventory_panel_bottom_half@common.inventory_panel": {} },
-                  { "hotbar_grid@common.hotbar_grid_template": {} },
-                  { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} },
-                  { "flying_item_renderer@common.flying_item_renderer": { "layer": 15 } }
-                ]
+              "change_amount_button@common.container_item": {
+                "size": [ 16, 16 ],
+                "$background_images": "common.empty_panel",
+                "$button_ref": "travel_backpack-upgrade_general.functional_button",
+                "$item_collection_name": "container_items",
+                "collection_index": "($inventory_size +6)"
               }
             },
             {
-              "backpack_panel@common.root_panel": {
-                "size": "$backpack_panel_size",
-                "anchor_from": "top_middle",
-                "anchor_to": "top_middle",
+              "change_amount_image_panel": {
+                "type": "panel",
+                "size": [ 16, 16 ],
                 "controls": [
-                  { "close@common.close_button": { "offset": [ -1, -8 ] } },
                   {
-                    "upgrade_slots_root@common.root_panel": {
-                      "size": [ "100%c", "100%c" ],
-                      "offset": [ -25, 0 ],
-                      "layer": 0,
-                      "anchor_from": "top_left",
-                      "anchor_to": "top_left",
+                    "change_amount_image_stack_panel": {
+                      "type": "stack_panel",
+                      "collection_name": "container_items",
+                      "size": [ 14, 14 ],
+                      "offset": [ -16, 0 ],
                       "controls": [
-                        { "upgrade_slots@travel_backpack-upgrades.upgrade_slots_panel": {} }
+                        {
+                          "change_amount_image": {
+                            "collection_index": "($inventory_size +6)",
+                            "type": "image",
+                            "size": [ 14, 14 ],
+                            "layer": 10,
+                            "bindings": [
+                              { "binding_type": "view", "source_control_name": "hover_data_control_ui_mode", "source_property_name": "#preserved_text", "target_property_name": "#info" },
+                              {
+                                "binding_type": "view",
+                                "source_property_name": "( ('textures/travel_backpack/ui/config/ui_mode/' + ('%.6s' * #info) - '§') )",
+                                "target_property_name": "#texture"
+                              }
+                            ]
+                          }
+                        }
                       ]
                     }
-                  },
-                  { "upgrade_functions@travel_backpack-upgrades.upgrade_functions_panel": { "ignored": "(not $is_desktop)" } },
-                  { "upgrade_functions_mobile@travel_backpack-upgrades.upgrade_functions_mobile_panel": { "ignored": "$is_desktop" } },
-                  { "background@travel_backpack-common.backpack_background": { "size": [ "100%", "100% + 12px" ] } },
-                  { "item_grid@travel_backpack-backpack.inventory_grid_panel": { "ignored": "(not $is_desktop)" } },
-                  { "item_grid_scrolling@travel_backpack-backpack.inventory_grid_panel_scrolling": { "ignored": "$is_desktop" } }
-                  // { "item_grid_scrolling@travel_backpack-backpack.inventory_grid_panel_scrolling": {} }
+                  }
                 ]
               }
-            },
-            { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
-            { "gamepad_cursor@common.gamepad_cursor_button": {} }
+            }
+          ]
+        }
+      },
+      { "root_panel@travel_backpack-backpack.backpack_main_panel": {} }
+    ]
+  },
+
+  "backpack_main_panel": {
+    "type": "collection_panel",
+    "collection_name": "container_items",
+    "controls": [
+      /* Precisei-colocar-os-preserved-text-aqui,-porque-dentro-do-painel-dos-upgrades-ele-tava-bugando-igual-os-toggles */
+      { "hover_data_control_1@travel_backpack-upgrades.hover_text_data_control": { "$index": "($inventory_size)" } },
+      { "hover_data_control_2@travel_backpack-upgrades.hover_text_data_control": { "$index": "($inventory_size +1)" } },
+      { "hover_data_control_3@travel_backpack-upgrades.hover_text_data_control": { "$index": "($inventory_size +2)" } },
+      { "hover_data_control_4@travel_backpack-upgrades.hover_text_data_control": { "$index": "($inventory_size +3)" } },
+      { "hover_data_control_5@travel_backpack-upgrades.hover_text_data_control": { "$index": "($inventory_size +4)" } },
+      { "hover_data_control_6@travel_backpack-upgrades.hover_text_data_control": { "$index": "($inventory_size +5)" } },
+      { "hover_data_control_craft_amount@travel_backpack-upgrades.hover_text_data_control": { "$index": "($inventory_size +21)" } },
+
+      { "hover_data_control_ui_mode@travel_backpack-upgrades.hover_text_data_control": { "$index": "($inventory_size +6)" } },
+      {
+        "default_ui@travel_backpack-backpack.backpack_panel": {
+          "bindings": [
+            { "binding_type": "view", "source_control_name": "hover_data_control_ui_mode", "source_property_name": "#preserved_text", "target_property_name": "#info" },
+            {
+              "binding_type": "view",
+              "source_property_name": "(('%.6s' * #info) = '§f§1')",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "scrolling_ui@travel_backpack-backpack.backpack_panel": {
+          "$panel_size": "$root_scrolling_panel_size",
+          "$backpack_size": "$backpack_scrolling_panel_size",
+          "$is_scrolling": true,
+          "$craft_toggle": "toggle_craft_upgrade_scroll",
+          "$furnace_toggle": "toggle_furnace_upgrade_scroll",
+          "$feed_toggle": "toggle_feed_upgrade_scroll",
+          "bindings": [
+            { "binding_type": "view", "source_control_name": "hover_data_control_ui_mode", "source_property_name": "#preserved_text", "target_property_name": "#info" },
+            {
+              "binding_type": "view",
+              "source_property_name": "(('%.6s' * #info) = '§f§2')",
+              "target_property_name": "#visible"
+            }
           ]
         }
       }
+    ]
+  },
+
+  "backpack_panel": {
+    "$panel_size": "$root_panel_size",
+    "$backpack_size": "$backpack_panel_size",
+    "$is_scrolling": false,
+
+    "$craft_toggle": "toggle_craft_upgrade",
+    "$furnace_toggle": "toggle_furnace_upgrade",
+    "$feed_toggle": "toggle_feed_upgrade",
+
+    "type": "panel",
+    "size": "$panel_size",
+    "controls": [
+      {
+        "inventory_panel@common.root_panel": {
+          "size": [ 176, 85 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "controls": [
+            { "background@common.dialog_background_opaque": {} },
+            { "inventory_panel_bottom_half@common.inventory_panel": {} },
+            { "hotbar_grid@common.hotbar_grid_template": {} },
+            { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} },
+            { "flying_item_renderer@common.flying_item_renderer": { "layer": 15 } }
+          ]
+        }
+      },
+      {
+        "backpack_panel@common.root_panel": {
+          "size": "$backpack_size",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "controls": [
+            { "close@common.close_button": { "offset": [ -1, -8 ] } },
+            {
+              "upgrade_slots_root@common.root_panel": {
+                "size": [ "100%c", "100%c" ],
+                "offset": [ -25, -2 ],
+                "layer": 0,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "controls": [ { "upgrade_slots@travel_backpack-upgrades.upgrade_slots_panel": {} } ]
+              }
+            },
+            { "organize_panel@travel_backpack-common.organize_panel": {} },
+            { "upgrade_functions@travel_backpack-upgrades.upgrade_functions_panel": {} },
+            { "background@travel_backpack-common.backpack_background": { "size": [ "100%", "100% + 12px" ] } },
+            { "item_grid@travel_backpack-backpack.inventory_grid_panel": { "ignored": "$is_scrolling" } },
+            { "item_grid_scrolling@travel_backpack-backpack.inventory_grid_panel_scrolling": { "ignored": "(not $is_scrolling)" } }
+          ]
+        }
+      },
+      { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+      { "gamepad_cursor@common.gamepad_cursor_button": {} }
     ]
   },
 
@@ -106,14 +214,14 @@
       { "inventory_name@travel_backpack-backpack.inventory_name": {} },
       {
         "scrolling_panel@common.scrolling_panel": {
-          "size": "$backpack_panel_size",
+          "size": "$backpack_size",
           "offset": [ 0, 10 ],
           "anchor_to": "top_left",
           "anchor_from": "top_left",
           "$show_background": false,
           "$scrolling_content": "travel_backpack-backpack.items_grid_scrolling",
           "$scroll_size": [ 5, "100% -4px" ],
-          "$scrolling_pane_size": [ "100% - 4px", "100% -13px" ],
+          "$scrolling_pane_size": [ "100% - 4px", "100% -11.75px" ],
           "$scrolling_pane_offset": [ 7, 0 ],
           "$scroll_bar_right_padding_size": [ 0, 0 ]
         }
@@ -134,8 +242,7 @@
           "grid_item_template": "chest.chest_grid_item",
           "collection_name": "container_items"
         }
-      },
-      { "padding@common.empty_panel": { "size": [ 0, 1 ] } }
+      }
     ]
   }
 }

@@ -1,4 +1,5 @@
-import { Entity, EntityComponentTypes, EquipmentSlot, ItemStack, Player } from "@minecraft/server"
+import { Block, Entity, EntityComponentTypes, EquipmentSlot, ItemStack, Player, system } from "@minecraft/server"
+import { BackpackDimension, backpackSizeTier, backpackTypeTier, dimensionCenter } from "../lib/variables"
 
 export const removeBackpack = new class RemoveBackpack {
   remove(player: Player, entity: Entity): void {
@@ -27,5 +28,40 @@ export const removeBackpack = new class RemoveBackpack {
     } catch {}
 
     entity.teleport({x: player.location.x, y: player.dimension.heightRange.min +1, z: player.location.z}, {dimension: player.dimension})
+  }
+
+  brokenBlock(block: Block, id: string): void {
+    const entities = block.dimension.getEntitiesAtBlockLocation(block.location)
+    let entity: Entity | undefined = undefined
+
+    for(let i = 0, len = entities.length; i < len; i++){
+      const e = entities[i]
+      if(e == undefined || e.isValid == false) continue
+      if(e.typeId != "travel_backpack:backpack") continue
+
+      const inv = e.getComponent(EntityComponentTypes.Inventory)?.container
+      if(inv == undefined) continue
+
+      const tier = backpackSizeTier[inv.size]
+      if(tier == undefined) continue
+
+      if(backpackTypeTier[tier] == id){
+        entity = e
+        break
+      }
+    }
+
+    if(entity == undefined) return
+
+    const item = new ItemStack(id)
+    if(!item) return
+
+    item.setDynamicProperty("id", entity.id)
+    item.setLore([{translate: "lore.travel_backpack:backpack.id", with: [entity.id]}])
+    entity.dimension.spawnItem(item, block.center())
+
+    entity.setDynamicProperty("pos", undefined)
+    entity.triggerEvent("travel_backpack:remove_on_ground")
+    entity.teleport(dimensionCenter, {dimension: BackpackDimension})
   }
 }

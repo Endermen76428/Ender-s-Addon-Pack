@@ -1,6 +1,6 @@
 import { removeBackpack } from "../functions/remove"
-import { apiWarn } from "../../0-lib/player/warn"
 import { world, Player } from "@minecraft/server"
+import { apiWarn } from "../../0-lib/player/warn"
 
 world.afterEvents.entityHitEntity.subscribe(({damagingEntity: player, hitEntity: entity}) => {
   if(!(player instanceof Player)) return

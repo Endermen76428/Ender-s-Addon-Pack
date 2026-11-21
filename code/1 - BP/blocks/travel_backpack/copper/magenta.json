@@ -9,6 +9,7 @@
       }
     },
     "components": {
+      "travel_backpack:backpack": {},
       "minecraft:tags": [ "travel_backpack:backpack", "bedrock_awakening:script_no_break" ],
       "minecraft:loot": "loot_tables/empty.json",
       "minecraft:geometry": "geometry.travel_backpack.backpack",

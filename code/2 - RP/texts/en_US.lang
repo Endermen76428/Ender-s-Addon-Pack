@@ -1355,7 +1355,7 @@ item.digital_miner:anchor_upgrade_1.bacs=Anchor Upgrade
 
 ## --------------------------------------------------
 ## #region Block
-## ------------------------------------------------
+## --------------------------------------------------
 
 ## Backpack
 tile.travel_backpack:leather_backpack.name=Leather Backpack
@@ -1705,6 +1705,22 @@ item.travel_backpack:magenta_netherite_backpack.bacs=Magenta Netherite Backpack
 item.travel_backpack:pink_netherite_backpack=Pink Netherite Backpack\n§9Travel Backpacks
 item.travel_backpack:pink_netherite_backpack.bacs=Pink Netherite Backpack
 
+### Config
+item.travel_backpack:ui_mode_default=§1§rUI Default
+item.travel_backpack:ui_mode_scrolling=§2§rUI Scrolling
+
+item.travel_backpack:organize_alphabetical=Organize by Name
+item.travel_backpack:organize_numeric=Organize by Amount
+
+## Craft
+item.travel_backpack:craft_amount_1=§1§rCraft: 1 Item
+item.travel_backpack:craft_amount_2=§2§rCraft: 2 Items
+item.travel_backpack:craft_amount_4=§3§rCraft: 4 Items
+item.travel_backpack:craft_amount_8=§4§rCraft: 8 Items
+item.travel_backpack:craft_amount_16=§5§rCraft: 16 Items
+item.travel_backpack:craft_amount_32=§6§rCraft: 32 Items
+item.travel_backpack:craft_amount_64=§7§rCraft: 64 Items
+
 ## upgrade
 item.travel_backpack:upgrade_template=Template Upgrade\n§9Travel Backpacks
 item.travel_backpack:upgrade_template.bacs=Template Upgrade
@@ -1726,6 +1742,8 @@ item.travel_backpack:craft_upgrade=§c§r§a§f§t§rCraft Upgrade\n§9Travel Ba
 item.travel_backpack:craft_upgrade.bacs=§c§r§a§f§t§rCraft Upgrade
 item.travel_backpack:furnace_upgrade=§f§u§r§n§a§rFurnace Upgrade\n§9Travel Backpacks
 item.travel_backpack:furnace_upgrade.bacs=§f§u§r§n§a§rFurnace Upgrade
+item.travel_backpack:feed_upgrade=§f§e§e§d§rFeed Upgrade\n§9Travel Backpacks
+item.travel_backpack:feed_upgrade.bacs=§f§e§e§d§rFeed Upgrade
 
 ### Warn
 
@@ -1752,6 +1770,8 @@ lore.travel_backpack:backpack.id=Backpack: %1
 ## --------------------------------------------------
 ## #region UI
 ## --------------------------------------------------
+
+container.feed=Feeder
 
 ## Custom Chest
 ui.travel_backpack:backpack.size.0=Leather Backpack

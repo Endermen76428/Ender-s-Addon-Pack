@@ -10,7 +10,7 @@
           "anchor_to": "top_left",
           "offset": [ -1.5, 0 ],
           "$index": 1,
-          "$name": "toggle_craft_upgrade",
+          "$name": "$craft_toggle",
           "$off_texture|default": "textures/travel_backpack/ui/upgrades/craft/craft_off",
           "$off_hover_texture|default": "textures/travel_backpack/ui/upgrades/craft/craft_off_hover",
           "$on_texture|default": "textures/travel_backpack/ui/upgrades/craft/craft_off",
@@ -30,15 +30,13 @@
               "craft_panel": {
                 "type": "panel",
                 "size": [ 87, 64 ],
-                "anchor_from": "top_left",
-                "anchor_to": "top_left",
                 "controls": [
                   {
                     "crafting_label": {
                       "type": "label",
                       "text": "container.crafting",
                       "localize": true,
-                      "offset": [ 23, 6 ],
+                      "offset": [ 10, -5 ],
                       "text_alignment": "left",
                       "anchor_from": "top_left",
                       "anchor_to": "top_left"
@@ -47,7 +45,7 @@
                   {
                     "grid_3x3": {
                       "type": "stack_panel",
-                      "offset": [ 10, 18 ],
+                      "offset": [ 0, 7 ],
                       "controls": [
                         {
                           "layer_1": {
@@ -96,7 +94,7 @@
                       "type": "image",
                       "texture": "textures/travel_backpack/ui/upgrades/craft/arrow",
                       "size": [ 16, 13 ],
-                      "offset": [ 40, 23 ],
+                      "offset": [ 30, 12 ],
                       "anchor_from": "top_middle",
                       "anchor_to": "top_middle"
                     }
@@ -104,7 +102,7 @@
                   {
                     "output": {
                       "type": "stack_panel",
-                      "offset": [ 72, 18 ],
+                      "offset": [ 62, 7 ],
                       "collection_name": "container_items",
                       "controls": [
                         {
@@ -118,12 +116,67 @@
                         }
                       ]
                     }
+                  },
+                  {
+                    "config": {
+                      "type": "stack_panel",
+                      "offset": [ "100% -8px", "100% -8px" ],
+                      "anchor_from": "top_left",
+                      "anchor_to": "top_left",
+                      "orientation": "horizontal",
+                      "collection_name": "container_items",
+                      "controls": [
+                        {
+                          "change_amount_button@common.container_item": {
+                            "size": [ 16, 16 ],
+                            "$background_images": "common.empty_panel",
+                            "$button_ref": "travel_backpack-upgrade_general.functional_button",
+                            "$item_collection_name": "container_items",
+                            "collection_index": "($inventory_size +21)"
+                          }
+                        },
+                        {
+                          "change_amount_image_panel": {
+                            "type": "panel",
+                            "size": [ 16, 16 ],
+                            "controls": [
+                              {
+                                "change_amount_image_stack_panel": {
+                                  "type": "stack_panel",
+                                  "collection_name": "container_items",
+                                  "size": [ 16, 16 ],
+                                  "offset": [ -16, 0 ],
+                                  "controls": [
+                                    {
+                                      "change_amount_image": {
+                                        "collection_index": "($inventory_size +21)",
+                                        "type": "image",
+                                        "size": [ 16, 16 ],
+                                        "layer": 10,
+                                        "bindings": [
+                                          { "binding_type": "view", "source_control_name": "hover_data_control_craft_amount", "source_property_name": "#preserved_text", "target_property_name": "#info" },
+                                          {
+                                            "binding_type": "view",
+                                            "source_property_name": "( ('textures/travel_backpack/ui/upgrades/craft/amount/' + ('%.6s' * #info) - '§') )",
+                                            "target_property_name": "#texture"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
                   }
                 ],
                 "bindings": [
                   {
                     "binding_type": "view",
-                    "source_control_name": "toggle_craft_upgrade",
+                    "source_control_name": "$craft_toggle",
                     "source_property_name": "#toggle_state",
                     "target_property_name": "#visible"
                   }
@@ -135,45 +188,23 @@
       }
     ],
     "bindings": [
+      { "binding_type": "view", "source_control_name": "hover_data_control_1", "source_property_name": "#preserved_text", "target_property_name": "#info_1" },
+      { "binding_type": "view", "source_control_name": "hover_data_control_2", "source_property_name": "#preserved_text", "target_property_name": "#info_2" },
+      { "binding_type": "view", "source_control_name": "hover_data_control_3", "source_property_name": "#preserved_text", "target_property_name": "#info_3" },
+      { "binding_type": "view", "source_control_name": "hover_data_control_4", "source_property_name": "#preserved_text", "target_property_name": "#info_4" },
+      { "binding_type": "view", "source_control_name": "hover_data_control_5", "source_property_name": "#preserved_text", "target_property_name": "#info_5" },
+      { "binding_type": "view", "source_control_name": "hover_data_control_6", "source_property_name": "#preserved_text", "target_property_name": "#info_6" },
+
+      { "binding_type": "view", "source_control_name": "hover_data_control_1", "source_property_name": "#has_item", "target_property_name": "#item_1" },
+      { "binding_type": "view", "source_control_name": "hover_data_control_2", "source_property_name": "#has_item", "target_property_name": "#item_2" },
+      { "binding_type": "view", "source_control_name": "hover_data_control_3", "source_property_name": "#has_item", "target_property_name": "#item_3" },
+      { "binding_type": "view", "source_control_name": "hover_data_control_4", "source_property_name": "#has_item", "target_property_name": "#item_4" },
+      { "binding_type": "view", "source_control_name": "hover_data_control_5", "source_property_name": "#has_item", "target_property_name": "#item_5" },
+      { "binding_type": "view", "source_control_name": "hover_data_control_6", "source_property_name": "#has_item", "target_property_name": "#item_6" },
+
       {
         "binding_type": "view",
-        "source_control_name": "hover_data_control_1",
-        "source_property_name": "#preserved_hover_text",
-        "target_property_name": "#info_1"
-      },
-      {
-        "binding_type": "view",
-        "source_control_name": "hover_data_control_2",
-        "source_property_name": "#preserved_hover_text",
-        "target_property_name": "#info_2"
-      },
-      {
-        "binding_type": "view",
-        "source_control_name": "hover_data_control_3",
-        "source_property_name": "#preserved_hover_text",
-        "target_property_name": "#info_3"
-      },
-      {
-        "binding_type": "view",
-        "source_control_name": "hover_data_control_4",
-        "source_property_name": "#preserved_hover_text",
-        "target_property_name": "#info_4"
-      },
-      {
-        "binding_type": "view",
-        "source_control_name": "hover_data_control_5",
-        "source_property_name": "#preserved_hover_text",
-        "target_property_name": "#info_5"
-      },
-      {
-        "binding_type": "view",
-        "source_control_name": "hover_data_control_6",
-        "source_property_name": "#preserved_hover_text",
-        "target_property_name": "#info_6"
-      },
-      {
-        "binding_type": "view",
-        "source_property_name": "((('%.21s' * #info_1) = '§f§c§r§a§f§t§r') or (('%.21s' * #info_2) = '§f§c§r§a§f§t§r') or (('%.21s' * #info_3) = '§f§c§r§a§f§t§r') or (('%.21s' * #info_4) = '§f§c§r§a§f§t§r') or (('%.21s' * #info_5) = '§f§c§r§a§f§t§r') or (('%.21s' * #info_6) = '§f§c§r§a§f§t§r'))", /* Cada-combinação-de-§-considerá-como-3-e-possui-um-§f-no-inicio-de-todo-hover_text-por-algum-motivo,-sofri-pra-descobrir-isso-:( */
+        "source_property_name": "( (('%.21s' * #info_1) = '§f§c§r§a§f§t§r' and #item_1) or (('%.21s' * #info_2) = '§f§c§r§a§f§t§r' and #item_2) or (('%.21s' * #info_3) = '§f§c§r§a§f§t§r' and #item_3) or (('%.21s' * #info_4) = '§f§c§r§a§f§t§r' and #item_4) or (('%.21s' * #info_5) = '§f§c§r§a§f§t§r' and #item_5) or (('%.21s' * #info_6) = '§f§c§r§a§f§t§r' and #item_6) )", /* Cada-combinação-de-§-considerá-como-3-e-possui-um-§f-no-inicio-de-todo-hover_text-por-algum-motivo,-sofri-pra-descobrir-isso-:( */
         "target_property_name": "#visible"
       }
     ]

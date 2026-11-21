@@ -1,4 +1,5 @@
 import { temporalBottleFuncBrewingStand } from "../temporal_bottle/functions/blocks/brewingStand"
+import { travelBackpackFuncFeed } from "../travel_backpack/functions/upgrades/feed/feedListener"
 import { temporalBottleFuncFurnace } from "../temporal_bottle/functions/blocks/furnace"
 import { system } from "@minecraft/server"
 
@@ -6,7 +7,10 @@ let enabledLoop = false
 const enabledFunctions: IEnabledFunctions = {
   // Temporal Bottle
   temporalBottleFurnace: false,
-  temporalBottleBrewingStand: false
+  temporalBottleBrewingStand: false,
+
+  // Travel Backpack
+  travelBackpackFeedListener: false
 }
 
 function loop(tick: number): void {
@@ -16,6 +20,9 @@ function loop(tick: number): void {
   // Temporal Bottle
   if(enabledFunctions.temporalBottleFurnace) temporalBottleFuncFurnace.update()
   if(enabledFunctions.temporalBottleBrewingStand) temporalBottleFuncBrewingStand.update()
+
+  // Travel Backpack
+  if(enabledFunctions.travelBackpackFeedListener && tick == 19) travelBackpackFuncFeed.update()
 
   // Reinicia o Loop no proximo tick
   system.run(() => { loop(tick == 19 ? 0 : tick +1) })
@@ -50,4 +57,7 @@ interface IEnabledFunctions {
   // temporal Bottle
   temporalBottleFurnace: boolean
   temporalBottleBrewingStand: boolean
+
+  // Travel Backpack
+  travelBackpackFeedListener: boolean
 }
