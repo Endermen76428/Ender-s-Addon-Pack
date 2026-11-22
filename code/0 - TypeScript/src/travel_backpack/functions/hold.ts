@@ -112,10 +112,27 @@ export function addPlayerHoldListen(player: Player, item: ItemStack, slot: numbe
     // Pega a entidade que está na região de salvamento
     entity = world.getEntity(itemBackpackId)
     if(!entity){
-      item.lockMode = ItemLockMode.none
-      inventory.setItem(slot, item)
+      const id = `travel_backpack:${itemBackpackId}`
+      const structure = world.structureManager.get(id)
+      if(structure != undefined){
+        const pos = {x: 0.5, y: BackpackDimension.heightRange.min +1, z: 0.5}
+        world.structureManager.place(structure, BackpackDimension, pos)
+        const backpackEntity = BackpackDimension.getEntitiesAtBlockLocation(pos)[0]
+        if(backpackEntity){
+          entity = backpackEntity
+          world.structureManager.delete(id)
+        } else {
+          item.lockMode = ItemLockMode.none
+          inventory.setItem(slot, item)
 
-      return console.warn("§4Entity not found!")
+          return console.warn("§4Entity not found in Structure!")
+        }
+      } else {
+        item.lockMode = ItemLockMode.none
+        inventory.setItem(slot, item)
+
+        return console.warn("§4Entity not found!")
+      }
     }
   } else {
     // Gera uma mochila nova pois nunca foi colocada no chão para gerar o primeiro id

@@ -96,7 +96,6 @@ system.run(() => {
         if(firstSlot == undefined) continue
 
         feedUpgradeFunctions.add(player, backpackEntity, backpackInv, firstSlot +32, i, true)
-        world.sendMessage(player.nameTag + " possui backpack com feed upgrade")
       }
     }
   }
