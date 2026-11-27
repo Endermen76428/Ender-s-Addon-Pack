@@ -54,11 +54,10 @@ function startInverval(executeTime = 0): void {
         const change = newUpgrades[slot]
         if(change == undefined) continue
 
-        if(change == ""){
-          const exe = removeFunctions[upgrades[slot] ?? ""]
+        const lastUpgrade = upgrades[slot] ?? ""
+        if(change != lastUpgrade){
+          const exe = removeFunctions[lastUpgrade]
           exe && exe(player, backpack, backpackInv, firstSlot, upgrades)
-          upgrades[slot] = ""
-          continue
         }
 
         const exe = addFunctions[change]

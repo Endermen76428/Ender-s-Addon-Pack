@@ -105,15 +105,28 @@
           "$panel_size": "$root_scrolling_panel_size",
           "$backpack_size": "$backpack_scrolling_panel_size",
           "$is_scrolling": true,
-          "$craft_toggle": "toggle_craft_upgrade_scroll",
-          "$furnace_toggle": "toggle_furnace_upgrade_scroll",
-          "$feed_toggle": "toggle_feed_upgrade_scroll",
           "bindings": [
             { "binding_type": "view", "source_control_name": "hover_data_control_ui_mode", "source_property_name": "#preserved_text", "target_property_name": "#info" },
             {
               "binding_type": "view",
               "source_property_name": "(('%.6s' * #info) = '§f§2')",
               "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "upgrades_functions@common.empty_panel": {
+          "size": [ "100%sm", "100%sm" ],
+          "controls": [
+            {
+              "upgrades_panel@common.empty_panel": {
+                "$upgrade_offset|default": [ 0, 0 ],
+                "offset": "$upgrade_offset",
+                "controls": [
+                  { "upgrade_functions@travel_backpack-upgrades.upgrade_functions_panel": {} }
+                ]
+              }
             }
           ]
         }
@@ -125,10 +138,6 @@
     "$panel_size": "$root_panel_size",
     "$backpack_size": "$backpack_panel_size",
     "$is_scrolling": false,
-
-    "$craft_toggle": "toggle_craft_upgrade",
-    "$furnace_toggle": "toggle_furnace_upgrade",
-    "$feed_toggle": "toggle_feed_upgrade",
 
     "type": "panel",
     "size": "$panel_size",
@@ -165,7 +174,6 @@
               }
             },
             { "organize_panel@travel_backpack-common.organize_panel": {} },
-            { "upgrade_functions@travel_backpack-upgrades.upgrade_functions_panel": {} },
             { "background@travel_backpack-common.backpack_background": { "size": [ "100%", "100% + 12px" ] } },
             { "item_grid@travel_backpack-backpack.inventory_grid_panel": { "ignored": "$is_scrolling" } },
             { "item_grid_scrolling@travel_backpack-backpack.inventory_grid_panel_scrolling": { "ignored": "(not $is_scrolling)" } }

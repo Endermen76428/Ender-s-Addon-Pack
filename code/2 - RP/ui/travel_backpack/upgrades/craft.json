@@ -10,7 +10,7 @@
           "anchor_to": "top_left",
           "offset": [ -1.5, 0 ],
           "$index": 1,
-          "$name": "$craft_toggle",
+          "$name": "toggle_craft_upgrade",
           "$off_texture|default": "textures/travel_backpack/ui/upgrades/craft/craft_off",
           "$off_hover_texture|default": "textures/travel_backpack/ui/upgrades/craft/craft_off_hover",
           "$on_texture|default": "textures/travel_backpack/ui/upgrades/craft/craft_off",
@@ -176,7 +176,7 @@
                 "bindings": [
                   {
                     "binding_type": "view",
-                    "source_control_name": "$craft_toggle",
+                    "source_control_name": "toggle_craft_upgrade",
                     "source_property_name": "#toggle_state",
                     "target_property_name": "#visible"
                   }

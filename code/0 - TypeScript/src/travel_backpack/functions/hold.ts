@@ -142,7 +142,7 @@ export function addPlayerHoldListen(player: Player, item: ItemStack, slot: numbe
 
   if(!entity || !entity.isValid) return
 
-  entity.triggerEvent("travel_backpack:remove_timer")
+  system.runTimeout(() => entity.triggerEvent("travel_backpack:remove_timer"), 5) // Precisa de um delay para que a ativação do timer do EntityLoad não sobrescreva essa
   if(player.isSneaking){
     entity.teleport({x: player.location.x, y: player.dimension.heightRange.min +1, z: player.location.z}, {dimension: player.dimension})
   } else {
