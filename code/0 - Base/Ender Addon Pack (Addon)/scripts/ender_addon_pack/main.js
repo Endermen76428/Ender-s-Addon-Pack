@@ -1,9 +1,1 @@
-import "./advanced_waypoints/main"
-import "./builder_wand/main"
-import "./digital_miner/main"
-import "./disenchanter_book/main"
-import "./gravestone_death_path/main"
-import "./simple_waystone/main"
-import "./temporal_bottle/main"
-import "./travel_backpack/main"
-import "./utilities_vein_miner/main"
+console.error("[§cEnder's Addon Pack§r] Missing Scripts.")
